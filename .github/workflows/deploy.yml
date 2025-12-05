@@ -99,8 +99,9 @@ jobs:
             NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
             EOF
 
-            # Download docker-compose.prod.yml if not exists or update it
+            # Download production configuration files
             curl -o docker-compose.prod.yml https://raw.githubusercontent.com/${{ github.repository }}/main/docker-compose.prod.yml
+            curl -o nginx.conf https://raw.githubusercontent.com/${{ github.repository }}/main/nginx.conf
 
             # Log in to GitHub Container Registry
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
@@ -117,7 +118,7 @@ jobs:
 
             # Wait for database to be ready
             echo "Waiting for database to be ready..."
-            sleep 10
+            sleep 15
 
             # Run database migrations
             docker-compose -f docker-compose.prod.yml exec -T api sh -c "cd /app && npx prisma migrate deploy" || echo "Migration failed or already up to date"
@@ -125,14 +126,22 @@ jobs:
             # Show running containers
             docker-compose -f docker-compose.prod.yml ps
 
-            # Check API health
-            echo "Checking API health..."
+            # Check nginx health
+            echo "Checking nginx health..."
             sleep 5
-            curl -f http://localhost:3001/health || echo "API health check failed"
+            curl -f http://localhost/health || echo "Nginx health check failed"
 
-            # Check Web health
-            echo "Checking Web health..."
-            curl -f http://localhost:3000 || echo "Web health check failed"
+            # Check API health via nginx
+            echo "Checking API health via nginx..."
+            curl -f http://localhost/api/health || echo "API health check failed"
+
+            # Check landing page
+            echo "Checking landing page..."
+            curl -f http://localhost/ || echo "Landing page health check failed"
+
+            # Check CRM login page
+            echo "Checking CRM..."
+            curl -f http://localhost/crm/login || echo "CRM health check failed"
 
             # Clean up old images
             docker image prune -af --filter "until=24h"
@@ -142,8 +151,9 @@ jobs:
         run: |
           if [ ${{ job.status }} == 'success' ]; then
             echo "✅ Deployment successful!"
-            echo "🌐 Web: http://${{ secrets.OCI_HOST }}:3000"
-            echo "🔌 API: http://${{ secrets.OCI_HOST }}:3001"
+            echo "🌐 Landing: http://${{ secrets.OCI_HOST }}"
+            echo "💼 CRM: http://${{ secrets.OCI_HOST }}/crm"
+            echo "🔌 API: http://${{ secrets.OCI_HOST }}/api"
           else
             echo "❌ Deployment failed!"
           fi

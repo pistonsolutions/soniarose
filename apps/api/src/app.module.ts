@@ -8,6 +8,8 @@ import { DatabaseModule } from './database/database.module';
 import { ContactsModule } from './contacts/contacts.module';
 import { WorkflowsModule } from './workflows/workflows.module';
 import { MediaModule } from './media/media.module';
+import { TallyModule } from './tally/tally.module';
+import { UserSettingsModule } from './user-settings/user-settings.module';
 import { ComplianceModule } from './compliance/compliance.module';
 import { TasksModule } from './tasks/tasks.module';
 import { TemplatesModule } from './templates/templates.module';
@@ -24,6 +26,8 @@ import { TemplatesModule } from './templates/templates.module';
     ContactsModule,
     WorkflowsModule,
     MediaModule,
+    TallyModule,
+    UserSettingsModule,
     ComplianceModule,
     TasksModule,
     TemplatesModule,
