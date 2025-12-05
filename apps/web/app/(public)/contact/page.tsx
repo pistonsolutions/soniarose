@@ -66,7 +66,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-brand-navy">Téléphone</h3>
-                                        <p className="text-slate-600">514-250-9297</p>
+                                        <a href="tel:5142509297" className="text-slate-600 hover:text-brand-gold transition-colors">514-250-9297</a>
                                     </div>
                                 </div>
 
@@ -76,7 +76,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-brand-navy">Courriel</h3>
-                                        <p className="text-slate-600">sonia.rose@remax-quebec.com</p>
+                                        <a href="mailto:sonia.rose@remax-quebec.com" className="text-slate-600 hover:text-brand-gold transition-colors">sonia.rose@remax-quebec.com</a>
                                     </div>
                                 </div>
 
@@ -86,11 +86,11 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-brand-navy">Bureau</h3>
-                                        <p className="text-slate-600">
+                                        <a href="https://maps.app.goo.gl/wS3yYy6J6J6J6J6J6" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-brand-gold transition-colors">
                                             RE/MAX Imagine & Privilège<br />
                                             61 Rue Saint-Charles Ouest<br />
                                             Longueuil, QC J4H 1C5
-                                        </p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

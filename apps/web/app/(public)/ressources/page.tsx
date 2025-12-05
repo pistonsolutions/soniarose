@@ -6,6 +6,7 @@ import { FadeIn } from '@/components/ui/fade-in';
 import { FileText, Calculator, HelpCircle, BookOpen, Facebook, Instagram } from 'lucide-react';
 import type { Metadata } from 'next';
 import { ResourcesBlogCarousel } from '@/components/resources-blog-carousel';
+import { MortgageCalculator } from '@/components/mortgage-calculator';
 
 // Configuration for image opacities
 const heroImageOpacity = 0.6;
@@ -85,18 +86,8 @@ export default function ResourcesPage() {
                     </div>
 
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-                        {/* Guide Vendeur */}
-                        <Link href="https://tally.so/r/QKKpvG" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
-                            <Image
-                                src="/resources-card-seller.jpg"
-                                alt="Guide du Vendeur"
-                                fill
-                                className="object-cover"
-                            />
-                        </Link>
-
                         {/* Guide Acheteur */}
-                        <Link href="https://tally.so/r/w7X1p6" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
+                        <Link href="https://drive.google.com/file/d/1Pr6QYcisk7Rvrb4T6D1l9Iq3sNqPCyry/view" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
                             <Image
                                 src="/resources-card-buyer.jpg"
                                 alt="Guide de l'Acheteur"
@@ -105,11 +96,11 @@ export default function ResourcesPage() {
                             />
                         </Link>
 
-                        {/* Alerte Immobilière */}
-                        <Link href="https://tally.so/r/w7X1p6" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
+                        {/* Guide Vendeur */}
+                        <Link href="https://drive.google.com/file/d/1qEjWFoXa9zZv-LwFF5B83kG4UgjF8GES/view?usp=sharing" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
                             <Image
-                                src="/resources-card-alert.jpg"
-                                alt="Alerte Immobilière Personnalisée"
+                                src="/resources-card-seller.jpg"
+                                alt="Guide du Vendeur"
                                 fill
                                 className="object-cover"
                             />
@@ -120,6 +111,16 @@ export default function ResourcesPage() {
                             <Image
                                 src="/resources-card-quiz.jpg"
                                 alt="Est-ce que ta maison est encore alignée avec toi?"
+                                fill
+                                className="object-cover"
+                            />
+                        </Link>
+
+                        {/* Alerte Immobilière */}
+                        <Link href="https://tally.so/r/A7PEko" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
+                            <Image
+                                src="/resources-card-alert.jpg"
+                                alt="Alerte Immobilière Personnalisée"
                                 fill
                                 className="object-cover"
                             />
@@ -186,21 +187,9 @@ export default function ResourcesPage() {
                         </h2>
 
                         <div className="grid gap-8 lg:grid-cols-3 lg:items-center">
-                            {/* Left Column: Calculator Image */}
-                            <div className="flex flex-col items-center">
-                                <div className="relative w-full max-w-[300px] shadow-xl">
-                                    <Image
-                                        src="/resources-tools-calculator.png"
-                                        alt="Calculatrice Hypothécaire"
-                                        width={400}
-                                        height={600}
-                                        className="object-contain bg-white"
-                                        style={{ opacity: calculatorImageOpacity }}
-                                    />
-                                </div>
-                                <p className="mt-6 font-serif text-lg uppercase tracking-widest text-[#734838]">
-                                    CALCULATRICE HYPOTHÉCAIRE
-                                </p>
+                            {/* Left Column: Calculator Component */}
+                            <div className="flex flex-col items-center w-full">
+                                <MortgageCalculator />
                             </div>
 
                             {/* Center Column: Text */}
@@ -430,27 +419,13 @@ export default function ResourcesPage() {
                                 Un contenu clair, structuré et humain pour t’aider à mieux comprendre où tu en es dans ta relation avec ta maison.
                             </p>
 
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <input
-                                        type="text"
-                                        placeholder="NOM COMPLET"
-                                        className="w-full bg-transparent border border-[#734838]/30 px-4 py-3 text-sm placeholder-[#734838]/60 text-[#734838] focus:outline-none focus:border-[#734838]"
-                                    />
-                                    <input
-                                        type="email"
-                                        placeholder="COURRIEL"
-                                        className="w-full bg-transparent border border-[#734838]/30 px-4 py-3 text-sm placeholder-[#734838]/60 text-[#734838] focus:outline-none focus:border-[#734838]"
-                                    />
-                                </div>
-
-                                <Button
-                                    className="w-full rounded-none uppercase tracking-wider text-white py-6 text-sm hover:opacity-90 transition-opacity mt-4"
-                                    style={{ backgroundColor: '#734838' }}
-                                >
-                                    RECEVOIR MON GUIDE
+                            <div className="mt-8">
+                                <Button asChild size="lg" className="w-full rounded-none uppercase tracking-wider text-white py-6 text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#734838' }}>
+                                    <Link href="https://drive.google.com/file/d/1kzazVf9vYNgjpKB1CX10LFan71pQ34C/view?usp=sharing" target="_blank">
+                                        RECEVOIR MON GUIDE
+                                    </Link>
                                 </Button>
-                            </form>
+                            </div>
                         </div>
                     </FadeIn>
                 </div>

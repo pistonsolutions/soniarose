@@ -1,37 +1,53 @@
-'use client'
+'use client';
 
-import { useFormState, useFormStatus } from 'react-dom'
-import { submitContactForm } from '@/app/actions'
-import { Button } from '@/components/ui/button'
-import { useEffect, useRef } from 'react'
-
-const initialState = {
-    message: '',
-    success: false,
-}
-
-function SubmitButton() {
-    const { pending } = useFormStatus()
-
-    return (
-        <Button type="submit" size="lg" className="w-full bg-brand-navy hover:bg-brand-navy/90" disabled={pending}>
-            {pending ? 'Envoi en cours...' : 'Envoyer'}
-        </Button>
-    )
-}
+import { useState, useRef } from 'react';
+import { Button } from '@/components/ui/button';
 
 export function ContactForm() {
-    const [state, formAction] = useFormState(submitContactForm, initialState)
-    const formRef = useRef<HTMLFormElement>(null)
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string | null }>({ type: null, message: null });
+    const formRef = useRef<HTMLFormElement>(null);
 
-    useEffect(() => {
-        if (state.success && formRef.current) {
-            formRef.current.reset()
+    async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+        event.preventDefault();
+        setLoading(true);
+        setStatus({ type: null, message: null });
+
+        const formData = new FormData(event.currentTarget);
+        const data = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            message: formData.get('message'),
+        };
+
+        try {
+            const response = await fetch('/api/contacts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+                setStatus({ type: 'success', message: 'Message envoyé avec succès!' });
+                formRef.current?.reset();
+            } else {
+                setStatus({ type: 'error', message: result.message || 'Une erreur est survenue.' });
+            }
+        } catch (error) {
+            setStatus({ type: 'error', message: 'Une erreur est survenue. Veuillez réessayer.' });
+        } finally {
+            setLoading(false);
         }
-    }, [state.success])
+    }
 
     return (
-        <form ref={formRef} action={formAction} className="space-y-4">
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                     <label htmlFor="firstName" className="text-sm font-medium text-slate-700">
@@ -94,13 +110,15 @@ export function ContactForm() {
                 ></textarea>
             </div>
 
-            {state.message && (
-                <div className={`p-3 rounded-md text-sm ${state.success ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
-                    {state.message}
+            {status.message && (
+                <div className={`p-3 rounded-md text-sm ${status.type === 'success' ? 'bg-green-50 text-green-700' : 'bg-red-50 text-red-700'}`}>
+                    {status.message}
                 </div>
             )}
 
-            <SubmitButton />
+            <Button type="submit" size="lg" className="w-full bg-brand-navy hover:bg-brand-navy/90" disabled={loading}>
+                {loading ? 'Envoi en cours...' : 'Envoyer'}
+            </Button>
         </form>
-    )
+    );
 }

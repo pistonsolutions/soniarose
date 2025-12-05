@@ -252,9 +252,6 @@ export default function PropertiesPage() {
                                         </div>
                                         <div className="flex items-center justify-between">
                                             <span className="text-xl font-bold text-[#734838]">{property.price}</span>
-                                            <Button asChild size="sm" variant="outline" className="border-[#734838] text-[#734838] hover:bg-[#734838] hover:text-white group-hover:bg-[#734838] group-hover:text-white transition-colors">
-                                                <Link href={`/proprietes/${property.id}`}>Voir détails</Link>
-                                            </Button>
                                         </div>
                                     </div>
                                 </div>
