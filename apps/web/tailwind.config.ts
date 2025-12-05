@@ -12,9 +12,10 @@ const config: Config = {
       },
       colors: {
         brand: {
-          navy: '#0f172a', // Deep Navy
+          navy: '#734838', // Deep Navy -> Brown
           gold: '#c5a059', // Gold/Bronze
-          cream: '#f8fafc', // Light Cream/White
+          cream: '#F9F9F7', // Warm Cream
+          beige: '#F2F0E9', // Warm Beige
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
