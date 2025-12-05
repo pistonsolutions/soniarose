@@ -59,7 +59,7 @@ export function ContactForm() {
     const payload = {
       firstName: form.firstName || undefined,
       lastName: form.lastName || undefined,
-      phone: form.phone,
+      phone: form.phone.length === 10 && !form.phone.startsWith('+') ? `+1${form.phone}` : form.phone,
       email: form.email || undefined,
       emotionalProfile: form.emotionalProfile || undefined,
       birthday: form.birthday || undefined,
@@ -69,11 +69,8 @@ export function ContactForm() {
       tags,
     };
 
-    const { getToken } = useAuth(); // This should be at the top level, but I can't move it easily with replace.
-    // Wait, useAuth must be at top level.
-    // I need to move it up.
-    // But I can't easily move it up with replace_file_content if I don't target the whole function.
-    // Let's just fix the handleSubmit part first.
+    // Use the token from the top-level hook
+    const token = await getToken();
 
     // Actually, I already added useAuth at the top level in the previous (broken) edit?
     // No, I added it in the previous edit but it was part of the broken block.
@@ -91,7 +88,6 @@ export function ContactForm() {
 
     // This tool call is for Edit 2 (using token).
 
-    const token = await getToken();
     const result = await createContact(payload, token);
 
     if (result.error || !result.data) {
@@ -108,7 +104,7 @@ export function ContactForm() {
       <div className="grid gap-6 md:grid-cols-2">
         <TextField label="First name" value={form.firstName} onChange={onChange('firstName')} />
         <TextField label="Last name" value={form.lastName} onChange={onChange('lastName')} />
-        <TextField label="Phone" value={form.phone} onChange={onChange('phone')} required placeholder="+15551234567" />
+        <TextField label="Phone" value={form.phone} onChange={onChange('phone')} required placeholder="+1 514 555 0123" />
         <TextField label="Email" value={form.email} onChange={onChange('email')} type="email" />
         <TextField label="Emotional profile" value={form.emotionalProfile} onChange={onChange('emotionalProfile')} />
         <TextField label="Birthday" value={form.birthday} onChange={onChange('birthday')} type="date" />

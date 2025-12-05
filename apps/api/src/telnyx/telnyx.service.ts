@@ -127,18 +127,26 @@ export class TelnyxService {
 
         let status: MessageStatus = MessageStatus.SENT;
         if (telnyxStatus === 'delivered') status = MessageStatus.DELIVERED;
-        if (telnyxStatus === 'failed' || telnyxStatus === 'undelivered') status = MessageStatus.FAILED;
+        if (telnyxStatus === 'failed' || telnyxStatus === 'undelivered' || telnyxStatus === 'sending_failed') status = MessageStatus.FAILED;
         if (telnyxStatus === 'sent') status = MessageStatus.SENT;
         if (telnyxStatus === 'queued') status = MessageStatus.QUEUED;
         if (telnyxStatus === 'sending') status = MessageStatus.SENDING;
 
         try {
+            const updateData: any = {
+                status,
+                deliveredAt: status === MessageStatus.DELIVERED ? new Date() : undefined,
+            };
+
+            if (status === MessageStatus.FAILED) {
+                updateData.errorCode = payload.errors?.[0]?.code || 'UNKNOWN';
+                updateData.errorMessage = JSON.stringify(payload.errors || []);
+                this.logger.warn(`Message ${messageId} failed: ${JSON.stringify(payload.errors)}`);
+            }
+
             await this.prisma.message.update({
                 where: { providerMessageId: messageId },
-                data: {
-                    status,
-                    deliveredAt: status === MessageStatus.DELIVERED ? new Date() : undefined
-                },
+                data: updateData,
             });
             this.logger.debug(`Updated status for message ${messageId} to ${status}`);
         } catch (error: any) {

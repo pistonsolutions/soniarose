@@ -44,7 +44,8 @@ export class WorkflowsModule implements OnModuleDestroy {
   constructor(
     @Inject(WORKFLOW_QUEUE_TOKEN) private readonly queue: Queue,
     @Inject(WORKFLOW_REDIS_TOKEN) private readonly connection: Redis,
-  ) {}
+    private readonly workflowsProcessor: WorkflowsProcessor,
+  ) { }
 
   async onModuleDestroy() {
     await this.queue.close();

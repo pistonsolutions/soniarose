@@ -89,9 +89,27 @@ export default async function WorkflowsPage() {
                 </tr>
               ) : (
                 runs.map((run) => {
+                  const WORKFLOW_TOTAL_STEPS: Record<string, number> = {
+                    FIVE_DAYS_OF_JOY: 5,
+                    POST_TRANSACTION_SEQ: 4,
+                    SELLER_LEAD_START: 5,
+                    BUYER_LEAD_START: 5,
+                    EXPIRED_LISTING_SEQ: 3,
+                    FSBO_SEQ: 3,
+                    CALL_PIPELINE_SEQ: 1,
+                    SIGNS_OF_LIFE: 1,
+                    SOCIAL_LEAD_IMPORT: 1,
+                    BIRTHDAY_GREETING: 1,
+                    HOLIDAY_GREETING: 1,
+                    MONTHLY_NEWSLETTER: 1,
+                    LONG_TERM_NURTURE: 4,
+                  };
+
+                  // ... inside the map function ...
                   const failed = run.status === 'FAILED';
                   const stepsCompleted = run.steps.filter((step) => step.status === 'COMPLETED').length;
                   const latestStep = run.steps[run.steps.length - 1];
+                  const totalSteps = Math.max(run.steps.length, WORKFLOW_TOTAL_STEPS[run.workflowKey] || 0);
 
                   return (
                     <tr key={run.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
@@ -116,7 +134,7 @@ export default async function WorkflowsPage() {
                       </td>
                       <td className="px-4 py-3 align-top text-sm text-slate-600 dark:text-slate-300">
                         <div className="text-sm font-medium">
-                          {stepsCompleted}/{run.steps.length} complete
+                          {stepsCompleted}/{totalSteps > 0 ? totalSteps : '?'} complete
                         </div>
                         {latestStep && (
                           <div className="text-xs text-slate-500 dark:text-slate-400">

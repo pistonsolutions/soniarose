@@ -109,7 +109,15 @@ export interface MediaAssetRecord {
     lastName?: string | null;
     phone?: string | null;
   } | null;
+  contacts?: Array<{
+    id: string;
+    firstName?: string | null;
+    lastName?: string | null;
+    phone?: string | null;
+  }>;
 }
+
+export type MediaAsset = MediaAssetRecord;
 
 export interface ComplianceSummary {
   eventsByType: Array<{ type: string; count: number }>;

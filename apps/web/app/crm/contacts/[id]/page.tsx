@@ -3,6 +3,8 @@ import { auth } from '@clerk/nextjs/server';
 import { getContact } from '@/lib/api';
 // import { ContactProfile } from '@/components/contacts/contact-profile';
 import { formatDate, formatName, formatOptInStatus } from '@/lib/format';
+import { EnrollWorkflowDialog } from '@/components/contacts/enroll-workflow-dialog';
+import { EditContactDialog } from '@/components/contacts/edit-contact-dialog';
 
 interface ContactPageProps {
   params: {
@@ -80,12 +82,10 @@ export default async function ContactPage({ params }: { params: { id: string } }
             >
               Send SMS
             </button>
-            <button
-              type="button"
-              className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800"
-            >
-              Enroll in workflow
-            </button>
+            <div className="flex gap-2">
+              <EditContactDialog contact={contact} />
+              <EnrollWorkflowDialog contactId={contact.id} />
+            </div>
           </div>
         </div>
       </header>

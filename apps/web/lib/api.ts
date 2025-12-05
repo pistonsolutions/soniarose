@@ -111,6 +111,14 @@ export async function createContact(payload: CreateContactPayload, token?: strin
   }, token, { cache: 'no-store' });
 }
 
+export async function updateContact(id: string, payload: Partial<CreateContactPayload>, token?: string | null): Promise<FetchResult<Contact>> {
+  const body = JSON.stringify(pruneEmptyValues(payload));
+  return fetchJson<Contact>(`/contacts/${id}`, {
+    method: 'PATCH',
+    body,
+  }, token, { cache: 'no-store' });
+}
+
 export const getWorkflowOverview = cache(async (token?: string | null): Promise<FetchResult<WorkflowOverview>> => {
   return fetchJson<WorkflowOverview>('/workflows/overview', undefined, token, { next: { revalidate: 60 } });
 });

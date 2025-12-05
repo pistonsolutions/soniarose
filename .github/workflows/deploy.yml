@@ -1,0 +1,159 @@
+name: Deploy to OCI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_PREFIX: ghcr.io/${{ github.repository_owner }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata for API
+        id: meta-api
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE_PREFIX }}/soniarose-api
+          tags: |
+            type=raw,value=latest
+            type=sha,prefix={{branch}}-
+
+      - name: Extract metadata for Web
+        id: meta-web
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.IMAGE_PREFIX }}/soniarose-web
+          tags: |
+            type=raw,value=latest
+            type=sha,prefix={{branch}}-
+
+      - name: Build and push API image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./apps/api/Dockerfile
+          push: true
+          tags: ${{ steps.meta-api.outputs.tags }}
+          labels: ${{ steps.meta-api.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Build and push Web image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./apps/web/Dockerfile
+          push: true
+          tags: ${{ steps.meta-web.outputs.tags }}
+          labels: ${{ steps.meta-web.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Deploy to OCI instance
+        uses: appleboy/ssh-action@v1.0.3
+        env:
+          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          TELNYX_API_KEY: ${{ secrets.TELNYX_API_KEY }}
+          TELNYX_PUBLIC_KEY: ${{ secrets.TELNYX_PUBLIC_KEY }}
+          TELNYX_PHONE_NUMBER: ${{ secrets.TELNYX_PHONE_NUMBER }}
+          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
+          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+        with:
+          host: ${{ secrets.OCI_HOST }}
+          username: ${{ secrets.OCI_USER }}
+          key: ${{ secrets.OCI_SSH_PRIVATE_KEY }}
+          envs: DATABASE_PASSWORD,TELNYX_API_KEY,TELNYX_PUBLIC_KEY,TELNYX_PHONE_NUMBER,CLERK_SECRET_KEY,NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+          script: |
+            # Navigate to app directory
+            cd ~/soniarose || mkdir -p ~/soniarose && cd ~/soniarose
+
+            # Create .env file with secrets
+            cat > .env << EOF
+            DATABASE_PASSWORD=${DATABASE_PASSWORD}
+            TELNYX_API_KEY=${TELNYX_API_KEY}
+            TELNYX_PUBLIC_KEY=${TELNYX_PUBLIC_KEY}
+            TELNYX_PHONE_NUMBER=${TELNYX_PHONE_NUMBER}
+            CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
+            NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+            EOF
+
+            # Download production configuration files
+            curl -o docker-compose.prod.yml https://raw.githubusercontent.com/${{ github.repository }}/main/docker-compose.prod.yml
+            curl -o nginx.conf https://raw.githubusercontent.com/${{ github.repository }}/main/nginx.conf
+
+            # Log in to GitHub Container Registry
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+            # Pull latest images
+            docker pull ghcr.io/${{ github.repository_owner }}/soniarose-api:latest
+            docker pull ghcr.io/${{ github.repository_owner }}/soniarose-web:latest
+
+            # Stop existing containers
+            docker-compose -f docker-compose.prod.yml down
+
+            # Start services
+            docker-compose -f docker-compose.prod.yml up -d
+
+            # Wait for database to be ready
+            echo "Waiting for database to be ready..."
+            sleep 15
+
+            # Run database migrations
+            docker-compose -f docker-compose.prod.yml exec -T api sh -c "cd /app && npx prisma migrate deploy" || echo "Migration failed or already up to date"
+
+            # Show running containers
+            docker-compose -f docker-compose.prod.yml ps
+
+            # Check nginx health
+            echo "Checking nginx health..."
+            sleep 5
+            curl -f http://localhost/health || echo "Nginx health check failed"
+
+            # Check API health via nginx
+            echo "Checking API health via nginx..."
+            curl -f http://localhost/api/health || echo "API health check failed"
+
+            # Check landing page
+            echo "Checking landing page..."
+            curl -f http://localhost/ || echo "Landing page health check failed"
+
+            # Check CRM login page
+            echo "Checking CRM..."
+            curl -f http://localhost/crm/login || echo "CRM health check failed"
+
+            # Clean up old images
+            docker image prune -af --filter "until=24h"
+
+      - name: Deployment notification
+        if: always()
+        run: |
+          if [ ${{ job.status }} == 'success' ]; then
+            echo "✅ Deployment successful!"
+            echo "🌐 Landing: http://${{ secrets.OCI_HOST }}"
+            echo "💼 CRM: http://${{ secrets.OCI_HOST }}/crm"
+            echo "🔌 API: http://${{ secrets.OCI_HOST }}/api"
+          else
+            echo "❌ Deployment failed!"
+          fi

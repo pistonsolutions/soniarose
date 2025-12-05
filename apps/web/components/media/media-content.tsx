@@ -2,6 +2,10 @@ import Link from 'next/link';
 import { auth } from '@clerk/nextjs/server';
 import { getMediaAssets } from '@/lib/api';
 import { formatBytes, formatDate, formatName } from '@/lib/format';
+import { UploadMediaDialog } from './upload-media-dialog';
+import { EditMediaDialog } from './edit-media-dialog';
+import { SendMediaButton } from './send-media-button';
+import { Badge } from '@/components/ui/badge';
 
 export async function MediaContent() {
     const { getToken } = await auth();
@@ -12,7 +16,10 @@ export async function MediaContent() {
     return (
         <div className="space-y-8">
             <header className="space-y-2">
-                <h2 className="text-3xl font-semibold">Media library</h2>
+                <div className="flex items-center justify-between">
+                    <h2 className="text-3xl font-semibold">Media library</h2>
+                    <UploadMediaDialog />
+                </div>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
                     Upload, catalog, and reuse video assets that fuel the SoniaRose campaigns.
                 </p>
@@ -41,12 +48,13 @@ export async function MediaContent() {
                                 <th className="px-4 py-3 text-left">Size</th>
                                 <th className="px-4 py-3 text-left">Expires</th>
                                 <th className="px-4 py-3 text-left">Created</th>
+                                <th className="px-4 py-3 text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100 dark:divide-slate-900">
                             {assets.length === 0 ? (
                                 <tr>
-                                    <td colSpan={6} className="px-6 py-8 text-center text-slate-500 dark:text-slate-400">
+                                    <td colSpan={7} className="px-6 py-8 text-center text-slate-500 dark:text-slate-400">
                                         No media assets yet. Upload a video to make it available for campaigns.
                                     </td>
                                 </tr>
@@ -57,16 +65,28 @@ export async function MediaContent() {
                                             <span className="line-clamp-2 break-words">{asset.objectKey}</span>
                                         </td>
                                         <td className="px-4 py-3 align-top text-sm text-slate-600 dark:text-slate-300">
-                                            {asset.contact ? (
-                                                <Link href={`/contacts/${asset.contact.id}`} className="text-blue-600 hover:underline dark:text-blue-300">
-                                                    {formatName(asset.contact.firstName, asset.contact.lastName)}
-                                                </Link>
-                                            ) : (
-                                                <span className="text-slate-400 dark:text-slate-500">Unassigned</span>
-                                            )}
-                                            {asset.ownerLabel && (
-                                                <div className="text-xs text-slate-500 dark:text-slate-400">{asset.ownerLabel}</div>
-                                            )}
+                                            <div className="flex flex-col gap-1">
+                                                {asset.contacts && asset.contacts.length > 0 ? (
+                                                    <div className="flex flex-wrap gap-1">
+                                                        {asset.contacts.map(contact => (
+                                                            <Link key={contact.id} href={`/contacts/${contact.id}`}>
+                                                                <Badge variant="secondary" className="hover:bg-slate-200 cursor-pointer">
+                                                                    {formatName(contact.firstName, contact.lastName)}
+                                                                </Badge>
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                ) : asset.contact ? (
+                                                    <Link href={`/contacts/${asset.contact.id}`} className="text-blue-600 hover:underline dark:text-blue-300">
+                                                        {formatName(asset.contact.firstName, asset.contact.lastName)}
+                                                    </Link>
+                                                ) : (
+                                                    <span className="text-slate-400 dark:text-slate-500">Unassigned</span>
+                                                )}
+                                                {asset.ownerLabel && (
+                                                    <div className="text-xs text-slate-500 dark:text-slate-400">{asset.ownerLabel}</div>
+                                                )}
+                                            </div>
                                         </td>
                                         <td className="px-4 py-3 align-top text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
                                             {asset.mimeType}
@@ -79,6 +99,12 @@ export async function MediaContent() {
                                         </td>
                                         <td className="px-4 py-3 align-top text-sm text-slate-600 dark:text-slate-300">
                                             {formatDate(asset.createdAt)}
+                                        </td>
+                                        <td className="px-4 py-3 align-top text-right">
+                                            <div className="flex justify-end gap-1">
+                                                <SendMediaButton asset={asset} />
+                                                <EditMediaDialog asset={asset} />
+                                            </div>
                                         </td>
                                     </tr>
                                 ))

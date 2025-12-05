@@ -1,4 +1,4 @@
-import { Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { ConflictException, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
 import { WorkflowsService } from '../workflows/workflows.service';
 import { TelnyxService } from '../telnyx/telnyx.service';
@@ -19,38 +19,79 @@ export class ContactsService {
   async create(userId: string, payload: CreateContactDto) {
     const { tags = [], ...contactData } = payload;
 
-    const contact = await this.prisma.contact.create({
-      data: {
-        ...contactData,
-        userId,
-        tags: {
-          create: tags.map((name: string) => ({
-            tag: {
-              connectOrCreate: {
-                where: { userId_name: { userId, name } },
-                create: { userId, name },
-              },
-            },
-          })),
-        },
-      },
-      include: {
-        tags: {
-          include: {
-            tag: true,
+    try {
+      // 1. Upsert Contact (Update details if exists, Create if new)
+      // We do NOT update tags here to avoid unique constraint violations on existing ContactTags
+      const contact = await this.prisma.contact.upsert({
+        where: {
+          userId_phone: {
+            userId,
+            phone: contactData.phone,
           },
         },
-      },
-    });
+        update: {
+          ...contactData,
+          birthday: contactData.birthday ? new Date(contactData.birthday) : undefined,
+        },
+        create: {
+          ...contactData,
+          birthday: contactData.birthday ? new Date(contactData.birthday) : undefined,
+          userId,
+        },
+      });
 
-    try {
-      await this.workflowsService.scheduleFiveDaysOfJoy(contact.id);
-    } catch (error) {
-      const message = error instanceof Error ? error.message : 'unknown error';
-      this.logger.warn(`Failed to enqueue Five Days of Joy workflow for ${contact.id}: ${message}`);
+      // 2. Handle Tags (Idempotent)
+      if (tags && tags.length > 0) {
+        for (const tagName of tags) {
+          // Ensure Tag exists
+          const tag = await this.prisma.tag.upsert({
+            where: { userId_name: { userId, name: tagName } },
+            update: {},
+            create: { userId, name: tagName },
+          });
+
+          // Ensure Link exists (Ignore if already exists)
+          try {
+            await this.prisma.contactTag.create({
+              data: {
+                contactId: contact.id,
+                tagId: tag.id,
+              },
+            });
+          } catch (error) {
+            // Ignore unique constraint violation (link already exists)
+          }
+        }
+      }
+
+      // 3. Schedule Workflow (Only if new)
+      const isNew = contact.createdAt.getTime() > Date.now() - 5000;
+      if (isNew) {
+        try {
+          await this.workflowsService.scheduleFiveDaysOfJoy(contact.id);
+        } catch (error) {
+          this.logger.warn(`Failed to enqueue Five Days of Joy workflow for ${contact.id}: ${error}`);
+        }
+      }
+
+      // 4. Return full object
+      return this.prisma.contact.findUnique({
+        where: { id: contact.id },
+        include: {
+          tags: {
+            include: {
+              tag: true,
+            },
+          },
+        },
+      });
+    } catch (error: any) {
+      this.logger.error(`Failed to create/update contact: ${error.message}`, error.stack);
+      if (error.code === 'P2002') {
+        throw new ConflictException(`Contact with this ${error.meta?.target?.join(', ')} already exists.`);
+      }
+      throw error;
     }
-
-    return contact;
   }
 
   findAll(userId: string) {
@@ -111,6 +152,7 @@ export class ContactsService {
       where: { id },
       data: {
         ...contactData,
+        ...(contactData.birthday && { birthday: new Date(contactData.birthday) }),
         ...(tags && {
           tags: {
             deleteMany: {},

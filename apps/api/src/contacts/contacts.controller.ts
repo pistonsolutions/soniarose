@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Req, Res, UseGuards, Logger } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Put, Req, Res, UseGuards, Logger } from '@nestjs/common';
 import { Response } from 'express';
 import { ContactsService } from './contacts.service';
 import { CreateContactDto } from './dto/create-contact.dto';
@@ -36,6 +36,11 @@ export class ContactsController {
 
   @Put(':id')
   update(@Req() req: any, @Param('id') id: string, @Body() payload: UpdateContactDto) {
+    return this.contactsService.update(req.user.id, id, payload);
+  }
+
+  @Patch(':id')
+  patch(@Req() req: any, @Param('id') id: string, @Body() payload: UpdateContactDto) {
     return this.contactsService.update(req.user.id, id, payload);
   }
 
