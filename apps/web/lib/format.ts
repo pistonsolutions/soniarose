@@ -58,7 +58,34 @@ export function formatBytes(size?: number | null) {
 }
 
 export function formatWorkflowKey(key: string) {
-  return key.replace(/_/g, ' ').toLowerCase();
+  const map: Record<string, string> = {
+    FIVE_DAYS_OF_JOY: '10 Days of Joy',
+    POST_TRANSACTION_SEQ: 'Post-Transaction Sequence',
+    BIRTHDAY_GREETING: 'Birthday Greeting',
+    HOLIDAY_GREETING: 'Holiday Greeting',
+    SELLER_LEAD_START: 'Seller Lead Sequence',
+    BUYER_LEAD_START: 'Buyer Lead Sequence',
+    EXPIRED_LISTING_SEQ: 'Expired Listing Sequence',
+    FSBO_SEQ: 'FSBO Sequence',
+    CALL_PIPELINE_SEQ: 'Call Pipeline',
+    SIGNS_OF_LIFE: 'Signs of Life',
+    MONTHLY_NEWSLETTER: 'Monthly Newsletter',
+    LONG_TERM_NURTURE: 'Long Term Nurture',
+    SOCIAL_LEAD_IMPORT: 'Social Lead Import',
+    BIRTHDAY_VIDEO: 'Birthday Video',
+    SEND_VIDEO: 'Send Video',
+  };
+
+  if (map[key]) {
+    return map[key];
+  }
+
+  // Fallback to Title Case
+  return key
+    .toLowerCase()
+    .split('_')
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
 }
 
 export function formatWorkflowStatus(status: string) {

@@ -1,0 +1,247 @@
+Figure out a technical implementation plan for the from the following decentralized documentation:
+PREAMBLE 
+
+Considering that:
+● The Service Provider specializes in website development, CRM systems, digital automations, and technical integrations;
+● The Client wishes to have a custom website, CRM configuration, and associated automations developed;
+● The Client will provide all content required for website pages and SEO elements;
+● This contract is governed by the Civil Code of Quebec;
+
+THE PARTIES AGREE ON THE FOLLOWING:
+
+1. SERVICE PROVIDER OBLIGATIONS
+
+1.1 Standard of Work
+The Service Provider will perform the services with prudence, diligence, and professionalism according to industry best practices.
+
+1.2 Instructions & Support
+The Service Provider will provide the Client with instructions on using the website, CRM, automations, and third-party integrations.
+
+2. CLIENT DATA OWNERSHIP & ACCESS
+(Favourable to You)
+
+2.1 Ownership of Business Data
+The Client fully owns their business data, including:
+● contacts & leads
+● call and SMS logs
+● message history
+● form submissions
+● pipelines & deal records
+● CRM data
+● website submissions
+● property listings entered by the Client
+● analytics & advertising data
+
+2.2 Client Access
+The Client receives full administrative access to:
+● CRM
+
+● website hosting
+● analytics accounts
+● advertising accounts
+● phone/SMS inbox
+● all third-party platforms connected to the project
+
+The Client may export their data (CSV/JSON) at any time.
+2.3 Continuity of Access
+If the contract ends, the Client retains access to accounts and data.
+This does not include ownership of any underlying code, frameworks, templates, automations, or backend logic, which remain the
+Service Provider’s exclusive intellectual property.
+
+3. INTELLECTUAL PROPERTY OF THE
+SERVICE PROVIDER (Your Protection)
+
+3.1 Ownership of Technology
+The Service Provider retains full, exclusive ownership of:
+● source code
+● backend logic
+● CRM automations, workflows, and pipelines
+● templates or modules
+● development frameworks
+
+● design systems
+● integration architecture
+● scripts, custom tools, and proprietary methods
+
+Nothing in this contract transfers ownership.
+3.2 License to Use
+The Client receives a perpetual, non-exclusive license to use the delivered system strictly for their business operations.
+3.3 Restrictions
+The Client may not:
+● resell the website or CRM system
+● redistribute automations or templates
+● sublicense any part of the system
+● give access to third parties for replication
+● reverse-engineer the structure
+
+These restrictions protect the Service Provider’s IP and technical assets.
+
+4. CLIENT OBLIGATIONS
+
+4.1 Required Content
+The Client provides all texts, videos, images, property details, and SEO inputs.
+
+4.2 Payment
+Payment terms appear in Annex A.
+4.3 Legal Compliance
+The Client is solely responsible for:
+● SMS and marketing consent
+● A2P 10DLC / carrier registration
+● advertising compliance
+● privacy disclosures
+● data collection policies
+
+The Service Provider assists with setup but assumes no liability.
+
+5. GENERAL CLAUSES
+
+5.1 Term
+This contract becomes effective upon signature.
+5.2 Entire Agreement
+This contract supersedes all previous agreements.
+5.3 Applicable Law
+
+Governed by Quebec and federal laws.
+5.4 Currency
+All fees are in CAD.
+5.5 Liability Limit
+The Service Provider is not liable for:
+● third-party outages
+● SMS deliverability issues
+● advertising platform errors
+● external service failures
+● indirect, incidental, special, or consequential damages
+
+Any claim cannot exceed the total amount paid under the contract.
+
+6. SIGNATURES
+
+Service Provider
+Name: Luyun Chen
+Signature: ____________________
+Date: ____________________
+Client
+Name: Sonia Rose
+Signature: ____________________
+Date: ____________________
+11/14/2025
+
+ANNEX A — SERVICES & DELIVERABLES
+(UPDATED + NEW ITEMS)
+
+A. WEBSITE PAGES
+
+● Home
+● About
+● Properties (add / modify / remove / mark sold)
+● Buyers
+● Sellers
+● Resources
+● Blog
+● Contact
+● Mortgage Calculator
+● Online Evaluation Form
+● Emotional Assessment integration throughout the site
+
+The Client provides all content.
+The Service Provider formats and implements it.
+
+B. EMOTIONAL QUESTIONNAIRE
+
+● Hosted externally (Tally/Typeform)
+● Buttons placed strategically across the website
+● Fully connected to CRM workflows and sequences
+
+C. CRM, AUTOMATION & LEAD
+MANAGEMENT
+
+Core Deliverables
+● Full “Five Days of Joy” automation
+● Automatic PDF + message delivery
+● Lead classification (hot/warm/cold)
+● Multi-platform lead sync from:
+○ Facebook
+○ Instagram
+○ TikTok
+○ Website
+○ Ubee
+○ External emotional form
+● Calendar integration
+● CRM phone number integration (SMS + calls)
+
+C.1 Birthday Video Automation
+The Service Provider will configure an automation that:
+● sends the Client’s real, pre-recorded birthday video
+● automatically on each contact’s birthday
+● via Messenger and/or SMS, depending on the contact
+
+(This feature is included and not considered “AI video generation.”)
+
+C.2 CRM Pipelines
+Three standard pipelines will be delivered:
+1. Sellers
+2. Buyers
+3. Cold / Long-term Follow-Up
+
+No complex customization unless requested and billed separately.
+
+C.3 Full End-to-End Testing Before Delivery
+Before final delivery, the Service Provider will test:
+● all forms
+● all buttons
+● redirects
+● workflows
+
+● sequences
+● guides
+● videos
+● automations
+● booking events
+
+This ensures all systems function correctly on Day 1.
+
+C.4 Number Setup
+A CRM phone number for SMS and calls will be configured.
+C.5 Usage Fees
+All SMS/call usage fees, number rental fees, carrier surcharges, and A2P fees are billed directly by the telecom provider.
+The Service Provider does not assume these costs.
+C.6 Compliance Setup
+The Service Provider will configure:
+● STOP/HELP unsubscribe instructions
+● opt-in language
+● compliant message templates
+
+Legal compliance remains the Client’s responsibility.
+
+D. SEO INTEGRATION
+
+The Client provides:
+● keywords
+● page SEO texts
+● Hn structure
+● meta descriptions
+● content strategy
+
+The Service Provider will:
+● configure Google Analytics & Search Console
+● submit sitemap
+● ensure indexation
+● implement technical SEO
+● optimize loading speed and performance
+● configure caching and structural optimization
+
+Pour Twilio + CRM, je veux :
+– un numéro Twilio relié au CRM
+– pouvoir envoyer des textos automatisés
+– que les suivis partent selon les réponses des formulaires
+– et que je puisse répondre manuellement au besoin.
+
+J’imagine que c’est une configuration que vous faites déjà régulièrement, donc je veux m’assurer qu’on est sur la même longueur d’onde et que tout est clair pour vous de votre côté avant qu’on avance
+Vous avez dit :
+CRM will be our proprietarysetup. the website will be custom. for the CRM/SMS we will make it so we get a new number for her and she can operate on it it will be automated down the line but right now it will be mostly her.
+
+create the feature list as if you were a CTO. you care about how the client's vision will do and you will make sure every ambiguity is figured out. this list sohuld be objectively interpreted by downstream engineers. understood?
+Vous avez dit :
+the crm and infra should be built first. the five days of joy workflow should be implemented. non-AI video sending should be implemented. birthday ideo as well and the twilio number essentially we just get one number that's it. and then from there on the lady only wants to operate on those numbers manually so call and text. not sure how she would be able to use that on her phone though?
+
+ChatGPT peut commettre des erreurs. Il est recommandé de vérifier les informations importantes. Voir les préférences en matière de cookies.

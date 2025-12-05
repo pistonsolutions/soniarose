@@ -321,3 +321,5 @@ CRM UI must be responsive
 Messaging interface must mimic iMessage/WhatsApp feel
 
 Allow push notifications (Phase 2)
+
+

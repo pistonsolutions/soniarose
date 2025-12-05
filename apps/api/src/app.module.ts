@@ -9,6 +9,8 @@ import { ContactsModule } from './contacts/contacts.module';
 import { WorkflowsModule } from './workflows/workflows.module';
 import { MediaModule } from './media/media.module';
 import { ComplianceModule } from './compliance/compliance.module';
+import { TasksModule } from './tasks/tasks.module';
+import { TemplatesModule } from './templates/templates.module';
 
 @Module({
   imports: [
@@ -23,6 +25,8 @@ import { ComplianceModule } from './compliance/compliance.module';
     WorkflowsModule,
     MediaModule,
     ComplianceModule,
+    TasksModule,
+    TemplatesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
