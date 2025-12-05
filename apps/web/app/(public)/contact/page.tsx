@@ -1,0 +1,118 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Section } from '@/components/ui/section';
+import { ContactForm } from '@/components/contact-form';
+import { Mail, Phone, MapPin, Instagram, Facebook, Linkedin } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Contactez Sonia Rose | Courtière immobilière Rive-Sud',
+    description: 'Discutez de votre projet immobilier avec Sonia Rose. Contactez-moi pour une évaluation gratuite, un achat ou simplement pour poser vos questions.',
+};
+
+export default function ContactPage() {
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'ContactPage',
+                        name: 'Contact',
+                        url: 'https://soniarose.ca/contact',
+                        description: 'Contacte Sonia Rose, courtière immobilière sur la Rive-Sud, pour discuter de ta situation, de ton projet et explorer tes options sans pression.',
+                    }),
+                }}
+            />
+
+            {/* SECTION 1 — HERO */}
+            <div className="relative flex min-h-[400px] items-center justify-center pt-20">
+                <Image
+                    src="/home-hero.png"
+                    alt="Contactez Sonia Rose"
+                    fill
+                    className="object-cover brightness-50"
+                    priority
+                />
+                <div className="container relative z-10 mx-auto px-4 text-center">
+                    <h1 className="mb-6 font-serif text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+                        Contactez <span className="text-brand-gold">Sonia Rose</span>
+                    </h1>
+                    <h2 className="mb-8 text-xl font-medium text-white md:text-2xl">
+                        Discutons de votre projet, sans pression.
+                    </h2>
+                </div>
+            </div>
+
+            {/* SECTION 2 — INFO CONTACT */}
+            <Section background="white">
+                <div className="grid gap-12 lg:grid-cols-2">
+                    <div>
+                        <h2 className="mb-6 font-serif text-3xl font-bold text-brand-navy">Restons en contact</h2>
+                        <p className="mb-8 text-lg text-slate-600">
+                            Que vous soyez prêt à vendre, à acheter, ou simplement en réflexion, je suis là pour répondre à vos questions et vous guider vers la meilleure stratégie pour vous.
+                        </p>
+
+                        <div className="space-y-6">
+                            <div className="flex items-start gap-4">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-cream text-brand-gold">
+                                    <Phone size={24} />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-brand-navy">Téléphone</h3>
+                                    <p className="text-slate-600">514-250-9297</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-4">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-cream text-brand-gold">
+                                    <Mail size={24} />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-brand-navy">Courriel</h3>
+                                    <p className="text-slate-600">sonia.rose@remax-quebec.com</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start gap-4">
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-cream text-brand-gold">
+                                    <MapPin size={24} />
+                                </div>
+                                <div>
+                                    <h3 className="font-bold text-brand-navy">Bureau</h3>
+                                    <p className="text-slate-600">
+                                        RE/MAX Imagine & Privilège<br />
+                                        61 Rue Saint-Charles Ouest<br />
+                                        Longueuil, QC J4H 1C5
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="mt-12">
+                            <h3 className="mb-4 font-serif text-xl font-bold text-brand-navy">Suivez-moi</h3>
+                            <div className="flex gap-4">
+                                <Link href="https://www.instagram.com/soniarose.remax" target="_blank" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-brand-navy transition-colors hover:bg-brand-gold hover:text-white">
+                                    <Instagram size={20} />
+                                </Link>
+                                <Link href="https://www.facebook.com/SoniaRoseImmobilier/" target="_blank" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-brand-navy transition-colors hover:bg-brand-gold hover:text-white">
+                                    <Facebook size={20} />
+                                </Link>
+                                <Link href="https://www.linkedin.com/in/sonia-rose-969025127" target="_blank" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-brand-navy transition-colors hover:bg-brand-gold hover:text-white">
+                                    <Linkedin size={20} />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="rounded-2xl bg-slate-50 p-8 shadow-sm">
+                        <h3 className="mb-6 font-serif text-2xl font-bold text-brand-navy">Envoyez-moi un message</h3>
+                        <ContactForm />
+                    </div>
+                </div>
+            </Section>
+        </>
+    );
+}
