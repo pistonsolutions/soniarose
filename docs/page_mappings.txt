@@ -1,0 +1,658 @@
+✅
+ PAGE D’ACCUEIL — MAPPING / ACTIONS À RÉALISER
+(Tu vas pouvoir copier-coller ça tel quel.)
+🔹
+ 1. En-tête (menu)
+Les onglets du menu doivent pointer vers :
+• Accueil → page d’accueil
+• À propos → /a-propos
+• Propriétés → /proprietes
+• Acheteurs → /acheteurs
+• Vendeurs → /vendeurs
+• Ressources → /ressources
+• Contact → /contact
+• Blog → /blog
+⸻
+🔹
+ 2. Section HERO
+Bouton 1 : “FAIS LE TEST” https://tally.so/r/mZK1pz
+→ Lien vers : /test-alignement (Formulaire émotionnel: Est-ce que ta maison est
+encore alignée avec toi?)
+Bouton 2 : “DÉCOUVRE LES VÉRITÉS CACHÉES”
+→ Lien vers : /Formulaire: Les vérités cachées sur la valeur de ta propriété
+https://tally.so/r/QKKpvG
+⸻
+🔹
+ 3. Section “QUI EST SONIA ROSE ?”
+Bouton : “DÉCOUVRIR MON HISTOIRE”
+→ Lien vers : /a-propos
+⸻
+🔹
+ 4. Section “AVEC SONIA ROSE” (3 blocs)
+Bloc 1 : MES PROPRIÉTÉS
+→ Lien vers : /proprietes
+Bloc 2 : ÉVALUATION GRATUITE
+→ Lien vers :Page Vendeur/evaluation-gratuite/ https://tally.so/r/QKKpvG
+Bloc 3 : ACHETEZ AVEC MOI
+→ Lien vers : /acheteurs/ https://tally.so/r/A7PEko
+⸻
+ 5. Section “TRAVAILLER AVEC MOI”
+Bouton 1 : ÉVALUATION GRATUITE
+→ Lien vers : Page Vendeur/evaluation-gratuite/ https://tally.so/r/QKKpvG
+Bouton 2 : PARLER À SONIA
+→ Lien vers : /contact
+⸻
+ 6. Section “MÉDIAS SOCIAUX”
+Liens à intégrer sur les icônes :
+• TikTok → https://www.tiktok.com/@soniarose.remax?
+_r=1&_t=ZS-91S6F1brHQw
+• Instagram → https://www.instagram.com/soniarose.remax?
+igsh=MWJmZTNzZng0c2ZueA%3D%3D&utm_source=qr
+• Facebook PRO→ https://www.facebook.com/share/1Exze3uymS/?
+mibextid=wwXIfr
+SoniaRoseImmobilier/
+• Facebook PERSO→https://www.facebook.com/share/1BZiQpj8dd/?
+mibextid=wwXIfr
+• YouTube → https://www.youtube.com/@rosesonia662
+• LinkedIn → https://www.linkedin.com/in/sonia-rose-969025127
+⸻
+ 7. Section finale (photo + texte)
+Bouton 1 : ACHETEZ AVEC MOI
+→ Lien vers : /acheteurs/https://tally.so/r/A7PEko
+Bouton 2 : VENDEZ AVEC MOI
+→ Lien vers : /vendeurs/https://tally.so/r/QKKpvG
+⸻
+ 8. Footer
+Éléments cliquables :
+ • Logo→ page d’accueil
+• Téléphone → tel:5142509297
+• Email → mailto:sonia.rose@remax-quebec.com
+• Adresse → lien Google Maps
+• Réseaux sociaux : mêmes liens qu’à la section “Médias sociaux”
+ MAPPING COMPLET — PAGE À PROPOS
+1. HEADER (menu du haut)
+(Identique sur toutes les pages)
+• Logo Sonia Rose → /home
+• À propos → /a-propos
+• Propriétés → /proprietes
+• Acheteurs → /acheteurs
+• Vendeurs → /vendeurs
+• Ressources → /ressources
+• Contact → /contact
+• Blog → /blog
+⸻
+2. SECTION HERO — « À PROPOS »
+(Aucun bouton)
+→ Aucun lien à programmer ici.
+⸻
+3. SECTION TEXTE + PHOTO SONIA
+Bouton : ME CONTACTER
+→ /contact(page reçois ton guide exclusif
+⸻
+4. FOOTER
+(Identique sur tous les gabarits)
+• Logo → /home
+• Téléphone → tap-to-call
+• Courriel → mailto:
+• Adresse → Google Maps
+• Icônes réseaux sociaux → liens externes
+• Copyright
+ MAPPING COMPLET — PAGE « MES PROPRIÉTÉS »
+1. HEADER (menu du haut)
+(Identique sur toutes les pages)
+• Logo Sonia Rose → /home
+• À propos → /a-propos
+• Propriétés → /proprietes
+• Acheteurs → /acheteurs
+• Vendeurs → /vendeurs
+• Ressources → /ressources
+• Contact → /contact
+• Blog → /blog
+Important : le logo placé dans le header ou dans une section → toujours
+diriger vers /home.
+⸻
+2. SECTION HERO — « MES PROPRIÉTÉS »
+(Aucun bouton dans cette section)
+→ Aucun lien à programmer
+⸻
+3. SECTION — CARROUSEL / SLIDER DES PROPRIÉTÉS
+Ce que tu dois programmer :
+• C’est un slider qui doit permettre de faire défiler les propriétés →
+flèches gauche/droite
+• Chaque propriété :
+• sans lien (affichage visuel seulement)
+• reliée plus tard vers une page individuelle (optionnel)
+ Pour l’instant :
+→ Aucun lien à programmer sur les propriétés (visuel uniquement)
+4. FOOTER
+(Identique sur toutes les pages)
+• Logo → /home
+• Téléphone → lien tap-to-call
+• Courriel → mailto:
+• Adresse → Google Maps
+• Icônes réseaux sociaux → liens externes
+• Copyright
+⸻
+ MAPPING COMPLET — PAGE ACHETEURS
+ 1. HEADER (menu du haut)
+(Identique sur toutes les pages)
+• Logo Sonia Rose → /home
+• À propos → /a-propos
+• Propriétés → /proprietes
+• Acheteurs → /acheteurs
+• Vendeurs → /vendeurs
+• Ressources → /ressources
+• Contact → /contact
+• Blog → /blog
+⸻
+ 2. SECTION HERO — « ACHETEURS »
+(Aucun bouton dans cette section)
+→ Aucun lien à programmer ici.
+⸻
+ 3. SECTION : GUIDE DE L’ACHETEUR
+Bouton : TÉLÉCHARGEZ-LE
+→ /guide-acheteur
+(= page où le guide est à téléchargé
+⸻
+ 4. SECTION : ALERTE IMMOBILIÈRE PERSONNALISÉE
+Bouton : RECEVOIR MES ALERTES
+→ /alerte-acheteur/https://tally.so/r/A7PEko
+(= formulaire de création d’alertes immobilières)
+⸻
+ 5. SECTION : PRÊT(E) À AVANCER ?
+Bouton : ME CONTACTER
+→ /contact
+⸻
+ 6. FOOTER
+(Identique sur tous les gabarits, à intégrer dans le site code)
+• Logo → /home
+• Téléphone → lien tap-to-call
+• Courriel → mailto:
+• Adresse → Google Maps
+• Icônes réseaux sociaux → liens externes
+• Copyright
+ MAPPING COMPLET — PAGE VENDEURS
+1. HEADER (menu du haut)
+(Identique sur toutes les pages)
+• Logo Sonia Rose → /home
+• À propos → /a-propos
+• Propriétés → /proprietes
+• Acheteurs → /acheteurs
+• Vendeurs → /vendeurs
+• Ressources → /ressources
+• Contact → /contact
+• Blog → /blog
+⸻
+2. SECTION HERO — « VENDEURS »
+(Aucun bouton)
+→ Aucun lien à programmer.
+⸻
+3. SECTION : POURQUOI VENDRE AVEC SONIA ROSE
+(Texte + photo Sonia)
+→ Aucun bouton
+→ Aucun lien
+⸻
+4. SECTION : « QUELLE EST LA VALEUR DE VOTRE PROPRIÉTÉ ? »
+(FORMULAIRE EN 2 ÉTAPES)(dans le Canva 2 pages à la fin étape 2 et étape
+3)
+IMPORTANT — Cette section contient un bouton « Suivant » qui mène vers
+la page 2 et 3 du formulaire.
+ 2. PAGE 1 — « QUELLE EST LA VALEUR DE VOTRE PROPRIÉTÉ ? »
+Cette page contient :
+• Une image
+• Un texte d’introduction
+• Le bouton SUIVANT
+Bouton “SUIVANT” → /evaluation-etape-2
+⸻
+ 3. PAGE 2 — « Détails de la propriété »
+Cette section contient :
+• Champ d’adresse avec autocomplétion Google (map picker)
+• Champs caractéristiques de la propriété
+• Bouton SUIVANT
+Bouton “SUIVANT” → /evaluation-etape-3
+⸻
+ 4. PAGE 3 — « Demande envoyée » + Bouton
+Sur ta capture d’écran, la page 3 contient :
+• Image
+• Texte “Merci ! Votre demande a bien été envoyée.”
+• Bouton RETOURNER AU SITE
+• Footer complet
+Bouton “RETOURNER AU SITE” → /home
+⸻
+5. SECTION : GUIDE PRATIQUE POUR VOTRE VENTE
+Bouton : TÉLÉCHARGEZ-LE
+→ /guide-vendeur
+(landing page ou télécharger le guide du vendeur)
+⸻
+6. SECTION : MISE EN MARCHÉ STRATÉGIQUE
+(Texte + photo)
+→ Aucun bouton
+→ Aucun lien
+⸻
+7. SECTION : « OBTIENS TON RAPPORT PERSONNALISÉ »
+Bouton : RECEVOIR MON RAPPORT
+→ /rapport-vendeur/https://tally.so/r/QKKpvG
+(landing page / formulaire: Les vérités cachées sur la valeur de ta propriété
+(pour obtenir le rapport analyse personnalisé)
+⸻
+8. SECTION : « ET SI TA MAISON NE TE RESSEMBLAIT PLUS VRAIMENT ? »
+Bouton : FAIS LE TEST
+→ /formulaire-emotionnel( Est-ce que ta maison est encore alignée avec toi)
+https://tally.so/r/mZK1pz
+⸻
+9. SECTION : PRÊT(E) À PASSER À L’ACTION ? (2e occurrence — AVEC
+BOUTON)
+Bouton : ME CONTACTER
+→ /contact
+⸻
+10. FOOTER
+(Identique sur tout le site)
+• Logo → /home
+• Téléphone → tap-to-call
+• Courriel → mailto:sonia.rose@remax-quebec.com
+• Adresse → lien Google Maps
+• Icônes FB / IG / TikTok / LinkedIn → liens externes
+• Copyright
+ MAPPING COMPLET — PAGE RESSOURCES (VERSION CORRIGÉE)
+1. HEADER (menu du haut)
+(Identique sur toutes les pages)
+• Logo → /home
+• À propos → /a-propos
+• Propriétés → /proprietes
+• Acheteurs → /acheteurs
+• Vendeurs → /vendeurs
+• Ressources → /ressources
+• Contact → /contact
+• Blog → /blog
+⸻
+2. SECTION HERO — « RESSOURCES »
+(Aucun bouton dans cette section)
+→ Aucun lien à programmer.
+⸻
+3. SECTION « RESSOURCES ET OUTILS IMMOBILIERS PRATIQUES »
+4 blocs de ressources, chaque image cliquable :
+1. Guide du vendeur
+→ /guide-vendeur
+2. Guide de l’acheteur
+→ /guide-acheteur
+3. Formulaire: Alerte immobilière personnalisée/https://tally.so/r/A7PEko
+→ /alerte immobilière-acheteur
+4. Formulaire: “Est-ce que ta maison est encore alignée avec toi ?”
+→ /formulaire lien: Est-ce que ta maison est encore alignée avec toi? https://
+tally.so/r/mZK1pz
+⸻
+4. SECTION : RAPPORT PERSONNALISÉ
+Bouton : RECEVOIR MON RAPPORT
+→ /formulaire: Les vérités cachées sur la valeur de ta propriété/
+(Page avec formulaire pour recevoir le rapport.) https://tally.so/r/QKKpvG
+⸻
+5. SECTION : OUTILS IMMOBILIERS PRATIQUES
+• Image « Calcul des versements hypothécaires »
+→ /calculatrice-hypothecaire
+ Le visuel actuel est une image que j’ai insérée pour te montrer à quoi
+ressemble une calculatrice hypothécaire
+Tu dois y intégrer une vraie calculatrice hypothécaire (widget / plugin /
+iframe) sur cette page.
+⸻
+6. SECTION : FAQ — ACHAT ET VENTE IMMOBILIÈRE
+Ici, les questions ET réponses sont affichées directement dans la page
+(/ blocs de texte).
+→ Aucun lien à programmer vers des articles.
+Tu mets simplement :
+• Titre de la FAQ
+• Sous-titre
+• Chaque question avec sa réponse juste en dessous.
+Pas de redirection, tout se lit dans cette section.
+⸻
+7. SECTION : BLOG IMMOBILIER — CONSEILS & ÉMOTIONS
+Carrousel (slider) d’articles de blog.
+Chaque carte (= image + titre + bouton « Lire l’article ») mène à un article
+spécifique.
+Exemple de structure (à adapter avec tes URL finales) :
+1. Carte 1 → /blog/quand-ta-maison-ne-te-ressemble-plus
+2. Carte 2 → /blog/preparer-ta-maison-pour-la-vente
+3. Carte 3 → /blog/7-signes-que-ta-maison-nest-plus-alignee
+4. Carte 4 → /blog/80-pourcent-du-succes
+5. Carte 5 → /blog/comment-choisir-le-bon-courtier
+6. Carte 6 → /blog/article-slider (article visible en glissant dans le slider)
+• Flèches gauche/droite pour le slider à programmer.
+⸻
+8. FOOTER
+(Identique sur tous les gabarits)
+• Logo → /home
+• Téléphone → lien tap-to-call
+• Courriel → mailto:
+• Adresse → lien Google Maps
+• Icônes réseaux sociaux → liens externes (TikTok, Instagram, Facebook,
+LinkedIn)
+• Copyright Sonia Rose
+ MAPPING COMPLET — PAGE CONTACT (/contact)(Reçois ton guide
+exclusif)
+ 1. HEADER
+Le même que partout
+→ ET IMPORTANT : le logo mène vers /home
+⸻
+ 2. SECTION PRINCIPALE — “REÇOIS TON GUIDE EXCLUSIF”
+• Photo de Sonia Rose (à gauche)
+• Texte à droite (déjà dans ton Canva)
+• Champs :
+• Nom complet
+• Courriel
+• Bouton : RECEVOIR MON GUIDE
+→ Lien : /telechargement-guide( 7 signes que ta maison n’est plus alignée
+avec toi) https://drive.google.com/file/d/1kzazVf9vYNgjpKB1CX10LFan71pQ34C/view?usp=sharing
+Fonction :
+Cette section fait office de formulaire de contact + capture de lead.
+⸻
+ 3. COORDONNÉES (sous le formulaire)
+• Téléphone → tap-to-call
+• Courriel → mailto
+• Adresse → Google Maps
+• Icônes Facebook / Instagram / TikTok / LinkedIn → leur lien respectif
+• Logo Sonia Rose (IMPORTANT : mène à /home)
+⸻
+ 4. FOOTER
+Identique aux autres pages.
+Rappeler :
+• logo Sonia Rose = lien /home
+• Remax
+• Téléphone / email
+• Réseaux sociaux
+ MAPPING COMPLET — PAGE BLOG IMMOBILIER
+⸻
+ 1. HEADER (menu du haut)
+(Identique sur toutes les pages)
+• Logo Sonia Rose → /home
+• À propos → /a-propos
+• Propriétés → /proprietes
+• Acheteurs → /acheteurs
+• Vendeurs → /vendeurs
+• Ressources → /ressources
+• Contact → /contact
+• Blog → /blog
+Important :
+Le logo en haut doit toujours pointer vers la page d’accueil.
+Le logo dans le footer doit aussi pointer vers la page d’accueil.
+⸻
+ 1. SECTION HERO — « BLOG IMMOBILIER »
+• Aucune interaction.
+• Aucun bouton.
+• Juste l’image + titre.
+⸻
+ 2. SECTION — “BLOG IMMOBILIER — Conseils & Émotions”
+ Fonctionnement des liens :
+Chaque vignette doit pointer vers son article correspondant.
+Il n’y a aucune URL fournie puisque les articles seront générés.
+Tu dois lier chaque carte à son article basé sur :
+• la photo
+• le titre
+• le texte d’introduction (si présent)
+ Structure (expliqué pour dev) :
+• 6 vignettes affichées
+• Vignettes 1 à 6: affichées en ligne → chacune pointe à l’article
+correspondant
+• Vignette 6 : apparaît dans le sliding (carousel) → elle pointe aussi vers
+son article correspondant
+ Lien logique:
+Carte #1 → Article #1 (même image + même titre)
+Carte #2 → Article #2
+Carte #3 → Article #3
+Carte #4 → Article #4
+Carte #5 → Article #5
+Carte #6 → Article #6 (dans le slider)
+⸻
+ 4. FOOTER
+(Identique à toutes les pages — doit être intégré dans le code mondial du site)
+Contient :
+• Logo Sonia Rose → /home
+• Téléphone → lien tap-to-call
+• Courriel → mailto:
+• Adresse → lien Google Maps
+• Icônes réseaux sociaux → liens externes
+• Copyright
+Rappel important :
+ Le logo dans le footer doit obligatoirement mener vers la page d’accueil.
+ MAPPING — FORMULAIRE 1
+FORMULAIRE : « Est-ce que ta maison est encore alignée avec toi? »
+URL du formulaire : https://tally.so/r/mZK1pz
+⸻
+ DESCRIPTION
+Formulaire introspectif en 2 pages permettant à l’utilisateur de répondre aux
+questions émotionnelles.
+Aucune action n’est requise dans les premières sections — seulement la fin
+contient un CTA à connecter.
+⸻
+ PAGE DU FORMULAIRE
+Aucun bouton interne à mapper.
+Toutes les questions sont statiques.
+⸻
+ SECTION À CONNECTER (IMPORTANT)
+Après que la personne clique sur « Envoyer », elle arrive sur la page de
+remerciement (Page 2 du formulaire).
+Cette page contient deux éléments cliquables que tu dois connecter.
+ Bouton “Parler à Sonia”
+→ Doit pointer vers le Messenger PRO de Sonia : https://www.facebook.com/
+SoniaRoseImmobilier/
+ Lien texte “Écrire à Sonia sur Messenger”
+→ Même URL : https://www.facebook.com/SoniaRoseImmobilier/
+⸻
+ NOTES TECHNIQUES
+• Le formulaire ne redirige vers aucune autre page externe.
+• La seule action nécessaire : ouvrir le Messenger de Sonia dans un
+nouvel onglet lorsque l’utilisateur clique sur l’un des deux CTAs.
+• Aucun mapping supplémentaire requis.
+ MAPPING COMPLET — FORMULAIRE #2
+« ALERTE IMMOBILIÈRE PERSONNALISÉE »
+⸻ https://tally.so/r/A7PEko
+ 1. PAGE 1 – INTRODUCTION
+Aucun bouton à programmer dans l’image du haut.
+Bouton à programmer :
+✔ Envoyer → Passe automatiquement à la Page 2 du formulaire (interne
+Tally).
+(Rien à relier au site ici.)
+⸻
+ 2. PAGE 2 – COORDONNÉES
+Champs intégrés dans Tally (aucun lien externe) :
+• Votre nom complet
+• Votre courriel
+• Votre téléphone
+Bouton :
+✔ Envoyer → mène à la Page 3 (page de remerciement).
+(Toujours interne à Tally, aucun lien externe.)
+⸻
+ 3. PAGE 3 – REMERCIEMENT + CALL TO ACTION
+Cette page affiche ton texte + ta photo + ton bouton brun « Parler à Sonia ».
+Ici, il y a 1 action importante à coder :
+✔ Bouton : PARLER À SONIA
+→ Doit mener vers ton Messenger professionnel
+Ton lien Messenger PRO officiel : https://www.facebook.com/
+SoniaRoseImmobilier/
+ MAPPING COMPLET — FORMULAIRE #3
+« LES VÉRITÉS CACHÉES SUR LA VALEUR DE TA PROPRIÉTÉ »
+https://tally.so/r/QKKpvG
+1. PAGE – COORDONNÉES
+Champs intégrés dans Tally (aucun lien externe) :
+• Nom complet
+• Téléphone
+• Courriel
+• Adresse complète de la propriété
+Bouton :
+✔ Recevoir mon analyse → mène à la Page 3 (Thank You Page).
+(Toujours interne à Tally, aucun lien externe.)
+⸻
+3. PAGE 3 – REMERCIEMENT + CALL TO ACTION
+Cette page affiche mon texte(message) + mon bouton « Réserve ton analyse
+complète ».
+Bouton à programmer :
+✔ RÉSERVE TON ANALYSE COMPLÈTE/
+→ Lien vers ton calendrier (Calendly / TidyCal / autre).
+IMPORTANT — Lorsqu’un rendez-vous est réservé dans le calendrier :
+→ L’événement doit automatiquement afficher :
+Évaluation — [Nom du client] — [Téléphone] — [Courriel] — [Adresse de la
+propriété]
+https://tally.so/r/QKKpvG
+*Idéalement, les infos déjà fournies dans le formulaire (nom, courriel,
+téléphone, adresse) sont transmises à l’outil de calendrier via l’intégration
+Tally/CRM. Si ce n’est pas possible techniquement, prévoir les mêmes champs
+dans le formulaire de réservation du calendrier
+ MAPPING COMPLET — GUIDE DU VENDEUR (PDF)
+⸻
+ 1. CTA #1 – PAGE 6
+(Page avec le titre “Fixer un prix juste et stratégique” et le petit texte sous la
+photo)
+Bouton : VOIR MON ANALYSE GRATUITE/https://tally.so/r/QKKpvG
+(ou “Recevoir mon analyse” – peu importe le texte exact du bouton,
+l’important est le lien)
+À programmer :
+• Le bouton doit ouvrir le formulaire Tally : https://tally.so/r/QKKpvG
+➜ Formulaire “Les vérités cachées sur la valeur de ta propriété”
+➜ URL : https://tally.so/r/QKKpvG
+• Ouverture dans un nouvel onglet recommandée.
+⸻
+ 2. CTA #2 – DERNIÈRE PAGE (mot de la fin)
+Bouton : VOIR MON ANALYSE GRATUITE
+À programmer :
+• Même logique que page 6 :
+➜ Le bouton ouvre le même formulaire Tally
+➜ URL : https://tally.so/r/QKKpvG
+➜ Idéalement dans un nouvel onglet.
+⸻
+ 3. CHEMIN APRÈS LE FORMULAIRE “VÉRITÉS CACHÉES”
+Une fois que la personne clique sur un des boutons du guide du vendeur, elle
+arrive sur :
+Formulaire Tally – “Les vérités cachées sur la valeur de ta propriété”
+URL : https://tally.so/r/QKKpvG
+Fonctionnement attendu :
+1. La personne remplit :
+• Nom complet
+• Courriel
+• Téléphone
+• Adresse complète de la propriété
+2. Elle clique sur le bouton : “Recevoir mon analyse”
+3. À ce moment-là, il doit se passer 2 choses :
+a) Côté Tally (déjà en place ou à vérifier)
+• Envoi automatique par courriel du rapport d’analyse partielle
+(PDF).
+b) Côté interface (Thank You Page)
+• Affichage d’une page de remerciement avec un bouton :
+➜ “Réserve ton analyse complète”
+4. Bouton “Réserve ton analyse complète” :
+• Doit mener vers l’outil de prise de rendez-vous de Sonia
+(calendrier en ligne).
+• URL à utiliser : [INSÉRER ICI LE LIEN DU CALENDRIER DE SONIA]
+⸻
+ 4. CONFIGURATION ATTENDUE DANS LE CALENDRIER
+Lorsque la personne choisit une date et une heure dans le calendrier :
+• Titre de l’événement (champ “Title” ou équivalent) :
+➜ Évaluation – [Prénom Nom du client]
+• Description / Notes de l’événement :
+➜ Numéro de téléphone
+➜ Courriel
+➜ Adresse complète de la propriété
+• Type de rendez-vous :
+➜ Évaluation gratuite / analyse complète de propriété
+(L’objectif : quand Sonia ouvre son calendrier, elle voit tout de suite qu’il s’agit
+d’une ÉVALUATION, pour QUI, et pour QUELLE ADRESSE.)
+ MAPPING — GUIDE DE L’ACHETEUR
+(À remettre tel quel au développeur)
+1. Bouton Call-to-Action – Page 6 (« Recevoir mes alertes »)
+• Texte du bouton : Recevoir mes alertes
+• Lien à intégrer : https://tally.so/r/A7PEko (remplace par ton vrai lien Tally
+de l’alerte immobilière)
+• Action :
+→ Ouvre le formulaire Alerte immobilière personnalisée.
+→ Quand la personne soumet le formulaire, elle reçoit :
+• Page de remerciement
+• Message de remerciement + bouton “Activer mon alerte
+maintenant”
+• Ce bouton mène vers ton CRM / Calendrier (si tu en mets un plus
+tard, mais rien à coder pour le guide).
+⸻
+2. Bouton Call-to-Action – Dernière page (« Recevoir mes alertes »)
+• Texte du bouton : Recevoir mes alertes
+• Lien à intégrer : https://tally.so/r/A7PEko(même lien que ci-haut)
+• Action :
+→ Même logique que la page 6 :
+• Ouvre le formulaire Alerte immobilière personnalisée
+• Page de remerciement
+• Bouton « Activer mon alerte maintenant »
+• Redirection vers ton calendrier / CRM (géré ailleurs, pas dans le
+guide)
+⸻
+3. Important :
+Aucun autre lien, aucune autre intégration n’est nécessaire dans le guide.
+Les deux boutons doivent mener au même formulaire Tally.
+Tout le reste (Thank You Page + redirection calendrier + données préremplies) est
+géré dans Tally + ton CRM, pas dans le PDF.
+⸻
+ VERSION ULTRA-CLEAN À COPIER-COLLER
+DIRECTEMENT
+GUIDE DE L’ACHETEUR – MAPPING DES CALLS TO ACTION
+1) Page 6 – Bouton “Recevoir mes alertes”
+- Lien : https://tally.so/r/A7PEko (formulaire Alerte immobilière)
+- Action : ouvre le formulaire Alerte immobilière personnalisée.
+- Après soumission du formulaire : message de remerciement + bouton “Activer
+mon alerte maintenant” (géré dans Tally).
+- Ce bouton redirige vers le calendrier/CRM (déjà configuré ailleurs).
+2) Page finale – Bouton “Recevoir mes alertes”
+- Lien : https://tally.so/r/A7PEko (même lien)
+- Action : même logique que la page 6.
+Aucune autre redirection n’est nécessaire dans le guide.
+Les deux CTA du guide mènent vers le même formulaire Alerte immobilière.
+ MAPPING – GUIDE “7 signes que ta maison n’est plus alignée avec toi”
+(Pour intégration du bouton final uniquement)
+PAGE FINALE – BOUTON D’ACTION
+ Bouton : “Voir mon analyse gratuite”
+ Ce bouton doit pointer vers :
+Formulaire Tally – “Les vérités cachées sur la valeur de ta propriété”
+Lien : https://tally.so/r/QKKpvG
+⸻
+ PARCOURS COMPLET (à intégrer dans le système)
+ L’utilisateur clique sur le bouton dans le guide
+→ Il arrive directement sur le formulaire :
+“Les vérités cachées sur la valeur de ta propriété”
+⸻
+ Dans le formulaire, il remplit ses infos
+→ Adresse complète
+→ Numéro de téléphone
+→ Courriel
+→ Informations demandées
+Puis clique sur :
+“Recevoir mon analyse”
+⸻
+ Après avoir soumis le formulaire
+Il tombe sur une Thank You Page automatique avec :
+• Un message de remerciement
+• Les prochaines étapes
+• Et un bouton final :
+ Bouton : “Réserve ton analyse complète”
+⸻
+ Ce bouton de la Thank You Page doit mener à :
+ TON CALENDRIER (page de prise de rendez-vous)
+→ Le rendez-vous doit être créé avec :
+• Titre : ÉVALUATION – [Nom du client]
+• Téléphone
+• Courriel
+• Adresse complète de la propriété
+• Notes du formulaire
+(Le développeur doit s’assurer que ces champs se “push” dans ton calendrier.)
+⸻
+ En résumé pour l’intégration (texte ultra clair à copier-coller)
+GUIDE “7 signes que ta maison n’est plus alignée avec toi” – MAPPING
+Page finale : Bouton “Voir mon analyse gratuite”
+Pointer vers le formulaire Tally “Les vérités cachées sur la valeur de ta
+propriété” : https://tally.so/r/QKKpvG
+Parcours utilisateur :
+1. L’utilisateur clique dans le guide → arrive sur le formulaire.
+2. Il remplit le formulaire → clique “Recevoir mon analyse”.
+3. Il reçoit la Thank You Page avec un message + un bouton.
+4. Le bouton “Réserve ton analyse complète” doit pointer vers mon
+calendrier.
+5. Lorsqu’il réserve, l’événement doit automatiquement inclure :
+– Titre : ÉVALUATION – [nom du client]
+– Téléphone
+– Courriel
+– Adresse complète de la propriété
+– Réponses du formulaire (si possible)
+Objectif final : Le rendez-vous d’évaluation entre automatiquement dans mon
+calendrier avec toutes les coordonnées essentielles du client.

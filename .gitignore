@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+.next/
+.vercel/
+.env
+.env.*
+pnpm-lock.yaml
+.idea/
+.DS_Store
+*.log
+coverage/

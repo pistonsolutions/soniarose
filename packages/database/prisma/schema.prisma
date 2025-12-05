@@ -1,0 +1,205 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum OptInStatus {
+  OPTED_IN
+  OPTED_OUT
+  UNKNOWN
+}
+
+enum MessageDirection {
+  INBOUND
+  OUTBOUND
+}
+
+enum MessageStatus {
+  QUEUED
+  SENDING
+  SENT
+  DELIVERED
+  FAILED
+  RECEIVED
+}
+
+enum WorkflowKey {
+  FIVE_DAYS_OF_JOY
+  BIRTHDAY_VIDEO
+  MANUAL_VIDEO
+}
+
+enum WorkflowRunStatus {
+  PENDING
+  RUNNING
+  PAUSED
+  COMPLETED
+  CANCELLED
+  FAILED
+}
+
+model Contact {
+  id              String          @id @default(cuid())
+  userId          String          // Clerk User ID
+  firstName       String?
+  lastName        String?
+  phone           String
+  email           String?
+  emotionalProfile String?
+  birthday        DateTime?
+  leadSource      String?
+  pipelineStage   String?
+  optInStatus     OptInStatus     @default(UNKNOWN)
+  tags            ContactTag[]
+  messages        Message[]
+  timeline        TimelineEvent[]
+  workflowRuns    WorkflowRun[]
+  mediaAssets     MediaAsset[]
+  callLogs        CallLog[]
+  complianceEvents ComplianceEvent[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@unique([userId, phone])
+  @@unique([userId, email])
+  @@index([userId])
+}
+
+model Tag {
+  id        String       @id @default(cuid())
+  userId    String       // Clerk User ID
+  name      String
+  contacts  ContactTag[]
+  createdAt DateTime     @default(now())
+
+  @@unique([userId, name])
+  @@index([userId])
+}
+
+model ContactTag {
+  contact   Contact @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  contactId String
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+  tagId     String
+
+  @@id([contactId, tagId])
+}
+
+model Message {
+  id                 String            @id @default(cuid())
+  contact            Contact           @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  contactId          String
+  direction          MessageDirection
+  status             MessageStatus     @default(QUEUED)
+  body               String
+  mediaUrl           String?
+  providerMessageId  String?           @unique
+  errorCode          String?
+  errorMessage       String?
+  metadata           Json?
+  queuedAt           DateTime          @default(now())
+  sentAt             DateTime?
+  deliveredAt        DateTime?
+  receivedAt         DateTime?
+  createdAt          DateTime          @default(now())
+
+  @@index([contactId, createdAt])
+  @@index([status])
+  @@index([providerMessageId])
+}
+
+model WorkflowRun {
+  id            String            @id @default(cuid())
+  userId        String            // Clerk User ID
+  workflowKey   WorkflowKey
+  status        WorkflowRunStatus @default(PENDING)
+  contact       Contact           @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  contactId     String
+  context       Json?
+  startedAt     DateTime?         @default(now())
+  completedAt   DateTime?
+  cancelledAt   DateTime?
+  errorMessage  String?
+  steps         WorkflowStep[]
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  @@index([workflowKey, status])
+  @@index([contactId])
+  @@index([userId])
+}
+
+model WorkflowStep {
+  id           String      @id @default(cuid())
+  run          WorkflowRun @relation(fields: [workflowRunId], references: [id], onDelete: Cascade)
+  workflowRunId String
+  name         String
+  sequence     Int
+  status       WorkflowRunStatus @default(PENDING)
+  scheduledFor DateTime?
+  executedAt   DateTime?
+  payload      Json?
+  errorMessage String?
+
+  @@unique([workflowRunId, sequence])
+}
+
+model TimelineEvent {
+  id          String   @id @default(cuid())
+  contact     Contact  @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  contactId   String
+  type        String
+  description String?
+  metadata    Json?
+  occurredAt  DateTime @default(now())
+
+  @@index([contactId, occurredAt])
+}
+
+model MediaAsset {
+  id            String    @id @default(cuid())
+  userId        String    // Clerk User ID
+  contact       Contact?  @relation(fields: [contactId], references: [id])
+  contactId     String?
+  ownerLabel    String?
+  objectKey     String
+  mimeType      String
+  sizeBytes     Int
+  checksum      String?
+  expiresAt     DateTime?
+  createdAt     DateTime  @default(now())
+
+  @@index([contactId])
+  @@index([objectKey])
+  @@index([userId])
+}
+
+model CallLog {
+  id               String   @id @default(cuid())
+  contact          Contact? @relation(fields: [contactId], references: [id])
+  contactId        String?
+  direction        MessageDirection
+  providerCallSid  String? @unique
+  forwardedTo      String?
+  durationSeconds  Int?
+  status           String?
+  metadata         Json?
+  occurredAt       DateTime @default(now())
+
+  @@index([contactId, occurredAt])
+}
+
+model ComplianceEvent {
+  id          String   @id @default(cuid())
+  contact     Contact? @relation(fields: [contactId], references: [id])
+  contactId   String?
+  type        String
+  payload     Json?
+  occurredAt  DateTime @default(now())
+
+  @@index([type, occurredAt])
+}

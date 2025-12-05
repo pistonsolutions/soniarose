@@ -1,0 +1,177 @@
+Based on the design mockups provided, I have analyzed the underlying structure of the website for Sonia Rose. The site is a cohesive, multi-page real estate portfolio and service website.
+
+The design relies heavily on a Component-Based Architecture, meaning many sections (headers, footers, lead magnet forms) are reused across different pages. The aesthetic is minimalist, using earth tones (beiges, browns) and serif typography to convey elegance and a human-centric approach.
+
+Here is the global high-level overview of the pages and their structural breakdown, mapped against your uploaded files.
+
+1. Global Design System (Shared Assets)
+Before diving into specific pages, these elements exist globally across the site:
+
+Typography:
+
+Headings: Elegant Serif font (e.g., "TRAVAILLER AVEC MOI").
+
+Body: Clean Sans-Serif font (e.g., "Agence immobilière...").
+
+Color Palette: Beige backgrounds (#f5f5f0 approx), Dark Brown buttons/text (#5a4a42 approx), White cards, and standard Re/Max branding colors (Blue/Red) restricted to logos.
+
+Footer (Found in all files):
+
+Left: Logo (Sonia Rose) + Phone/Email.
+
+Center: Re/Max Logo.
+
+Right: Social Media Icons (Insta, FB, TikTok, LinkedIn).
+
+French Text to keep: "Agence immobilière - Franchisé indépendant et autonome de Re/max Québec", "Tous droits réservés."
+
+2. Homepage (File: 1.jpg)
+Structure: A classic landing page designed to establish trust and direct traffic to inner pages.
+
+Hero Section: Full-width image with overlay text and two primary CTA buttons.
+
+French Text: "Parce que l'immobilier, c'est plus qu'une simple transaction."
+
+Introduction (Bio Teaser): Image left, text right layout.
+
+French Text: "QUI EST SONIA ROSE?"
+
+Navigation Grid (Services): Three columns linking to internal pages.
+
+Labels: "ACHETEURS" (Buyers), "VENDEURS" (Sellers), "INVESTISSEURS" (Investors).
+
+Philosophy Section: Centered text block with CTA.
+
+French Text: "TRAVAILLER AVEC MOI" / "Une façon de travailler qui met l’humain avant la transaction."
+
+Testimonials Carousel: A slider component for reviews.
+
+French Text: "TÉMOIGNAGES"
+
+Social Feed: A horizontal grid of Instagram/social images.
+
+Lead Magnet: A text + form section for capturing emails (Reused in file 7.jpg).
+
+French Text: "REÇOIS TON GUIDE EXCLUSIF" / "Les 7 signes que ta maison n’est plus alignée avec toi".
+
+3. About Page (File: 2.jpg)
+Structure: Text-heavy, storytelling focus.
+
+Hero: Simple header image.
+
+French Text: "À PROPOS"
+
+Bio Section: Image right, text left. Detailed history.
+
+Values Section: Vertical list or text block focusing on "Vies," "Histoires," "Moments charnières."
+
+French Text: "MES VALEURS" / "L’immobilier, pour moi, qui n’a jamais été juste des transactions."
+
+Approach Section:
+
+French Text: "MON APPROCHE" / "Le respect avant la pression, et la réalité avant tout le reste."
+
+Why Me Section:
+
+French Text: "POURQUOI LES GENS TRAVAILLENT AVEC MOI"
+
+4. Properties / Listings (File: 3.jpg)
+Structure: A grid-based catalog.
+
+Hero: Simple header.
+
+French Text: "MES PROPRIÉTÉS"
+
+Listing Grid: A 3-column grid of property cards.
+
+Card Components: Property Image, Status Label (top-left overlay).
+
+Labels to keep: "NOUVEAUTÉ" (New), "VENDU" (Sold).
+
+Pagination: Standard << 1 2 >> navigation at the bottom.
+
+5. Buyers Page (File: 4.jpg)
+Structure: Educational and service-oriented.
+
+Hero: Image with "ACHETEURS" overlay.
+
+Value Proposition: Image right, bullet points left.
+
+French Text: "POURQUOI ACHETER AVEC SONIA ROSE"
+
+Lead Magnet (Buyer Specific): A card promoting a PDF download.
+
+French Text: "GUIDE PRATIQUE POUR ACHETER SEREINEMENT"
+
+Process Steps: A section detailing the workflow (needs icons/graphics).
+
+French Text: "ACCOMPAGNEMENT ÉTAPE PAR ÉTAPE"
+
+Alert Tool: A CTA for email alerts.
+
+French Text: "ALERTE IMMOBILIÈRE PERSONNALISÉE"
+
+Final CTA:
+
+French Text: "PRÊT(E) À AVANCER?"
+
+6. Sellers Page (File: 5.jpg)
+Structure: Mirrors the Buyers page but with seller-specific tools.
+
+Hero: Image with "VENDEURS" overlay.
+
+Value Proposition:
+
+French Text: "POURQUOI VENDRE AVEC SONIA ROSE"
+
+Valuation Tool Widget: An input field or button to request home valuation.
+
+French Text: "QUELLE EST LA VALEUR DE VOTRE PROPRIÉTÉ?"
+
+Lead Magnet (Seller Specific): Similar design to Buyer guide.
+
+French Text: "GUIDE PRATIQUE POUR VOTRE VENTE"
+
+Marketing Strategy:
+
+French Text: "MISE EN MARCHÉ STRATÉGIQUE"
+
+Final CTA:
+
+French Text: "PRÊT(E) À PASSER À L'ACTION?"
+
+7. Resources Page (File: 6.jpg)
+Structure: A hub aggregating tools and links.
+
+Hero: "RESSOURCES".
+
+Tools Grid: Links to the Buyer Guide, Seller Guide, and Valuation Tool (reusing cards from previous pages).
+
+Calculator Widget: A functional mortgage calculator section.
+
+French Text: "OUTILS IMMOBILIER PRATIQUES" / "Estimez rapidement vos paiements..."
+
+FAQ Section: Accordion style (Expand/Collapse text).
+
+French Text: "FAQ – ACHAT ET VENTE IMMOBILIÈRE"
+
+Blog Preview: A row of recent blog posts.
+
+8. Blog Section (Files: 8.jpg, 9.jpg, 10.jpg)
+Structure: Classic CMS (Content Management System) layout.
+
+Blog Index (8.jpg):
+
+Hero: "BLOG IMMOBILIER".
+
+Subtitle: "CONSEILS & ÉMOTIONS".
+
+Article Grid: 4-column grid. Each card has: Thumbnail, Title, Excerpt, "LIRE L'ARTICLE" (Read Article) button.
+
+Single Post (9.jpg, 10.jpg):
+
+Title: H1 styling.
+
+Body Content: Long-form text with subheadings (H2, H3) and bullet points.
+
+Sidebar/Footer: Links to other articles or a "Return to Blog" link.

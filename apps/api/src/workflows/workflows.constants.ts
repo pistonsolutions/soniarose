@@ -1,0 +1,3 @@
+export const WORKFLOW_QUEUE_NAME = 'workflow-actions';
+export const WORKFLOW_QUEUE_TOKEN = 'WORKFLOW_QUEUE_TOKEN';
+export const WORKFLOW_REDIS_TOKEN = 'WORKFLOW_REDIS_TOKEN';

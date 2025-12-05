@@ -1,0 +1,323 @@
+1. PHASE 1 — CRM + INFRASTRUCTURE (FOUNDATION)
+1.1 CRM CAPABILITIES REQUIRED before any workflows
+
+This MUST exist first because workflows depend entirely on:
+
+Contact model
+
+name
+
+phone
+
+email
+
+tags
+
+emotional profile
+
+birthday
+
+lead source
+
+timeline events
+
+pipeline stage
+
+opt-in/opt-out status (STOP)
+
+Messaging model
+
+inbound SMS
+
+outbound SMS
+
+delivery receipts
+
+STOP/HELP compliance events
+
+Workflow engine (minimal)
+
+Trigger conditions
+
+Action queue
+
+Execution runner
+
+Retry logic
+
+Media handling
+
+Client video upload to object storage
+
+Generate stable URLs for sending
+
+Twilio integration layer
+
+Single dedicated number
+
+Inbound handler
+
+Outbound sender
+
+Call forwarding
+
+Call logs
+
+✅ 2. SINGLE TWILIO NUMBER — HOW IT WORKS
+
+The client (“the lady”) will get one Twilio phone number.
+It is used for:
+
+SMS sending (manual + automated)
+
+SMS receiving
+
+Phone calls (inbound → forwarded to her real phone)
+
+Call logs in CRM
+
+2.1 Outbound SMS
+
+Sent from inside the CRM (desktop/mobile browser).
+
+2.2 Inbound SMS
+
+Received in the CRM inbox.
+
+2.3 How can she text from her phone?
+
+There are 2 options:
+
+Option A — CRM Mobile Web App (recommended)
+
+She logs into the CRM on her phone browser
+
+She sends/receives messages through the CRM
+
+Messages go OUT via Twilio
+
+Messages come IN via Twilio → CRM → her interface
+
+This is the safest and preserves your architecture + IP.
+
+Option B — Call Forwarding Only (SMS not forwarded to personal phone)
+
+Inbound calls go to her real phone.
+But SMS is never forwarded to her real number (Twilio doesn’t support native forwarding in Canada without coding workarounds).
+
+This ensures:
+
+compliance
+
+correct message logging
+
+NO leakage of sender identity via personal number
+
+🚫 What she cannot do
+
+She cannot reply to SMS from her personal phone app.
+
+Because:
+
+carriers rewrite the number
+
+compliance breaks
+
+CRM loses the message trace
+
+STOP/HELP events cannot be caught
+
+automation breaks
+
+This is standard in all CRM + Twilio systems (GoHighLevel, Close.io, etc.).
+
+✅ 3. PHASE 2 — WORKFLOW IMPLEMENTATION
+
+The CRM must support three workflows out of the gate:
+
+3.1 Five Days of Joy Automation (Full Spec)
+
+Triggers:
+
+New contact enters pipeline
+
+OR emotional questionnaire submitted
+
+OR custom tag applied (Day0_Trigger)
+
+Action chain:
+
+Day 0
+
+Send welcome SMS + PDF link (PDF pre-uploaded)
+Tag: “Joy_Day0_Sent”
+
+Day 1
+
+Send nurturing SMS
+Tag: “Joy_Day1_Sent”
+
+Day 2
+
+Send insight SMS
+Tag: “Joy_Day2_Sent”
+
+Day 3
+
+Send resource SMS
+Tag: “Joy_Day3_Sent”
+
+Day 4
+
+Send relationship-builder SMS
+Tag: “Joy_Day4_Sent”
+
+Day 5
+
+Send CTA SMS
+Tag: “Joy_Final_Sent”
+
+Technical notes:
+
+Must support time-of-day windows (e.g., send between 10AM–6PM local)
+
+Must detect STOP (opt-out) and cancel the workflow
+
+Must support per-contact pause/resume
+
+3.2 Birthday Video Automation
+
+Trigger:
+
+Daily cron job checks: contact.birthday == today
+
+Actions:
+
+Send SMS:
+“Happy Birthday! 🎉 [Video link]”
+
+If Messenger ID exists → send Messenger version
+
+Log completion event
+
+Prevent duplicate sends (store last_birthday_sent_year)
+
+Video Logic:
+
+Client manually uploads one real pre-recorded video
+
+Stored in stable S3 bucket
+
+CRM simply attaches the link
+
+3.3 Non-AI Video Sending
+
+Usage:
+
+Agents sends a video manually
+
+Workflow sends a video automatically
+
+Birthday workflow uses the same infrastructure
+
+Technical Implementation:
+
+Upload endpoint: /api/media/upload-video
+
+File stored as: /videos/{client_id}/{uuid}.mp4
+
+Links expiring or permanent (you choose security vs simplicity)
+
+Twilio SMS sends URL in the message
+
+📱 4. HOW THE CLIENT WILL OPERATE DAY-TO-DAY
+Daily Operation for the Client
+
+Open CRM on phone or laptop
+
+See conversations (SMS inbox)
+
+Click a contact and reply manually
+
+See missed calls
+
+Respond to leads
+
+Let workflow handle 5-Day and Birthday sends
+
+Phone Calls
+
+Inbound call → Twilio forwards → her personal phone rings
+
+CRM logs call metadata
+
+She answers normally
+
+This is the simplest operational workflow, identical to HighLevel, Close, and FollowUpBoss.
+
+🎯 5. WHAT ENGINEERS MUST DELIVER (NON-AMBIGUOUS LIST)
+CRM Infrastructure
+
+Multi-tenant DB layer
+
+Contact engine
+
+Conversation engine
+
+Media storage
+
+Workflow engine
+
+Twilio integration
+
+Pipelines
+
+Timeline logging
+
+Permissions
+
+Export tools
+
+Twilio Layer
+
+Purchase one number
+
+Messaging Service setup
+
+Inbound webhook
+
+Outbound API wrapper
+
+Call forwarding
+
+STOP/HELP processor
+
+Delivery status handler
+
+Workflows
+
+Five Days of Joy
+
+Birthday video
+
+Manual + automated video sending
+
+Admin Interfaces
+
+Video upload
+
+PDF upload for Day 0
+
+Pipeline stages
+
+Conversation inbox
+
+Lead management
+
+Mobile Compatibility
+
+CRM UI must be responsive
+
+Messaging interface must mimic iMessage/WhatsApp feel
+
+Allow push notifications (Phase 2)

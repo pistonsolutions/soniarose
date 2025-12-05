@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": ["ES2022", "DOM"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@soniarose/lib": ["packages/lib/src"],
+      "@soniarose/database": ["packages/database/src"],
+      "@soniarose/database/*": ["packages/database/*"],
+      "@soniarose/lib/*": ["packages/lib/*"]
+    }
+  }
+}

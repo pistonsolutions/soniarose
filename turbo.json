@@ -1,0 +1,74 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "package.json",
+    "pnpm-lock.yaml",
+    "tsconfig.json"
+  ],
+  "globalEnv": [
+    "DATABASE_URL",
+    "REDIS_URL"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        "build/**",
+        ".next/**",
+        ".turbo/**"
+      ],
+      "inputs": [
+        "src/**",
+        "app/**",
+        "components/**",
+        "lib/**",
+        "public/**",
+        "*.config.*",
+        "prisma/**"
+      ],
+      "env": [
+        "NEXT_PUBLIC_*",
+        "CLERK_*"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "outputs": [],
+      "inputs": [
+        "src/**",
+        "app/**",
+        "components/**",
+        "lib/**",
+        "*.config.*"
+      ]
+    },
+    "test": {
+      "dependsOn": [
+        "^test"
+      ],
+      "outputs": [
+        "coverage/**"
+      ],
+      "inputs": [
+        "src/**",
+        "app/**",
+        "components/**",
+        "lib/**",
+        "**/*.test.*",
+        "**/*.spec.*"
+      ]
+    },
+    "db:generate": {
+      "cache": false,
+      "inputs": [
+        "prisma/**"
+      ]
+    }
+  }
+}
