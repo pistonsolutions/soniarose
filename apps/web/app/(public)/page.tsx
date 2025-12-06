@@ -49,12 +49,10 @@ export default function HomePage() {
             {/* SECTION 1 — HERO */}
             <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-cream">
                 <div className="absolute inset-0 z-0">
-                    <Image
+                    <img
                         src="/home-hero-high-res.png"
                         alt="Sonia Rose Courtier Immobilier"
-                        fill
-                        className="object-cover"
-                        priority
+                        className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)), rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)))` }} />
                 </div>
@@ -94,7 +92,7 @@ export default function HomePage() {
             <section className="relative overflow-hidden" style={{ backgroundColor: '#E6DDD0' }}>
                 {/* Logo Top Right */}
                 <div className="absolute top-8 right-8 z-10 hidden md:block opacity-80">
-                    <Image
+                    <img
                         src="/images/sonia-rose-logo.png"
                         alt="Sonia Rose Logo"
                         width={200}
@@ -121,11 +119,10 @@ export default function HomePage() {
                     </div>
                     <div className="md:w-1/2 relative min-h-[600px] w-full">
                         <div className="absolute inset-0 overflow-hidden">
-                            <Image
+                            <img
                                 src="/sonia-rose-transparent.png"
                                 alt="Sonia Rose"
-                                fill
-                                className="object-cover object-top"
+                                className="absolute inset-0 w-full h-full object-cover object-top"
                                 style={{
                                     transform: `scale(${imageZoom}) translate(${imageX}px, ${imageY}px)`,
                                     transformOrigin: 'top center'
@@ -148,11 +145,10 @@ export default function HomePage() {
                         {/* Bloc 1 */}
                         <Link href="/proprietes" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
                             <div className="aspect-[4/3] bg-slate-200 relative">
-                                <Image
+                                <img
                                     src="/avec-sonia-1.jpg"
                                     alt="Propriétés Sonia Rose"
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     style={{ opacity: opacity1 }}
                                 />
                             </div>
@@ -165,11 +161,10 @@ export default function HomePage() {
                         {/* Bloc 2 */}
                         <Link href="https://tally.so/r/QKKpvG" target="_blank" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
                             <div className="aspect-[4/3] bg-slate-200 relative">
-                                <Image
+                                <img
                                     src="/avec-sonia-2.jpg"
                                     alt="Évaluation Gratuite"
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     style={{ opacity: opacity2 }}
                                 />
                             </div>
@@ -182,11 +177,10 @@ export default function HomePage() {
                         {/* Bloc 3 */}
                         <Link href="/acheteurs" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
                             <div className="aspect-[4/3] bg-slate-200 relative">
-                                <Image
+                                <img
                                     src="/avec-sonia-3.jpg"
                                     alt="Acheter avec Sonia Rose"
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     style={{ opacity: opacity3 }}
                                 />
                             </div>
@@ -204,11 +198,10 @@ export default function HomePage() {
 
                 {/* CORNER LOGO */}
                 <div className="absolute bottom-4 right-4 w-32 h-16 opacity-80 md:w-48 md:h-24">
-                    <Image
+                    <img
                         src="/images/old-sonia-logo.png"
                         alt="Sonia Rose Logo (Old)"
-                        fill
-                        className="object-contain object-right-bottom"
+                        className="absolute inset-0 w-full h-full object-contain object-right-bottom"
                     />
                 </div>
 
@@ -320,11 +313,10 @@ export default function HomePage() {
             <section className={`relative flex items-center overflow-hidden ${ctaSectionPadding}`}>
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
-                    <Image
+                    <img
                         src="/cta-background.jpg"
                         alt="Background"
-                        fill
-                        className="object-cover"
+                        className="absolute inset-0 w-full h-full object-cover"
                     />
                     {/* Overlay/Blur */}
                     <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
@@ -334,11 +326,10 @@ export default function HomePage() {
                     {/* Left Column - Sonia Image */}
                     <div className="md:w-1/2 h-full flex items-end justify-center md:justify-start mt-10 md:mt-0">
                         <div className={`relative w-full ${ctaImageWidth} ${ctaImageHeight} -mb-20`}>
-                            <Image
+                            <img
                                 src="/cta-sonia.png"
                                 alt="Sonia Rose"
-                                fill
-                                className="object-contain object-bottom"
+                                className="absolute inset-0 w-full h-full object-contain object-bottom"
                                 style={{
                                     transform: `scale(${ctaImageScale}) translate(${ctaImageX}px, ${ctaImageY}px)`,
                                     transformOrigin: 'bottom center'
@@ -352,7 +343,7 @@ export default function HomePage() {
                         <FadeIn>
                             {/* Logo */}
                             <div className="mb-12 opacity-80">
-                                <Image
+                                <img
                                     src="/images/sonia-rose-logo.png"
                                     alt="Sonia Rose Logo"
                                     width={250}

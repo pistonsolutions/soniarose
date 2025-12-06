@@ -40,12 +40,10 @@ export function PublicNavbar() {
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="relative h-12 w-32 transition-opacity hover:opacity-80">
-          <Image
+          <img
             src="/logo.png"
             alt="Sonia Rose"
-            fill
-            className="object-contain object-left"
-            priority
+            className="absolute inset-0 w-full h-full object-contain object-left"
           />
         </Link>
 

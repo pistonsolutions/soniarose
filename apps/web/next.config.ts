@@ -45,6 +45,7 @@ const nextConfig: NextConfig = {
 
   // Image optimization
   images: {
+    unoptimized: true,
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 60,
   },
