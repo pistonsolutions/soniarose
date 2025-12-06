@@ -57,7 +57,7 @@ export default function BuyersPage() {
                         fill
                         className="object-cover"
                         priority
-                        style={{ opacity: heroImageOpacity }}
+                        style={{ opacity: heroImageOpacity, transform: 'scale(1.2)' }}
                     />
                     {/* Light overlay to ensure text readability if needed */}
                     <div className="absolute inset-0 bg-black/10" />
@@ -259,7 +259,7 @@ export default function BuyersPage() {
 
                             <div className="mt-12">
                                 <Button asChild size="lg" className="px-8 py-4 text-lg rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
-                                    <Link href="https://tally.so/r/w7X1p6" target="_blank">RECEVOIR MES ALERTES</Link>
+                                    <Link href="https://tally.so/r/A7PEko" target="_blank">RECEVOIR MES ALERTES</Link>
                                 </Button>
                             </div>
                         </FadeIn>

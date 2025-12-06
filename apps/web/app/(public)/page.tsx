@@ -67,7 +67,7 @@ export default function HomePage() {
                         </p>
                         <div className="flex justify-center gap-4">
                             <Button asChild size="lg" variant="gold" className="px-6 py-3 text-lg bg-brand-navy text-white hover:bg-brand-gold">
-                                <Link href="https://tally.so/r/QKKpvG" target="_blank">FAIS LE TEST</Link>
+                                <Link href="https://tally.so/r/mZK1pz" target="_blank">FAIS LE TEST</Link>
                             </Button>
                             <Button asChild size="lg" variant="outline" className="px-6 py-3 text-lg border-brand-navy text-brand-navy hover:bg-brand-gold hover:text-white">
                                 <Link href="https://tally.so/r/QKKpvG" target="_blank">DÉCOUVRE LES VÉRITÉS CACHÉES</Link>
@@ -146,11 +146,12 @@ export default function HomePage() {
                         <Link href="/proprietes" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
                             <div className="aspect-[4/3] bg-slate-200 relative">
                                 <img
-                                    src="/avec-sonia-1.jpg"
+                                    src="/Vendu%20-%20Sainte-Julie.jpeg"
                                     alt="Propriétés Sonia Rose"
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     style={{ opacity: opacity1 }}
                                 />
+
                             </div>
                             <div className="p-6">
                                 <h3 className="mb-2 font-serif text-2xl font-bold text-brand-navy group-hover:text-brand-gold">Mes Propriétés</h3>
@@ -383,10 +384,10 @@ export default function HomePage() {
                             {/* Buttons */}
                             <div className="mt-12 flex flex-col sm:flex-row gap-6">
                                 <Button asChild size="lg" className="px-8 py-6 text-lg rounded-none shadow-lg hover:opacity-90 transition-opacity min-w-[250px]" style={{ backgroundColor: '#5D4037', color: '#FFFFFF' }}>
-                                    <Link href="/acheteurs">ACHETEZ AVEC MOI</Link>
+                                    <Link href="https://tally.so/r/A7PEko" target="_blank">ACHETEZ AVEC MOI</Link>
                                 </Button>
                                 <Button asChild size="lg" className="px-8 py-6 text-lg rounded-none shadow-lg hover:opacity-90 transition-opacity min-w-[250px]" style={{ backgroundColor: '#5D4037', color: '#FFFFFF' }}>
-                                    <Link href="/vendeurs">VENDEZ AVEC MOI</Link>
+                                    <Link href="https://tally.so/r/QKKpvG" target="_blank">VENDEZ AVEC MOI</Link>
                                 </Button>
                             </div>
                         </FadeIn>

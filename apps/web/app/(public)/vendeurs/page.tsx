@@ -156,14 +156,14 @@ export default function SellersPage() {
                                 </p>
 
                                 {/* Address Input Simulation */}
-                                <div className="mb-8 mx-auto max-w-md bg-white/50 p-2 rounded-full border border-[#734838]/30 flex items-center shadow-sm">
+                                <Link href="https://tally.so/r/QKKpvG" target="_blank" className="mb-8 mx-auto max-w-md bg-white/50 p-2 rounded-full border border-[#734838]/30 flex items-center shadow-sm hover:bg-white/70 transition-colors cursor-pointer">
                                     <div className="flex-grow px-4 py-2 text-left text-[#734838]/70 italic">
                                         Entrez votre adresse pour commencer
                                     </div>
                                     <div className="h-10 w-10 flex items-center justify-center bg-[#E6E0D9] rounded-full text-[#734838] font-bold border border-[#734838]/20">
                                         #
                                     </div>
-                                </div>
+                                </Link>
 
                                 <div className="mb-12">
                                     <Button asChild size="lg" className="px-12 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
@@ -229,7 +229,7 @@ export default function SellersPage() {
 
                                 <div className="mt-10">
                                     <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
-                                        <Link href="https://drive.google.com/file/d/1qEjWFoXa9zZv-LwFF5B83kG4UgjF8GES/view?usp=sharing" target="_blank">TÉLÉCHARGEZ- LE</Link>
+                                        <Link href="https://drive.google.com/file/d/1qEjWFoXa9zZv-LwFF5B83kG4UgjF8GES/view?usp=sharing" target="_blank">TÉLÉCHARGEZ-LE</Link>
                                     </Button>
                                 </div>
                             </div>
@@ -360,7 +360,7 @@ export default function SellersPage() {
                             </div>
                             <div className="mt-10">
                                 <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#8C6A5D', color: '#FFFFFF' }}>
-                                    <Link href="https://tally.so/r/QKKpvG" target="_blank">FAIS LE TEST</Link>
+                                    <Link href="https://tally.so/r/mZK1pz" target="_blank">FAIS LE TEST</Link>
                                 </Button>
                             </div>
                         </FadeIn>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { FadeIn } from '@/components/ui/fade-in';
-import { MapPin, Bed, Bath, Maximize, ArrowRight } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
 import { EvaluationSection } from '@/components/evaluation-section';
 
@@ -245,16 +245,9 @@ export default function PropertiesPage() {
                                             <MapPin size={16} className="mr-1" />
                                             <span className="text-sm">{property.address}</span>
                                         </div>
-                                        <div className="mb-6 flex justify-between border-y border-[#734838]/10 py-4 text-sm text-[#734838]/80">
-                                            <div className="flex items-center gap-1"><Bed size={18} /> {property.beds} Lits</div>
-                                            <div className="flex items-center gap-1"><Bath size={18} /> {property.baths} Bains</div>
-                                            <div className="flex items-center gap-1"><Maximize size={18} /> {property.sqft} pi²</div>
-                                        </div>
+
                                         <div className="flex items-center justify-between">
                                             <span className="text-xl font-bold text-[#734838]">{property.price}</span>
-                                            <Button asChild size="sm" variant="outline" className="border-[#734838] text-[#734838] hover:bg-[#734838] hover:text-white group-hover:bg-[#734838] group-hover:text-white transition-colors">
-                                                <Link href={`/proprietes/${property.id}`}>Voir détails</Link>
-                                            </Button>
                                         </div>
                                     </div>
                                 </div>

@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { auth } from '@clerk/nextjs/server';
 import { getContact } from '@/lib/api';
-import { ContactProfile } from '@/components/contacts/contact-profile';
+// import { ContactProfile } from '@/components/contacts/contact-profile';
 import { formatDate, formatName, formatOptInStatus } from '@/lib/format';
 import { EnrollWorkflowDialog } from '@/components/contacts/enroll-workflow-dialog';
 import { EditContactDialog } from '@/components/contacts/edit-contact-dialog';
