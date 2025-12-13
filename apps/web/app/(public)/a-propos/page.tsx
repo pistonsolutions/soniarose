@@ -18,11 +18,13 @@ export default function AboutPage() {
 
     // HERO CONFIGURATION
     const heroImageOpacity = 0.6; // Opacity of the background image (0.0 to 1.0)
+    const heroZoom = 1; // Zoom level (1 = 100%)
+    const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom. '50% 80%' moves it up slightly.
 
     // BIO SECTION CONFIGURATION
-    const bioImageScale = 3.5; // Scale the image (1 = 100%, 1.1 = 110%, etc.)
+    const bioImageScale = 1.2; // Adjusted for new Portrait asset (was 3.5)
     const bioImageX = 0; // Horizontal offset in pixels
-    const bioImageY = 100; // Vertical offset in pixels
+    const bioImageY = 0; // Vertical offset in pixels
 
     return (
         <>
@@ -61,12 +63,12 @@ export default function AboutPage() {
             <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-brand-cream">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/about-bg.png"
+                        src="/assets/about/hero-bg.jpg"
                         alt="À Propos Background"
                         fill
                         className="object-cover"
                         priority
-                        style={{ opacity: heroImageOpacity }}
+                        style={{ opacity: heroImageOpacity, transform: `scale(${heroZoom})`, objectPosition: heroImagePosition }}
                     />
                     {/* Light overlay to ensure text readability if needed, but keeping it minimal as per design */}
                     <div className="absolute inset-0 bg-black/10" />
@@ -149,7 +151,7 @@ export default function AboutPage() {
                             <div className="lg:w-1/2 relative h-[600px] md:h-[800px] w-full mt-10 lg:mt-0 flex items-end justify-center lg:justify-end">
                                 <div className="relative w-full h-full">
                                     <Image
-                                        src="/about-bio.png"
+                                        src="/assets/about/portrait-main.png"
                                         alt="Sonia Rose Portrait"
                                         fill
                                         className="object-contain object-bottom"

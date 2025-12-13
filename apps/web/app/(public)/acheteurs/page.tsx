@@ -14,11 +14,13 @@ export const metadata: Metadata = {
 export default function BuyersPage() {
     // HERO CONFIGURATION
     const heroImageOpacity = 0.6; // Opacity of the background image (0.0 to 1.0)
+    const heroZoom = 1; // Zoom level (1 = 100%)
+    const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom.
 
     // BIO SECTION CONFIGURATION
-    const bioImageScale = 3.5; // Scale the image (1 = 100%, 1.1 = 110%, etc.)
+    const bioImageScale = 3; // Adjusted for new Portrait asset (was 3.5)
     const bioImageX = 0; // Horizontal offset in pixels
-    const bioImageY = 150; // Vertical offset in pixels
+    const bioImageY = 180; // Vertical offset in pixels
 
     // CTA SECTION CONFIGURATION
     const ctaImageOpacity = 0.8; // Opacity of the background image (0.0 to 1.0)
@@ -52,12 +54,12 @@ export default function BuyersPage() {
             <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-brand-cream">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/buyers-hero.jpg"
+                        src="/assets/buyers/hero-bg.jpg"
                         alt="Acheter une propriété avec Sonia Rose"
                         fill
                         className="object-cover"
                         priority
-                        style={{ opacity: heroImageOpacity, transform: 'scale(1.2)' }}
+                        style={{ opacity: heroImageOpacity, transform: `scale(${heroZoom})`, objectPosition: heroImagePosition }}
                     />
                     {/* Light overlay to ensure text readability if needed */}
                     <div className="absolute inset-0 bg-black/10" />
@@ -117,7 +119,7 @@ export default function BuyersPage() {
                             <div className="lg:w-1/2 relative h-[320px] md:h-[440px] w-full mt-10 lg:mt-0 flex items-end justify-center lg:justify-end">
                                 <div className="relative w-full h-full">
                                     <Image
-                                        src="/buyers-bio.png"
+                                        src="/assets/buyers/why-buy-portrait.png"
                                         alt="Sonia Rose"
                                         fill
                                         className="object-contain object-bottom"
@@ -273,7 +275,7 @@ export default function BuyersPage() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/buyers-cta-bg.jpg"
+                        src="/assets/buyers/cta-bg.jpg"
                         alt="Prêt à avancer?"
                         fill
                         className="object-cover"

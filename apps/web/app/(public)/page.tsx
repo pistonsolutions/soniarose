@@ -11,10 +11,14 @@ import { useState } from 'react';
 export default function HomePage() {
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    // CONFIGURATION: Adjust these values to position the "Qui est Sonia Rose" image
-    const imageZoom = 1.5; // Zoom level (1 = 100%)
+    // HERO CONFIGURATION (Section 1)
+    const heroZoom = 1; // Zoom level (1 = 100%)
+    const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom. '50% 80%' moves it up slightly.
+
+    // SECTION 2 CONFIGURATION: Adjust these values to position the "Qui est Sonia Rose" image
+    const imageZoom = 2; // Zoom level (1 = 100%)
     const imageX = 0;       // Horizontal offset in pixels
-    const imageY = -100;       // Vertical offset in pixels
+    const imageY = 60;       // Vertical offset in pixels
 
     // SECTION 3 CONFIGURATION: Adjust opacity for the 3 images (0 to 1)
     const opacity1 = 1;
@@ -23,11 +27,11 @@ export default function HomePage() {
 
     // SECTION 5 CONFIGURATION
     const ctaSectionPadding = 'py-12'; // Adjust section vertical padding
-    const ctaImageHeight = 'h-[800px]'; // Adjust image height class (e.g., h-[600px], h-[800px])
-    const ctaImageWidth = 'max-w-2xl'; // Adjust image width class (e.g., max-w-lg, max-w-xl, max-w-2xl)
-    const ctaImageScale = 5; // Scale the image (1 = 100%, 1.5 = 150%, etc.)
-    const ctaImageX = 80; // Horizontal offset in pixels
-    const ctaImageY = 180; // Vertical offset in pixels
+    const ctaImageHeight = 'h-[50vh] md:h-[85vh]'; // Scalable height relative to viewport (50vh mobile, 85vh desktop)
+    const ctaImageWidth = 'w-full max-w-3xl'; // Allow wider width for better scaling
+    const ctaImageScale = 1; // Scale the image (1 = 100%, 1.5 = 150%, etc.)
+    const ctaImageX = 0; // Horizontal offset in pixels
+    const ctaImageY = 0; // Vertical offset in pixels
 
     const testimonials = [
         {
@@ -50,11 +54,12 @@ export default function HomePage() {
             <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-cream">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/home-hero-high-res.png"
+                        src="/assets/home/hero-bg.jpg"
                         alt="Sonia Rose Courtier Immobilier"
                         fill
                         className="object-cover"
                         priority
+                        style={{ transform: `scale(${heroZoom})`, objectPosition: heroImagePosition }}
                     />
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)), rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)))` }} />
                 </div>
@@ -92,16 +97,7 @@ export default function HomePage() {
 
             {/* NEW SECTION — QUI EST SONIA ROSE */}
             <section className="relative overflow-hidden" style={{ backgroundColor: '#E6DDD0' }}>
-                {/* Logo Top Right */}
-                <div className="absolute top-8 right-8 z-10 hidden md:block opacity-80">
-                    <Image
-                        src="/images/sonia-rose-logo.png"
-                        alt="Sonia Rose Logo"
-                        width={200}
-                        height={100}
-                        className="object-contain"
-                    />
-                </div>
+
 
                 <div className="container mx-auto px-4 flex flex-col md:flex-row">
                     <div className="md:w-1/2 py-16 text-center flex flex-col items-center justify-center z-10">
@@ -122,13 +118,13 @@ export default function HomePage() {
                     <div className="md:w-1/2 relative min-h-[600px] w-full">
                         <div className="absolute inset-0 overflow-hidden">
                             <Image
-                                src="/sonia-rose-transparent.png"
+                                src="/assets/home/sonia-portrait-intro.png"
                                 alt="Sonia Rose"
                                 fill
-                                className="object-cover object-top"
+                                className="object-contain object-bottom"
                                 style={{
                                     transform: `scale(${imageZoom}) translate(${imageX}px, ${imageY}px)`,
-                                    transformOrigin: 'top center'
+                                    transformOrigin: 'bottom center'
                                 }}
                             />
                         </div>
@@ -149,7 +145,7 @@ export default function HomePage() {
                         <Link href="/proprietes" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
                             <div className="aspect-[4/3] bg-slate-200 relative">
                                 <Image
-                                    src="/Vendu%20-%20Sainte-Julie.jpeg"
+                                    src="/assets/home/my-properties-bg.jpg"
                                     alt="Propriétés Sonia Rose"
                                     fill
                                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -166,7 +162,7 @@ export default function HomePage() {
                         <Link href="https://tally.so/r/QKKpvG" target="_blank" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
                             <div className="aspect-[4/3] bg-slate-200 relative">
                                 <Image
-                                    src="/avec-sonia-2.jpg"
+                                    src="/assets/home/free-eval-bg.jpg"
                                     alt="Évaluation Gratuite"
                                     fill
                                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -183,7 +179,7 @@ export default function HomePage() {
                         <Link href="/acheteurs" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
                             <div className="aspect-[4/3] bg-slate-200 relative">
                                 <Image
-                                    src="/avec-sonia-3.jpg"
+                                    src="/assets/home/buy-with-me-bg.jpg"
                                     alt="Acheter avec Sonia Rose"
                                     fill
                                     className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -202,15 +198,7 @@ export default function HomePage() {
             {/* SECTION 4 — TRAVAILLER AVEC MOI */}
             <section className="relative py-20" style={{ backgroundColor: '#E6DDD0' }}>
 
-                {/* CORNER LOGO */}
-                <div className="absolute bottom-4 right-4 w-32 h-16 opacity-80 md:w-48 md:h-24">
-                    <Image
-                        src="/images/old-sonia-logo.png"
-                        alt="Sonia Rose Logo (Old)"
-                        fill
-                        className="object-contain object-right-bottom"
-                    />
-                </div>
+
 
                 <div className="container mx-auto px-4">
                     <FadeIn>
@@ -321,7 +309,7 @@ export default function HomePage() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/cta-background.jpg"
+                        src="/assets/home/footer-bg.jpg"
                         alt="Background"
                         fill
                         className="object-cover"
@@ -333,12 +321,12 @@ export default function HomePage() {
                 <div className="container relative z-10 mx-auto px-4 h-full flex flex-col md:flex-row items-center">
                     {/* Left Column - Sonia Image */}
                     <div className="md:w-1/2 h-full flex items-end justify-center md:justify-start mt-10 md:mt-0">
-                        <div className={`relative w-full ${ctaImageWidth} ${ctaImageHeight} -mb-20`}>
+                        <div className={`relative w-full max-w-5xl ${ctaImageHeight} md:-mb-20`}>
                             <Image
-                                src="/cta-sonia.png"
+                                src="/assets/home/sonia-portrait-cta.png"
                                 alt="Sonia Rose"
                                 fill
-                                className="object-contain object-bottom"
+                                className="object-cover object-top md:object-contain md:object-bottom"
                                 style={{
                                     transform: `scale(${ctaImageScale}) translate(${ctaImageX}px, ${ctaImageY}px)`,
                                     transformOrigin: 'bottom center'
@@ -350,16 +338,7 @@ export default function HomePage() {
                     {/* Right Column - Content */}
                     <div className="md:w-1/2 text-center md:text-right flex flex-col items-center md:items-end justify-center py-16 md:py-0">
                         <FadeIn>
-                            {/* Logo */}
-                            <div className="mb-12 opacity-80">
-                                <Image
-                                    src="/images/sonia-rose-logo.png"
-                                    alt="Sonia Rose Logo"
-                                    width={250}
-                                    height={125}
-                                    className="object-contain"
-                                />
-                            </div>
+
 
                             {/* Text Content */}
                             <div className="space-y-8 max-w-xl text-black">

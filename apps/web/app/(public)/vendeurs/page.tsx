@@ -16,9 +16,9 @@ export default function SellersPage() {
     const heroImageOpacity = 0.6; // Opacity of the background image (0.0 to 1.0)
 
     // BIO SECTION CONFIGURATION
-    const sellersBioScale = 3.7; // Scale the image (1 = 100%, 1.1 = 110%, etc.)
+    const sellersBioScale = 1.5; // Adjusted for new Portrait asset (was 3.7)
     const sellersBioX = 0; // Horizontal offset in pixels
-    const sellersBioY = 100; // Vertical offset in pixels
+    const sellersBioY = 150; // Vertical offset in pixels
 
     // GUIDE SECTION CONFIGURATION
     const sellersGuideScale = 1; // Scale the image (1 = 100%, 1.1 = 110%, etc.)
@@ -56,7 +56,7 @@ export default function SellersPage() {
             {/* HERO SECTION */}
             <section className="relative flex h-[60vh] min-h-[500px] items-center justify-center overflow-hidden">
                 <Image
-                    src="/sellers-hero.jpg"
+                    src="/assets/sellers/hero-bg.jpg"
                     alt="Vendre sa propriété avec Sonia Rose"
                     fill
                     className="object-cover"
@@ -112,7 +112,7 @@ export default function SellersPage() {
                             <div className="lg:w-1/2 relative h-[500px] md:h-[700px] w-full mt-10 lg:mt-0 flex items-end justify-center lg:justify-end">
                                 <div className="relative w-full h-full max-w-lg">
                                     <Image
-                                        src="/sellers-bio.png"
+                                        src="/assets/sellers/why-sell-portrait.png"
                                         alt="Sonia Rose"
                                         fill
                                         className="object-contain object-bottom"
@@ -137,7 +137,7 @@ export default function SellersPage() {
                             <div className="lg:w-1/2">
                                 <div className="relative aspect-square w-full shadow-xl">
                                     <Image
-                                        src="/sellers-explore.jpg"
+                                        src="/assets/sellers/sellers-explore.jpg"
                                         alt="Cuisine moderne"
                                         fill
                                         className="object-cover"
@@ -336,7 +336,7 @@ export default function SellersPage() {
                 {/* Header Image */}
                 <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/sellers-quiz-header.jpg"
+                        src="/assets/sellers/sellers-quiz-header.jpg"
                         alt="Café et détente"
                         fill
                         className="object-cover"
@@ -373,7 +373,7 @@ export default function SellersPage() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/sellers-cta-bg.jpg"
+                        src="/assets/sellers/cta-bg.jpg"
                         alt="Background"
                         fill
                         className="object-cover"
