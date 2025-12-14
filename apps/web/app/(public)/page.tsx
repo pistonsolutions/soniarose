@@ -7,6 +7,7 @@ import { Section } from '@/components/ui/section';
 import { FadeIn } from '@/components/ui/fade-in';
 import { Star, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function HomePage() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -16,7 +17,7 @@ export default function HomePage() {
     const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom. '50% 80%' moves it up slightly.
 
     // SECTION 2 CONFIGURATION: Adjust these values to position the "Qui est Sonia Rose" image
-    const imageZoom = 2; // Zoom level (1 = 100%)
+    const imageZoom = 2.5; // Zoom level (1 = 100%)
     const imageX = 0;       // Horizontal offset in pixels
     const imageY = 60;       // Vertical offset in pixels
 
@@ -35,16 +36,16 @@ export default function HomePage() {
 
     const testimonials = [
         {
-            quote: "Sonia Rose à dépassé toutes nos attentes en tant que Courtière immobilière. Son professionnalisme exceptionnel, sa connaissance approfondie du marché et son engagement à satisfaire pleinement ses clients ont rendu notre expérience remarquable.",
+            quote: "Sonia Rose à dépassée toutes nos attentes en tant que Courtière immobilière. Son professionnalisme exceptionel, sa connaissance approfondie du marché et son engagement à satisfaire pleinement ses clients ont rendu notre expérience remarquable. Grâce à son dynamisme e, sa transparence, son attitude positive et à sa dilligence, elle a facilité chaque étape du processus. Je la recommande vivement à tous ceux qui recherche une expertise de qualité!!",
             author: "– Christiane et Louise, La Prairie",
         },
         {
-            quote: "Une expérience incroyable avec Sonia. Elle a su nous écouter et nous guider avec une patience exemplaire.",
-            author: "– Client Satisfait",
+            quote: "J'ai choisi Sonia Rose pour me représenter après avoir vécu un cauchemar de 7 mois avec une courtière qui donne une mauvaise réputation au métier. J'étais méfiant au début, mais Sonia m'a démontré qu'elle se donne à 100% pour ses clients, et ça parraît. Elle est vite en affaires, elle n'a pas de temps à perdre, et elle est très minutieuse. C'était pour la vente d'un immeuble locatif, et elle m'a trouvé un investisseur sérieux, et c'était déjà décidé lors le la première visite. On vient de passer chez le notaire pour finaliser la vente, et tout ça en moins de 30 jours de la visite initiale. En partant, j'étais très méfiant de tous les courtiers/ères, mais Sonia m'a démontré qu'elle est digne de confiance, et je serai toujours reconnaissant pour ses services. Merci Sonia:)",
+            author: "– D.Blakney, Montréal",
         },
         {
-            quote: "Grâce à son dynamisme, sa transparence, son attitude positive et à sa diligence, elle a facilité chaque étape du processus.",
-            author: "– Client Heureux",
+            quote: "Ça bouge avec Sonia Rose. Si vous êtes à la recherche d'un Courtier Immobilier de confiance, notre expérience personnelle en fait foi. Non seulement elle avait bien ciblé le montant à afficher pour la mise en vente de notre propriété mais aussi le prix obtenu à la vente! Sa connaissance du milieu immobilier et la confiance qu'elle démontre ont été révélateur tout comme sa personnalité attachante et dynamique. Nous sommes enchantés de notre expérience et n'hésiter pas, c'est Sonia Rose qu'il vous faut!!",
+            author: "– Louis et Lise, Longueuil",
         },
     ];
 
@@ -53,24 +54,36 @@ export default function HomePage() {
             {/* SECTION 1 — HERO */}
             <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-cream">
                 <div className="absolute inset-0 z-0">
-                    <Image
-                        src="/assets/home/hero-bg.jpg"
-                        alt="Sonia Rose Courtier Immobilier"
-                        fill
-                        className="object-cover"
-                        priority
-                        style={{ transform: `scale(${heroZoom})`, objectPosition: heroImagePosition }}
-                    />
+                    <motion.div
+                        initial={{ scale: 1 }}
+                        animate={{ scale: 2 }}
+                        transition={{
+                            duration: 10,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                            ease: "linear"
+                        }}
+                        className="relative h-full w-full"
+                    >
+                        <Image
+                            src="/assets/home/hero-bg.jpg"
+                            alt="Sonia Rose Courtier Immobilier"
+                            fill
+                            className="object-cover"
+                            priority
+                            style={{ objectPosition: heroImagePosition }}
+                        />
+                    </motion.div>
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)), rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)))` }} />
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 text-center text-brand-navy">
                     <FadeIn delay={0.2}>
                         <h1 className="mb-6 font-serif text-4xl font-bold md:text-6xl">
-                            Parce que l'immobilier, <span className="text-brand-gold">c'est plus qu'une simple transaction</span>
+                            L'immobilier, <span className="text-brand-gold">plus qu'une transaction</span>
                         </h1>
-                        <p className="mb-8 text-lg font-light md:text-xl">
-                            C'est une étape de vie qui mérite réflexion, stratégie et une approche respectueuse de vos besoins réels.
+                        <p className="mb-8 text-lg font-medium md:text-xl text-slate-900">
+                            Une étape de vie qui mérite réflexion, stratégie et respect.
                         </p>
                         <div className="flex justify-center gap-4">
                             <Button asChild size="lg" variant="gold" className="px-6 py-3 text-lg bg-brand-navy text-white hover:bg-brand-gold">
@@ -96,39 +109,38 @@ export default function HomePage() {
             </section>
 
             {/* NEW SECTION — QUI EST SONIA ROSE */}
-            <section className="relative overflow-hidden" style={{ backgroundColor: '#E6DDD0' }}>
-
-
-                <div className="container mx-auto px-4 flex flex-col md:flex-row">
-                    <div className="md:w-1/2 py-16 text-center flex flex-col items-center justify-center z-10">
-                        <FadeIn>
-                            <h2 className="mb-6 font-serif text-5xl font-light tracking-wide leading-tight" style={{ color: '#734838' }}>
-                                QUI EST<br />SONIA ROSE?
-                            </h2>
-                            <p className="mb-8 text-lg leading-relaxed max-w-md" style={{ color: '#734838' }}>
-                                Courtière immobilière depuis plus de 20 ans, Sonia Rose accompagne vendeurs, acheteurs et investisseurs avec une approche humaine, authentique et profondément stratégique. Reconnue pour sa transparence, sa sensibilité et son expertise, elle guide chaque client vers les bonnes décisions — au bon moment.
-                            </p>
-                            <Button asChild size="lg" className="px-8 py-6 text-lg rounded-none shadow-none hover:opacity-90 transition-opacity" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
-                                <Link href="/a-propos">
-                                    DÉCOUVRIR MON<br />HISTOIRE
-                                </Link>
-                            </Button>
-                        </FadeIn>
-                    </div>
-                    <div className="md:w-1/2 relative min-h-[600px] w-full">
-                        <div className="absolute inset-0 overflow-hidden">
-                            <Image
-                                src="/assets/home/sonia-portrait-intro.png"
-                                alt="Sonia Rose"
-                                fill
-                                className="object-contain object-bottom"
-                                style={{
-                                    transform: `scale(${imageZoom}) translate(${imageX}px, ${imageY}px)`,
-                                    transformOrigin: 'bottom center'
-                                }}
-                            />
+            <section className="relative bg-[#E6DDD0] flex flex-col md:block">
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="flex flex-col md:flex-row">
+                        <div className="md:w-1/2 py-12 md:py-16 text-center flex flex-col items-center justify-center">
+                            <FadeIn>
+                                <h2 className="mb-8 font-serif text-6xl md:text-7xl font-light tracking-wide leading-tight" style={{ color: '#734838' }}>
+                                    QUI EST<br />SONIA ROSE?
+                                </h2>
+                                <p className="mb-10 text-xl md:text-2xl leading-relaxed max-w-lg" style={{ color: '#734838' }}>
+                                    Courtière immobilière depuis plus de 20 ans, Sonia Rose accompagne vendeurs, acheteurs et investisseurs avec une approche humaine, authentique et profondément stratégique. Reconnue pour sa transparence, sa sensibilité et son expertise, elle guide chaque client vers les bonnes décisions — au bon moment.
+                                </p>
+                                <Button asChild size="lg" className="px-10 py-8 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
+                                    <Link href="/a-propos">
+                                        DÉCOUVRIR MON<br />HISTOIRE
+                                    </Link>
+                                </Button>
+                            </FadeIn>
                         </div>
+                        <div className="md:w-1/2"></div> {/* Spacer */}
                     </div>
+                </div>
+
+                {/* Image Container */}
+                <div className="relative w-full h-[500px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-full z-0">
+                    <Image
+                        src="/assets/home/sonia-portrait-intro.png"
+                        alt="Sonia Rose"
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
+                    />
                 </div>
             </section>
 
@@ -282,19 +294,36 @@ export default function HomePage() {
 
                         <div className="flex justify-center gap-6">
                             <Link href="https://www.tiktok.com/@soniarose.remax" target="_blank" className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md transition-transform hover:scale-110 hover:text-brand-gold">
-                                <span className="font-bold">TT</span>
+                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-black">
+                                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                                </svg>
                             </Link>
                             <Link href="https://www.instagram.com/soniarose.remax" target="_blank" className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md transition-transform hover:scale-110 hover:text-brand-gold">
-                                <Instagram size={32} />
+                                <svg viewBox="0 0 24 24" className="w-8 h-8">
+                                    <defs>
+                                        <linearGradient id="instagram-gradient-home" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stopColor="#f09433" />
+                                            <stop offset="25%" stopColor="#e6683c" />
+                                            <stop offset="50%" stopColor="#dc2743" />
+                                            <stop offset="75%" stopColor="#cc2366" />
+                                            <stop offset="100%" stopColor="#bc1888" />
+                                        </linearGradient>
+                                    </defs>
+                                    <path fill="url(#instagram-gradient-home)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
                             </Link>
                             <Link href="https://www.facebook.com/SoniaRoseImmobilier/" target="_blank" className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md transition-transform hover:scale-110 hover:text-brand-gold">
-                                <Facebook size={32} />
+                                <svg viewBox="0 0 24 24" className="w-8 h-8 text-[#1877F2] fill-current">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                                </svg>
                             </Link>
                             <Link href="https://www.youtube.com/@rosesonia662" target="_blank" className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md transition-transform hover:scale-110 hover:text-brand-gold">
-                                <Youtube size={32} />
+                                <Youtube size={32} className="text-[#FF0000]" />
                             </Link>
                             <Link href="https://www.linkedin.com/in/sonia-rose-969025127" target="_blank" className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md transition-transform hover:scale-110 hover:text-brand-gold">
-                                <Linkedin size={32} />
+                                <svg viewBox="0 0 24 24" className="w-8 h-8 text-[#0A66C2] fill-current">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                                </svg>
                             </Link>
                         </div>
                     </div>

@@ -160,6 +160,12 @@ const properties = [
 ];
 
 export default function PropertiesPage() {
+    // HERO CONFIGURATION
+    // Change to 'contain' to see the full image (unzoomed), or 'cover' to fill the area (zoomed/cropped)
+    const heroObjectFit: 'cover' | 'contain' = 'cover'; 
+    const heroScale = 1; // Scale factor: 1 = 100%
+    const heroObjectPosition = '50% 70%'; // Focus on the lower part (50% horizontal, 70% vertical)
+
     return (
         <>
             <script
@@ -188,11 +194,11 @@ export default function PropertiesPage() {
             {/* SECTION 1 — HERO */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/Nouveaute - Saint-Paul-de-l'Ile-aux-Noix.jpeg"
+                    src="/properties-hero.jpg"
                     alt="Propriétés à vendre Sonia Rose"
                     fill
-                    className="object-cover"
-                    style={{ opacity: 0.6 }}
+                    className={`object-${heroObjectFit}`}
+                    style={{ opacity: 0.6, transform: `scale(${heroScale})`, objectPosition: heroObjectPosition }}
                     priority
                 />
                 <div className="absolute inset-0 bg-black/20" />

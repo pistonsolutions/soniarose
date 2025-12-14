@@ -8,7 +8,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-lato)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--font-playfair)', ...defaultTheme.fontFamily.serif],
+        serif: ['var(--font-montserrat)', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         brand: {

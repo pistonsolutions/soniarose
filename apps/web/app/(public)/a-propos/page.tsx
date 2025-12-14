@@ -171,8 +171,8 @@ export default function AboutPage() {
             <section className="py-20" style={{ backgroundColor: '#e0dbd3' }}>
                 <div className="container mx-auto px-4">
                     <FadeIn>
-                        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-                            <div className="order-2 lg:order-1">
+                        <div className="mx-auto max-w-4xl">
+                            <div className="">
                                 <h2 className="mb-4 font-serif text-4xl font-bold text-brand-navy">Mes valeurs</h2>
                                 <h3 className="mb-6 text-xl font-medium text-brand-gold">
                                     L’immobilier, pour moi, ça n’a jamais été juste des transactions. C’est des vies. Des histoires. Des moments charnières.
@@ -192,17 +192,6 @@ export default function AboutPage() {
                                         C’est une personne qui m’accorde sa confiance.
                                         Et ça, je ne le prends jamais pour acquis.
                                     </p>
-                                </div>
-                            </div>
-                            <div className="order-1 lg:order-2 flex justify-center">
-
-                                <div className="relative h-64 w-64 rounded-full bg-white p-8 shadow-xl flex items-center justify-center border-4 border-brand-gold/20 overflow-hidden">
-                                    <Image
-                                        src="/logo.png"
-                                        alt="Sonia Rose Valeurs"
-                                        fill
-                                        className="object-contain p-8"
-                                    />
                                 </div>
                             </div>
                         </div>

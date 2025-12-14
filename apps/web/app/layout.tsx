@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Lato } from 'next/font/google';
+import { Montserrat, Lato } from 'next/font/google';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
-const playfair = Playfair_Display({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-montserrat',
   display: 'swap',
 });
 
@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <ClerkProvider>
       <html lang="fr" suppressHydrationWarning>
-        <body className={`${playfair.variable} ${lato.variable} antialiased font-sans`}>
+        <body className={`${montserrat.variable} ${lato.variable} antialiased font-sans`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
