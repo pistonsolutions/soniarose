@@ -110,7 +110,7 @@ export function BlogPageCarousel() {
 
                                     {/* Title Overlay */}
                                     <div className="absolute top-4 left-4 right-4 text-center">
-                                        <h3 className="text-white font-bold text-lg md:text-xl leading-tight drop-shadow-md">
+                                        <h3 className="text-white font-sans font-bold text-lg md:text-xl leading-tight drop-shadow-md">
                                             {post.title}
                                         </h3>
                                     </div>

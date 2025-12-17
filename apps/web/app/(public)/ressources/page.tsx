@@ -44,7 +44,7 @@ export default function ResourcesPage() {
                             name: 'Sonia Rose Immobilier',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://soniarose.ca/assets/logo.png',
+                                url: 'https://soniarose.ca/assets/logo-beige-et-or.png',
                             },
                         },
                     }),
@@ -63,10 +63,10 @@ export default function ResourcesPage() {
                 />
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn delay={0.2}>
-                        <h1 className="mb-6 font-serif text-5xl font-bold text-[#734838] md:text-7xl lg:text-8xl tracking-widest uppercase">
+                        <h1 className="mb-6 font-sans text-6xl text-brand-brown md:text-8xl lg:text-9xl tracking-widest uppercase" style={{ textShadow: '3px 5px 6px rgba(0, 0, 0, 0.4)' }}>
                             RESSOURCES
                         </h1>
-                        <h2 className="mb-8 text-xl font-medium text-[#734838] md:text-2xl font-serif max-w-2xl mx-auto">
+                        <h2 className="mb-8 text-xl font-medium text-brand-brown md:text-2xl font-sans max-w-2xl mx-auto">
                             Des outils simples, humains et pratiques pour vous accompagner dans votre projet immobilier
                         </h2>
                     </FadeIn>
@@ -77,10 +77,10 @@ export default function ResourcesPage() {
             <Section background="white">
                 <FadeIn>
                     <div className="text-center mb-12">
-                        <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#734838] uppercase leading-tight">
+                        <h2 className="font-sans text-3xl md:text-5xl text-brand-brown uppercase leading-tight">
                             RESSOURCES ET OUTILS IMMOBILIERS PRATIQUES <br /> POUR VOUS GUIDER
                         </h2>
-                        <p className="mt-6 text-lg text-[#734838] max-w-4xl mx-auto font-medium">
+                        <p className="mt-6 text-lg text-brand-brown max-w-4xl mx-auto font-medium">
                             Je vous ai créé des formulaires et des guides immobiliers clairs et structurés pour vous aider à préparer votre achat ou votre vente. Mes outils sont simples, humains et pratiques, et vous permettent d’avancer étape par étape, que vous soyez acheteur ou vendeur.
                         </p>
                     </div>
@@ -149,13 +149,13 @@ export default function ResourcesPage() {
 
                         {/* Right Column: Content */}
                         <div className="text-center lg:text-left">
-                            <h2 className="mb-4 font-serif text-3xl md:text-5xl uppercase leading-tight" style={{ color: '#734838' }}>
+                            <h2 className="mb-4 font-sans text-3xl md:text-5xl uppercase leading-tight text-brand-brown">
                                 OBTIENS TON RAPPORT <br /> PERSONNALISÉE
                             </h2>
-                            <h3 className="mb-6 font-serif text-xl md:text-2xl font-bold" style={{ color: '#734838' }}>
+                            <h3 className="mb-6 font-sans text-xl md:text-2xl font-bold text-brand-brown">
                                 Découvre les vérités cachées qui influencent vraiment la valeur de ta propriété
                             </h3>
-                            <div className="space-y-4 text-lg leading-relaxed" style={{ color: '#734838' }}>
+                            <div className="space-y-4 text-lg leading-relaxed text-brand-brown">
                                 <p>
                                     Réponds à ce mini-test et je t’envoie ton rapport personnalisé, basé sur ton secteur, ton type de propriété et la réalité actuelle du marché.
                                 </p>
@@ -169,7 +169,7 @@ export default function ResourcesPage() {
                             </div>
 
                             <div className="mt-10">
-                                <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
+                                <Button asChild size="lg" className="px-10 py-6 text-xl shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
                                     <Link href="https://tally.so/r/QKKpvG" target="_blank">RECEVOIR MON RAPPORT</Link>
                                 </Button>
                             </div>
@@ -179,10 +179,10 @@ export default function ResourcesPage() {
             </Section>
 
             {/* SECTION 4 — OUTILS IMMOBILIER PRATIQUES */}
-            <section className="py-20" style={{ backgroundColor: '#CDC5B9' }}>
+            <section className="py-20 bg-brand-beige-500">
                 <div className="container mx-auto px-4">
                     <FadeIn>
-                        <h2 className="mb-16 text-center font-serif text-3xl md:text-5xl uppercase tracking-wide text-[#734838]">
+                        <h2 className="mb-16 text-center font-sans text-3xl md:text-5xl uppercase tracking-wide text-brand-brown">
                             OUTILS IMMOBILIER <br /> PRATIQUES
                         </h2>
 
@@ -194,7 +194,7 @@ export default function ResourcesPage() {
 
                             {/* Center Column: Text */}
                             <div className="text-center">
-                                <p className="font-serif text-3xl md:text-4xl leading-snug text-[#734838]">
+                                <p className="font-sans text-3xl md:text-4xl leading-snug text-brand-brown">
                                     Estimez <br />
                                     rapidement vos <br />
                                     paiements <br />
@@ -224,19 +224,19 @@ export default function ResourcesPage() {
             </section>
 
             {/* SECTION 5 — FAQ */}
-            <section className="py-20" style={{ backgroundColor: '#E6E0D9' }}>
+            <section className="py-20 bg-brand-beige-400">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="text-center mb-16">
-                            <h2 className="font-serif text-3xl md:text-5xl uppercase tracking-wide text-[#734838]">
+                            <h2 className="font-sans text-3xl md:text-5xl uppercase tracking-wide text-brand-brown">
                                 FAQ – ACHAT ET VENTE IMMOBILIÈRE
                             </h2>
-                            <p className="mt-4 text-lg text-[#734838] font-medium">
+                            <p className="mt-4 text-lg text-brand-brown font-medium">
                                 Des réponses simples, claires et stratégiques pour t’aider à prendre les meilleures décisions.
                             </p>
                         </div>
 
-                        <div className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3 text-[#734838]">
+                        <div className="grid gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3 text-brand-brown">
                             {/* Column 1 */}
                             <div className="space-y-10">
                                 <div>
@@ -313,14 +313,14 @@ export default function ResourcesPage() {
             </section>
 
             {/* SECTION 6 — BLOG CAROUSEL */}
-            <section className="py-20" style={{ backgroundColor: '#F4F1EE' }}>
+            <section className="py-20 bg-brand-beige-200">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="text-center mb-16">
-                            <h2 className="font-serif text-3xl md:text-5xl uppercase tracking-wide text-[#734838]">
+                            <h2 className="font-sans text-3xl md:text-5xl uppercase tracking-wide text-brand-brown">
                                 BLOG IMMOBILIER <br /> CONSEILS & ÉMOTIONS
                             </h2>
-                            <p className="mt-4 text-lg text-[#734838] font-medium">
+                            <p className="mt-4 text-lg text-brand-brown font-medium">
                                 Des articles humains, et inspirant pour guider vos décisions immobilières
                             </p>
                         </div>
@@ -363,15 +363,15 @@ export default function ResourcesPage() {
 
                     {/* Contact Info Overlay */}
                     <div className="absolute bottom-8 right-8 z-20 text-right flex flex-col items-end">
-                        <div className="relative w-48 h-24 mb-2">
+                        <div className="relative w-64 h-32 mb-2">
                             <Image
-                                src="/resources-guide-logo.png"
+                                src="/assets/logo-beige-et-or.png"
                                 alt="Sonia Rose Logo"
                                 fill
                                 className="object-contain object-right"
                             />
                         </div>
-                        <div className="text-[#734838] text-sm font-medium space-y-1 mb-3">
+                        <div className="text-brand-brown text-sm font-medium space-y-1 mb-3">
                             <p>514 250-9297</p>
                             <p>sonia.rose@remax-quebec.com</p>
                         </div>
@@ -402,33 +402,33 @@ export default function ResourcesPage() {
                 </div>
 
                 {/* Right Column - Content & Form */}
-                <div className="w-full md:w-1/2 flex flex-col justify-center px-8 py-16 md:px-20 lg:px-24" style={{ backgroundColor: '#E6E0D9' }}>
+                <div className="w-full md:w-1/2 flex flex-col justify-center px-8 py-16 md:px-20 lg:px-24 bg-brand-beige-400">
                     <FadeIn>
                         <div className="max-w-md mx-auto md:mx-0 text-center md:text-left">
-                            <h2 className="font-serif text-3xl md:text-4xl uppercase tracking-wide text-[#734838] mb-8 border-b border-[#734838]/20 pb-8">
+                            <h2 className="font-sans text-3xl md:text-4xl uppercase tracking-wide text-brand-brown mb-8 border-b border-brand-brown/20 pb-8">
                                 REÇOIS TON GUIDE <br /> EXCLUSIF
                             </h2>
 
-                            <h3 className="font-serif text-xl text-[#734838] font-bold mb-6">
+                            <h3 className="font-sans text-xl text-brand-brown font-bold mb-6">
                                 “Les 7 signes que ta maison n’est plus alignée avec toi”
                             </h3>
 
-                            <p className="text-[#734838] mb-10 leading-relaxed">
+                            <p className="text-brand-brown mb-10 leading-relaxed">
                                 Laisse-moi ton nom complet et ton courriel — je t’envoie ton guide dès maintenant.
                                 <br /><br />
                                 Un contenu clair, structuré et humain pour t’aider à mieux comprendre où tu en es dans ta relation avec ta maison.
                             </p>
 
                             <div className="mt-8">
-                                <Button asChild size="lg" className="w-full rounded-none uppercase tracking-wider text-white py-6 text-sm hover:opacity-90 transition-opacity" style={{ backgroundColor: '#734838' }}>
+                                <Button asChild size="lg" className="w-full rounded-none uppercase tracking-wider text-white py-6 text-sm hover:opacity-90 transition-opacity bg-brand-brown">
                                     <Link href="https://drive.google.com/file/d/1kzazVf9vYNgjpKB1CX10LFan71pQ34C/view?usp=sharing" target="_blank">
                                         RECEVOIR MON GUIDE
                                     </Link>
                                 </Button>
                             </div>
                         </div>
-                    </FadeIn>
-                </div>
+                    </FadeIn >
+                </div >
             </section >
         </>
     );

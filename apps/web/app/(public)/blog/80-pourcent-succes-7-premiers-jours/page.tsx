@@ -25,7 +25,7 @@ export default function BlogPostPage() {
             {/* CONTENT SECTION */}
             <Section className="py-20 bg-[#F4F1EE]">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h1 className="font-serif text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
+                    <h1 className="font-sans text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
                         80 % du succès se joue <br /> dans les 7 premiers jours
                     </h1>
 
@@ -49,7 +49,7 @@ export default function BlogPostPage() {
                         <div className="space-y-12">
                             {/* Point 1 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">1. Les acheteurs regardent chaque nouveau listing... mais seulement une fois</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">1. Les acheteurs regardent chaque nouveau listing... mais seulement une fois</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Dans les sept premiers jours, ton listing apparaît dans :</p>
                                     <ul className="list-disc pl-6 space-y-2">
@@ -66,7 +66,7 @@ export default function BlogPostPage() {
 
                             {/* Point 2 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">2. Les acheteurs veulent être les premiers — pas les derniers</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">2. Les acheteurs veulent être les premiers — pas les derniers</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Les acheteurs fonctionnent par émotion, mais aussi par réflexe :<br />
                                         ils ont peur de manquer une opportunité.</p>
@@ -89,7 +89,7 @@ export default function BlogPostPage() {
 
                             {/* Point 3 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">3. Le prix juste au départ = le maximum que tu peux aller chercher</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">3. Le prix juste au départ = le maximum que tu peux aller chercher</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>C’est mathématique, mais surtout psychologique.</p>
                                     <p>Quand tu arrives au bon prix dès le départ :</p>
@@ -109,7 +109,7 @@ export default function BlogPostPage() {
 
                             {/* Point 4 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">4. Les photos et la présentation — ça change tout</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">4. Les photos et la présentation — ça change tout</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Je le répète depuis des années :<br />
                                         <strong>les gens achètent ce qu’ils voient, pas ce qu’ils imaginent.</strong></p>
@@ -129,7 +129,7 @@ export default function BlogPostPage() {
 
                             {/* Point 5 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">5. Les sept premiers jours créent “l’histoire” de ta maison</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">5. Les sept premiers jours créent “l’histoire” de ta maison</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Une maison crée sa réputation très vite.</p>
                                     <p>Si, dès le début :</p>
@@ -158,7 +158,7 @@ export default function BlogPostPage() {
 
                             {/* Point 7 (Keeping numbering as per source text) */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">7. Les vendeurs qui comprennent l’importance du début vendent plus vite — et mieux</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">7. Les vendeurs qui comprennent l’importance du début vendent plus vite — et mieux</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>C’est le point le plus simple à comprendre :<br />
                                         les maisons qui sont :</p>
@@ -178,7 +178,7 @@ export default function BlogPostPage() {
 
                             {/* Comment maximiser TON lancement */}
                             <div className="mt-12">
-                                <h3 className="font-serif text-2xl font-bold mb-4">Comment maximiser TON lancement</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">Comment maximiser TON lancement</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Voici ce que je dis toujours à mes vendeurs :</p>
 
@@ -231,7 +231,7 @@ export default function BlogPostPage() {
 
                             {/* Le mot de la fin */}
                             <div className="mt-16 pt-8 border-t border-[#734838]/20">
-                                <h3 className="font-serif text-2xl font-bold mb-6">Le mot de la fin</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-6">Le mot de la fin</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Les sept premiers jours ne sont pas un détail. Ce sont <strong>le cœur de la mise en marché.</strong></p>
                                     <p>Quand on comprend ça, tout change :</p>

@@ -24,7 +24,7 @@ export default function BlogPostPage() {
             {/* CONTENT SECTION */}
             <Section className="py-20 bg-[#F4F1EE]">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h1 className="font-serif text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
+                    <h1 className="font-sans text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
                         L’art de tourner une page <br /> sans se perdre
                     </h1>
 
@@ -41,7 +41,7 @@ export default function BlogPostPage() {
                         <div className="space-y-12">
                             {/* Point 1 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">1. Pourquoi c’est si difficile de tourner une page ?</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">1. Pourquoi c’est si difficile de tourner une page ?</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Parce qu’on s’attache.</p>
                                     <p>Parce qu’on a investi du temps, de l’argent, de l’énergie, des souvenirs.</p>
@@ -62,7 +62,7 @@ export default function BlogPostPage() {
 
                             {/* Point 2 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">2. Les signaux qui montrent que tu es prête à passer à autre chose</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">2. Les signaux qui montrent que tu es prête à passer à autre chose</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Tourner une page, ça ne se fait pas du jour au lendemain. Ça commence par des petits signes, presque invisibles au début.</p>
                                     <p>Voici ceux que j’entends le plus souvent :</p>
@@ -90,7 +90,7 @@ export default function BlogPostPage() {
 
                             {/* Point 3 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">3. Dans la maison comme dans la vie : rester trop longtemps peut coûter cher.</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">3. Dans la maison comme dans la vie : rester trop longtemps peut coûter cher.</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Et je ne parle pas juste d’argent.</p>
                                     <p>Oui, financièrement, attendre trop longtemps peut faire perdre :</p>
@@ -107,7 +107,7 @@ export default function BlogPostPage() {
 
                             {/* Point 4 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">4. Tourner une page, ce n’est pas se détacher de tout : c’est choisir mieux</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">4. Tourner une page, ce n’est pas se détacher de tout : c’est choisir mieux</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Les gens pensent souvent qu’en changeant de maison, ils “perdent” leur histoire. C’est faux. Tu ne perds pas ton passé. Tu choisis ton prochain chapitre.</p>
                                     <p>Chaque maison marque une période de ta vie :</p>
@@ -123,7 +123,7 @@ export default function BlogPostPage() {
 
                             {/* Point 5 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">5. Comment savoir que c’est le bon moment d’avancer ?</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">5. Comment savoir que c’est le bon moment d’avancer ?</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Voici ce que j’explique souvent à mes clients :</p>
                                     <p><strong>Si rester t’épuise plus que partir, c’est un signe clair.</strong> Oui, ça peut paraître simple, mais c’est vrai. On ne tourne pas une page quand tout est parfait. On la tourne quand on sait que rester bloque l’évolution.</p>
@@ -140,7 +140,7 @@ export default function BlogPostPage() {
 
                             {/* Point 6 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">6. Se retrouver au lieu de se perdre.</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">6. Se retrouver au lieu de se perdre.</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Tourner une page peut te donner l’impression de perdre tes repères. Mais souvent, c’est là que tu te retrouves vraiment.</p>
                                     <p>Parce que tu recrées un espace qui te ressemble aujourd’hui, pas hier. Parce que tu reprends le contrôle. Parce que tu fais un choix pour toi.</p>
@@ -157,7 +157,7 @@ export default function BlogPostPage() {
 
                             {/* Conclusion */}
                             <div className="mt-16 pt-8 border-t border-[#734838]/20">
-                                <h3 className="font-serif text-2xl font-bold mb-6">Conclusion : tourner la page, c’est se réaligner.</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-6">Conclusion : tourner la page, c’est se réaligner.</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Ce n’est pas être impulsive. Ce n’est pas “faire un move” sans réfléchir. C’est reconnaître ce qui change en toi... et choisir un environnement qui suit cette évolution. Tourner une page sans se perdre, c’est simplement ça :</p>
                                     <p><strong>faire un choix qui te ramène à toi-même.</strong></p>

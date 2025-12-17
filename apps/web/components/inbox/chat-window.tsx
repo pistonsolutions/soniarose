@@ -133,7 +133,7 @@ export function ChatWindow({ contact }: ChatWindowProps) {
         <div className="flex h-full flex-col bg-slate-50 dark:bg-slate-950">
             {/* Header */}
             <div className="border-b border-slate-200 bg-white px-6 py-4 dark:border-slate-800 dark:bg-slate-900">
-                <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+                <h3 className="text-lg font-semibold font-sans text-slate-900 dark:text-slate-100">
                     {formatName(contact.firstName, contact.lastName)}
                 </h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400">{contact.phone}</p>

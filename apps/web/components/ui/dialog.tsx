@@ -79,7 +79,7 @@ export const DialogHeader = ({ children, className }: { children: React.ReactNod
 
 export const DialogTitle = ({ children, className }: { children: React.ReactNode, className?: string }) => {
     return (
-        <div className={cn("text-lg font-semibold leading-none tracking-tight", className)}>
+        <div className={cn("text-lg font-semibold font-sans leading-none tracking-tight", className)}>
             {children}
         </div>
     )
@@ -87,7 +87,7 @@ export const DialogTitle = ({ children, className }: { children: React.ReactNode
 
 export const DialogDescription = ({ children, className }: { children: React.ReactNode, className?: string }) => {
     return (
-        <div className={cn("text-sm text-muted-foreground", className)}>
+        <div className={cn("text-sm font-sans text-muted-foreground", className)}>
             {children}
         </div>
     )

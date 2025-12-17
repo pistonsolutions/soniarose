@@ -22,7 +22,7 @@ export async function ComplianceContent() {
     return (
         <div className="space-y-8">
             <header className="space-y-2">
-                <h2 className="text-3xl font-semibold">Compliance</h2>
+                <h2 className="text-3xl font-semibold font-sans">Compliance</h2>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
                     Monitor STOP/HELP activity, manage opt-outs, and ensure messaging stays compliant.
                 </p>
@@ -48,7 +48,7 @@ export async function ComplianceContent() {
             <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 glass-panel">
                 <header className="flex flex-wrap items-center justify-between gap-3">
                     <div>
-                        <h3 className="text-lg font-semibold">Event breakdown</h3>
+                        <h3 className="text-lg font-semibold font-sans">Event breakdown</h3>
                         <p className="text-sm text-slate-500 dark:text-slate-400">Incoming STOP, HELP, and re-opt events captured by Twilio webhooks.</p>
                     </div>
                 </header>
@@ -73,7 +73,7 @@ export async function ComplianceContent() {
 
             <section className="space-y-4">
                 <header className="flex flex-wrap items-center justify-between gap-3">
-                    <h3 className="text-lg font-semibold">Recent events</h3>
+                    <h3 className="text-lg font-semibold font-sans">Recent events</h3>
                     <span className="text-xs uppercase tracking-wide text-slate-400 dark:text-slate-500">Latest {events.length} entries</span>
                 </header>
 
@@ -148,7 +148,7 @@ function MetricCard({
     return (
         <article className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 glass-panel">
             <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{label}</p>
-            <p className="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">{value}</p>
+            <p className="mt-2 text-3xl font-semibold font-sans text-slate-900 dark:text-white">{value}</p>
             {children && <div className="mt-2 text-xs text-slate-500 dark:text-slate-400">{children}</div>}
         </article>
     );

@@ -60,7 +60,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                             name: 'Sonia Rose Immobilier',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://soniarose.ca/assets/logo.png',
+                                url: 'https://soniarose.ca/assets/logo-beige-et-or.png',
                             },
                         },
                         mainEntityOfPage: {
@@ -98,17 +98,17 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                 <span className="flex items-center gap-2"><User size={16} /> {post.author}</span>
                             </div>
 
-                            <h1 className="mb-8 font-serif text-3xl font-bold text-brand-navy md:text-4xl lg:text-5xl">
+                            <h1 className="mb-8 font-sans text-3xl font-bold text-brand-brown md:text-4xl lg:text-5xl">
                                 {post.title}
                             </h1>
 
                             <div
-                                className="prose prose-lg max-w-none text-slate-600 prose-headings:font-serif prose-headings:text-brand-navy prose-a:text-brand-gold hover:prose-a:text-brand-navy"
+                                className="prose prose-lg max-w-none text-slate-600 prose-headings:font-sans prose-headings:text-brand-brown prose-a:text-brand-gold hover:prose-a:text-brand-brown"
                                 dangerouslySetInnerHTML={{ __html: post.content }}
                             />
 
                             <div className="mt-12 border-t border-slate-100 pt-8">
-                                <h3 className="mb-4 font-serif text-2xl font-bold text-brand-navy">Vous avez aimé cet article ?</h3>
+                                <h3 className="mb-4 font-sans text-2xl font-bold text-brand-brown">Vous avez aimé cet article ?</h3>
                                 <p className="mb-6 text-slate-600">
                                     Si ce sujet vous parle, n'hésitez pas à me contacter pour en discuter. Je suis là pour vous accompagner dans vos réflexions immobilières.
                                 </p>

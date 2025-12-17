@@ -44,7 +44,7 @@ export default function HomePage() {
               name: 'Sonia Rose Immobilier',
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://soniarose.ca/assets/logo.png',
+                url: 'https://soniarose.ca/assets/logo-beige-et-or.png',
               },
             },
           }),
@@ -65,7 +65,7 @@ export default function HomePage() {
         </div>
 
         <div className="container relative z-10 mx-auto px-4 text-center">
-          <h1 className="mb-6 font-serif text-4xl font-bold text-brand-navy md:text-6xl lg:text-7xl">
+          <h1 className="mb-6 font-sans text-4xl font-bold text-brand-brown md:text-6xl lg:text-7xl">
             Courtier Immobilier Rive-Sud <br />
             <span className="text-brand-gold">Sonia Rose</span> | Achat & Vente
           </h1>
@@ -109,7 +109,7 @@ export default function HomePage() {
             */}
           </div>
           <div>
-            <h2 className="mb-6 font-serif text-4xl font-bold text-brand-navy">Qui est Sonia Rose ?</h2>
+            <h2 className="mb-6 font-sans text-4xl font-bold text-brand-brown">Qui est Sonia Rose ?</h2>
             <div className="space-y-6 text-lg text-slate-600">
               <p>
                 Courtière immobilière depuis plus de 20 ans, Sonia Rose accompagne vendeurs, acheteurs et investisseurs avec une approche humaine, authentique et profondément stratégique.
@@ -119,7 +119,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="mt-8">
-              <Button asChild variant="link" className="text-lg text-brand-gold p-0 h-auto font-serif italic">
+              <Button asChild variant="link" className="text-lg text-brand-gold p-0 h-auto font-sans italic">
                 <Link href="/a-propos">Découvrir mon histoire <ArrowRight className="ml-2 h-4 w-4" /></Link>
               </Button>
             </div>
@@ -130,7 +130,7 @@ export default function HomePage() {
       {/* SECTION 3 — AVEC SONIA ROSE (3 blocs) */}
       <Section background="cream">
         <div className="mb-16 text-center">
-          <h2 className="mb-4 font-serif text-4xl font-bold text-brand-navy">Avec Sonia Rose</h2>
+          <h2 className="mb-4 font-sans text-4xl font-bold text-brand-brown">Avec Sonia Rose</h2>
           <p className="text-xl text-slate-600">Vendre. Acheter. Évaluer. Tout commence ici.</p>
         </div>
 
@@ -141,7 +141,7 @@ export default function HomePage() {
               {/* Image placeholder */}
             </div>
             <div className="p-6">
-              <h3 className="mb-2 font-serif text-2xl font-bold text-brand-navy group-hover:text-brand-gold">Mes Propriétés</h3>
+              <h3 className="mb-2 font-sans text-2xl font-bold text-brand-brown group-hover:text-brand-gold">Mes Propriétés</h3>
               <p className="text-slate-600">Découvrez les propriétés disponibles sur la Rive-Sud.</p>
             </div>
           </Link>
@@ -152,7 +152,7 @@ export default function HomePage() {
               {/* Image placeholder */}
             </div>
             <div className="p-6">
-              <h3 className="mb-2 font-serif text-2xl font-bold text-brand-navy group-hover:text-brand-gold">Évaluation Gratuite</h3>
+              <h3 className="mb-2 font-sans text-2xl font-bold text-brand-brown group-hover:text-brand-gold">Évaluation Gratuite</h3>
               <p className="text-slate-600">Estimez ce que votre propriété vaut vraiment.</p>
             </div>
           </Link>
@@ -163,7 +163,7 @@ export default function HomePage() {
               {/* Image placeholder */}
             </div>
             <div className="p-6">
-              <h3 className="mb-2 font-serif text-2xl font-bold text-brand-navy group-hover:text-brand-gold">Achetez avec moi</h3>
+              <h3 className="mb-2 font-sans text-2xl font-bold text-brand-brown group-hover:text-brand-gold">Achetez avec moi</h3>
               <p className="text-slate-600">Un accompagnement humain pour votre projet d'achat.</p>
             </div>
           </Link>
@@ -171,10 +171,10 @@ export default function HomePage() {
       </Section>
 
       {/* SECTION 4 — TRAVAILLER AVEC MOI */}
-      <Section background="navy">
+      <Section background="brown">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="order-2 lg:order-1">
-            <h2 className="mb-6 font-serif text-4xl font-bold text-white">Travailler avec moi</h2>
+            <h2 className="mb-6 font-sans text-4xl font-bold text-white">Travailler avec moi</h2>
             <div className="space-y-6 text-lg text-slate-300">
               <p>
                 Avec moi, vous obtenez bien plus qu’une courtière immobilière. Vous bénéficiez de plus de 20 ans d’expérience, de stratégie, de négociation et surtout d’écoute.
@@ -190,7 +190,7 @@ export default function HomePage() {
               <Button asChild size="lg" variant="gold">
                 <Link href="https://tally.so/r/QKKpvG" target="_blank">Évaluation gratuite</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white hover:text-brand-navy">
+              <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white hover:text-brand-brown">
                 <Link href="/contact">Parler à Sonia</Link>
               </Button>
             </div>
@@ -209,7 +209,7 @@ export default function HomePage() {
       {/* SECTION 5 — TÉMOIGNAGES */}
       <Section background="white">
         <div className="text-center">
-          <h2 className="mb-12 font-serif text-4xl font-bold text-brand-navy">Témoignages</h2>
+          <h2 className="mb-12 font-sans text-4xl font-bold text-brand-brown">Témoignages</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {/* Testimonial placeholders */}
             {[1, 2, 3].map((i) => (
@@ -218,7 +218,7 @@ export default function HomePage() {
                   {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
                 </div>
                 <p className="mb-6 text-slate-600 italic">"Une expérience incroyable avec Sonia. Elle a su nous écouter et nous guider avec une patience exemplaire."</p>
-                <p className="font-bold text-brand-navy">- Client Satisfait</p>
+                <p className="font-bold text-brand-brown">- Client Satisfait</p>
               </div>
             ))}
           </div>
@@ -228,7 +228,7 @@ export default function HomePage() {
       {/* SECTION 6 — MÉDIAS SOCIAUX */}
       <Section background="cream">
         <div className="text-center">
-          <h2 className="mb-4 font-serif text-4xl font-bold text-brand-navy">Médias sociaux</h2>
+          <h2 className="mb-4 font-sans text-4xl font-bold text-brand-brown">Médias sociaux</h2>
           <p className="mb-12 text-xl text-slate-600">Suivez-moi sur mes réseaux</p>
 
           <div className="flex justify-center gap-6">
@@ -254,7 +254,7 @@ export default function HomePage() {
       {/* SECTION 7 — MESSAGE FINAL */}
       <Section background="white">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="mb-8 font-serif text-3xl font-bold text-brand-navy md:text-4xl">
+          <h2 className="mb-8 font-sans text-3xl font-bold text-brand-brown md:text-4xl">
             Votre projet immobilier mérite une expérience douce, respectueuse et en confiance.
           </h2>
           <p className="mb-10 text-xl text-slate-600">

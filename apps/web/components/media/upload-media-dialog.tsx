@@ -88,14 +88,14 @@ export function UploadMediaDialog({ onUploadComplete }: { onUploadComplete?: () 
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-                <Button className="gap-2 bg-brand-navy hover:bg-brand-navy/90 text-white dark:bg-brand-gold dark:text-brand-navy dark:hover:bg-brand-gold/90">
+                <Button className="gap-2 bg-brand-brown hover:bg-brand-brown/90 text-white dark:bg-brand-gold dark:text-brand-brown dark:hover:bg-brand-gold/90">
                     <Upload className="h-4 w-4" />
                     Upload Video
                 </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[500px]">
                 <DialogHeader>
-                    <DialogTitle className="text-xl font-semibold">Upload Video Asset</DialogTitle>
+                    <DialogTitle className="text-xl font-semibold font-sans">Upload Video Asset</DialogTitle>
                 </DialogHeader>
 
                 {success ? (
@@ -103,7 +103,7 @@ export function UploadMediaDialog({ onUploadComplete }: { onUploadComplete?: () 
                         <div className="rounded-full bg-emerald-100 p-4 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400 mb-4">
                             <CheckCircle2 className="h-10 w-10" />
                         </div>
-                        <h3 className="text-xl font-semibold text-slate-900 dark:text-white">Upload Complete!</h3>
+                        <h3 className="text-xl font-semibold font-sans text-slate-900 dark:text-white">Upload Complete!</h3>
                         <p className="mt-2 text-slate-500 dark:text-slate-400">Your video has been processed and added to the library.</p>
                     </div>
                 ) : (
@@ -176,7 +176,7 @@ export function UploadMediaDialog({ onUploadComplete }: { onUploadComplete?: () 
                             <Button
                                 onClick={handleUpload}
                                 disabled={!file || uploading}
-                                className="bg-brand-navy hover:bg-brand-navy/90 text-white dark:bg-brand-gold dark:text-brand-navy dark:hover:bg-brand-gold/90"
+                                className="bg-brand-brown hover:bg-brand-brown/90 text-white dark:bg-brand-gold dark:text-brand-brown dark:hover:bg-brand-gold/90"
                             >
                                 {uploading ? (
                                     <>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Montserrat, Lato } from 'next/font/google';
+import { Montserrat, Lora } from 'next/font/google';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -11,10 +11,9 @@ const montserrat = Montserrat({
   display: 'swap',
 });
 
-const lato = Lato({
-  weight: ['300', '400', '700'],
+const lora = Lora({
   subsets: ['latin'],
-  variable: '--font-lato',
+  variable: '--font-lora',
   display: 'swap',
 });
 
@@ -27,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <ClerkProvider>
       <html lang="fr" suppressHydrationWarning>
-        <body className={`${montserrat.variable} ${lato.variable} antialiased font-sans`}>
+        <body className={`${montserrat.variable} ${lora.variable} antialiased font-serif`}>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"

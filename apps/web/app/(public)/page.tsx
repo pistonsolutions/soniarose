@@ -17,20 +17,20 @@ export default function HomePage() {
     const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom. '50% 80%' moves it up slightly.
 
     // SECTION 2 CONFIGURATION: Adjust these values to position the "Qui est Sonia Rose" image
-    const imageZoom = 2.5; // Zoom level (1 = 100%)
+    const imageZoom = 1.4; // Zoom level (1 = 100%)
     const imageX = 0;       // Horizontal offset in pixels
-    const imageY = 60;       // Vertical offset in pixels
+    const imageY = -90;       // Vertical offset in pixels
 
     // SECTION 3 CONFIGURATION: Adjust opacity for the 3 images (0 to 1)
-    const opacity1 = 1;
-    const opacity2 = 1;
-    const opacity3 = 1;
+    const opacity1 = 0.6;
+    const opacity2 = 0.6;
+    const opacity3 = 0.6;
 
     // SECTION 5 CONFIGURATION
     const ctaSectionPadding = 'py-12'; // Adjust section vertical padding
     const ctaImageHeight = 'h-[50vh] md:h-[85vh]'; // Scalable height relative to viewport (50vh mobile, 85vh desktop)
     const ctaImageWidth = 'w-full max-w-3xl'; // Allow wider width for better scaling
-    const ctaImageScale = 1; // Scale the image (1 = 100%, 1.5 = 150%, etc.)
+    const ctaImageScale = 1.3; // Scale the image (1 = 100%, 1.5 = 150%, etc.)
     const ctaImageX = 0; // Horizontal offset in pixels
     const ctaImageY = 0; // Vertical offset in pixels
 
@@ -47,16 +47,67 @@ export default function HomePage() {
             quote: "Ça bouge avec Sonia Rose. Si vous êtes à la recherche d'un Courtier Immobilier de confiance, notre expérience personnelle en fait foi. Non seulement elle avait bien ciblé le montant à afficher pour la mise en vente de notre propriété mais aussi le prix obtenu à la vente! Sa connaissance du milieu immobilier et la confiance qu'elle démontre ont été révélateur tout comme sa personnalité attachante et dynamique. Nous sommes enchantés de notre expérience et n'hésiter pas, c'est Sonia Rose qu'il vous faut!!",
             author: "– Louis et Lise, Longueuil",
         },
+        {
+            quote: "J’étais étourdi par de gros changements, qui s’en suivaient de grosses décisions à prendre rapidement, j’hésitais beaucoup à vendre ma première propriété (mon duplex). La peur et l’angoisse me faisaient ralentir cette décision mais grâce à ma Courtière Sonia Rose, dès la première rencontre elle a eu toute ma confiance pour la vente avec des explications claires, réalistes et détaillées de mes options. J’ai eu une guide hors pair et mon duplex s’est vendu en 24h!!!!! Le prix était au delà de mes attentes. C’est un très gros morceau qui finit bien. C’est ce que j’appelle être passionnée et bien expérimentée. Merci énormément, je recommanderai Sonia Rose à quiconque se lançant dans un projet de vente ou achat immobilier.",
+            author: "– Nicolas Robidoux, Saint-Roch-sur-Richelieu",
+        },
+        {
+            quote: "Sonia, je tiens à exprimer toute ma gratitude envers toi, une courtière immobilière qui a fait un travail absolument remarquable. Grâce à ton professionnalisme, ton écoute et ta connaissance approfondie du marché, la vente s’est déroulée de façon fluide et très agréable. Je la recommande sans hésitation à tous ceux qui cherchent une professionnelle de confiance pour les accompagner. Merci encore pour tout!",
+            author: "– Martin Choquette, Saint-Jean-sur-Richelieu",
+        },
+        {
+            quote: "Sonia a été au-delà de mes espérances avec l’achat de ma propriété, avec ses conseils et son professionnalisme! Rapide et à l’écoute de toutes mes questions! Je la recommande fortement!",
+            author: "– Bruno Ponton, Saint-Hubert",
+        },
+        {
+            quote: "J’ai été représenté par Sonia Rose, courtière immobilière de l’agence Remax, et pour qui j’ai énormément de gratitude, dû à son excellent travail et son expérience qui m’ont permis d’acquérir mon premier achat. Sonia est très travaillante, organisée, rapide, gentille, ponctuelle, toujours disponible pour aider et très compétente. C’est pour ça que je la recommande à toute personne qui souhaite vendre ou acheter et de la choisir en tant que courtière immobilière, en toute confiance.",
+            author: "– Mr. Ulises, Longueuil",
+        },
+        {
+            quote: "Je tiens à vous remercier Sonia Rose pour le bon travail que vous avez fait, vous avez vendu ma maison bien au-delà de mes attentes, vous êtes très professionnelle et très à l’écoute. Je n’hésiterai pas à vous référer à qui que ce soit!! Really good job!",
+            author: "– Alois Czernohorsky, Carignan",
+        },
+        {
+            quote: "Merci beaucoup Sonia Rose. J’ai confié le mandat de vendre la maison à mon oncle et ma tante décédés. La maison avait besoin de beaucoup d’amour et c’était tout un défi de la vendre telle quelle. Cette vente a été réalisée en moins d’une semaine et au-delà de la valeur demandée. Félicitation Sonia Rose, je la réfère à tous!!",
+            author: "– Daniel Lapointe, Longueuil",
+        },
+        {
+            quote: "Nous sommes contents d’avoir conclu cette transaction avec vous. Nous tenons à vous remercier grandement pour votre collaboration tout au long du processus. Ce sera un plaisir de refaire une autre transaction avec vous dans l’avenir! Je vous recommande fortement Sonia Rose courtier immobilier.",
+            author: "– Marcello Wagner, Longueuil",
+        },
+        {
+            quote: "Merci Sonia pour la vente de ma maison! Tu m’as permis d’obtenir un meilleur prix avec tes connaissances du marché. Tu m’as convaincu avec tes bons arguments de faire affaire avec toi plutôt que Du Proprio. Ça a été une bonne décision!!",
+            author: "– Sonya Rose, Longueuil",
+        },
+        {
+            quote: "Merci Sonia pour ta grande disponibilité, ton professionnalisme et pour ton suivi hors du commun. Je vais te recommander sans aucune hésitation.",
+            author: "– Martin Lefebvre, Longueuil",
+        },
+        {
+            quote: "J’ai eu l’occasion de rencontrer Sonia Rose dans le processus d’achat et vente de propriétés et je peux vous avouer combien j’étais contente de la rencontrer. Sonia est une bonne négociatrice et conseillère. Elle utilise son honnêteté, son bon sens tout le long du processus. Elle connaît très bien son travail et atteint toujours son objectif.",
+            author: "– Mélonne Bérard, Saint-Hubert",
+        },
+        {
+            quote: "Nous avons eu la chance de faire affaire avec Sonia en début d’année 2020. Nous avons été frappés par son professionnalisme et son dynamisme. C’était une évidence qu’elle avait de l’expérience et qu’elle maîtrisait parfaitement la situation. Notre maison s’est rapidement vendue et le résultat était au-delà de nos espérances! Nous vous recommandons Sonia Rose sans aucune hésitation pour vos transactions immobilières!!",
+            author: "– Roger Paquette, La Prairie",
+        },
+        {
+            quote: "2019 a été une année chargée d’émotions. Un énorme changement s’imposait dans ma vie. J’ai donc pris la décision de mettre mes 2 maisons en vente, celle du 6681 rue Rose Filato à Terrebonne et du 315 rue Lulli à Laval. J’ai eu la chance de rencontrer une agente d’immeuble hors pair, Sonia Rose du groupe RE/MAX. Elle a tout simplement été à l’écoute de mes besoins sur tous les points, la fixation du prix de vente, la négociation avec les clients, la prise en charge complète du dossier de vente. Je la réfère à tous.",
+            author: "– Gilles Côté, Terrebonne & Laval",
+        },
+        {
+            quote: "Quand j’ai décidé de vendre mon 4 plex à Longueuil, je voulais avoir un agent qui sache bien me représenter. J’ai choisi Sonia Rose, donne d’excellent conseil, elle a une bonne écoute et demeure toujours très professionnelle et transparente. J’avais besoin de lui parler elle répondait rapidement! Elle a vendu mon 4 plex en 9 jours tout s’est très bien passé, elle a trouvé rapidement un acheteur sérieux et le tout s’est fait sans embûche. En plus j’ai eu le prix que je voulais! Je ne manquerai pas de lui faire appel dans le futur. Très disponible et dévoué, d’un professionnalisme impeccable! Merci Sonia Rose.",
+            author: "– Client",
+        }
     ];
 
     return (
         <>
-            {/* SECTION 1 — HERO */}
-            <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-cream">
+            <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-beige-300">
                 <div className="absolute inset-0 z-0">
                     <motion.div
                         initial={{ scale: 1 }}
-                        animate={{ scale: 2 }}
+                        animate={{ scale: heroZoom }}
                         transition={{
                             duration: 10,
                             repeat: Infinity,
@@ -73,23 +124,26 @@ export default function HomePage() {
                             priority
                             style={{ objectPosition: heroImagePosition }}
                         />
-                    </motion.div>
+                    </motion.div >
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)), rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)))` }} />
                 </div>
 
-                <div className="container relative z-10 mx-auto px-4 text-center text-brand-navy">
+                <div className="container relative z-10 mx-auto px-4 text-center text-brand-brown">
                     <FadeIn delay={0.2}>
-                        <h1 className="mb-6 font-serif text-4xl font-bold md:text-6xl">
-                            L'immobilier, <span className="text-brand-gold">plus qu'une transaction</span>
+                        <h1 className="mb-6 font-sans text-4xl md:text-6xl drop-shadow-md">
+                            Parce que l’immobilier,<br />
+                            c’est plus qu’une simple transaction
                         </h1>
-                        <p className="mb-8 text-lg font-medium md:text-xl text-slate-900">
-                            Une étape de vie qui mérite réflexion, stratégie et respect.
+                        <p className="mb-8 text-lg font-medium md:text-xl text-brand-brown">
+                            C’est une étape de vie qui mérite réflexion,<br />
+                            stratégie et une approche respectueuse<br />
+                            de vos besoins réels.
                         </p>
                         <div className="flex justify-center gap-4">
-                            <Button asChild size="lg" variant="gold" className="px-6 py-3 text-lg bg-brand-navy text-white hover:bg-brand-gold">
+                            <Button asChild size="lg" variant="gold" className="px-6 py-3 text-lg bg-brand-brown text-white hover:bg-brand-gold">
                                 <Link href="https://tally.so/r/mZK1pz" target="_blank">FAIS LE TEST</Link>
                             </Button>
-                            <Button asChild size="lg" variant="outline" className="px-6 py-3 text-lg border-brand-navy text-brand-navy hover:bg-brand-gold hover:text-white">
+                            <Button asChild size="lg" variant="outline" className="px-6 py-3 text-lg border-brand-brown text-brand-brown hover:bg-brand-gold hover:text-white">
                                 <Link href="https://tally.so/r/QKKpvG" target="_blank">DÉCOUVRE LES VÉRITÉS CACHÉES</Link>
                             </Button>
                         </div>
@@ -97,30 +151,20 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* SECTION 2 — À PROPOS DE SONIA ROSE */}
-            <section className="py-16 bg-brand-beige">
-                <div className="container mx-auto px-4 text-center">
-                    <FadeIn>
-                        <p className="text-lg text-brand-navy">
-                            Courtière immobilière depuis plus de 20 ans, Sonia Rose accompagne vendeurs et acheteurs et investisseurs sur la Rive-Sud et dans le Grand Montréal. Connue pour sa façon juste et transparente d’aborder l’immobilier, Sonia offre un accompagnement complet et des stratégies adaptées à chacun, que ce soit pour la vente ou l’achat de propriétés, de condos et d’immeubles à revenus.
-                        </p>
-                    </FadeIn>
-                </div>
-            </section>
 
             {/* NEW SECTION — QUI EST SONIA ROSE */}
-            <section className="relative bg-[#E6DDD0] flex flex-col md:block">
+            <section className="relative bg-brand-beige-300 flex flex-col md:block" >
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="flex flex-col md:flex-row">
                         <div className="md:w-1/2 py-12 md:py-16 text-center flex flex-col items-center justify-center">
                             <FadeIn>
-                                <h2 className="mb-8 font-serif text-6xl md:text-7xl font-light tracking-wide leading-tight" style={{ color: '#734838' }}>
+                                <h2 className="mb-8 font-sans text-6xl md:text-7xl font-light tracking-wide leading-tight text-brand-brown">
                                     QUI EST<br />SONIA ROSE?
                                 </h2>
-                                <p className="mb-10 text-xl md:text-2xl leading-relaxed max-w-lg" style={{ color: '#734838' }}>
-                                    Courtière immobilière depuis plus de 20 ans, Sonia Rose accompagne vendeurs, acheteurs et investisseurs avec une approche humaine, authentique et profondément stratégique. Reconnue pour sa transparence, sa sensibilité et son expertise, elle guide chaque client vers les bonnes décisions — au bon moment.
+                                <p className="mb-10 text-xl md:text-2xl leading-relaxed max-w-lg text-brand-brown">
+                                    Courtière immobilière depuis plus de 20 ans, j'accompagne vendeurs, acheteurs et investisseurs avec authenticité et stratégie. Reconnue pour sa transparence et son expertise, elle guide chaque client vers les bonnes décisions — au bon moment.
                                 </p>
-                                <Button asChild size="lg" className="px-10 py-8 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
+                                <Button asChild size="lg" className="px-10 py-8 text-xl shadow-none hover:opacity-90 transition-opacity bg-brand-brown text-white">
                                     <Link href="/a-propos">
                                         DÉCOUVRIR MON<br />HISTOIRE
                                     </Link>
@@ -133,113 +177,96 @@ export default function HomePage() {
 
                 {/* Image Container */}
                 <div className="relative w-full h-[500px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-full z-0">
-                    <Image
-                        src="/assets/home/sonia-portrait-intro.png"
-                        alt="Sonia Rose"
-                        fill
-                        className="object-cover object-top"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        priority
-                    />
+                </div>
+                {/* Cards Grid */}
+                <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10 mt-12 md:-mt-32">
+                    <Link href="/proprietes" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
+                        <div className="aspect-[4/3] bg-brand-beige-300 relative">
+                            <Image
+                                src="/assets/home/hero-bg.jpg"
+                                alt="Mes Propriétés"
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-110 contrast-90"
+                                style={{ opacity: 0.6 }}
+                            />
+                        </div>
+                        <div className="p-6">
+                            <h3 className="mb-2 font-sans text-2xl font-bold text-brand-brown group-hover:text-brand-gold">Mes Propriétés</h3>
+                            <p className="text-brand-brown">Découvrez les propriétés disponibles dans la Rive-Sud et le Grand Montréal.</p>
+                        </div>
+                    </Link>
+
+                    {/* Bloc 2 */}
+                    <Link href="https://tally.so/r/QKKpvG" target="_blank" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1" >
+                        <div className="aspect-[4/3] bg-brand-beige-300 relative">
+                            <Image
+                                src="/assets/home/free-eval-bg.jpg"
+                                alt="Évaluation Gratuite"
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-110 contrast-90"
+                                style={{ opacity: opacity2 }}
+                            />
+                        </div>
+                        <div className="p-6">
+                            <h3 className="mb-2 font-sans text-2xl font-bold text-brand-brown group-hover:text-brand-gold">Évaluation Gratuite</h3>
+                            <p className="text-brand-brown">Découvrez ce que votre propriété vaut vraiment.</p>
+                        </div>
+                    </Link>
+
+                    {/* Bloc 3 */}
+                    <Link href="/acheteurs" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1" >
+                        <div className="aspect-[4/3] bg-brand-beige-300 relative">
+                            <Image
+                                src="/assets/home/buy-with-me-bg.jpg"
+                                alt="Acheter avec Sonia Rose"
+                                fill
+                                className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-110 contrast-90"
+                                style={{ opacity: opacity3 }}
+                            />
+                        </div>
+                        <div className="p-6">
+                            <h3 className="mb-2 font-sans text-2xl font-bold text-brand-brown group-hover:text-brand-gold">Achetez avec moi</h3>
+                            <p className="text-brand-brown">Le meilleur accompagnement pour votre projet d'achat.</p>
+                        </div>
+                    </Link>
                 </div>
             </section>
 
-            {/* SECTION 3 — AVEC SONIA ROSE (3 blocs) */}
-            <Section background="cream">
-                <FadeIn>
-                    <div className="mb-16 text-center">
-                        <h2 className="mb-4 font-serif text-4xl font-bold text-brand-navy">Avec Sonia Rose</h2>
-                        <p className="text-xl text-brand-navy">Vendre. Acheter. Évaluer. Tout commence ici.</p>
-                    </div>
-
-                    <div className="grid gap-8 md:grid-cols-3">
-                        {/* Bloc 1 */}
-                        <Link href="/proprietes" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
-                            <div className="aspect-[4/3] bg-slate-200 relative">
-                                <Image
-                                    src="/assets/home/my-properties-bg.jpg"
-                                    alt="Propriétés Sonia Rose"
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    style={{ opacity: opacity1 }}
-                                />
-                            </div>
-                            <div className="p-6">
-                                <h3 className="mb-2 font-serif text-2xl font-bold text-brand-navy group-hover:text-brand-gold">Mes Propriétés</h3>
-                                <p className="text-brand-navy">Découvrez les propriétés disponibles sur la Rive-Sud.</p>
-                            </div>
-                        </Link>
-
-                        {/* Bloc 2 */}
-                        <Link href="https://tally.so/r/QKKpvG" target="_blank" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
-                            <div className="aspect-[4/3] bg-slate-200 relative">
-                                <Image
-                                    src="/assets/home/free-eval-bg.jpg"
-                                    alt="Évaluation Gratuite"
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    style={{ opacity: opacity2 }}
-                                />
-                            </div>
-                            <div className="p-6">
-                                <h3 className="mb-2 font-serif text-2xl font-bold text-brand-navy group-hover:text-brand-gold">Évaluation Gratuite</h3>
-                                <p className="text-brand-navy">Estimez ce que votre propriété vaut vraiment.</p>
-                            </div>
-                        </Link>
-
-                        {/* Bloc 3 */}
-                        <Link href="/acheteurs" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
-                            <div className="aspect-[4/3] bg-slate-200 relative">
-                                <Image
-                                    src="/assets/home/buy-with-me-bg.jpg"
-                                    alt="Acheter avec Sonia Rose"
-                                    fill
-                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    style={{ opacity: opacity3 }}
-                                />
-                            </div>
-                            <div className="p-6">
-                                <h3 className="mb-2 font-serif text-2xl font-bold text-brand-navy group-hover:text-brand-gold">Achetez avec moi</h3>
-                                <p className="text-brand-navy">Un accompagnement humain pour votre projet d'achat.</p>
-                            </div>
-                        </Link>
-                    </div>
-                </FadeIn>
-            </Section>
-
             {/* SECTION 4 — TRAVAILLER AVEC MOI */}
-            <section className="relative py-20" style={{ backgroundColor: '#E6DDD0' }}>
+            < section className="relative py-20 bg-brand-beige-300">
 
 
 
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="mx-auto max-w-3xl text-center">
-                            <h2 className="mb-6 font-serif text-4xl font-bold" style={{ color: '#3E2723' }}>TRAVAILLER AVEC MOI</h2>
-                            <div className="space-y-6 text-lg" style={{ color: '#3E2723' }}>
+                            <h2 className="mb-6 font-sans text-4xl font-bold text-brand-charcoal">TRAVAILLER AVEC MOI</h2>
+                            <div className="space-y-6 text-lg text-brand-charcoal">
                                 <p>
-                                    Avec moi, vous obtenez bien plus qu’une courtière immobilière. Vous bénéficiez de plus de 20 ans d’expérience, de stratégie, de négociation et surtout d’écoute.
+                                    Avec moi, vous obtenez bien plus qu’une courtière immobilière.
+                                    Vous bénéficiez de plus de 20 ans d’expérience, de stratégie, de négociation et surtout d’écoute.
                                 </p>
                                 <p>
-                                    Je cible vite ce qui est le mieux pour vous, je vous représente avec rigueur et transparence, et je m’occupe de tout du début à la fin.
+                                    Je comprends vite vos besoins, je cible ce qui est le mieux pour vous, et je représente vos intérêts avec rigueur et transparence.
                                 </p>
                                 <p>
-                                    Parce que pour moi, une transaction n’est jamais “juste une transaction”. C’est votre histoire. C’est votre vie. Chaque projet mérite une réflexion juste, humaine et rentable.
+                                    Que ce soit pour vendre, acheter ou investir, je m’occupe de tout, du début à la fin, comme si c’était mon propre projet.
+                                </p>
+                                <p>
+                                    Parce que pour moi, une transaction n’est jamais
+                                    “ Juste une transaction”.
+                                    C’est un moment de vie important.  C’est votre histoire.  Et je suis là pour que votre projet immobilier devienne une réussite, réfléchie et rentable.
                                 </p>
                             </div>
                             <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
                                 {/* BUTTON 1: FILLED */}
-                                <Button asChild size="lg" className="text-white hover:opacity-90" style={{ backgroundColor: '#3E2723' }}>
+                                <Button asChild size="lg" className="text-white hover:opacity-90 bg-brand-brown">
                                     <Link href="https://tally.so/r/QKKpvG" target="_blank">Évaluation gratuite</Link>
                                 </Button>
 
                                 {/* BUTTON 2: OUTLINE */}
                                 <Button asChild size="lg" variant="outline"
-                                    className="bg-transparent hover:text-white"
-                                    style={{
-                                        borderColor: '#3E2723',
-                                        color: '#3E2723',
-                                    }}
+                                    className="bg-transparent hover:text-white border-brand-brown text-brand-brown"
                                 >
                                     <Link href="/contact">Parler à Sonia</Link>
                                 </Button>
@@ -247,21 +274,21 @@ export default function HomePage() {
                         </div>
                     </FadeIn>
                 </div>
-            </section>
+            </section >
 
             {/* SECTION 5 — TÉMOIGNAGES */}
-            <Section background="white">
+            < Section background="white" >
                 <FadeIn>
                     <div className="text-center">
-                        <h2 className="mb-12 font-serif text-5xl font-bold text-brand-navy">Témoignages</h2>
+                        <h2 className="mb-12 font-sans text-5xl font-bold text-brand-brown">Témoignages</h2>
                         <div className="relative mx-auto max-w-4xl">
                             {/* Carousel container */}
                             <div className="overflow-hidden">
                                 <div className="flex transition-transform duration-500" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                                     {testimonials.map((testimonial, index) => (
                                         <div key={index} className="w-full flex-shrink-0 px-8 py-12">
-                                            <p className="mb-6 text-xl text-brand-navy italic">{testimonial.quote}</p>
-                                            <p className="font-serif text-2xl font-bold text-brand-navy">{testimonial.author}</p>
+                                            <p className="mb-6 text-xl text-brand-brown italic">{testimonial.quote}</p>
+                                            <p className="font-sans text-2xl font-bold text-brand-brown">{testimonial.author}</p>
                                         </div>
                                     ))}
                                 </div>
@@ -269,13 +296,13 @@ export default function HomePage() {
 
                             {/* Navigation arrows */}
                             <button
-                                className="absolute left-[-60px] top-1/2 -translate-y-1/2 text-brand-navy bg-white rounded-full shadow-md p-4 hover:bg-brand-gold hover:text-white transition"
+                                className="absolute left-[-60px] top-1/2 -translate-y-1/2 text-brand-brown bg-white rounded-full shadow-md p-4 hover:bg-brand-gold hover:text-white transition"
                                 onClick={() => setCurrentSlide((prev) => Math.max(prev - 1, 0))}
                             >
                                 ←
                             </button>
                             <button
-                                className="absolute right-[-60px] top-1/2 -translate-y-1/2 text-brand-navy bg-white rounded-full shadow-md p-4 hover:bg-brand-gold hover:text-white transition"
+                                className="absolute right-[-60px] top-1/2 -translate-y-1/2 text-brand-brown bg-white rounded-full shadow-md p-4 hover:bg-brand-gold hover:text-white transition"
                                 onClick={() => setCurrentSlide((prev) => Math.min(prev + 1, testimonials.length - 1))}
                             >
                                 →
@@ -283,18 +310,18 @@ export default function HomePage() {
                         </div>
                     </div>
                 </FadeIn>
-            </Section>
+            </Section >
 
             {/* SECTION 6 — MÉDIAS SOCIAUX */}
-            <Section background="cream">
+            < Section background="cream" >
                 <FadeIn>
                     <div className="text-center">
-                        <h2 className="mb-4 font-serif text-4xl font-bold text-brand-navy">Médias sociaux</h2>
-                        <p className="mb-12 text-xl text-brand-navy">Suivez-moi sur mes réseaux</p>
+                        <h2 className="mb-4 font-sans text-4xl font-bold text-brand-brown">Médias sociaux</h2>
+                        <p className="mb-12 text-xl text-brand-brown">Suivez-moi sur mes réseaux</p>
 
                         <div className="flex justify-center gap-6">
                             <Link href="https://www.tiktok.com/@soniarose.remax" target="_blank" className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md transition-transform hover:scale-110 hover:text-brand-gold">
-                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-black">
+                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-brand-charcoal">
                                     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                                 </svg>
                             </Link>
@@ -328,15 +355,12 @@ export default function HomePage() {
                         </div>
                     </div>
                 </FadeIn>
-            </Section>
-
-
-
+            </Section >
 
             {/* SECTION 5- CALL TO ACTION */}
-            <section className={`relative flex items-center overflow-hidden ${ctaSectionPadding}`}>
+            < section className={`relative flex items-center overflow-hidden ${ctaSectionPadding}`}>
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0">
+                < div className="absolute inset-0 z-0" >
                     <Image
                         src="/assets/home/footer-bg.jpg"
                         alt="Background"
@@ -345,7 +369,7 @@ export default function HomePage() {
                     />
                     {/* Overlay/Blur */}
                     <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
-                </div>
+                </div >
 
                 <div className="container relative z-10 mx-auto px-4 h-full flex flex-col md:flex-row items-center">
                     {/* Left Column - Sonia Image */}
@@ -370,7 +394,7 @@ export default function HomePage() {
 
 
                             {/* Text Content */}
-                            <div className="space-y-8 max-w-xl text-black">
+                            <div className="space-y-8 max-w-xl text-brand-charcoal">
                                 <p className="text-lg leading-relaxed">
                                     Qu’il s’agisse d’acheter, vendre ou d’investir, je vous accompagne avec humanité, écoute et transparence.
                                     <br />
@@ -399,17 +423,17 @@ export default function HomePage() {
 
                             {/* Buttons */}
                             <div className="mt-12 flex flex-col sm:flex-row gap-6">
-                                <Button asChild size="lg" className="px-8 py-6 text-lg rounded-none shadow-lg hover:opacity-90 transition-opacity min-w-[250px]" style={{ backgroundColor: '#5D4037', color: '#FFFFFF' }}>
+                                <Button asChild size="lg" className="px-8 py-6 text-lg shadow-lg hover:opacity-90 transition-opacity min-w-[250px] bg-brand-brown text-white">
                                     <Link href="https://tally.so/r/A7PEko" target="_blank">ACHETEZ AVEC MOI</Link>
                                 </Button>
-                                <Button asChild size="lg" className="px-8 py-6 text-lg rounded-none shadow-lg hover:opacity-90 transition-opacity min-w-[250px]" style={{ backgroundColor: '#5D4037', color: '#FFFFFF' }}>
+                                <Button asChild size="lg" className="px-8 py-6 text-lg shadow-lg hover:opacity-90 transition-opacity min-w-[250px] bg-brand-brown text-white">
                                     <Link href="https://tally.so/r/QKKpvG" target="_blank">VENDEZ AVEC MOI</Link>
                                 </Button>
                             </div>
                         </FadeIn>
                     </div>
                 </div>
-            </section>
+            </section >
 
 
         </>

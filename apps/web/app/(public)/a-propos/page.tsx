@@ -52,7 +52,7 @@ export default function AboutPage() {
                             name: 'Sonia Rose Immobilier',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://soniarose.ca/assets/logo.png',
+                                url: 'https://soniarose.ca/assets/logo-beige-et-or.png',
                             },
                         },
                     }),
@@ -76,7 +76,7 @@ export default function AboutPage() {
 
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn delay={0.2}>
-                        <h1 className="font-serif text-6xl md:text-8xl text-white tracking-widest uppercase" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+                        <h1 className="font-sans text-7xl md:text-9xl tracking-widest uppercase text-brand-beige-300" style={{ textShadow: '3px 5px 6px rgba(0, 0, 0, 0.4)' }}>
                             À PROPOS
                         </h1>
                     </FadeIn>
@@ -89,7 +89,7 @@ export default function AboutPage() {
             <section className="py-16 bg-brand-beige">
                 <div className="container mx-auto px-4 text-center">
                     <FadeIn>
-                        <p className="text-lg text-brand-navy">
+                        <p className="text-lg text-brand-brown">
                             Courtière immobilière depuis plus de 20 ans, Sonia Rose accompagne vendeurs et acheteurs et investisseurs sur la Rive-Sud et dans le Grand Montréal. Connue pour sa façon juste et transparente d’aborder l’immobilier, Sonia offre un accompagnement complet et des stratégies adaptées à chacun, que ce soit pour la vente ou l’achat de propriétés, de condos et d’immeubles à revenus.
                         </p>
                     </FadeIn>
@@ -97,11 +97,11 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION 2 — SONIA ROSE (portrait + bio) */}
-            <section className="relative py-20 overflow-hidden" style={{ backgroundColor: '#cdc9c3' }}>
+            <section className="relative py-20 overflow-hidden bg-brand-beige-600">
                 {/* Logo Top Right */}
-                <div className="absolute top-8 right-8 z-10 opacity-80 w-32 md:w-48">
+                <div className="absolute top-8 right-8 z-10 opacity-80 w-48 md:w-64">
                     <Image
-                        src="/images/sonia-rose-logo.png"
+                        src="/assets/logo-beige-et-or.png"
                         alt="Sonia Rose Logo"
                         width={200}
                         height={100}
@@ -114,14 +114,14 @@ export default function AboutPage() {
                         <div className="flex flex-col lg:flex-row items-center">
                             {/* Left Column: Text */}
                             <div className="lg:w-1/2 z-10 lg:pr-12">
-                                <h2 className="mb-2 font-serif text-5xl md:text-6xl text-brand-navy uppercase tracking-wide" style={{ color: '#734838' }}>
+                                <h2 className="mb-2 font-sans text-5xl md:text-6xl text-brand-brown uppercase tracking-wide">
                                     SONIA ROSE
                                 </h2>
-                                <h3 className="mb-8 font-serif text-xl md:text-2xl font-bold" style={{ color: '#8D6E63' }}>
+                                <h3 className="mb-8 font-sans text-xl md:text-2xl font-bold text-brand-brown">
                                     Courtière immobilière – Rive-Sud & Grand Montréal
                                 </h3>
 
-                                <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#4E342E' }}>
+                                <div className="space-y-6 text-lg leading-relaxed text-brand-brown">
                                     <p>
                                         Depuis plus de 20 ans, Sonia Rose accompagne vendeurs, acheteurs et investisseurs dans la réalisation de leurs projets immobiliers sur la Rive-Sud et dans le Grand Montréal.
                                     </p>
@@ -141,7 +141,7 @@ export default function AboutPage() {
                                 </div>
 
                                 <div className="mt-10">
-                                    <Button asChild size="lg" className="px-8 py-4 text-lg rounded-none shadow-none hover:opacity-90 transition-opacity" style={{ backgroundColor: '#5D4037', color: '#FFFFFF' }}>
+                                    <Button asChild size="lg" className="px-8 py-4 text-lg shadow-none hover:opacity-90 transition-opacity" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
                                         <Link href="/contact">ME CONTACTER</Link>
                                     </Button>
                                 </div>
@@ -168,12 +168,12 @@ export default function AboutPage() {
             </section>
 
             {/* SECTION 3 — MES VALEURS */}
-            <section className="py-20" style={{ backgroundColor: '#e0dbd3' }}>
+            <section className="py-20 bg-brand-beige-400">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="mx-auto max-w-4xl">
                             <div className="">
-                                <h2 className="mb-4 font-serif text-4xl font-bold text-brand-navy">Mes valeurs</h2>
+                                <h2 className="mb-4 font-sans text-4xl font-bold text-brand-navy">Mes valeurs</h2>
                                 <h3 className="mb-6 text-xl font-medium text-brand-gold">
                                     L’immobilier, pour moi, ça n’a jamais été juste des transactions. C’est des vies. Des histoires. Des moments charnières.
                                 </h3>
@@ -203,7 +203,7 @@ export default function AboutPage() {
             <Section background="white">
                 <div className="mx-auto max-w-4xl text-center">
                     <FadeIn>
-                        <h2 className="mb-4 font-serif text-4xl font-bold text-brand-navy">Mon approche</h2>
+                        <h2 className="mb-4 font-sans text-4xl font-bold text-brand-navy">Mon approche</h2>
                         <h3 className="mb-8 text-xl font-medium text-brand-gold">
                             Une façon de travailler qui met l’humain avant la transaction, le respect avant la pression, et ta réalité avant tout le reste.
                         </h3>
@@ -231,32 +231,32 @@ export default function AboutPage() {
             </Section>
 
             {/* SECTION 5 — POURQUOI LES GENS TRAVAILLENT AVEC MOI */}
-            <section className="py-20" style={{ backgroundColor: '#363636' }}>
+            <section className="py-20 bg-brand-charcoal">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="mx-auto max-w-4xl text-center">
-                            <h2 className="mb-4 font-serif text-4xl font-bold text-white">Pourquoi les gens travaillent avec moi</h2>
+                            <h2 className="mb-4 font-sans text-4xl font-bold text-white">Pourquoi les gens travaillent avec moi</h2>
                             <h3 className="mb-8 text-xl font-medium text-brand-gold">
                                 Parce qu’au-delà des maisons, je m’investis dans les gens, leurs histoires, leurs émotions — et leurs résultats.
                             </h3>
                             <div className="grid gap-6 text-left text-lg text-slate-300 md:grid-cols-2">
                                 <div className="rounded-xl bg-white/5 p-6">
-                                    <p>Depuis plus de 20 ans, les gens me choisissent parce qu’ils sentent qu’ils peuvent me faire confiance.</p>
+                                    <p>Depuis plus de 20 ans, les gens choisissent de travailler avec moi pour une raison simple : ils sentent qu’ils peuvent me faire confiance.</p>
                                 </div>
                                 <div className="rounded-xl bg-white/5 p-6">
-                                    <p>Je ne fais pas de façade, pas de masque : je dis les vraies choses, toujours avec respect.</p>
+                                    <p>Avec moi, il n’y a pas de façade, pas de masque, pas de pression. Je dis les vraies choses, toujours avec respect, et jamais en contournant la vérité.</p>
                                 </div>
                                 <div className="rounded-xl bg-white/5 p-6">
-                                    <p>Ils viennent vers moi parce qu’ils sentent que je vais défendre leurs intérêts comme si c’était ma propre transaction.</p>
+                                    <p>Les gens viennent vers moi parce qu’ils savent que je vais protéger leurs intérêts, comme si c’était ma propre transaction.</p>
                                 </div>
                                 <div className="rounded-xl bg-white/5 p-6">
-                                    <p>Ils savent que je protège leurs intérêts, que je règle les lignes, que j’anticipe les problèmes avant qu’ils n’arrivent.</p>
+                                    <p>Ils travaillent avec moi parce qu’ils sentent que je suis présente. Pas juste pour vendre une maison, mais pour accompagner une étape de vie.</p>
                                 </div>
                                 <div className="rounded-xl bg-white/5 p-6">
-                                    <p>Ils travaillent avec moi parce qu’ils savent que je suis présente : pas juste pour vendre une maison, mais pour accompagner une étape de vie.</p>
+                                    <p>Parce que je prends le temps de comprendre leur histoire, leurs émotions, leurs craintes, et leurs projets.</p>
                                 </div>
                                 <div className="rounded-xl bg-white/5 p-6">
-                                    <p>Parce que je prends le temps de comprendre leur histoire, leurs craintes, leurs projets. Parce que je m’adapte à eux, pas l’inverse.</p>
+                                    <p>Ils choisissent ma façon de travailler, qui est simple : être honnête, humaine et stratégique. Trouver des solutions, et surtout livrer des résultats.</p>
                                 </div>
                             </div>
                             <div className="mt-10">

@@ -34,17 +34,17 @@ export function PublicNavbar() {
     <nav
       className={cn(
         'fixed top-0 z-50 w-full transition-all duration-300',
-        scrolled ? 'bg-white/95 shadow-md backdrop-blur-sm py-2' : 'bg-transparent py-4'
+        scrolled ? 'bg-[#E6DDD0]/95 shadow-md backdrop-blur-sm py-0' : 'bg-[#E6DDD0] py-0'
       )}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="relative h-16 w-48 transition-opacity hover:opacity-80">
+        <Link href="/" className="relative h-20 w-64 md:h-24 md:w-[28rem] transition-opacity hover:opacity-80">
           <Image
-            src="/logo.png"
+            src="/assets/logo-beige-et-or.png"
             alt="Sonia Rose"
             fill
-            className="object-contain object-left"
+            className="object-contain object-left scale-[3.0] origin-left ml-4"
             priority
           />
         </Link>
@@ -55,7 +55,7 @@ export function PublicNavbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium uppercase tracking-wide text-brand-navy transition-colors hover:text-brand-gold"
+              className="text-base font-medium font-sans uppercase tracking-wide text-brand-brown transition-colors hover:text-brand-gold"
             >
               {link.name}
             </Link>
@@ -65,7 +65,7 @@ export function PublicNavbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-brand-navy lg:hidden"
+          className="text-brand-brown lg:hidden"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -87,7 +87,7 @@ export function PublicNavbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-brand-navy hover:text-brand-gold"
+                  className="text-lg font-medium font-sans text-brand-brown hover:text-brand-gold"
                 >
                   {link.name}
                 </Link>

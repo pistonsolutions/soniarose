@@ -99,7 +99,7 @@ export function ResourcesBlogCarousel() {
                             />
                             {/* Title Overlay */}
                             <div className="absolute top-4 left-4 right-4 text-center">
-                                <h3 className="text-white font-serif text-lg font-bold drop-shadow-md leading-tight">
+                                <h3 className="text-white font-sans text-lg font-bold drop-shadow-md leading-tight">
                                     {post.title}
                                 </h3>
                             </div>

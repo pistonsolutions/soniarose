@@ -39,7 +39,7 @@ export default function ContactPage() {
                 />
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn delay={0.2}>
-                        <h1 className="mb-6 font-serif text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+                        <h1 className="mb-6 font-sans text-5xl text-white md:text-6xl lg:text-7xl">
                             Contactez <span className="text-brand-gold">Sonia Rose</span>
                         </h1>
                         <h2 className="mb-8 text-xl font-medium text-white md:text-2xl">
@@ -54,38 +54,38 @@ export default function ContactPage() {
                 <FadeIn>
                     <div className="grid gap-12 lg:grid-cols-2">
                         <div>
-                            <h2 className="mb-6 font-serif text-3xl font-bold text-brand-navy">Restons en contact</h2>
+                            <h2 className="mb-6 font-sans text-3xl font-bold text-brand-brown">Restons en contact</h2>
                             <p className="mb-8 text-lg text-slate-600">
                                 Que vous soyez prêt à vendre, à acheter, ou simplement en réflexion, je suis là pour répondre à vos questions et vous guider vers la meilleure stratégie pour vous.
                             </p>
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-cream text-brand-gold">
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-beige-50 text-brand-gold">
                                         <Phone size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-brand-navy">Téléphone</h3>
+                                        <h3 className="font-bold text-brand-brown">Téléphone</h3>
                                         <a href="tel:5142509297" className="text-slate-600 hover:text-brand-gold transition-colors">514-250-9297</a>
                                     </div>
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-cream text-brand-gold">
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-beige-50 text-brand-gold">
                                         <Mail size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-brand-navy">Courriel</h3>
+                                        <h3 className="font-bold text-brand-brown">Courriel</h3>
                                         <a href="mailto:sonia.rose@remax-quebec.com" className="text-slate-600 hover:text-brand-gold transition-colors">sonia.rose@remax-quebec.com</a>
                                     </div>
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-cream text-brand-gold">
+                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-beige-50 text-brand-gold">
                                         <MapPin size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-brand-navy">Bureau</h3>
+                                        <h3 className="font-bold text-brand-brown">Bureau</h3>
                                         <a href="https://maps.app.goo.gl/wS3yYy6J6J6J6J6J6" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-brand-gold transition-colors">
                                             RE/MAX Imagine & Privilège<br />
                                             61 Rue Saint-Charles Ouest<br />
@@ -96,15 +96,15 @@ export default function ContactPage() {
                             </div>
 
                             <div className="mt-12">
-                                <h3 className="mb-4 font-serif text-xl font-bold text-brand-navy">Suivez-moi</h3>
+                                <h3 className="mb-4 font-sans text-xl font-bold text-brand-brown">Suivez-moi</h3>
                                 <div className="flex gap-4">
-                                    <Link href="https://www.instagram.com/soniarose.remax" target="_blank" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-brand-navy transition-colors hover:bg-brand-gold hover:text-white">
+                                    <Link href="https://www.instagram.com/soniarose.remax" target="_blank" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-brand-brown transition-colors hover:bg-brand-gold hover:text-white">
                                         <Instagram size={20} />
                                     </Link>
-                                    <Link href="https://www.facebook.com/SoniaRoseImmobilier/" target="_blank" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-brand-navy transition-colors hover:bg-brand-gold hover:text-white">
+                                    <Link href="https://www.facebook.com/SoniaRoseImmobilier/" target="_blank" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-brand-brown transition-colors hover:bg-brand-gold hover:text-white">
                                         <Facebook size={20} />
                                     </Link>
-                                    <Link href="https://www.linkedin.com/in/sonia-rose-969025127" target="_blank" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-brand-navy transition-colors hover:bg-brand-gold hover:text-white">
+                                    <Link href="https://www.linkedin.com/in/sonia-rose-969025127" target="_blank" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-brand-brown transition-colors hover:bg-brand-gold hover:text-white">
                                         <Linkedin size={20} />
                                     </Link>
                                 </div>
@@ -112,7 +112,7 @@ export default function ContactPage() {
                         </div>
 
                         <div className="rounded-2xl bg-slate-50 p-8 shadow-sm">
-                            <h3 className="mb-6 font-serif text-2xl font-bold text-brand-navy">Envoyez-moi un message</h3>
+                            <h3 className="mb-6 font-sans text-2xl font-bold text-brand-brown">Envoyez-moi un message</h3>
                             <ContactForm />
                         </div>
                     </div>

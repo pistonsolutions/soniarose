@@ -19,15 +19,15 @@ export function PublicFooter() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="w-full bg-white border-t border-slate-100 pt-16 pb-8">
+        <footer className="w-full bg-[#E6DDD0] border-t border-slate-100 pt-16 pb-8">
             <div className="container mx-auto px-8">
 
                 {/* 1. LOGO ROW */}
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-4">
                     {/* SONIA ROSE LOGO */}
-                    <div className="relative w-64 h-16">
+                    <div className="relative w-80 h-24">
                         <Image
-                            src="/logo.png"
+                            src="/assets/logo-beige-et-or.png"
                             alt="Sonia Rose Courtier Immobilière"
                             fill
                             className="object-contain"
@@ -63,7 +63,7 @@ export function PublicFooter() {
 
                     {/* COLUMN 1: SONIA INFO */}
                     <div className="space-y-4">
-                        <h3 className="font-serif text-sm uppercase tracking-[0.2em] text-slate-400">
+                        <h3 className="font-sans text-sm uppercase tracking-[0.2em] text-slate-400">
                             Sonia Rose
                         </h3>
                         <div className="space-y-1">
@@ -79,7 +79,7 @@ export function PublicFooter() {
 
                     {/* COLUMN 2: ADDRESS */}
                     <div className="space-y-4">
-                        <h3 className="font-serif text-sm uppercase tracking-[0.2em] text-slate-400">
+                        <h3 className="font-sans text-sm uppercase tracking-[0.2em] text-slate-400">
                             Adresse
                         </h3>
                         <div className="space-y-1 text-sm font-light text-slate-400 uppercase tracking-wide">

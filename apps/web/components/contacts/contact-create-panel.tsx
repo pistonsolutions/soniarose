@@ -5,6 +5,7 @@ import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { createContact } from '@/lib/api';
 import type { CreateContactPayload } from '@/lib/types';
+import { useAuth } from '@clerk/nextjs';
 
 const INITIAL_FORM: CreateContactPayload = {
   firstName: '',
@@ -79,7 +80,7 @@ export function ContactCreatePanel() {
     <section className="w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <header className="flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h3 className="text-lg font-semibold text-slate-900 dark:text-white">Quick create</h3>
+          <h3 className="text-lg font-semibold font-sans text-slate-900 dark:text-white">Quick create</h3>
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Capture a new lead and enrol them in automations in one step.
           </p>

@@ -34,17 +34,17 @@ export function MortgageCalculator() {
     return (
         <div className="w-full max-w-md mx-auto bg-white shadow-xl rounded-xl overflow-hidden border border-slate-100">
             <div className="bg-[#734838] text-white p-6">
-                <h3 className="text-center font-serif text-2xl font-bold">
+                <h3 className="text-center font-sans text-2xl font-bold">
                     Calculatrice Hypothécaire
                 </h3>
             </div>
             <div className="p-6 space-y-6">
                 <div className="space-y-2">
-                    <label htmlFor="price" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    <label htmlFor="price" className="text-sm font-medium font-sans leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                         Prix de la propriété
                     </label>
                     <div className="flex items-center gap-2">
-                        <span className="text-lg font-bold text-[#734838]">{price.toLocaleString()} $</span>
+                        <span className="text-lg font-bold font-sans text-[#734838]">{price.toLocaleString()} $</span>
                     </div>
                     <input
                         type="range"
@@ -58,7 +58,7 @@ export function MortgageCalculator() {
                 </div>
 
                 <div className="space-y-2">
-                    <label htmlFor="downPayment" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    <label htmlFor="downPayment" className="text-sm font-medium font-sans leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                         Mise de fonds
                     </label>
                     <div className="flex items-center gap-4">
@@ -76,7 +76,7 @@ export function MortgageCalculator() {
 
                 <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <label htmlFor="rate" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                        <label htmlFor="rate" className="text-sm font-medium font-sans leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                             Taux d'intérêt (%)
                         </label>
                         <Input
@@ -88,13 +88,13 @@ export function MortgageCalculator() {
                         />
                     </div>
                     <div className="space-y-2">
-                        <label htmlFor="years" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                        <label htmlFor="years" className="text-sm font-medium font-sans leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
                             Amortissement (ans)
                         </label>
                         <select
                             value={years}
                             onChange={(e) => setYears(Number(e.target.value))}
-                            className="flex h-10 w-full rounded-md border border-input bg-slate-50 px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                            className="flex h-10 w-full rounded-md border border-input bg-slate-50 px-3 py-2 text-sm font-sans ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                         >
                             <option value="15">15 ans</option>
                             <option value="20">20 ans</option>
@@ -106,7 +106,7 @@ export function MortgageCalculator() {
 
                 <div className="mt-8 rounded-lg bg-[#F4F1EE] p-6 text-center">
                     <p className="text-sm font-medium text-[#734838]/80 mb-2">Paiement mensuel estimé</p>
-                    <p className="text-4xl font-bold text-[#734838]">
+                    <p className="text-4xl font-bold font-sans text-[#734838]">
                         {payment.toLocaleString('fr-CA', { style: 'currency', currency: 'CAD' })}
                     </p>
                 </div>

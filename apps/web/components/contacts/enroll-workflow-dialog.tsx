@@ -116,7 +116,7 @@ export function EnrollWorkflowDialog({ contactId }: { contactId: string }) {
                         <div className="rounded-full bg-emerald-100 p-3 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400">
                             <CheckCircle2 className="h-8 w-8" />
                         </div>
-                        <h3 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">Enrolled!</h3>
+                        <h3 className="mt-4 text-lg font-semibold font-sans text-slate-900 dark:text-white">Enrolled!</h3>
                         <p className="text-sm text-slate-500 dark:text-slate-400">The workflow has been started successfully.</p>
                     </div>
                 ) : (
@@ -131,7 +131,7 @@ export function EnrollWorkflowDialog({ contactId }: { contactId: string }) {
                                 <div className={`mb-3 rounded-lg p-2 ${option.color}`}>
                                     <option.icon className="h-5 w-5" />
                                 </div>
-                                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-brand-navy dark:group-hover:text-brand-gold">
+                                <div className="font-semibold text-slate-900 dark:text-white group-hover:text-brand-brown dark:group-hover:text-brand-gold">
                                     {option.label}
                                 </div>
                                 <div className="mt-1 text-xs text-slate-500 dark:text-slate-400">
