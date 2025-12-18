@@ -53,14 +53,17 @@ const nextConfig = {
     optimizePackageImports: ['framer-motion', '@clerk/nextjs', 'clsx'],
   },
 
-  async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'http://localhost:3001/api/:path*',
-      },
-    ];
-  },
+  // Only use API rewrites in development
+  ...(process.env.NODE_ENV === 'development' && {
+    async rewrites() {
+      return [
+        {
+          source: '/api/:path*',
+          destination: 'http://localhost:3001/api/:path*',
+        },
+      ];
+    },
+  }),
 };
 
 export default nextConfig;
