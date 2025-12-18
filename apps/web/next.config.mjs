@@ -2,6 +2,14 @@
 const nextConfig = {
   output: 'standalone',
 
+  // Disable ESLint and TypeScript checks during build (run them separately in CI)
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
   // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? {
