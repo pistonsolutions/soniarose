@@ -44,7 +44,7 @@ export default function HomePage() {
               name: 'Sonia Rose Immobilier',
               logo: {
                 '@type': 'ImageObject',
-                url: 'https://soniarose.ca/assets/logo-beige-et-or.png',
+                url: 'https://soniarose.ca/assets/logo-sonia-rose-new.png',
               },
             },
           }),

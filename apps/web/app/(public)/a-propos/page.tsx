@@ -52,7 +52,7 @@ export default function AboutPage() {
                             name: 'Sonia Rose Immobilier',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://soniarose.ca/assets/logo-beige-et-or.png',
+                                url: 'https://soniarose.ca/assets/logo-sonia-rose-new.png',
                             },
                         },
                     }),
@@ -101,7 +101,7 @@ export default function AboutPage() {
                 {/* Logo Top Right */}
                 <div className="absolute top-8 right-8 z-10 opacity-80 w-48 md:w-64">
                     <Image
-                        src="/assets/logo-beige-et-or.png"
+                        src="/assets/logo-sonia-rose-new.png"
                         alt="Sonia Rose Logo"
                         width={200}
                         height={100}

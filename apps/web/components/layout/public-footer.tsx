@@ -27,7 +27,7 @@ export function PublicFooter() {
                     {/* SONIA ROSE LOGO */}
                     <div className="relative w-80 h-24">
                         <Image
-                            src="/assets/logo-beige-et-or.png"
+                            src="/assets/logo-sonia-rose-new.png"
                             alt="Sonia Rose Courtier Immobilière"
                             fill
                             className="object-contain"
@@ -41,7 +41,7 @@ export function PublicFooter() {
                     {/* REMAX LOGO */}
                     <div className="relative w-32 h-12">
                         <Image
-                            src="/images/remax-logo.png"
+                            src="/images/remax-logo-new.png"
                             alt="Remax Imagine & Privilège"
                             fill
                             className="object-contain"

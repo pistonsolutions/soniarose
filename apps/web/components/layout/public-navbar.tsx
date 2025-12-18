@@ -41,7 +41,7 @@ export function PublicNavbar() {
         {/* Logo */}
         <Link href="/" className="relative h-20 w-64 md:h-24 md:w-[28rem] transition-opacity hover:opacity-80">
           <Image
-            src="/assets/logo-beige-et-or.png"
+            src="/assets/logo-sonia-rose-new.png"
             alt="Sonia Rose"
             fill
             className="object-contain object-left scale-[3.0] origin-left ml-4"

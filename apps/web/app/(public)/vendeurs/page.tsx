@@ -45,7 +45,7 @@ export default function SellersPage() {
                             name: 'Sonia Rose Immobilier',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://soniarose.ca/assets/logo-beige-et-or.png',
+                                url: 'https://soniarose.ca/assets/logo-sonia-rose-new.png',
                             },
                         },
                     }),
@@ -411,7 +411,7 @@ export default function SellersPage() {
                 {/* Logo Watermark */}
                 <div className="absolute right-4 bottom-4 w-48 md:w-64 opacity-50 pointer-events-none z-0">
                     <Image
-                        src="/assets/logo-beige-et-or.png"
+                        src="/assets/logo-sonia-rose-new.png"
                         alt="Sonia Rose Logo"
                         width={200}
                         height={100}

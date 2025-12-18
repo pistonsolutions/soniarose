@@ -44,7 +44,7 @@ export default function ResourcesPage() {
                             name: 'Sonia Rose Immobilier',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://soniarose.ca/assets/logo-beige-et-or.png',
+                                url: 'https://soniarose.ca/assets/logo-sonia-rose-new.png',
                             },
                         },
                     }),
@@ -365,7 +365,7 @@ export default function ResourcesPage() {
                     <div className="absolute bottom-8 right-8 z-20 text-right flex flex-col items-end">
                         <div className="relative w-64 h-32 mb-2">
                             <Image
-                                src="/assets/logo-beige-et-or.png"
+                                src="/assets/logo-sonia-rose-new.png"
                                 alt="Sonia Rose Logo"
                                 fill
                                 className="object-contain object-right"
