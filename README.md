@@ -1,5 +1,5 @@
 # SoniaRose CRM Monorepo
-
+ 
 This repository houses the SoniaRose CRM platform, built as a full TypeScript monorepo powered by Turborepo and pnpm.
 
 ## Structure
