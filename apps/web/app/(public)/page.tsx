@@ -117,7 +117,7 @@ export default function HomePage() {
                         className="relative h-full w-full"
                     >
                         <Image
-                            src="/assets/home/hero-bg.jpg"
+                            src="/home-hero-bg.jpg"
                             alt="Sonia Rose Courtier Immobilier"
                             fill
                             className="object-cover"

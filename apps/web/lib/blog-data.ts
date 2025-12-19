@@ -4,6 +4,7 @@ export interface BlogPost {
     date: string;
     author: string;
     excerpt: string;
+    image?: string;
     content: string; // HTML content
     metaTitle: string;
     metaDescription: string;
@@ -16,6 +17,7 @@ export const blogPosts: BlogPost[] = [
         date: '12 Déc 2024',
         author: 'Sonia Rose',
         excerpt: 'Découvrez les signes émotionnels et pratiques qui indiquent qu’il est temps de vendre votre maison.',
+        image: '/blog/comment-choisir-le-bon-moment-pour-vendre.jpg',
         metaTitle: 'Comment choisir le bon moment pour vendre sa maison | Conseils humains & expertise immobilière – Sonia Rose',
         metaDescription: 'Découvrez les signes émotionnels et pratiques qui indiquent qu’il est temps de vendre votre maison. Analyse humaine, conseils intuitifs et expertise Sonia Rose.',
         content: `
@@ -47,6 +49,7 @@ export const blogPosts: BlogPost[] = [
         date: '05 Déc 2024',
         author: 'Sonia Rose',
         excerpt: 'Découvrez les 5 regrets les plus fréquents des vendeurs et comment les éviter.',
+        image: '/blog/ce-que-les-vendeurs-regrettent-le-plus.jpg',
         metaTitle: 'Ce que les vendeurs regrettent le plus | Conseils immobiliers',
         metaDescription: 'Découvrez les 5 regrets les plus fréquents des vendeurs et comment les éviter pour vendre au bon prix, sans stress et sans mauvaises surprises.',
         content: `
@@ -78,6 +81,7 @@ export const blogPosts: BlogPost[] = [
         date: '28 Nov 2024',
         author: 'Sonia Rose',
         excerpt: 'Pourquoi est-ce si difficile de tourner une page ? Les signes et le bon moment pour avancer.',
+        image: '/blog/l-art-de-tourner-une-page-sans-se-perdre.jpg',
         metaTitle: 'L’art de tourner une page sans se perdre | Avancer sans regret – Sonia Rose',
         metaDescription: 'Pourquoi est-ce si difficile de tourner une page ? Les signes, les émotions et le bon moment pour avancer — une perspective humaine et claire par Sonia Rose.',
         content: `
@@ -106,6 +110,7 @@ export const blogPosts: BlogPost[] = [
         date: '20 Nov 2024',
         author: 'Sonia Rose',
         excerpt: 'Certains signes te montrent que ta maison ne correspond plus à ta vie actuelle.',
+        image: '/blog/7-signes-que-cest-peut-etre-le-moment-de-vendre.jpg',
         metaTitle: '7 signes que c’est peut-être le moment de vendre | Sonia Rose, courtière immobilière',
         metaDescription: 'Certains signes te montrent que ta maison ne correspond plus à ta vie actuelle. Voici 7 indices simples, concrets et émotionnels pour savoir si c’est peut-être le bon moment de vendre.',
         content: `
@@ -138,6 +143,7 @@ export const blogPosts: BlogPost[] = [
         title: 'Quand ta maison ne te ressemble plus',
         date: '15 Nov 2024',
         author: 'Sonia Rose',
+        image: '/blog/quand-ta-maison-ne-te-ressemble-plus.jpg',
         excerpt: 'Découvre les signes subtils qu’il est temps d’évoluer vers un nouvel espace.',
         metaTitle: 'Quand ta maison ne te ressemble plus | Signes qu’un changement s’impose',
         metaDescription: 'Ta maison ne reflète plus qui tu es devenu(e) ? Découvre les signes subtils et émotionnels qu’il est temps d’évoluer vers un nouvel espace aligné avec ta vie.',
@@ -169,6 +175,7 @@ export const blogPosts: BlogPost[] = [
         title: '80 % du succès se joue dans les 7 premiers jours',
         date: '08 Nov 2024',
         author: 'Sonia Rose',
+        image: '/blog/80-pourcent-succes-7-premiers-jours.jpg',
         excerpt: 'Pourquoi les premiers jours déterminent l’intérêt, les visites et même le prix final.',
         metaTitle: 'Immobilier : Pourquoi les 7 premiers jours sont décisifs',
         metaDescription: 'Les premiers jours déterminent l’intérêt, les visites et même le prix final. Voici pourquoi les 7 premiers jours définissent le succès d’une mise en marché.',

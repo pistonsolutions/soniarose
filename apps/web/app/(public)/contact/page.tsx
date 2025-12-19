@@ -31,7 +31,7 @@ export default function ContactPage() {
             {/* SECTION 1 — HERO */}
             <div className="relative flex min-h-[400px] items-center justify-center pt-20">
                 <Image
-                    src="/home-hero.png"
+                    src="/contact-hero-bg.jpg"
                     alt="Contactez Sonia Rose"
                     fill
                     className="object-cover brightness-50"

@@ -219,7 +219,7 @@ export default function PropertiesPage() {
             {/* SECTION 1 — HERO */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/properties-hero.jpg"
+                    src="/properties-hero-bg.jpg"
                     alt="Propriétés à vendre Sonia Rose"
                     fill
                     className={`object-${heroObjectFit}`}

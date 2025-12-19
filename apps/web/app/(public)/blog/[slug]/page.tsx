@@ -84,7 +84,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                     <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl bg-white shadow-sm">
                         <div className="relative h-[400px] w-full bg-slate-200">
                             <Image
-                                src="/home-hero.png"
+                                src={post.image || "/home-hero-bg.jpg"}
                                 alt={post.title}
                                 fill
                                 className="object-cover"

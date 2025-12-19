@@ -54,7 +54,7 @@ export default function ResourcesPage() {
             {/* HERO SECTION */}
             <section className="relative flex h-[60vh] min-h-[500px] items-center justify-center overflow-hidden">
                 <Image
-                    src="/resources-hero-bg-v2.jpg"
+                    src="/resources-hero-bg.jpg"
                     alt="Ressources immobilières Sonia Rose"
                     fill
                     className="object-cover"

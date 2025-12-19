@@ -56,7 +56,7 @@ export default function SellersPage() {
             {/* HERO SECTION */}
             <section className="relative flex h-[60vh] min-h-[500px] items-center justify-center overflow-hidden">
                 <Image
-                    src="/assets/sellers/hero-bg.jpg"
+                    src="/sellers-hero-bg.jpg"
                     alt="Vendre sa propriété avec Sonia Rose"
                     fill
                     className="object-cover"

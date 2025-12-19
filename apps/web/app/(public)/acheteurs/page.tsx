@@ -54,7 +54,7 @@ export default function BuyersPage() {
             <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-brand-cream">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/assets/buyers/hero-bg.jpg"
+                        src="/buyers-hero-bg.jpg"
                         alt="Acheter une propriété avec Sonia Rose"
                         fill
                         className="object-cover"

@@ -63,7 +63,7 @@ export default function AboutPage() {
             <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-brand-cream">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/assets/about/hero-bg.jpg"
+                        src="/about-hero-bg.jpg"
                         alt="À Propos Background"
                         fill
                         className="object-cover"

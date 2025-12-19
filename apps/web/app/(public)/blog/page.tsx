@@ -41,7 +41,7 @@ export default function BlogPage() {
             {/* SECTION 1 — HERO */}
             <div className="relative flex min-h-[600px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-hero-bg.png"
+                    src="/blog-hero-bg.jpg"
                     alt="Blog Immobilier Sonia Rose"
                     fill
                     className="object-cover"
