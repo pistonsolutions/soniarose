@@ -243,7 +243,7 @@ export default function SellersPage() {
                 {/* Header Image */}
                 <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/sellers-marketing-header.jpg"
+                        src="/assets/sellers/marketing-header.png"
                         alt="Mise en marché stratégique"
                         fill
                         className="object-cover"
@@ -371,14 +371,15 @@ export default function SellersPage() {
             {/* Section 8 - PRÊT(E) À PASSER À L’ACTION? */}
             <section className="relative py-32 overflow-hidden">
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 w-full h-full">
                     <Image
-                        src="/assets/sellers/cta-bg.jpg"
+                        src="/assets/sellers/cta-bg.png"
                         alt="Background"
                         fill
                         className="object-cover"
-                        style={{ opacity: ctaImageOpacity }}
+                        style={{ opacity: 0.4 }}
                     />
+                    <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" />
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 text-center">

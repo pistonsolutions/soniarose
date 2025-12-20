@@ -5,16 +5,18 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { FadeIn } from '@/components/ui/fade-in';
-import { Star, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react';
+import { Star, Instagram, Facebook, Linkedin, Youtube, X } from 'lucide-react';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function HomePage() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
 
     // HERO CONFIGURATION (Section 1)
     const heroZoom = 1; // Zoom level (1 = 100%)
     const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom. '50% 80%' moves it up slightly.
+    const heroOpacity = 0.8; // Opacity of the hero background image (0 to 1)
 
     // SECTION 2 CONFIGURATION: Adjust these values to position the "Qui est Sonia Rose" image
     const imageZoom = 1.4; // Zoom level (1 = 100%)
@@ -104,27 +106,28 @@ export default function HomePage() {
     return (
         <>
             <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-beige-300">
+                {/* Hero Background Image - Fixed */}
                 <div className="absolute inset-0 z-0">
                     <motion.div
-                        initial={{ scale: 1 }}
-                        animate={{ scale: heroZoom }}
-                        transition={{
-                            duration: 10,
-                            repeat: Infinity,
-                            repeatType: "reverse",
-                            ease: "linear"
-                        }}
+                        initial={{ scale: 1.1 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
                         className="relative h-full w-full"
                     >
                         <Image
-                            src="/home-hero-bg.jpg"
-                            alt="Sonia Rose Courtier Immobilier"
+                            src="/assets/home/hero-bg.jpg" // High-res image
+                            alt="Sonia Rose"
                             fill
                             className="object-cover"
+                            style={{
+                                transform: `scale(${heroZoom})`,
+                                transformOrigin: '50% 50%',
+                                objectPosition: heroImagePosition,
+                                opacity: heroOpacity
+                            }}
                             priority
-                            style={{ objectPosition: heroImagePosition }}
                         />
-                    </motion.div >
+                    </motion.div>
                     <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)), rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)))` }} />
                 </div>
 
@@ -353,23 +356,132 @@ export default function HomePage() {
                                 </svg>
                             </Link>
                         </div>
+
+                        {/* Video Gallery */}
+                        <div className="mt-16 relative">
+                            <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar px-4 md:justify-center">
+                                {[
+                                    '/assets/videos/presentation.mp4',
+                                    '/assets/videos/succes-7-jours.mp4',
+                                    '/assets/videos/bouton.mp4',
+                                    '/assets/videos/video-1.mp4',
+                                    '/assets/videos/video-2.mp4'
+                                ].map((videoSrc, index) => (
+                                    <div
+                                        key={index}
+                                        className="relative w-[280px] h-[500px] shrink-0 rounded-2xl overflow-hidden shadow-lg snap-center bg-gray-100 group cursor-pointer transition-transform hover:scale-[1.02]"
+                                        onClick={() => setSelectedVideo(videoSrc)}
+                                    >
+                                        <video
+                                            className="h-full w-full object-cover"
+                                            autoPlay
+                                            muted
+                                            loop
+                                            playsInline
+                                            controls={false}
+                                        >
+                                            <source src={videoSrc} type="video/mp4" />
+                                        </video>
+                                        {/* Overlay gradient */}
+                                        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
+
+                                        {/* Play Icon Hint */}
+                                        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+                                            <div className="bg-white/90 rounded-full p-4 shadow-xl">
+                                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-brand-brown ml-1">
+                                                    <path d="M8 5v14l11-7z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
                 </FadeIn>
             </Section >
 
+            {/* Video Modal */}
+            <AnimatePresence>
+                {selectedVideo && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 md:p-10 backdrop-blur-sm"
+                        onClick={() => setSelectedVideo(null)}
+                    >
+                        <button
+                            onClick={() => setSelectedVideo(null)}
+                            className="absolute top-4 right-4 text-white hover:text-brand-gold transition-colors z-50 bg-black/50 rounded-full p-2"
+                        >
+                            <X size={32} />
+                        </button>
+
+                        <motion.div
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            className="relative w-full max-w-md md:max-w-4xl max-h-[90vh] aspect-[9/16] md:aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <video
+                                className="w-full h-full object-contain"
+                                src={selectedVideo}
+                                autoPlay
+                                controls
+                                autoFocus
+                            />
+
+                            {/* CTA Button Overlay */}
+                            {(() => {
+                                const videoCtas: Record<string, { url: string; label: string }> = {
+                                    '/assets/videos/succes-7-jours.mp4': {
+                                        url: 'https://tally.so/r/QKKpvG',
+                                        label: 'DÉCOUVRIR LES VÉRITÉS CACHÉES'
+                                    },
+                                    '/assets/videos/bouton.mp4': {
+                                        url: 'https://tally.so/r/mZK1pz',
+                                        label: 'FAIRE LE TEST'
+                                    }
+                                };
+                                const cta = selectedVideo ? videoCtas[selectedVideo] : null;
+
+                                if (cta) {
+                                    return (
+                                        <div className="absolute bottom-20 md:bottom-10 left-0 right-0 z-50 flex justify-center pointer-events-none">
+                                            <a
+                                                href={cta.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="bg-brand-brown text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-brand-brown/90 transition-all transform hover:scale-105 pointer-events-auto flex items-center gap-2 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500"
+                                            >
+                                                {cta.label}
+                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                            </a>
+                                        </div>
+                                    );
+                                }
+                                return null;
+                            })()}
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* SECTION 5- CALL TO ACTION */}
             < section className={`relative flex items-center overflow-hidden ${ctaSectionPadding}`}>
                 {/* Background Image */}
-                < div className="absolute inset-0 z-0" >
+                <div className="absolute inset-0">
                     <Image
-                        src="/assets/home/footer-bg.jpg"
+                        src="/assets/home/cta-bg.png"
                         alt="Background"
                         fill
                         className="object-cover"
+                        style={{ opacity: 0.4 }}
                     />
-                    {/* Overlay/Blur */}
-                    <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
-                </div >
+                    <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" />
+                </div>
 
                 <div className="container relative z-10 mx-auto px-4 h-full flex flex-col md:flex-row items-center">
                     {/* Left Column - Sonia Image */}

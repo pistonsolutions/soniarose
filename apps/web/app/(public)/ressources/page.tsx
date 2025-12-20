@@ -300,14 +300,13 @@ export default function ResourcesPage() {
                     </FadeIn>
                 </div>
 
-                {/* Bottom Image - Full Width */}
-                <div className="mt-16 relative h-[300px] md:h-[500px] w-full overflow-hidden">
+                {/* Header Image */}
+                <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/resources-faq-laptop.jpg"
-                        alt="Espace de travail immobilier"
+                        src="/assets/resources/faq-header.png"
+                        alt="Foire aux questions"
                         fill
                         className="object-cover"
-                        style={{ opacity: faqLaptopImageOpacity }}
                     />
                 </div>
             </section>

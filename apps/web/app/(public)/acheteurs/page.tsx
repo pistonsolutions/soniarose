@@ -184,9 +184,9 @@ export default function BuyersPage() {
             {/* Section 2.6 - ACCOMPAGNEMENT ÉTAPE PAR ÉTAPE */}
             <section className="relative">
                 {/* Header Image */}
-                <div className="relative w-full h-[300px] md:h-[400px]">
+                <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/buyers-steps-header.jpg"
+                        src="/assets/buyers/steps-header.png"
                         alt="Accompagnement étape par étape"
                         fill
                         className="object-cover"
@@ -226,10 +226,10 @@ export default function BuyersPage() {
             {/* Section 2.7 - ALERTE IMMOBILIÈRE PERSONNALISÉE */}
             <section className="relative">
                 {/* Header Image */}
-                <div className="relative w-full h-[300px] md:h-[400px]">
+                <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/buyers-alert-header.jpg"
-                        alt="Alerte immobilière personnalisée"
+                        src="/assets/buyers/alert-header.png"
+                        alt="Alerte immobilière"
                         fill
                         className="object-cover"
                     />
@@ -270,16 +270,16 @@ export default function BuyersPage() {
             {/* Section 2.8 - PRÊT(E) À AVANCER? */}
             <section className="relative min-h-[800px] flex items-center justify-center py-20">
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0">
                     <Image
-                        src="/assets/buyers/cta-bg.jpg"
-                        alt="Prêt à avancer?"
+                        src="/assets/buyers/cta-bg.png"
+                        alt="Background"
                         fill
                         className="object-cover"
-                        style={{ opacity: ctaImageOpacity }}
+                        style={{ opacity: 0.4 }}
                     />
+                    <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" />
                 </div>
-
                 {/* Content */}
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn>
