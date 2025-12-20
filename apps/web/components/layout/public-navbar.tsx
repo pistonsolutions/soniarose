@@ -39,7 +39,7 @@ export function PublicNavbar() {
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="relative h-20 w-64 md:h-24 md:w-[24rem] transition-opacity hover:opacity-80 shrink-0 z-50">
+        <Link href="/" className="relative h-20 w-40 sm:w-56 md:h-24 md:w-[24rem] transition-opacity hover:opacity-80 shrink-0 z-50">
           <Image
             src="/assets/logo-sonia-rose-new.png"
             alt="Sonia Rose"
