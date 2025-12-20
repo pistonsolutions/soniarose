@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { FadeIn } from '@/components/ui/fade-in';
 import { TrendingUp, Users, Camera, FileCheck } from 'lucide-react';
+import { EvaluationTunnel } from '@/components/evaluation-tunnel';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -129,13 +130,13 @@ export default function SellersPage() {
             </section>
 
             {/* Section 3 - QUELLE EST LA VALEUR DE VOTRE PROPRIÉTÉ? */}
-            <section className="py-20 bg-brand-beige-400">
+            <section className="py-20 bg-brand-beige-400" id="evaluation">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                             {/* Left Column: Image */}
-                            <div className="lg:w-1/2">
-                                <div className="relative aspect-square w-full shadow-xl">
+                            <div className="lg:w-1/2 hidden lg:block">
+                                <div className="relative aspect-square w-full shadow-xl rounded-2xl overflow-hidden">
                                     <Image
                                         src="/assets/sellers/sellers-explore.jpg"
                                         alt="Cuisine moderne"
@@ -145,50 +146,9 @@ export default function SellersPage() {
                                 </div>
                             </div>
 
-                            {/* Right Column: Content */}
-                            <div className="lg:w-1/2 text-center">
-                                <h2 className="mb-4 font-sans text-3xl md:text-5xl uppercase leading-tight text-brand-brown">
-                                    QUELLE EST LA VALEUR DE <br /> VOTRE PROPRIÉTÉ?
-                                </h2>
-                                <p className="mb-8 text-lg leading-relaxed text-brand-brown">
-                                    Reçois une estimation personnalisée basée sur ton adresse.<br />
-                                    Simple, rapide, sans pression — juste une analyse claire pour savoir où tu te situes réellement sur le marché.
-                                </p>
-
-                                {/* Address Input Simulation */}
-                                <Link href="https://tally.so/r/QKKpvG" target="_blank" className="mb-8 mx-auto max-w-md bg-white/50 p-2 rounded-full border border-brand-brown/30 flex items-center shadow-sm hover:bg-white/70 transition-colors cursor-pointer">
-                                    <div className="flex-grow px-4 py-2 text-left text-brand-brown/70 italic">
-                                        Entrez votre adresse pour commencer
-                                    </div>
-                                    <div className="h-10 w-10 flex items-center justify-center bg-brand-beige-400 rounded-full text-brand-brown font-bold border border-brand-brown/20">
-                                        #
-                                    </div>
-                                </Link>
-
-                                <div className="mb-12">
-                                    <Button asChild size="lg" className="px-12 py-6 text-xl shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
-                                        <Link href="https://tally.so/r/QKKpvG" target="_blank">SUIVANT</Link>
-                                    </Button>
-                                </div>
-
-                                {/* Steps */}
-                                <div className="flex justify-center gap-4 md:gap-8">
-                                    {/* Step 1 */}
-                                    <div className="flex flex-col items-center justify-center w-28 h-28 md:w-32 md:h-32 rounded-full bg-brand-beige-200 text-brand-brown p-2 shadow-sm">
-                                        <span className="font-sans font-bold text-lg mb-1">ÉTAPE 1</span>
-                                        <span className="text-xs md:text-sm leading-tight">Adresse de la propriété</span>
-                                    </div>
-                                    {/* Step 2 */}
-                                    <div className="flex flex-col items-center justify-center w-28 h-28 md:w-32 md:h-32 rounded-full bg-brand-beige-400 text-brand-brown p-2 shadow-sm">
-                                        <span className="font-sans font-bold text-lg mb-1">ÉTAPE 2</span>
-                                        <span className="text-xs md:text-sm leading-tight">Détails de la propriété</span>
-                                    </div>
-                                    {/* Step 3 */}
-                                    <div className="flex flex-col items-center justify-center w-28 h-28 md:w-32 md:h-32 rounded-full bg-brand-beige-600 text-white p-2 shadow-sm">
-                                        <span className="font-sans font-bold text-lg mb-1">ÉTAPE 3</span>
-                                        <span className="text-xs md:text-sm leading-tight">Évaluation gratuite</span>
-                                    </div>
-                                </div>
+                            {/* Right Column: Tunnel Form */}
+                            <div className="w-full lg:w-1/2">
+                                <EvaluationTunnel />
                             </div>
                         </div>
                     </FadeIn>
@@ -229,7 +189,7 @@ export default function SellersPage() {
 
                                 <div className="mt-10">
                                     <Button asChild size="lg" className="px-10 py-6 text-xl shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
-                                        <Link href="https://drive.google.com/file/d/1qEjWFoXa9zZv-LwFF5B83kG4UgjF8GES/view?usp=sharing" target="_blank">TÉLÉCHARGEZ-LE</Link>
+                                        <Link href="https://drive.google.com/file/d/1I0PGN5d3bkYA7ANvUHIZxTh089j3NrKX/view" target="_blank">TÉLÉCHARGEZ-LE</Link>
                                     </Button>
                                 </div>
                             </div>

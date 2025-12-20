@@ -5,8 +5,8 @@ import { Section } from '@/components/ui/section';
 import { FadeIn } from '@/components/ui/fade-in';
 import { MapPin, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
-import { EvaluationSection } from '@/components/evaluation-section';
 import { PropertiesCarousel } from '@/components/properties-carousel';
+import { EvaluationTunnel } from '@/components/evaluation-tunnel';
 
 export const metadata: Metadata = {
     title: 'Propriétés à vendre Rive-Sud | Sonia Rose Courtier Immobilier',
@@ -266,9 +266,11 @@ export default function PropertiesPage() {
             </Section>
 
             {/* SECTION 3 — EVALUATION */}
-            <FadeIn>
-                <EvaluationSection />
-            </FadeIn>
+            <Section className="py-20 bg-brand-cream">
+                <FadeIn>
+                    <EvaluationTunnel />
+                </FadeIn>
+            </Section>
         </>
     );
 }

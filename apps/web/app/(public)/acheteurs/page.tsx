@@ -169,7 +169,7 @@ export default function BuyersPage() {
                                 </div>
                                 <div className="mt-10">
                                     <Button asChild size="lg" className="px-8 py-4 text-lg shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
-                                        <Link href="https://drive.google.com/file/d/1Pr6QYcisk7Rvrb4T6D1l9Iq3sNqPCyry/view" target="_blank">TÉLÉCHARGEZ-LE</Link>
+                                        <Link href="https://drive.google.com/file/d/1KwaIbl3n7xCO4CX1U7nytA5ohFbK9lZT/view" target="_blank">TÉLÉCHARGEZ-LE</Link>
                                     </Button>
                                 </div>
                             </div>

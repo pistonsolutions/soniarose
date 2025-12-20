@@ -5,72 +5,62 @@ import Image from 'next/image';
 import { Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 
 export function PublicFooter() {
-    // LOGO CONTROLS (FOOTER)
-    // Sonia Rose Logo
-    const soniaLogoX = '0%'; // 0% = Left, 50% = Center, 100% = Right
-    const soniaLogoY = '50%'; // 0% = Top, 50% = Center, 100% = Bottom
-    const soniaLogoZoom = 1.3; // 1 = 100%, 1.2 = 120%
-
-    // RE/MAX Logo
-    const remaxLogoX = '-60%';
-    const remaxLogoY = '50%';
-    const remaxLogoZoom = 2.75;
-
     const currentYear = new Date().getFullYear();
+
+    // LOGO SIZE CONTROLS (Modify these values to change size)
+    // Using explicit pixel values avoids layout shifts and scaling issues
+    const soniaLogoWidth = 300;
+    const soniaLogoHeight = 150;
+
+    const remaxLogoWidth = 300;
+    const remaxLogoHeight = 150;
 
     return (
         <footer className="w-full bg-[#E6DDD0] border-t border-slate-100 pt-16 pb-8">
             <div className="container mx-auto px-8">
 
                 {/* 1. LOGO ROW */}
-                <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-4">
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-start gap-12 mb-4">
                     {/* SONIA ROSE LOGO */}
-                    <div className="relative w-80 h-24">
+                    <div className="relative -ml-16" style={{ width: soniaLogoWidth, height: soniaLogoHeight }}>
                         <Image
                             src="/assets/logo-sonia-rose-new.png"
                             alt="Sonia Rose Courtier Immobilière"
                             fill
-                            className="object-contain"
-                            style={{
-                                objectPosition: `${soniaLogoX} ${soniaLogoY}`,
-                                transform: `scale(${soniaLogoZoom})`
-                            }}
+                            className="object-contain object-left"
+                            priority
                         />
                     </div>
 
                     {/* REMAX LOGO */}
-                    <div className="relative w-32 h-12">
+                    <div className="relative" style={{ width: remaxLogoWidth, height: remaxLogoHeight }}>
                         <Image
                             src="/images/remax-logo-new.png"
                             alt="Remax Imagine & Privilège"
                             fill
-                            className="object-contain"
-                            style={{
-                                objectPosition: `${remaxLogoX} ${remaxLogoY}`,
-                                transform: `scale(${remaxLogoZoom})`
-                            }}
+                            className="object-contain object-left"
                         />
                     </div>
                 </div>
 
                 {/* Disclaimer Text */}
-                <p className="text-sm text-slate-400 mb-12 font-light">
+                <p className="text-sm text-brand-charcoal mb-12 font-light">
                     Agence immobilière - Franchisé indépendant et autonome de Re/max Québec
                 </p>
 
                 {/* 2. INFO COLUMNS & SOCIALS */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-slate-200 pb-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-brand-charcoal pb-12">
 
                     {/* COLUMN 1: SONIA INFO */}
                     <div className="space-y-4">
-                        <h3 className="font-sans text-sm uppercase tracking-[0.2em] text-slate-400">
+                        <h3 className="font-sans text-sm uppercase tracking-[0.2em] text-brand-charcoal">
                             Sonia Rose
                         </h3>
                         <div className="space-y-1">
-                            <p className="text-xl font-light text-slate-600">514 250-9297</p>
+                            <p className="text-xl font-light text-brand-charcoal">514 250-9297</p>
                             <a
                                 href="mailto:sonia.rose@remax-quebec.com"
-                                className="text-sm font-light text-slate-400 hover:text-brand-gold uppercase tracking-wide transition-colors"
+                                className="text-sm font-light text-brand-charcoal hover:text-brand-gold uppercase tracking-wide transition-colors"
                             >
                                 sonia.rose@remax-quebec.com
                             </a>
@@ -79,10 +69,10 @@ export function PublicFooter() {
 
                     {/* COLUMN 2: ADDRESS */}
                     <div className="space-y-4">
-                        <h3 className="font-sans text-sm uppercase tracking-[0.2em] text-slate-400">
+                        <h3 className="font-sans text-sm uppercase tracking-[0.2em] text-brand-charcoal">
                             Adresse
                         </h3>
-                        <div className="space-y-1 text-sm font-light text-slate-400 uppercase tracking-wide">
+                        <div className="space-y-1 text-sm font-light text-brand-charcoal uppercase tracking-wide">
                             <p>61 Rue Saint-Charles O.</p>
                             <p>Longueuil, QC</p>
                             <p>J4H 1C5</p>
@@ -94,7 +84,7 @@ export function PublicFooter() {
                         {/* Instagram */}
                         <Link href="https://www.instagram.com/soniarose.remax" target="_blank">
                             <div className="rounded-lg p-1 transition-transform hover:-translate-y-1">
-                                <svg viewBox="0 0 24 24" className="w-8 h-8">
+                                <svg viewBox="0 0 24 24" className="w-8 h-8 text-brand-charcoal fill-current">
                                     <defs>
                                         <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                                             <stop offset="0%" stopColor="#f09433" />
@@ -112,7 +102,7 @@ export function PublicFooter() {
                         {/* Facebook */}
                         <Link href="https://www.facebook.com/SoniaRoseImmobilier/" target="_blank">
                             <div className="rounded-lg p-1 transition-transform hover:-translate-y-1">
-                                <svg viewBox="0 0 24 24" className="w-8 h-8 text-[#1877F2] fill-current">
+                                <svg viewBox="0 0 24 24" className="w-8 h-8 text-brand-charcoal fill-current">
                                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                                 </svg>
                             </div>
@@ -121,7 +111,7 @@ export function PublicFooter() {
                         {/* TikTok */}
                         <Link href="https://www.tiktok.com/@soniarose.remax" target="_blank">
                             <div className="rounded-lg p-1 transition-transform hover:-translate-y-1">
-                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-black">
+                                <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-brand-charcoal">
                                     <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                                 </svg>
                             </div>
@@ -130,7 +120,7 @@ export function PublicFooter() {
                         {/* LinkedIn */}
                         <Link href="https://www.linkedin.com/in/sonia-rose-969025127" target="_blank">
                             <div className="rounded-lg p-1 transition-transform hover:-translate-y-1">
-                                <svg viewBox="0 0 24 24" className="w-8 h-8 text-[#0A66C2] fill-current">
+                                <svg viewBox="0 0 24 24" className="w-8 h-8 text-brand-charcoal fill-current">
                                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                                 </svg>
                             </div>
@@ -139,7 +129,7 @@ export function PublicFooter() {
                 </div>
 
                 {/* 3. COPYRIGHT */}
-                <div className="pt-8 text-xs text-slate-300">
+                <div className="pt-8 text-xs text-brand-charcoal opacity-60">
                     Copyright © {currentYear} Sonia Rose. Tous droits réservés.
                 </div>
             </div>

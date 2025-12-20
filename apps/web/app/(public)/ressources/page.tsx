@@ -87,7 +87,8 @@ export default function ResourcesPage() {
 
                     <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
                         {/* Guide Acheteur */}
-                        <Link href="https://drive.google.com/file/d/1Pr6QYcisk7Rvrb4T6D1l9Iq3sNqPCyry/view" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
+                        {/* Guide Acheteur */}
+                        <Link href="https://drive.google.com/file/d/1KwaIbl3n7xCO4CX1U7nytA5ohFbK9lZT/view" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
                             <Image
                                 src="/resources-card-buyer.jpg"
                                 alt="Guide de l'Acheteur"
@@ -97,7 +98,8 @@ export default function ResourcesPage() {
                         </Link>
 
                         {/* Guide Vendeur */}
-                        <Link href="https://drive.google.com/file/d/1qEjWFoXa9zZv-LwFF5B83kG4UgjF8GES/view?usp=sharing" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
+                        {/* Guide Vendeur */}
+                        <Link href="https://drive.google.com/file/d/1I0PGN5d3bkYA7ANvUHIZxTh089j3NrKX/view" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
                             <Image
                                 src="/resources-card-seller.jpg"
                                 alt="Guide du Vendeur"

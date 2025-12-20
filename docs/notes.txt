@@ -30,12 +30,12 @@ temoignages buttons:
 qui est Sonia rose:
 - change the height of the text. and then put picture to the side
 videos:
-Sonia will send videos
+Sonia will send videos. DONE
 
 
 change black color to charcoal gray. DONE
 
-travailler avec moi: use actual text
+travailler avec moi: use actual text. DONE
 
 
 put shadowing as all the pages. DONE

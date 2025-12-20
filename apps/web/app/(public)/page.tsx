@@ -21,7 +21,7 @@ export default function HomePage() {
     // SECTION 2 CONFIGURATION: Adjust these values to position the "Qui est Sonia Rose" image
     const imageZoom = 1.4; // Zoom level (1 = 100%)
     const imageX = 0;       // Horizontal offset in pixels
-    const imageY = -90;       // Vertical offset in pixels
+    const imageY = 0;       // Vertical offset in pixels
 
     // SECTION 3 CONFIGURATION: Adjust opacity for the 3 images (0 to 1)
     const opacity1 = 0.6;
@@ -32,9 +32,11 @@ export default function HomePage() {
     const ctaSectionPadding = 'py-12'; // Adjust section vertical padding
     const ctaImageHeight = 'h-[50vh] md:h-[85vh]'; // Scalable height relative to viewport (50vh mobile, 85vh desktop)
     const ctaImageWidth = 'w-full max-w-3xl'; // Allow wider width for better scaling
-    const ctaImageScale = 1.3; // Scale the image (1 = 100%, 1.5 = 150%, etc.)
-    const ctaImageX = 0; // Horizontal offset in pixels
-    const ctaImageY = 0; // Vertical offset in pixels
+    const ctaImageScale = 1.25; // Scale the image (1 = 100%, 1.5 = 150%, etc.)
+    const ctaImageX = -350; // Horizontal offset in pixels
+    const ctaImageY = 95; // Vertical offset in pixels
+
+
 
     const testimonials = [
         {
@@ -142,11 +144,11 @@ export default function HomePage() {
                             stratégie et une approche respectueuse<br />
                             de vos besoins réels.
                         </p>
-                        <div className="flex justify-center gap-4">
-                            <Button asChild size="lg" variant="gold" className="px-6 py-3 text-lg bg-brand-brown text-white hover:bg-brand-gold">
+                        <div className="flex flex-col md:flex-row justify-center gap-4 w-full px-4 md:px-0">
+                            <Button asChild size="lg" variant="gold" className="w-full md:w-auto px-6 py-3 text-lg bg-brand-brown text-white hover:bg-brand-gold">
                                 <Link href="https://tally.so/r/mZK1pz" target="_blank">FAIS LE TEST</Link>
                             </Button>
-                            <Button asChild size="lg" variant="outline" className="px-6 py-3 text-lg border-brand-brown text-brand-brown hover:bg-brand-gold hover:text-white">
+                            <Button asChild size="lg" variant="outline" className="w-full md:w-auto px-6 py-3 text-lg border-brand-brown text-brand-brown hover:bg-brand-gold hover:text-white">
                                 <Link href="https://tally.so/r/QKKpvG" target="_blank">DÉCOUVRE LES VÉRITÉS CACHÉES</Link>
                             </Button>
                         </div>
@@ -156,7 +158,7 @@ export default function HomePage() {
 
 
             {/* NEW SECTION — QUI EST SONIA ROSE */}
-            <section className="relative bg-brand-beige-300 flex flex-col md:block" >
+            <section className="relative bg-brand-beige-300 overflow-hidden" >
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="flex flex-col md:flex-row">
                         <div className="md:w-1/2 py-12 md:py-16 text-center flex flex-col items-center justify-center">
@@ -179,11 +181,24 @@ export default function HomePage() {
                 </div>
 
                 {/* Image Container */}
-                <div className="relative w-full h-[500px] md:absolute md:top-0 md:right-0 md:w-1/2 md:h-full z-0">
+                <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 opacity-40 md:opacity-100 mix-blend-multiply md:mix-blend-normal pointer-events-none md:pointer-events-auto">
+                    <Image
+                        src="/assets/home/sonia-portrait-intro.png"
+                        alt="Sonia Rose Portrait"
+                        fill
+                        className="object-cover"
+                        style={{
+                            objectPosition: `${imageX}${typeof imageX === 'number' ? 'px' : ''} ${imageY}${typeof imageY === 'number' ? 'px' : ''}`,
+                            transform: `scale(${imageZoom})`
+                        }}
+                    />
                 </div>
-                {/* Cards Grid */}
-                <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10 mt-12 md:-mt-32">
-                    <Link href="/proprietes" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1">
+            </section>
+
+            {/* SECTION - 3 BLOCKS */}
+            <section className="py-20 bg-white">
+                <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <Link href="/proprietes" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1 border border-brand-beige-300">
                         <div className="aspect-[4/3] bg-brand-beige-300 relative">
                             <Image
                                 src="/assets/home/hero-bg.jpg"
@@ -200,7 +215,7 @@ export default function HomePage() {
                     </Link>
 
                     {/* Bloc 2 */}
-                    <Link href="https://tally.so/r/QKKpvG" target="_blank" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1" >
+                    <Link href="https://tally.so/r/QKKpvG" target="_blank" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1 border border-brand-beige-300" >
                         <div className="aspect-[4/3] bg-brand-beige-300 relative">
                             <Image
                                 src="/assets/home/free-eval-bg.jpg"
@@ -217,7 +232,7 @@ export default function HomePage() {
                     </Link>
 
                     {/* Bloc 3 */}
-                    <Link href="/acheteurs" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1" >
+                    <Link href="/acheteurs" className="group relative overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:-translate-y-1 border border-brand-beige-300" >
                         <div className="aspect-[4/3] bg-brand-beige-300 relative">
                             <Image
                                 src="/assets/home/buy-with-me-bg.jpg"
@@ -233,10 +248,10 @@ export default function HomePage() {
                         </div>
                     </Link>
                 </div>
-            </section>
+            </section >
 
             {/* SECTION 4 — TRAVAILLER AVEC MOI */}
-            < section className="relative py-20 bg-brand-beige-300">
+            < section className="relative py-20 bg-brand-beige-300" >
 
 
 
@@ -403,76 +418,79 @@ export default function HomePage() {
 
             {/* Video Modal */}
             <AnimatePresence>
-                {selectedVideo && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 md:p-10 backdrop-blur-sm"
-                        onClick={() => setSelectedVideo(null)}
-                    >
-                        <button
-                            onClick={() => setSelectedVideo(null)}
-                            className="absolute top-4 right-4 text-white hover:text-brand-gold transition-colors z-50 bg-black/50 rounded-full p-2"
-                        >
-                            <X size={32} />
-                        </button>
-
+                {
+                    selectedVideo && (
                         <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            className="relative w-full max-w-md md:max-w-4xl max-h-[90vh] aspect-[9/16] md:aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
-                            onClick={(e) => e.stopPropagation()}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 md:p-10 backdrop-blur-sm"
+                            onClick={() => setSelectedVideo(null)}
                         >
-                            <video
-                                className="w-full h-full object-contain"
-                                src={selectedVideo}
-                                autoPlay
-                                controls
-                                autoFocus
-                            />
+                            <button
+                                onClick={() => setSelectedVideo(null)}
+                                className="absolute top-4 right-4 text-white hover:text-brand-gold transition-colors z-50 bg-black/50 rounded-full p-2"
+                            >
+                                <X size={32} />
+                            </button>
 
-                            {/* CTA Button Overlay */}
-                            {(() => {
-                                const videoCtas: Record<string, { url: string; label: string }> = {
-                                    '/assets/videos/succes-7-jours.mp4': {
-                                        url: 'https://tally.so/r/QKKpvG',
-                                        label: 'DÉCOUVRIR LES VÉRITÉS CACHÉES'
-                                    },
-                                    '/assets/videos/bouton.mp4': {
-                                        url: 'https://tally.so/r/mZK1pz',
-                                        label: 'FAIRE LE TEST'
+                            <motion.div
+                                initial={{ scale: 0.9, opacity: 0 }}
+                                animate={{ scale: 1, opacity: 1 }}
+                                exit={{ scale: 0.9, opacity: 0 }}
+                                className="relative w-full max-w-md md:max-w-4xl max-h-[90vh] aspect-[9/16] md:aspect-video bg-black rounded-lg overflow-hidden shadow-2xl"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <video
+                                    className="w-full h-full object-contain"
+                                    src={selectedVideo}
+                                    autoPlay
+                                    controls
+                                    autoFocus
+                                />
+
+                                {/* CTA Button Overlay */}
+                                {(() => {
+                                    const videoCtas: Record<string, { url: string; label: string }> = {
+                                        '/assets/videos/succes-7-jours.mp4': {
+                                            url: 'https://tally.so/r/QKKpvG',
+                                            label: 'DÉCOUVRIR LES VÉRITÉS CACHÉES'
+                                        },
+                                        '/assets/videos/bouton.mp4': {
+                                            url: 'https://tally.so/r/mZK1pz',
+                                            label: 'FAIRE LE TEST'
+                                        }
+                                    };
+                                    const cta = selectedVideo ? videoCtas[selectedVideo] : null;
+
+                                    if (cta) {
+                                        return (
+                                            <div className="absolute bottom-20 md:bottom-10 left-0 right-0 z-50 flex justify-center pointer-events-none">
+                                                <a
+                                                    href={cta.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="bg-brand-brown text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-brand-brown/90 transition-all transform hover:scale-105 pointer-events-auto flex items-center gap-2 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500"
+                                                >
+                                                    {cta.label}
+                                                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                                </a>
+                                            </div>
+                                        );
                                     }
-                                };
-                                const cta = selectedVideo ? videoCtas[selectedVideo] : null;
-
-                                if (cta) {
-                                    return (
-                                        <div className="absolute bottom-20 md:bottom-10 left-0 right-0 z-50 flex justify-center pointer-events-none">
-                                            <a
-                                                href={cta.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="bg-brand-brown text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-brand-brown/90 transition-all transform hover:scale-105 pointer-events-auto flex items-center gap-2 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-500"
-                                            >
-                                                {cta.label}
-                                                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                                            </a>
-                                        </div>
-                                    );
-                                }
-                                return null;
-                            })()}
+                                    return null;
+                                })()}
+                            </motion.div>
                         </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                    )
+                }
+            </AnimatePresence >
 
             {/* SECTION 5- CALL TO ACTION */}
-            < section className={`relative flex items-center overflow-hidden ${ctaSectionPadding}`}>
+            < section className={`relative flex items-center overflow-hidden ${ctaSectionPadding}`
+            }>
                 {/* Background Image */}
-                <div className="absolute inset-0">
+                < div className="absolute inset-0" >
                     <Image
                         src="/assets/home/cta-bg.png"
                         alt="Background"
@@ -481,12 +499,12 @@ export default function HomePage() {
                         style={{ opacity: 0.4 }}
                     />
                     <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" />
-                </div>
+                </div >
 
-                <div className="container relative z-10 mx-auto px-4 h-full flex flex-col md:flex-row items-center">
-                    {/* Left Column - Sonia Image */}
-                    <div className="md:w-1/2 h-full flex items-end justify-center md:justify-start mt-10 md:mt-0">
-                        <div className={`relative w-full max-w-5xl ${ctaImageHeight} md:-mb-20`}>
+                <div className="container relative z-10 mx-auto px-4 h-full flex flex-col items-center justify-center">
+                    {/* Sonia Image - Absolute Positioned on Desktop */}
+                    <div className="absolute bottom-0 left-0 h-full w-full md:w-1/2 pointer-events-none flex items-end justify-start z-0 opacity-40 md:opacity-100 mix-blend-multiply md:mix-blend-normal">
+                        <div className={`relative w-full max-w-[800px] ${ctaImageHeight} md:-mb-0`}>
                             <Image
                                 src="/assets/home/sonia-portrait-cta.png"
                                 alt="Sonia Rose"
@@ -500,30 +518,28 @@ export default function HomePage() {
                         </div>
                     </div>
 
-                    {/* Right Column - Content */}
-                    <div className="md:w-1/2 text-center md:text-right flex flex-col items-center md:items-end justify-center py-16 md:py-0">
+                    {/* Centered Content */}
+                    <div className="relative z-10 w-full max-w-4xl text-center flex flex-col items-center justify-center py-16 md:py-12">
                         <FadeIn>
-
-
                             {/* Text Content */}
-                            <div className="space-y-8 max-w-xl text-brand-charcoal">
-                                <p className="text-lg leading-relaxed">
+                            <div className="space-y-8 text-brand-charcoal mx-auto backdrop-blur-sm bg-white/30 p-6 sm:p-8 rounded-3xl md:bg-transparent md:backdrop-blur-none md:p-0">
+                                <p className="text-lg leading-relaxed font-medium">
                                     Qu’il s’agisse d’acheter, vendre ou d’investir, je vous accompagne avec humanité, écoute et transparence.
                                     <br />
                                     Ma priorité est de comprendre ce que vous vivez maintenant, vos besoins réel, et de vous guider vers une propriété qui est alignée avec vos besoins.
                                 </p>
 
-                                <p className="text-lg leading-relaxed">
+                                <p className="text-lg leading-relaxed font-medium">
                                     Je vous accompagne sans pression, avec une approche simple, humaine et structurée. Je mets à votre services mes années d’expérience, mes stratégies et ma connaissance du marché immobilier sur la Rive-Sud et le Grand Montréal, afin de sécuriser chaque étape et de protéger vos intérêts.
                                 </p>
 
-                                <p className="text-lg leading-relaxed">
+                                <p className="text-lg leading-relaxed font-medium">
                                     Votre projet immobilier mérite une expérience fluide, respectueuse et en confiance. Et je suis là pour vous du début à la fin.
                                 </p>
 
                                 <div className="pt-4">
-                                    <p className="text-xl italic mb-2">Prêt(e) à écrire la suite ?</p>
-                                    <p className="text-xl italic">Je suis là pour vous accompagner.</p>
+                                    <p className="text-xl italic mb-2 font-serif">Prêt(e) à écrire la suite ?</p>
+                                    <p className="text-xl italic font-serif">Je suis là pour vous accompagner.</p>
                                 </div>
 
                                 <div className="pt-4">
@@ -534,11 +550,11 @@ export default function HomePage() {
                             </div>
 
                             {/* Buttons */}
-                            <div className="mt-12 flex flex-col sm:flex-row gap-6">
-                                <Button asChild size="lg" className="px-8 py-6 text-lg shadow-lg hover:opacity-90 transition-opacity min-w-[250px] bg-brand-brown text-white">
+                            <div className="mt-12 flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
+                                <Button asChild size="lg" className="w-full sm:w-auto px-8 py-6 text-lg shadow-lg hover:opacity-90 transition-opacity sm:min-w-[250px] bg-brand-brown text-white">
                                     <Link href="https://tally.so/r/A7PEko" target="_blank">ACHETEZ AVEC MOI</Link>
                                 </Button>
-                                <Button asChild size="lg" className="px-8 py-6 text-lg shadow-lg hover:opacity-90 transition-opacity min-w-[250px] bg-brand-brown text-white">
+                                <Button asChild size="lg" className="w-full sm:w-auto px-8 py-6 text-lg shadow-lg hover:opacity-90 transition-opacity sm:min-w-[250px] bg-brand-brown text-white">
                                     <Link href="https://tally.so/r/QKKpvG" target="_blank">VENDEZ AVEC MOI</Link>
                                 </Button>
                             </div>
