@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function SellersPage() {
     // CONFIGURATION
-    const heroImageOpacity = 0.6; // Opacity of the background image (0.0 to 1.0)
+    const heroImageOpacity = 1.0; // Opacity of the background image (0.0 to 1.0)
 
     // BIO SECTION CONFIGURATION
     const sellersBioScale = 1.5; // Adjusted for new Portrait asset (was 3.7)
@@ -27,7 +27,7 @@ export default function SellersPage() {
     const sellersGuideY = 0; // Vertical offset in pixels
 
     // CTA SECTION CONFIGURATION
-    const ctaImageOpacity = 0.4; // Opacity of the background image (0.0 to 1.0)
+    const ctaImageOpacity = 1.0; // Opacity of the background image (0.0 to 1.0)
 
     return (
         <>
@@ -57,7 +57,7 @@ export default function SellersPage() {
             {/* HERO SECTION */}
             <section className="relative flex h-[60vh] min-h-[500px] items-center justify-center overflow-hidden">
                 <Image
-                    src="/sellers-hero-bg.jpg"
+                    src="/assets/sellers/hero.png"
                     alt="Vendre sa propriété avec Sonia Rose"
                     fill
                     className="object-cover"
@@ -164,7 +164,7 @@ export default function SellersPage() {
                             <div className="lg:w-1/2 flex justify-center lg:justify-end">
                                 <div className="relative w-full max-w-md aspect-[3/4] shadow-2xl">
                                     <Image
-                                        src="/sellers-guide-cover.png"
+                                        src="/assets/resources/card-quiz.jpg"
                                         alt="Guide du Vendeur"
                                         fill
                                         className="object-cover"
@@ -249,13 +249,12 @@ export default function SellersPage() {
                         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                             {/* Left Column: Image */}
                             <div className="lg:w-1/2 flex justify-center lg:justify-end">
-                                <div className="relative w-full max-w-md shadow-lg">
+                                <div className="relative w-full max-w-md shadow-lg aspect-[3/4]">
                                     <Image
-                                        src="/sellers-report-quiz.png"
+                                        src="/assets/resources/secrets.webp"
                                         alt="Rapport personnalisé"
-                                        width={500}
-                                        height={600}
-                                        className="object-contain"
+                                        fill
+                                        className="object-cover"
                                     />
                                 </div>
                             </div>
@@ -296,7 +295,7 @@ export default function SellersPage() {
                 {/* Header Image */}
                 <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/assets/sellers/sellers-quiz-header.jpg"
+                        src="/assets/sellers/mismatch-header.png"
                         alt="Café et détente"
                         fill
                         className="object-cover"
@@ -337,9 +336,9 @@ export default function SellersPage() {
                         alt="Background"
                         fill
                         className="object-cover"
-                        style={{ opacity: 0.4 }}
+                        style={{ opacity: 1.0 }}
                     />
-                    <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" />
+                    {/* <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" /> */}
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 text-center">

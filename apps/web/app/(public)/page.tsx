@@ -16,17 +16,17 @@ export default function HomePage() {
     // HERO CONFIGURATION (Section 1)
     const heroZoom = 1; // Zoom level (1 = 100%)
     const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom. '50% 80%' moves it up slightly.
-    const heroOpacity = 0.8; // Opacity of the hero background image (0 to 1)
+    const heroOpacity = 1.0; // Opacity of the hero background image (0 to 1)
 
     // SECTION 2 CONFIGURATION: Adjust these values to position the "Qui est Sonia Rose" image
-    const imageZoom = 1.4; // Zoom level (1 = 100%)
+    const imageZoom = 0.6; // Zoom level (1 = 100%)
     const imageX = 0;       // Horizontal offset in pixels
     const imageY = 0;       // Vertical offset in pixels
 
     // SECTION 3 CONFIGURATION: Adjust opacity for the 3 images (0 to 1)
-    const opacity1 = 0.6;
-    const opacity2 = 0.6;
-    const opacity3 = 0.6;
+    const opacity1 = 1.0;
+    const opacity2 = 1.0;
+    const opacity3 = 1.0;
 
     // SECTION 5 CONFIGURATION
     const ctaSectionPadding = 'py-12'; // Adjust section vertical padding
@@ -101,13 +101,13 @@ export default function HomePage() {
         },
         {
             quote: "Quand j’ai décidé de vendre mon 4 plex à Longueuil, je voulais avoir un agent qui sache bien me représenter. J’ai choisi Sonia Rose, donne d’excellent conseil, elle a une bonne écoute et demeure toujours très professionnelle et transparente. J’avais besoin de lui parler elle répondait rapidement! Elle a vendu mon 4 plex en 9 jours tout s’est très bien passé, elle a trouvé rapidement un acheteur sérieux et le tout s’est fait sans embûche. En plus j’ai eu le prix que je voulais! Je ne manquerai pas de lui faire appel dans le futur. Très disponible et dévoué, d’un professionnalisme impeccable! Merci Sonia Rose.",
-            author: "– Client",
+            author: "– Catherine Grohan (cliente satisfaite), Longueuil",
         }
     ];
 
     return (
         <>
-            <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-brand-beige-300">
+            <section className="relative min-h-screen overflow-hidden bg-brand-beige-300">
                 {/* Hero Background Image - Fixed */}
                 <div className="absolute inset-0 z-0">
                     <motion.div
@@ -117,7 +117,7 @@ export default function HomePage() {
                         className="relative h-full w-full"
                     >
                         <Image
-                            src="/assets/home/hero-bg.jpg" // High-res image
+                            src="/assets/home/hero-new.png" // High-res image
                             alt="Sonia Rose"
                             fill
                             className="object-cover"
@@ -130,25 +130,30 @@ export default function HomePage() {
                             priority
                         />
                     </motion.div>
-                    <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)), rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)))` }} />
+                    {/* <div className="absolute inset-0" style={{ background: `linear-gradient(to bottom, rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)), rgba(255, 255, 255, var(--hero-bg-opacity, 0.1)))` }} /> */}
                 </div>
 
-                <div className="container relative z-10 mx-auto px-4 text-center text-brand-brown">
+                {/* Text Container - Centered in Left Half */}
+                <div className="absolute top-0 left-0 w-full md:w-1/2 h-full z-10 flex flex-col justify-center items-center text-center px-4 md:px-0">
                     <FadeIn delay={0.2}>
-                        <h1 className="mb-6 font-sans text-4xl md:text-6xl drop-shadow-md">
-                            Parce que l’immobilier,<br />
-                            c’est plus qu’une simple transaction
+                        <h1 className="mb-6 font-playfair text-4xl md:text-6xl drop-shadow-md leading-tight" style={{ textShadow: '2px 0px 0px #c5a059' }}>
+                            <span className="text-brand-beige-300 block">Parce que l’immobilier,</span>
+                            <span className="text-brand-gold block">c’est plus qu’une simple transaction</span>
                         </h1>
-                        <p className="mb-8 text-lg font-medium md:text-xl text-brand-brown">
-                            C’est une étape de vie qui mérite réflexion,<br />
-                            stratégie et une approche respectueuse<br />
-                            de vos besoins réels.
+                        <p className="mb-8 text-lg font-medium md:text-xl text-brand-beige-50 font-sans max-w-md mx-auto drop-shadow-md">
+                            C’est une étape de vie qui mérite réflexion, stratégie et une approche respectueuse de vos besoins réels.
                         </p>
-                        <div className="flex flex-col md:flex-row justify-center gap-4 w-full px-4 md:px-0">
-                            <Button asChild size="lg" variant="gold" className="w-full md:w-auto px-6 py-3 text-lg bg-brand-brown text-white hover:bg-brand-gold">
+                    </FadeIn>
+                </div>
+
+                {/* CTA Buttons - Centered relative to the entire Hero Section */}
+                <div className="absolute bottom-12 left-0 w-full z-10">
+                    <FadeIn delay={0.4}>
+                        <div className="flex flex-col md:flex-row justify-center gap-6 px-4">
+                            <Button asChild size="lg" className="rounded-full px-10 py-7 text-xl bg-brand-brown text-white hover:bg-brand-brown/90 shadow-lg">
                                 <Link href="https://tally.so/r/mZK1pz" target="_blank">FAIS LE TEST</Link>
                             </Button>
-                            <Button asChild size="lg" variant="outline" className="w-full md:w-auto px-6 py-3 text-lg border-brand-brown text-brand-brown hover:bg-brand-gold hover:text-white">
+                            <Button asChild size="lg" className="rounded-full px-10 py-7 text-xl bg-brand-brown text-white hover:bg-brand-brown/90 shadow-lg">
                                 <Link href="https://tally.so/r/QKKpvG" target="_blank">DÉCOUVRE LES VÉRITÉS CACHÉES</Link>
                             </Button>
                         </div>
@@ -181,16 +186,12 @@ export default function HomePage() {
                 </div>
 
                 {/* Image Container */}
-                <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 opacity-40 md:opacity-100 mix-blend-multiply md:mix-blend-normal pointer-events-none md:pointer-events-auto">
+                <div className="absolute top-0 right-0 w-full md:w-1/2 h-full z-0 pointer-events-none md:pointer-events-auto">
                     <Image
-                        src="/assets/home/sonia-portrait-intro.png"
+                        src="/assets/home/sonia-qui-est-sonia.png"
                         alt="Sonia Rose Portrait"
                         fill
-                        className="object-cover"
-                        style={{
-                            objectPosition: `${imageX}${typeof imageX === 'number' ? 'px' : ''} ${imageY}${typeof imageY === 'number' ? 'px' : ''}`,
-                            transform: `scale(${imageZoom})`
-                        }}
+                        className="object-contain object-bottom"
                     />
                 </div>
             </section>
@@ -204,8 +205,8 @@ export default function HomePage() {
                                 src="/assets/home/hero-bg.jpg"
                                 alt="Mes Propriétés"
                                 fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-110 contrast-90"
-                                style={{ opacity: 0.6 }}
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                style={{ opacity: opacity1 }}
                             />
                         </div>
                         <div className="p-6">
@@ -221,7 +222,7 @@ export default function HomePage() {
                                 src="/assets/home/free-eval-bg.jpg"
                                 alt="Évaluation Gratuite"
                                 fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-110 contrast-90"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 style={{ opacity: opacity2 }}
                             />
                         </div>
@@ -238,7 +239,7 @@ export default function HomePage() {
                                 src="/assets/home/buy-with-me-bg.jpg"
                                 alt="Acheter avec Sonia Rose"
                                 fill
-                                className="object-cover transition-transform duration-500 group-hover:scale-105 brightness-110 contrast-90"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
                                 style={{ opacity: opacity3 }}
                             />
                         </div>
@@ -496,14 +497,14 @@ export default function HomePage() {
                         alt="Background"
                         fill
                         className="object-cover"
-                        style={{ opacity: 0.4 }}
+                        style={{ opacity: 1.0 }}
                     />
-                    <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" />
+                    {/* <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" /> */}
                 </div >
 
                 <div className="container relative z-10 mx-auto px-4 h-full flex flex-col items-center justify-center">
                     {/* Sonia Image - Absolute Positioned on Desktop */}
-                    <div className="absolute bottom-0 left-0 h-full w-full md:w-1/2 pointer-events-none flex items-end justify-start z-0 opacity-40 md:opacity-100 mix-blend-multiply md:mix-blend-normal">
+                    <div className="absolute bottom-0 left-0 h-full w-full md:w-1/2 pointer-events-none flex items-end justify-start z-0">
                         <div className={`relative w-full max-w-[800px] ${ctaImageHeight} md:-mb-0`}>
                             <Image
                                 src="/assets/home/sonia-portrait-cta.png"
@@ -522,7 +523,7 @@ export default function HomePage() {
                     <div className="relative z-10 w-full max-w-4xl text-center flex flex-col items-center justify-center py-16 md:py-12">
                         <FadeIn>
                             {/* Text Content */}
-                            <div className="space-y-8 text-brand-charcoal mx-auto backdrop-blur-sm bg-white/30 p-6 sm:p-8 rounded-3xl md:bg-transparent md:backdrop-blur-none md:p-0">
+                            <div className="space-y-8 text-brand-beige-50 mx-auto backdrop-blur-sm bg-white/30 p-6 sm:p-8 rounded-3xl md:bg-transparent md:backdrop-blur-none md:p-0">
                                 <p className="text-lg leading-relaxed font-medium">
                                     Qu’il s’agisse d’acheter, vendre ou d’investir, je vous accompagne avec humanité, écoute et transparence.
                                     <br />

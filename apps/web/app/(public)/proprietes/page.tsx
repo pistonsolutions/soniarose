@@ -21,7 +21,7 @@ const properties = [
         title: 'Bord de l\'eau',
         address: "Saint-Paul-de-l'Île-aux-Noix, QC",
         price: 'Sur demande',
-        image: "/Nouveaute - Saint-Paul-de-l'Ile-aux-Noix.jpeg",
+        image: "/assets/properties/nouveaute-saint-paul.jpg",
         beds: 4,
         baths: 2,
         sqft: 2500,
@@ -33,7 +33,7 @@ const properties = [
         title: 'Condo',
         address: 'Boucherville, QC',
         price: 'Vendu',
-        image: '/Vendu - Boucherville.jpeg',
+        image: '/assets/properties/vendu-boucherville.jpg',
         beds: 4,
         baths: 2,
         sqft: 2200,
@@ -45,7 +45,7 @@ const properties = [
         title: 'Cottage rénové',
         address: 'Brossard, QC',
         price: 'Vendu',
-        image: '/Vendu - Brossard.jpg',
+        image: '/assets/properties/vendu-brossard.jpg',
         beds: 3,
         baths: 2,
         sqft: 1800,
@@ -57,7 +57,7 @@ const properties = [
         title: 'Condo lumineux',
         address: 'Longueuil, QC',
         price: 'Vendu',
-        image: '/Vendu - Longeuil.png',
+        image: '/assets/properties/vendu-longueuil-1.png',
         beds: 2,
         baths: 1,
         sqft: 1100,
@@ -69,7 +69,7 @@ const properties = [
         title: 'Maison à étages',
         address: 'Longueuil, QC',
         price: 'Vendu',
-        image: '/Vendu - Longeuil1.jpeg',
+        image: '/assets/properties/vendu-longueuil-2.jpg',
         beds: 6,
         baths: 3,
         sqft: 2800,
@@ -81,7 +81,7 @@ const properties = [
         title: 'Maison à paliers multiples',
         address: 'Mercier, QC',
         price: 'Vendu',
-        image: '/Vendu - Mercier.jpeg',
+        image: '/assets/properties/vendu-mercier.jpg',
         beds: 3,
         baths: 2,
         sqft: 1500,
@@ -93,7 +93,7 @@ const properties = [
         title: 'Maison plain-pied avec vue exceptionelle',
         address: 'Saint-Jean-sur-Richelieu, QC',
         price: 'Vendu',
-        image: '/Vendu - Saint-Jean-sur-Richelieu.jpeg',
+        image: '/assets/properties/vendu-saint-jean.jpg',
         beds: 3,
         baths: 1.5,
         sqft: 1600,
@@ -105,7 +105,7 @@ const properties = [
         title: 'Maison de ville',
         address: 'Sainte-Julie, QC',
         price: 'Vendu',
-        image: '/Vendu - Sainte-Julie.jpeg',
+        image: '/assets/properties/vendu-sainte-julie.jpg',
         beds: 5,
         baths: 3,
         sqft: 3200,
@@ -117,7 +117,7 @@ const properties = [
         title: 'Charme champêtre',
         address: 'Sainte-Madeleine, QC',
         price: 'Vendu',
-        image: '/Vendu - Sainte-Madelaine.jpg',
+        image: '/assets/properties/vendu-sainte-madeleine.jpg',
         beds: 3,
         baths: 1,
         sqft: 1400,
@@ -129,7 +129,7 @@ const properties = [
         title: 'Condo rénové',
         address: 'Saint-Hubert, QC',
         price: 'Vendu',
-        image: '/Vendu - St-Hubert.png',
+        image: '/assets/properties/vendu-st-hubert.png',
         beds: 3,
         baths: 2,
         sqft: 1300,
@@ -141,7 +141,7 @@ const properties = [
         title: 'Havre de paix',
         address: 'Stukely-Sud, QC',
         price: 'Vendu',
-        image: '/Vendu - Stukely-Sud.jpeg',
+        image: '/assets/properties/vendu-stukely-sud.jpg',
         beds: 3,
         baths: 2,
         sqft: 2000,
@@ -153,7 +153,7 @@ const properties = [
         title: 'Construction Neuve',
         address: 'Saint-Hubert, QC',
         price: 'Vendu',
-        image: '/Vendu Saint-Hubert.jpg',
+        image: '/assets/properties/vendu-st-hubert-2.jpg',
         beds: 2,
         baths: 1,
         sqft: 1000,
@@ -165,7 +165,7 @@ const properties = [
         title: '6 Plex',
         address: 'Hochelaga-Maisonneuve, QC',
         price: 'Vendu',
-        image: '/Vendu - 6plexes - Hochelaga-Maisonneuve.jpeg',
+        image: '/assets/properties/vendu-hochelaga.jpg',
         beds: 6,
         baths: 6,
         sqft: 5000,
@@ -177,7 +177,7 @@ const properties = [
         title: 'Propriété à revenus - Idéal pour investissement',
         address: 'Plateau Mont-Royal, QC',
         price: 'Vendu',
-        image: '/Vendu - Propriétés a revenu, idéal pour investissement - Plateau Montroyal.jpg',
+        image: '/assets/properties/vendu-plateau.jpg',
         beds: 4,
         baths: 2,
         sqft: 3000,
@@ -219,14 +219,14 @@ export default function PropertiesPage() {
             {/* SECTION 1 — HERO */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/properties-hero-bg.jpg"
+                    src="/assets/properties/hero.png"
                     alt="Propriétés à vendre Sonia Rose"
                     fill
                     className={`object-${heroObjectFit}`}
-                    style={{ opacity: 0.6, transform: `scale(${heroScale})`, objectPosition: heroObjectPosition }}
+                    style={{ opacity: 1.0, transform: `scale(${heroScale})`, objectPosition: heroObjectPosition }}
                     priority
                 />
-                <div className="absolute inset-0 bg-black/20" />
+                {/* <div className="absolute inset-0 bg-black/20" /> */}
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn delay={0.2}>
                         <h1 className="mb-4 font-sans text-6xl font-normal md:text-8xl tracking-widest opacity-90 text-brand-beige-300" style={{ textShadow: '3px 5px 6px rgba(0, 0, 0, 0.4)' }}>

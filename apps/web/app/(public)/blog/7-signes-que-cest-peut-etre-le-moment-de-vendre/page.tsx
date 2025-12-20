@@ -13,7 +13,7 @@ export default function BlogPostPage() {
             {/* HERO SECTION */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-card-4.jpg"
+                    src="/assets/blog/article-4.png"
                     alt="7 signes que c’est peut-être le moment de vendre"
                     fill
                     className="object-cover"

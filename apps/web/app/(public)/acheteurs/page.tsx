@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function BuyersPage() {
     // HERO CONFIGURATION
-    const heroImageOpacity = 0.6; // Opacity of the background image (0.0 to 1.0)
+    const heroImageOpacity = 1.0; // Opacity of the background image (0.0 to 1.0)
     const heroZoom = 1; // Zoom level (1 = 100%)
     const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom.
 
@@ -54,7 +54,7 @@ export default function BuyersPage() {
             <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-brand-cream">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/buyers-hero-bg.jpg"
+                        src="/assets/buyers/hero.png"
                         alt="Acheter une propriété avec Sonia Rose"
                         fill
                         className="object-cover"
@@ -62,7 +62,7 @@ export default function BuyersPage() {
                         style={{ opacity: heroImageOpacity, transform: `scale(${heroZoom})`, objectPosition: heroImagePosition }}
                     />
                     {/* Light overlay to ensure text readability if needed */}
-                    <div className="absolute inset-0 bg-black/10" />
+                    {/* <div className="absolute inset-0 bg-black/10" /> */}
                 </div>
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn delay={0.2}>
@@ -145,7 +145,7 @@ export default function BuyersPage() {
                             <div className="lg:w-1/2 flex justify-center lg:justify-end">
                                 <div className="relative w-full max-w-md aspect-[3/4] shadow-2xl lg:mr-60">
                                     <Image
-                                        src="/buyer-guide-cover.png"
+                                        src="/assets/buyers/guide-cover.png"
                                         alt="Guide de l'acheteur"
                                         fill
                                         className="object-cover"
@@ -186,10 +186,10 @@ export default function BuyersPage() {
                 {/* Header Image */}
                 <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/assets/buyers/steps-header.png"
+                        src="/assets/buyers/steps-header-1600.webp"
                         alt="Accompagnement étape par étape"
                         fill
-                        className="object-cover"
+                        className="object-cover object-top"
                     />
                 </div>
 
@@ -276,18 +276,18 @@ export default function BuyersPage() {
                         alt="Background"
                         fill
                         className="object-cover"
-                        style={{ opacity: 0.4 }}
+                        style={{ opacity: 1.0 }}
                     />
-                    <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" />
+                    {/* <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" /> */}
                 </div>
                 {/* Content */}
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn>
-                        <h2 className="mb-12 font-sans text-5xl md:text-7xl uppercase leading-tight text-brand-brown">
+                        <h2 className="mb-12 font-sans text-5xl md:text-7xl uppercase leading-tight text-brand-beige-50">
                             PRÊT(E) À AVANCER?
                         </h2>
 
-                        <div className="max-w-4xl mx-auto space-y-8 text-xl md:text-2xl leading-relaxed font-medium text-brand-brown">
+                        <div className="max-w-4xl mx-auto space-y-8 text-xl md:text-2xl leading-relaxed font-medium text-brand-beige-50">
                             <p>
                                 Acheter une propriété, ce n’est pas rien.<br />
                                 C’est une décision importante, un chapitre de vie qui mérite d’être accompagné avec soin.

@@ -7,7 +7,7 @@ import { ArrowRight, Calendar, User } from 'lucide-react';
 import type { Metadata } from 'next';
 import { BlogPageCarousel } from '@/components/blog-page-carousel';
 
-const blogHeroOpacity = 0.8; // 0.0 to 1.0
+const blogHeroOpacity = 1.0; // 0.0 to 1.0
 
 export const metadata: Metadata = {
     title: 'Blog Immobilier | Conseils, Émotions & Décisions – Sonia Rose',
@@ -41,7 +41,7 @@ export default function BlogPage() {
             {/* SECTION 1 — HERO */}
             <div className="relative flex min-h-[600px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-hero-bg.jpg"
+                    src="/assets/blog/hero.png"
                     alt="Blog Immobilier Sonia Rose"
                     fill
                     className="object-cover"

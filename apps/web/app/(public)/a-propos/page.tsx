@@ -17,7 +17,7 @@ export default function AboutPage() {
     const portraitZoom = 1.6; // Zoom: 1 = 100%, 1.1 = 110%, etc.
 
     // HERO CONFIGURATION
-    const heroImageOpacity = 0.6; // Opacity of the background image (0.0 to 1.0)
+    const heroImageOpacity = 1.0; // Opacity of the background image (0.0 to 1.0)
     const heroZoom = 1; // Zoom level (1 = 100%)
     const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom. '50% 80%' moves it up slightly.
 
@@ -60,10 +60,10 @@ export default function AboutPage() {
             />
 
             {/* SECTION 1 — HERO “À PROPOS” */}
-            <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-brand-cream">
+            <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-brand-beige-50">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/about-hero-bg.jpg"
+                        src="/assets/about/hero.png"
                         alt="À Propos Background"
                         fill
                         className="object-cover"
@@ -71,7 +71,7 @@ export default function AboutPage() {
                         style={{ opacity: heroImageOpacity, transform: `scale(${heroZoom})`, objectPosition: heroImagePosition }}
                     />
                     {/* Light overlay to ensure text readability if needed, but keeping it minimal as per design */}
-                    <div className="absolute inset-0 bg-black/10" />
+                    {/* <div className="absolute inset-0 bg-black/10" /> */}
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 text-center">

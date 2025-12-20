@@ -111,7 +111,7 @@ export default function ContactPage() {
                             </div>
                         </div>
 
-                        <div className="rounded-2xl bg-slate-50 p-8 shadow-sm">
+                        <div className="rounded-2xl bg-brand-beige-50 p-8 shadow-sm">
                             <h3 className="mb-6 font-sans text-2xl font-bold text-brand-brown">Envoyez-moi un message</h3>
                             <ContactForm />
                         </div>

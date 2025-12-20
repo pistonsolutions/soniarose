@@ -14,7 +14,7 @@ export default function BlogPostPage() {
             {/* HERO SECTION */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-card-2.jpg"
+                    src="/assets/blog/article-2.png"
                     alt="Ce que les vendeurs regrettent le plus"
                     fill
                     className="object-cover"

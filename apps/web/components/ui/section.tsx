@@ -11,8 +11,8 @@ interface SectionProps {
 export function Section({ children, className, id, background = 'white' }: SectionProps) {
     const bgStyles = {
         white: 'bg-white',
-        cream: 'bg-brand-beige-50', // Deprecated
-        beige: 'bg-brand-beige-100',
+        cream: 'bg-brand-beige-50', // Updated Cream #EFEAE2
+        beige: 'bg-brand-beige-100', // Updated Cream #EFEAE2
         navy: 'bg-brand-brown text-white', // Deprecated
         brown: 'bg-brand-brown text-white',
         gold: 'bg-brand-gold text-white',

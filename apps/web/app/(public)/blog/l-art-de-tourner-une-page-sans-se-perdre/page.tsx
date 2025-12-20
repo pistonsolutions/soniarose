@@ -13,7 +13,7 @@ export default function BlogPostPage() {
             {/* HERO SECTION */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-card-3.jpg"
+                    src="/assets/blog/article-3.png"
                     alt="L’art de tourner une page sans se perdre"
                     fill
                     className="object-cover"

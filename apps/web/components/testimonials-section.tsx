@@ -17,6 +17,10 @@ const testimonials = [
         quote: "Grâce à son dynamisme, sa transparence, son attitude positive et à sa diligence, elle a facilité chaque étape du processus.",
         author: "– Client Heureux",
     },
+    {
+        quote: "Quand j’ai décidé de vendre mon 4 plex à Longueuil, je voulais avoir un agent qui sache bien me représenter. J’ai choisi Sonia Rose, donne d’excellent conseil, elle a une bonne écoute et demeure toujours très professionnelle et transparente. J’avais besoin de lui parler elle répondait rapidement! Elle a vendu mon 4 plex en 9 jours tout s’est très bien passé, elle a trouvé rapidement un acheteur sérieux et le tout s’est fait sans embûche. En plus j’ai eu le prix que je voulais! Je ne manquerai pas de lui faire appel dans le futur. Très disponible et dévoué, d’un professionnalisme impeccable! Merci Sonia Rose.",
+        author: "– Catherine Grohan, Longueuil",
+    },
 ];
 
 export function TestimonialsSection() {

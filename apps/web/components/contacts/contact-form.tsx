@@ -158,7 +158,7 @@ export function ContactForm() {
       <div className="flex items-center gap-3">
         <button
           type="submit"
-          className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
+          className="rounded-lg bg-brand-brown px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-brand-brown/90 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
           disabled={submitting}
         >
           {submitting ? 'Saving…' : 'Save contact'}

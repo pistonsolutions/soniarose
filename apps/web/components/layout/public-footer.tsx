@@ -16,10 +16,9 @@ export function PublicFooter() {
     const remaxLogoHeight = 150;
 
     return (
-        <footer className="w-full bg-[#E6DDD0] border-t border-slate-100 pt-16 pb-8">
-            <div className="container mx-auto px-8">
-
-                {/* 1. LOGO ROW */}
+        <footer className="bg-brand-beige-50 pt-20 pb-8 border-t border-brand-brown/10">
+            <div className="container mx-auto px-4 md:px-8">
+                {/* Main Footer Content */}
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-start gap-12 mb-4">
                     {/* SONIA ROSE LOGO */}
                     <div className="relative -ml-16" style={{ width: soniaLogoWidth, height: soniaLogoHeight }}>

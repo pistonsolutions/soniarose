@@ -39,7 +39,7 @@ export function PublicNavbar() {
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <Link href="/" className="relative h-20 w-40 sm:w-56 md:h-24 md:w-[24rem] transition-opacity hover:opacity-80 shrink-0 z-50">
+        <Link href="/" className="relative h-20 w-40 sm:w-56 lg:w-64 xl:w-[24rem] transition-opacity hover:opacity-80 shrink-0 z-50">
           <Image
             src="/assets/logo-sonia-rose-new.png"
             alt="Sonia Rose"
@@ -50,12 +50,12 @@ export function PublicNavbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex lg:items-center lg:space-x-8">
+        <div className="hidden lg:flex lg:items-center lg:space-x-5 xl:space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-base font-medium font-sans uppercase tracking-wide text-brand-brown transition-colors hover:text-brand-gold"
+              className="text-sm xl:text-base font-medium font-sans uppercase tracking-wide text-brand-brown transition-colors hover:text-brand-gold whitespace-nowrap"
             >
               {link.name}
             </Link>

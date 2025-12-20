@@ -9,17 +9,17 @@ import { ResourcesBlogCarousel } from '@/components/resources-blog-carousel';
 import { MortgageCalculator } from '@/components/mortgage-calculator';
 
 // Configuration for image opacities
-const heroImageOpacity = 0.6;
+const heroImageOpacity = 1.0;
 const reportImageOpacity = 1.0;
 const calculatorImageOpacity = 1.0;
 const interiorImageOpacity = 1.0;
-const faqLaptopImageOpacity = 0.5;
-const guideBgImageOpacity = 0.6;
+const faqLaptopImageOpacity = 1.0;
+const guideBgImageOpacity = 1.0;
 const guideSoniaImageOpacity = 1.0;
 // Configuration for Sonia image positioning in Guide section
-const guideSoniaScale = 1.5; // Scale the image (1 = 100%, 1.1 = 110%, etc.)
-const guideSoniaX = -400; // Horizontal offset in pixels
-const guideSoniaY = 500; // Vertical offset in pixels
+const guideSoniaScale = 1.1; // Scale the image (1 = 100%, 1.1 = 110%, etc.)
+const guideSoniaX = 0; // Horizontal offset in pixels
+const guideSoniaY = 0; // Vertical offset in pixels
 
 export const metadata: Metadata = {
     title: 'Ressources immobilières | Outils & Guides gratuits | Sonia Rose',
@@ -54,7 +54,7 @@ export default function ResourcesPage() {
             {/* HERO SECTION */}
             <section className="relative flex h-[60vh] min-h-[500px] items-center justify-center overflow-hidden">
                 <Image
-                    src="/resources-hero-bg.jpg"
+                    src="/assets/resources/hero.png"
                     alt="Ressources immobilières Sonia Rose"
                     fill
                     className="object-cover"
@@ -90,7 +90,7 @@ export default function ResourcesPage() {
                         {/* Guide Acheteur */}
                         <Link href="https://drive.google.com/file/d/1KwaIbl3n7xCO4CX1U7nytA5ohFbK9lZT/view" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
                             <Image
-                                src="/resources-card-buyer.jpg"
+                                src="/assets/resources/card-alert.jpg"
                                 alt="Guide de l'Acheteur"
                                 fill
                                 className="object-cover"
@@ -101,7 +101,7 @@ export default function ResourcesPage() {
                         {/* Guide Vendeur */}
                         <Link href="https://drive.google.com/file/d/1I0PGN5d3bkYA7ANvUHIZxTh089j3NrKX/view" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
                             <Image
-                                src="/resources-card-seller.jpg"
+                                src="/assets/resources/card-quiz.jpg"
                                 alt="Guide du Vendeur"
                                 fill
                                 className="object-cover"
@@ -111,7 +111,7 @@ export default function ResourcesPage() {
                         {/* Test Alignement */}
                         <Link href="https://tally.so/r/mZK1pz" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
                             <Image
-                                src="/resources-card-quiz.jpg"
+                                src="/assets/resources/card-buyer.jpg"
                                 alt="Est-ce que ta maison est encore alignée avec toi?"
                                 fill
                                 className="object-cover"
@@ -121,7 +121,7 @@ export default function ResourcesPage() {
                         {/* Alerte Immobilière */}
                         <Link href="https://tally.so/r/A7PEko" target="_blank" className="group block relative aspect-[3/4] overflow-hidden shadow-lg transition-transform hover:-translate-y-2">
                             <Image
-                                src="/resources-card-alert.jpg"
+                                src="/assets/resources/card-seller.jpg"
                                 alt="Alerte Immobilière Personnalisée"
                                 fill
                                 className="object-cover"
@@ -137,13 +137,12 @@ export default function ResourcesPage() {
                     <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
                         {/* Left Column: Image */}
                         <div className="flex justify-center lg:justify-end">
-                            <div className="relative w-full max-w-md shadow-lg">
+                            <div className="relative w-full max-w-md shadow-lg aspect-[3/4]">
                                 <Image
-                                    src="/sellers-report-quiz.png"
+                                    src="/assets/resources/secrets.webp"
                                     alt="Rapport Personnalisé"
-                                    width={500}
-                                    height={600}
-                                    className="object-contain"
+                                    fill
+                                    className="object-cover"
                                     style={{ opacity: reportImageOpacity }}
                                 />
                             </div>
@@ -212,7 +211,7 @@ export default function ResourcesPage() {
                             <div className="flex justify-center lg:justify-end">
                                 <div className="relative w-full max-w-md aspect-[3/4] overflow-hidden">
                                     <Image
-                                        src="/resources-tools-interior.jpg"
+                                        src="/assets/resources/tools-interior.jpg"
                                         alt="Intérieur design"
                                         fill
                                         className="object-cover"
@@ -337,7 +336,7 @@ export default function ResourcesPage() {
                 <div className="relative w-full md:w-1/2 min-h-[400px] md:min-h-auto overflow-hidden">
                     {/* Background Image */}
                     <Image
-                        src="/resources-guide-bg.jpg"
+                        src="/assets/resources/guide-bg.jpg"
                         alt="Intérieur design minimaliste"
                         fill
                         className="object-cover"
@@ -353,7 +352,7 @@ export default function ResourcesPage() {
                         }}
                     >
                         <Image
-                            src="/resources-guide-sonia.png"
+                            src="/assets/resources/guide-sonia.png"
                             alt="Sonia Rose"
                             fill
                             className="object-contain object-bottom left-0"

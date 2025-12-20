@@ -35,11 +35,15 @@ export function generateMetadata({ params }: BlogPostPageProps): Metadata {
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-    const post = blogPosts.find((p) => p.slug === params.slug);
+    const postIndex = blogPosts.findIndex((p) => p.slug === params.slug);
+    const post = blogPosts[postIndex];
 
     if (!post) {
         notFound();
     }
+
+    const prevPost = postIndex < blogPosts.length - 1 ? blogPosts[postIndex + 1] : null;
+    const nextPost = postIndex > 0 ? blogPosts[postIndex - 1] : null;
 
     return (
         <>
@@ -71,9 +75,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                 }}
             />
 
-            <article className="min-h-screen bg-slate-50 pt-24 pb-20">
+            <article className="min-h-screen bg-brand-beige-50 pt-24 pb-20">
                 <div className="container mx-auto px-4">
-                    <div className="mb-8">
+                    <div className="mb-8 flex justify-between items-center">
                         <Button asChild variant="ghost" className="pl-0 hover:bg-transparent hover:text-brand-gold">
                             <Link href="/blog">
                                 <ArrowLeft className="mr-2 h-4 w-4" /> Retour au blog
@@ -87,7 +91,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                 src={post.image || "/home-hero-bg.jpg"}
                                 alt={post.title}
                                 fill
-                                className="object-cover"
+                                className="object-cover object-center"
                                 priority
                             />
                         </div>
@@ -107,6 +111,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                 dangerouslySetInnerHTML={{ __html: post.content }}
                             />
 
+                            {/* Author/CTA Block */}
                             <div className="mt-12 border-t border-slate-100 pt-8">
                                 <h3 className="mb-4 font-sans text-2xl font-bold text-brand-brown">Vous avez aimé cet article ?</h3>
                                 <p className="mb-6 text-slate-600">
@@ -122,6 +127,27 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    {/* Next/Prev Navigation */}
+                    <div className="mx-auto max-w-4xl mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {prevPost ? (
+                            <Link href={`/blog/${prevPost.slug}`} className="group p-6 rounded-xl bg-white shadow-sm border border-transparent hover:border-brand-gold/20 hover:shadow-md transition-all">
+                                <span className="text-xs font-bold text-brand-gold uppercase tracking-wider mb-2 block">Article précédent</span>
+                                <h4 className="font-sans font-bold text-brand-brown group-hover:text-brand-gold transition-colors line-clamp-2">
+                                    {prevPost.title}
+                                </h4>
+                            </Link>
+                        ) : <div />}
+
+                        {nextPost ? (
+                            <Link href={`/blog/${nextPost.slug}`} className="group p-6 rounded-xl bg-white shadow-sm border border-transparent hover:border-brand-gold/20 hover:shadow-md transition-all text-right">
+                                <span className="text-xs font-bold text-brand-gold uppercase tracking-wider mb-2 block">Article suivant</span>
+                                <h4 className="font-sans font-bold text-brand-brown group-hover:text-brand-gold transition-colors line-clamp-2">
+                                    {nextPost.title}
+                                </h4>
+                            </Link>
+                        ) : <div />}
                     </div>
                 </div>
             </article>

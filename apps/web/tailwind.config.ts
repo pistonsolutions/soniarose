@@ -9,15 +9,16 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-montserrat)', ...defaultTheme.fontFamily.sans],
         serif: ['var(--font-lora)', ...defaultTheme.fontFamily.serif],
+        playfair: ['var(--font-playfair)', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         brand: {
-          brown: '#734838', // Deep Navy -> Brown (Primary Brand Color)
+          brown: '#4b3620', // Deep Navy -> Brown (Primary Brand Color)
           gold: '#c5a059', // Gold/Bronze
-          charcoal: '#363636', // Charcoal Gray (Base text color)
+          charcoal: '#4b3620', // Merged into Brown (#4B3620)
           beige: {
-            50: '#F9F9F7',  // Was 'cream'
-            100: '#F4F1EE', // Lightest Section BG
+            50: '#EFEAE2',  // Updated Cream
+            100: '#EFEAE2', // Updated Cream
             200: '#F2EFE9', // Light Beige
             300: '#E6DDD0', // Navbar & Hero Text (The "Main" Beige)
             400: '#E6E0D9', // FAQ Section BG

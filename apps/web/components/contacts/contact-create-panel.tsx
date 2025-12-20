@@ -88,7 +88,7 @@ export function ContactCreatePanel() {
         <button
           type="button"
           onClick={toggleOpen}
-          className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
+          className="rounded-lg bg-brand-brown px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-brand-brown/90 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
         >
           {isOpen ? 'Close form' : 'Add contact'}
         </button>
@@ -223,7 +223,7 @@ export function ContactCreatePanel() {
             <button
               type="submit"
               disabled={isPending}
-              className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
+              className="rounded-lg bg-brand-brown px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-brand-brown/90 disabled:cursor-not-allowed disabled:opacity-70 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
             >
               {isPending ? 'Saving…' : 'Create contact'}
             </button>

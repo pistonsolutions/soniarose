@@ -82,7 +82,7 @@ export function PropertiesCarousel({ properties }: PropertiesCarouselProps) {
                         {visibleProperties.map((property) => (
                             <div key={property.id} className="group overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
                                 <div className="relative aspect-[4/3] bg-slate-200">
-                                    <div className={`absolute top-4 left-4 z-10 rounded-md px-3 py-1 text-sm font-bold text-white ${property.status === 'Nouveau' ? 'bg-[#734838]' : 'bg-black/50'
+                                    <div className={`absolute top-4 left-4 z-10 rounded-md px-3 py-1 text-sm font-bold text-white ${property.status === 'Nouveau' ? 'bg-brand-brown' : 'bg-brand-brown/80'
                                         }`}>
                                         {property.status}
                                     </div>
@@ -90,19 +90,20 @@ export function PropertiesCarousel({ properties }: PropertiesCarouselProps) {
                                         src={property.image}
                                         alt={property.title}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>
                                 <div className="p-6">
-                                    <div className="mb-2 text-sm font-medium text-[#734838]/70 uppercase tracking-wider">{property.city}</div>
-                                    <h3 className="mb-2 font-sans text-xl font-bold text-[#734838]">{property.title}</h3>
-                                    <div className="mb-4 flex items-center text-[#734838]/80">
+                                    <div className="mb-2 text-sm font-medium text-brand-brown/70 uppercase tracking-wider">{property.city}</div>
+                                    <h3 className="mb-2 font-sans text-xl font-bold text-brand-brown">{property.title}</h3>
+                                    <div className="mb-4 flex items-center text-brand-brown/80">
                                         <MapPin size={16} className="mr-1" />
                                         <span className="text-sm">{property.address}</span>
                                     </div>
 
                                     <div className="flex items-center justify-between">
-                                        <span className="text-xl font-bold text-[#734838]">{property.price}</span>
+                                        <span className="text-xl font-bold text-brand-brown">{property.price}</span>
                                     </div>
                                 </div>
                             </div>
@@ -117,18 +118,18 @@ export function PropertiesCarousel({ properties }: PropertiesCarouselProps) {
                     variant="outline"
                     size="icon"
                     onClick={prevSlide}
-                    className="h-12 w-12 rounded-full border-[#734838] text-[#734838] hover:bg-[#734838] hover:text-white"
+                    className="h-12 w-12 rounded-full border-brand-brown text-brand-brown hover:bg-brand-brown hover:text-white"
                 >
                     <ChevronLeft className="h-6 w-6" />
                 </Button>
-                <div className="flex items-center text-sm font-medium text-[#734838]">
+                <div className="flex items-center text-sm font-medium text-brand-brown">
                     {Math.ceil((currentIndex + 1) / itemsPerPage)} / {Math.ceil(properties.length / itemsPerPage)}
                 </div>
                 <Button
                     variant="outline"
                     size="icon"
                     onClick={nextSlide}
-                    className="h-12 w-12 rounded-full border-[#734838] text-[#734838] hover:bg-[#734838] hover:text-white"
+                    className="h-12 w-12 rounded-full border-brand-brown text-brand-brown hover:bg-brand-brown hover:text-white"
                 >
                     <ChevronRight className="h-6 w-6" />
                 </Button>

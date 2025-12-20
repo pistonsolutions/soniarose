@@ -12,7 +12,7 @@ const blogPosts = [
         id: 1,
         title: "Comment choisir le bon moment pour vendre",
         description: "Avec le temps, nos besoins, nos valeurs et notre énergie changent. Et parfois, la maison qui nous a autrefois comblés ne nous correspond plus autant. Cet article t’aide à reconnaître les signaux qui indiquent qu’une nouvelle étape se prépare doucement.",
-        image: "/blog-card-1.jpg",
+        image: "/assets/blog/article-1.png",
         link: "/blog/comment-choisir-le-bon-moment-pour-vendre",
         date: "12 Déc 2024"
     },
@@ -20,7 +20,7 @@ const blogPosts = [
         id: 2,
         title: "Ce que les vendeurs regrettent le plus",
         description: "Une vente immobilière, c’est un mélange d’émotions, de décisions et d’intuitions. Avec l’expérience, j’ai observé les erreurs les plus fréquentes qui créent des déceptions. Cet article t’offre une perspective claire pour faire les bons choix dès le départ.",
-        image: "/blog-card-2.jpg",
+        image: "/assets/blog/article-2.png",
         link: "/blog/ce-que-les-vendeurs-regrettent-le-plus",
         date: "05 Déc 2024"
     },
@@ -28,7 +28,7 @@ const blogPosts = [
         id: 3,
         title: "L’art de tourner une page sans se perdre",
         description: "Tourner une page, ce n’est jamais simple. C’est laisser aller ce qui ne nous ressemble plus, reconnaître ce qui doit changer, et avancer vers un nouveau chapitre. Cet article t’aide à comprendre ce moment fragile où l’on peut se perdre… ou enfin se retrouver.",
-        image: "/blog-card-3.jpg",
+        image: "/assets/blog/article-3.png",
         link: "/blog/l-art-de-tourner-une-page-sans-se-perdre",
         date: "28 Nov 2024"
     },
@@ -36,7 +36,7 @@ const blogPosts = [
         id: 4,
         title: "7 signes que c’est peut-être le moment de vendre",
         description: "Certaines maisons nous parlent sans qu’on s’en rende compte. À travers ces sept indices concrets et émotionnels, tu pourras mieux savoir si ta maison t’offre encore ce dont tu as besoin — ou si un nouveau chapitre s’annonce doucement.",
-        image: "/blog-card-4.jpg",
+        image: "/assets/blog/article-4.png",
         link: "/blog/7-signes-que-cest-peut-etre-le-moment-de-vendre",
         date: "20 Nov 2024"
     },
@@ -44,7 +44,7 @@ const blogPosts = [
         id: 5,
         title: "Quand ta maison ne te ressemble plus",
         description: "Parfois, sans qu’on s’en aperçoive, la maison qu’on aimait ne reflète plus qui on est devenu. Cet article explore les signes subtils — et parfois évidents — qui montrent qu’un changement s’impose, non par pression, mais pour ton bien-être.",
-        image: "/blog-card-1.jpg", // Reusing image for demo
+        image: "/assets/blog/article-5.png",
         link: "/blog/quand-ta-maison-ne-te-ressemble-plus",
         date: "15 Nov 2024"
     },
@@ -52,7 +52,7 @@ const blogPosts = [
         id: 6,
         title: "80 % du succès se joue dans les 7 premiers jours",
         description: "Les premières impressions comptent énormément en immobilier. Cet article t’explique pourquoi les premiers jours sur le marché déterminent l’intérêt des acheteurs, le nombre de visites et même le prix final — et comment maximiser ton lancement.",
-        image: "/blog-card-2.jpg", // Reusing image for demo
+        image: "/assets/blog/article-6.png",
         link: "/blog/80-pourcent-succes-7-premiers-jours",
         date: "08 Nov 2024"
     }
