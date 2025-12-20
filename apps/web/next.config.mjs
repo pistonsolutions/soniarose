@@ -3,12 +3,15 @@ const nextConfig = {
   output: 'standalone',
 
   // Disable ESLint and TypeScript checks during build (run them separately in CI)
+  // Disable ESLint and TypeScript checks during build - standard checks enabled
+  /*
   eslint: {
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   typescript: {
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
+  */
 
   // Compiler optimizations
   compiler: {
