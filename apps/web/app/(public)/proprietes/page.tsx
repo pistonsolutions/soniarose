@@ -15,6 +15,18 @@ export const metadata: Metadata = {
 
 const properties = [
     {
+        id: 0,
+        status: 'Nouveau',
+        city: 'Montréal-Nord',
+        title: 'Duplex',
+        address: 'Montréal-Nord, QC',
+        price: 'Sur demande',
+        image: '/assets/properties/duplex-mtl-nord.jpg',
+        beds: 0,
+        baths: 0,
+        sqft: 0,
+    },
+    {
         id: 1,
         status: 'Nouveau',
         city: "Saint-Paul-de-l'Île-aux-Noix",

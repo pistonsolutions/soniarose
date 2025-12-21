@@ -9,8 +9,7 @@ import { Label } from "@/components/ui/label";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
-// ⚠️ TODO: REPLACE WITH ACTUAL CALENDLY URL WHEN AVAILABLE
-const CALENDLY_BASE_URL = "https://calendly.com/PLACEHOLDER_USER/evaluation";
+const CALENDLY_BASE_URL = "https://calendly.com/sonia-rose-remax-quebec/30min";
 
 export function EvaluationTunnel() {
     const [step, setStep] = useState<1 | 2>(1);

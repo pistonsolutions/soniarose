@@ -19,14 +19,14 @@ export function PublicFooter() {
         <footer className="bg-brand-beige-50 pt-20 pb-8 border-t border-brand-brown/10">
             <div className="container mx-auto px-4 md:px-8">
                 {/* Main Footer Content */}
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-start gap-12 mb-4">
+                <div className="flex flex-col md:flex-row items-center justify-start gap-8 md:gap-12 mb-8">
                     {/* SONIA ROSE LOGO */}
-                    <div className="relative -ml-16" style={{ width: soniaLogoWidth, height: soniaLogoHeight }}>
+                    <div className="relative md:-ml-16" style={{ width: soniaLogoWidth, height: soniaLogoHeight }}>
                         <Image
-                            src="/assets/logo-sonia-rose-new.png"
+                            src="/assets/logo-sonia-rose-new.svg"
                             alt="Sonia Rose Courtier Immobilière"
                             fill
-                            className="object-contain object-left"
+                            className="object-contain object-center md:object-left"
                             priority
                         />
                     </div>
@@ -34,10 +34,10 @@ export function PublicFooter() {
                     {/* REMAX LOGO */}
                     <div className="relative" style={{ width: remaxLogoWidth, height: remaxLogoHeight }}>
                         <Image
-                            src="/images/remax-logo-new.png"
+                            src="/assets/logo-remax-new.svg"
                             alt="Remax Imagine & Privilège"
                             fill
-                            className="object-contain object-left"
+                            className="object-contain object-center md:object-left"
                         />
                     </div>
                 </div>
