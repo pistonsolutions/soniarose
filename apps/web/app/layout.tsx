@@ -23,8 +23,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'SoniaRose CRM',
-  description: 'Operational console for SoniaRose relationship workflows.',
+  title: {
+    template: '%s | Sonia Rose',
+    default: 'Sonia Rose | Courtier Immobilier',
+  },
+  description: 'Sonia Rose, courtière immobilière experte sur la Rive-Sud et Montréal. Accompagnement stratégique et humain pour vendeurs et acheteurs.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

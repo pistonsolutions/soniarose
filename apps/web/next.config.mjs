@@ -75,6 +75,40 @@ const nextConfig = {
       ];
     },
   }),
+  async redirects() {
+    return [
+      {
+        source: '/en',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/en/properties',
+        destination: '/proprietes',
+        permanent: true,
+      },
+      {
+        source: '/en/blog',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/en/contact',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/en/property-assessment',
+        destination: '/vendeurs',
+        permanent: true,
+      },
+      {
+        source: '/fr',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
