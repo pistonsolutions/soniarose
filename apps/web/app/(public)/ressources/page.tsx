@@ -66,7 +66,7 @@ export default function ResourcesPage() {
                         <h1 className="mb-6 font-sans text-6xl text-brand-brown md:text-8xl lg:text-9xl tracking-widest uppercase" style={{ textShadow: '3px 5px 6px rgba(0, 0, 0, 0.4)' }}>
                             RESSOURCES
                         </h1>
-                        <h2 className="mb-8 text-xl font-medium text-brand-brown md:text-2xl font-sans max-w-2xl mx-auto">
+                        <h2 className="mb-8 text-xl font-medium text-brand-beige-50 md:text-2xl font-sans max-w-2xl mx-auto">
                             Des outils simples, humains et pratiques pour vous accompagner dans votre projet immobilier
                         </h2>
                     </FadeIn>

@@ -175,22 +175,21 @@ export default function AboutPage() {
                             <div className="">
                                 <h2 className="mb-4 font-sans text-4xl font-bold text-brand-navy">Mes valeurs</h2>
                                 <h3 className="mb-6 text-xl font-medium text-brand-gold">
-                                    L’immobilier, pour moi, ça n’a jamais été juste des transactions. C’est des vies. Des histoires. Des moments charnières.
+                                    L’immobilier, pour moi, ça n’a jamais été juste des transactions.<br />
+                                    Ce sont des vies, des histoires, et des moments importants.
                                 </h3>
                                 <div className="space-y-6 text-lg text-brand-navy/80">
                                     <p>
-                                        Depuis plus de 20 ans, j’ai compris que ce métier, ce n’est pas vendre des maisons — c’est accompagner des humains. À chaque fois qu’une personne m’ouvre sa porte, elle m’ouvre aussi un morceau de sa vie. Et moi, je prends ça à cœur.
+                                        Depuis plus de 20 ans dans l’immobilier, j’ai compris que ce métier-là, ce n’est pas juste vendre des propriétés : c’est accompagner des personnes dans des étapes importantes. Chaque fois qu’on me confie une maison, on me confie aussi une partie de vie.
                                     </p>
                                     <p>
-                                        Les gens me disent souvent que je suis authentique, que je dis les vraies choses avec douceur. Je veux que tu te sentes en sécurité, que tu comprennes chaque étape, sans pression, sans fla fla.
+                                        Je travaille avec authenticité : je dis les vraies choses, et je te guide avec clarté. Ce qui compte pour moi, c’est que tu prennes une décision réfléchie, basée sur ta réalité du moment et tes objectifs futurs — pas seulement sur les chiffres.
                                     </p>
                                     <p>
-                                        Je donne tout : mes 20 ans d’expérience, mes connaissances du marché, ma capacité à négocier, à anticiper et à protéger tes intérêts.
+                                        Je suis quelqu’un de concret et présente. Quand je m’engage dans un dossier, je m’implique à 100 % : analyse, stratégie, négociation et protections. J’utilise mes 20 ans d’expérience pour que tu avances avec confiance, que ce soit pour acheter, vendre, recommencer ou tourner une page.
                                     </p>
                                     <p className="font-bold text-brand-navy">
-                                        Pour moi, un client n’est pas un numéro.
-                                        C’est une personne qui m’accorde sa confiance.
-                                        Et ça, je ne le prends jamais pour acquis.
+                                        Parce que pour moi, un client, c’est bien plus qu’un simple numéro...
                                     </p>
                                 </div>
                             </div>

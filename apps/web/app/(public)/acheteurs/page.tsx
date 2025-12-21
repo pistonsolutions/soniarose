@@ -228,7 +228,7 @@ export default function BuyersPage() {
                 {/* Header Image */}
                 <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/assets/buyers/alert-header.png"
+                        src="/assets/buyers/custom-alert.png"
                         alt="Alerte immobilière"
                         fill
                         className="object-cover"
