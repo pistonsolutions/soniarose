@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import { auth } from '@clerk/nextjs/server';
 import { getContacts } from '@/lib/api';
-import { ContactsTable } from '@/components/contacts/contacts-table';
-import { CreateContactButton } from '@/components/contacts/create-contact-button';
+// import { ContactsTable } from '@/components/contacts/contacts-table';
+// import { CreateContactButton } from '@/components/contacts/create-contact-button';
 import { formatDate, formatName, formatOptInStatus } from '@/lib/format';
 
 export default async function ContactsPage() {
   const { getToken } = await auth();
   const token = await getToken();
-  const { data: contacts, error } = await getContacts(token);
+  const { data: contactData, error } = await getContacts(token);
+  const contacts = contactData || [];
 
   return (
     <div className="space-y-8">
@@ -22,7 +23,7 @@ export default async function ContactsPage() {
           </div>
           <div className="flex flex-wrap items-center gap-2">
             <Link
-              href="/contacts/new"
+              href="/crm/contacts/new"
               className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-slate-800 dark:bg-white dark:text-slate-900 dark:hover:bg-slate-100"
             >
               Add contact
@@ -89,7 +90,7 @@ export default async function ContactsPage() {
                     <tr key={contact.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/50">
                       <DataCell>
                         <Link
-                          href={`/contacts/${contact.id}`}
+                          href={`/crm/contacts/${contact.id}`}
                           className="font-medium text-blue-600 hover:underline dark:text-blue-300"
                         >
                           {formatName(contact.firstName, contact.lastName)}

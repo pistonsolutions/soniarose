@@ -13,6 +13,7 @@ export default function SettingsPage() {
   const { userId, getToken } = useAuth();
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [syncing, setSyncing] = useState(false);
   const [settings, setSettings] = useState({
     telnyxApiKey: '',
     tallyApiKey: '',
@@ -27,7 +28,7 @@ export default function SettingsPage() {
       if (!userId) return;
       try {
         const token = await getToken();
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/api/user-settings/me?userId=${userId}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api'}/user-settings/me?userId=${userId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -53,7 +54,7 @@ export default function SettingsPage() {
     setSaving(true);
     try {
       const token = await getToken();
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'}/api/user-settings/me?userId=${userId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api'}/user-settings/me?userId=${userId}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -71,6 +72,34 @@ export default function SettingsPage() {
       toast.error('An error occurred');
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleSyncWebhooks = async () => {
+    setSyncing(true);
+    try {
+      const token = await getToken();
+      // Remove duplicate /api if present
+      const baseUrl = (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api').replace(/\/api$/, '');
+      const res = await fetch(`${baseUrl}/api/tally/sync?userId=${userId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ webhookUrl }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        toast.success(`Synced ${data.updated} forms successfully`);
+      } else {
+        toast.error('Failed to sync webhooks');
+      }
+    } catch (error) {
+      toast.error('An error occurred during sync');
+    } finally {
+      setSyncing(false);
     }
   };
 
@@ -144,8 +173,18 @@ export default function SettingsPage() {
                   <Copy className="h-4 w-4" />
                 </Button>
               </div>
+              <div className="flex justify-end pt-2">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={handleSyncWebhooks}
+                  disabled={syncing || !settings.tallyApiKey}
+                >
+                  {syncing ? 'Syncing...' : 'Sync Webhooks'}
+                </Button>
+              </div>
               <p className="text-xs text-muted-foreground">
-                Paste this URL into the "Integrations" &gt; "Webhooks" section of your Tally forms.
+                Paste this URL into the "Integrations" &gt; "Webhooks" section of your Tally forms, or click "Sync Webhooks" to do it automatically (requires API Key).
               </p>
             </div>
           </CardContent>

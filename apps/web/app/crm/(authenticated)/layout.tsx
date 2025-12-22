@@ -1,6 +1,18 @@
+
 import type { ReactNode } from 'react';
 import { UserButton } from '@clerk/nextjs';
 import { currentUser } from '@clerk/nextjs/server';
+import {
+  LayoutDashboard,
+  UserSquare2,
+  Share2,
+  MessageSquare,
+  Settings,
+  Menu,
+  X,
+  ShieldCheck,
+  ClipboardList
+} from 'lucide-react';
 import { Sidebar } from '@/components/navigation/sidebar';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 
@@ -8,6 +20,7 @@ const NAV_ITEMS = [
   { href: '/crm/dashboard', label: 'Overview', description: 'KPIs and system status' },
   { href: '/crm/contacts', label: 'Contacts', description: 'Profiles, tags, activity' },
   { href: '/crm/inbox', label: 'Conversations', description: 'Two-way SMS and call log' },
+  { href: '/crm/forms', label: 'Forms', description: 'Build and manage forms' },
   { href: '/crm/workflows', label: 'Workflows', description: 'Automation queues and runs' },
   { href: '/crm/media', label: 'Media Library', description: 'Video uploads and assets' },
   { href: '/crm/compliance', label: 'Compliance', description: 'Opt-in events and STOP handling' },
