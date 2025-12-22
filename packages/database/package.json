@@ -8,7 +8,7 @@
     "build": "tsc -p tsconfig.json",
     "generate": "prisma generate",
     "migrate": "prisma migrate dev",
-    "lint": "eslint src prisma --ext .ts --max-warnings=0",
+    "lint": "eslint src prisma --max-warnings=0",
     "test": "echo 'no tests yet'"
   },
   "dependencies": {

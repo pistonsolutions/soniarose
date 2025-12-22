@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { RetryWorkflowButton } from '@/components/workflows/retry-workflow-button';
 import { auth } from '@clerk/nextjs/server';
 import { getWorkflowOverview, getWorkflowRuns } from '@/lib/api';
-import { WorkflowStats } from '@/components/workflows/workflow-stats';
-import { WorkflowRunsTable } from '@/components/workflows/workflow-runs-table';
+
 import { formatDate, formatName, formatWorkflowKey, formatWorkflowStatus } from '@/lib/format';
 
 export default async function WorkflowsPage() {
