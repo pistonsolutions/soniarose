@@ -1,0 +1,85 @@
+Sonia rose feedback
+
+global header:
+- use darker color. DONE
+- thicker header (which means increased logo and text size) 
+
+landing page:
+hero section: 
+- keep original text but on two lines. DONE
+- hero section logo: Use logo beige et or dans dossier page evaluation 2 etapes
+- remove the white border for mobile
+CTA:
+"Es tu encore aligne(e) avec ta maison"
+
+temoignages:
+use the ones from the email. DONE
+
+headers: Montserrat
+body text: lora
+button text: Montserrat. need to confirm. DONE	
+
+Decouvrez les roprietes ... & rive sud DONE
+
+buttons:
+round buttons. DONE
+
+temoignages buttons:
+
+
+qui est Sonia rose:
+- change the height of the text. and then put picture to the side
+videos:
+Sonia will send videos. DONE
+
+
+change black color to charcoal gray. DONE
+
+travailler avec moi: use actual text. DONE
+
+
+put shadowing as all the pages. DONE
+
+achetez avec moi:
+centralize buttons and text
+
+a propos page:
+move the picture up so that it's more shadow colored
+put shadowing
+
+for the picture pin it down
+
+6 blogs - turn it into 4 . DONE
+
+ensure brown colors are all the same brown. DONE.
+
+travailler avec moi 3E2723
+
+footer make it so that the same color as the testimony section. for the line make it darker. charcoal gray
+
+re deploy Sonia rose website
+
+mes propriétés:
+put it into a carousel. three showing at once. DONE
+
+
+add functionality to the button of evaluation form
+
+change components to also follow the structure of the fonts
+
+https://www.bardagi.com/en/sell-my-house/ for this use free home evaluation for people to fill out. Les étapes et les formules. 
+
+acheteurs 
+prêt a advancer image zoom it out. see the top of the arch
+update link of the google drive
+
+vendeurs
+
+ressources:
+- ressources et outils: normal instead of bold
+- zoom out on the picture
+zoom out on the hero picture
+- use Sonia's brown from canva everywhere
+- inverse the links
+
+blogs need to link

@@ -1,9 +1,20 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Lato } from 'next/font/google';
+import { Montserrat, Lora, Playfair_Display } from 'next/font/google';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
-import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+  display: 'swap',
+});
+
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-lora',
+  display: 'swap',
+});
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -11,33 +22,27 @@ const playfair = Playfair_Display({
   display: 'swap',
 });
 
-const lato = Lato({
-  weight: ['300', '400', '700'],
-  subsets: ['latin'],
-  variable: '--font-lato',
-  display: 'swap',
-});
-
 export const metadata: Metadata = {
-  title: 'SoniaRose CRM',
-  description: 'Operational console for SoniaRose relationship workflows.',
+  title: {
+    template: '%s | Sonia Rose',
+    default: 'Sonia Rose | Courtier Immobilier',
+  },
+  description: 'Sonia Rose, courtière immobilière experte sur la Rive-Sud et Montréal. Accompagnement stratégique et humain pour vendeurs et acheteurs.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ClerkProvider>
-      <html lang="fr" suppressHydrationWarning>
-        <body className={`${playfair.variable} ${lato.variable} antialiased font-sans`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem={false}
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="fr" suppressHydrationWarning>
+      <body className={`${montserrat.variable} ${lora.variable} ${playfair.variable} antialiased font-serif`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

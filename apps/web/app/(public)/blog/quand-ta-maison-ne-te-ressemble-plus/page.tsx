@@ -13,7 +13,7 @@ export default function BlogPostPage() {
             {/* HERO SECTION */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-card-1.jpg"
+                    src="/assets/blog/article-5.png"
                     alt="Quand ta maison ne te ressemble plus"
                     fill
                     className="object-cover"
@@ -24,7 +24,7 @@ export default function BlogPostPage() {
             {/* CONTENT SECTION */}
             <Section className="py-20 bg-[#F4F1EE]">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h1 className="font-serif text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
+                    <h1 className="font-sans text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
                         Quand ta maison ne te <br /> ressemble plus
                     </h1>
 
@@ -47,7 +47,7 @@ export default function BlogPostPage() {
                         <div className="space-y-12">
                             {/* Point 1 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">1. Tu ne te sens plus “chez toi”, même si tout est correct en apparence</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">1. Tu ne te sens plus “chez toi”, même si tout est correct en apparence</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>C’est un des signes les plus fréquents. Tout a l’air correct :<br />
                                         les murs sont beaux, les pièces sont fonctionnelles, rien n’est brisé... mais <strong>l’énergie n’est plus la même.</strong></p>
@@ -57,7 +57,7 @@ export default function BlogPostPage() {
 
                             {/* Point 2 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">2. Ton style de vie a changé, mais ta maison est restée dans le passé</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">2. Ton style de vie a changé, mais ta maison est restée dans le passé</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Ce que tu aimais avant ne correspond plus à ta réalité :</p>
                                     <ul className="list-disc pl-6 space-y-2">
@@ -77,7 +77,7 @@ export default function BlogPostPage() {
 
                             {/* Point 3 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">3. Tu ressens un poids plutôt qu’un confort</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">3. Tu ressens un poids plutôt qu’un confort</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Une maison, ça doit t’apporter du repos, de la paix, un sentiment de sécurité. Quand au contraire :</p>
                                     <ul className="list-disc pl-6 space-y-2">
@@ -91,7 +91,7 @@ export default function BlogPostPage() {
 
                             {/* Point 4 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">4. Tu évites certaines pièces (ou tu restes toujours dans les mêmes)</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">4. Tu évites certaines pièces (ou tu restes toujours dans les mêmes)</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Ça, c’est un signe fort. Quand on n’est plus aligné avec sa maison :</p>
                                     <ul className="list-disc pl-6 space-y-2">
@@ -107,7 +107,7 @@ export default function BlogPostPage() {
 
                             {/* Point 5 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">5. Tu rêves d’autre chose — souvent, et toujours pour les mêmes raisons</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">5. Tu rêves d’autre chose — souvent, et toujours pour les mêmes raisons</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Quand ce que tu désires revient en boucle :<br />
                                         un condo plus simple, un terrain plus petit, plus grand, plus lumineux, plus intime, plus pratique... Ce n’est pas un fantasme. C’est une réalité intérieure qui cherche à sortir.</p>
@@ -122,7 +122,7 @@ export default function BlogPostPage() {
 
                             {/* Point 6 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">6. Ton quotidien devient compliqué, alors qu’il devrait être simple</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">6. Ton quotidien devient compliqué, alors qu’il devrait être simple</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Une maison doit t’aider, pas te nuire.</p>
                                     <p>Quand elle t’en demande trop :<br />
@@ -140,7 +140,7 @@ export default function BlogPostPage() {
 
                             {/* Point 7 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">7. Tu changes intérieurement, et ton environnement ne suit plus</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">7. Tu changes intérieurement, et ton environnement ne suit plus</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>C’est le plus important.</p>
                                     <p>Parfois, on évolue personnellement :<br />

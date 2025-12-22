@@ -13,7 +13,7 @@ export default function BlogPostPage() {
             {/* HERO SECTION */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-card-4.jpg"
+                    src="/assets/blog/article-4.png"
                     alt="7 signes que c’est peut-être le moment de vendre"
                     fill
                     className="object-cover"
@@ -24,7 +24,7 @@ export default function BlogPostPage() {
             {/* CONTENT SECTION */}
             <Section className="py-20 bg-[#F4F1EE]">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h1 className="font-serif text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
+                    <h1 className="font-sans text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
                         7 signes que c’est peut-être <br /> le moment de vendre
                     </h1>
 
@@ -42,7 +42,7 @@ export default function BlogPostPage() {
                         <div className="space-y-12">
                             {/* Point 1 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">1. La maison ne correspond plus à ta vie actuelle</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">1. La maison ne correspond plus à ta vie actuelle</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Ça arrive à tout le monde. La maison parfaite il y a 10 ans ne l’est plus aujourd’hui. Pourquoi ?</p>
                                     <p>Parce que nos vies changent :</p>
@@ -59,7 +59,7 @@ export default function BlogPostPage() {
 
                             {/* Point 2 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">2. L’entretien devient un poids au lieu d’un plaisir</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">2. L’entretien devient un poids au lieu d’un plaisir</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Une maison, c’est beau. Mais une maison, c’est aussi de l’ouvrage... et ça, ça peut devenir lourd. Les tâches qui étaient faciles avant deviennent épuisantes :</p>
                                     <ul className="list-disc pl-6 space-y-2">
@@ -77,7 +77,7 @@ export default function BlogPostPage() {
 
                             {/* Point 3 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">3. Tu ne te sens plus “chez toi” comme avant</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">3. Tu ne te sens plus “chez toi” comme avant</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>C’est un signe subtil, mais puissant. Tu rentres chez toi et... l’ambiance n’est plus la même. Il manque quelque chose. Tu n’as plus le même attachement.</p>
                                     <p>Des fois, c’est à cause d’un changement personnel.<br />
@@ -89,7 +89,7 @@ export default function BlogPostPage() {
 
                             {/* Point 4 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">4. Tes besoins d’espace ont changé</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">4. Tes besoins d’espace ont changé</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Dans la vie, on passe par différentes phases.</p>
                                     <ul className="list-disc pl-6 space-y-2">
@@ -108,7 +108,7 @@ export default function BlogPostPage() {
 
                             {/* Point 5 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">5. Tu penses souvent à autre chose... un autre quartier, une autre vibe</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">5. Tu penses souvent à autre chose... un autre quartier, une autre vibe</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Ce signe-là, il est révélateur.</p>
                                     <p>Tu observes d’autres quartiers.<br />
@@ -121,7 +121,7 @@ export default function BlogPostPage() {
 
                             {/* Point 6 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">6. Ta maison est rendue plus lourde que ta vie</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">6. Ta maison est rendue plus lourde que ta vie</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Ça, c’est LE signe que les gens ignorent trop longtemps.</p>
                                     <p>Quand une maison n’accompagne plus ton quotidien mais le complique :</p>
@@ -139,7 +139,7 @@ export default function BlogPostPage() {
 
                             {/* Point 7 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">7. Tu sens que tu es prête à passer à autre chose</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">7. Tu sens que tu es prête à passer à autre chose</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>C’est le signe le plus important... et le plus difficile à nommer. Tu n’es pas malheureuse. Mais tu n’es plus pleinement bien non plus.</p>
                                     <p>Tu sens que quelque chose est terminé.<br />
@@ -151,7 +151,7 @@ export default function BlogPostPage() {
 
                             {/* Ce qu'il faut comprendre */}
                             <div className="mt-12">
-                                <h3 className="font-serif text-2xl font-bold mb-4">Ce qu’il faut comprendre</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">Ce qu’il faut comprendre</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Vendre une maison, ce n’est jamais juste financier. C’est un mélange de logique... et d’instinct. Les deux comptent.</p>
                                     <p>Tu n’as pas besoin d’être certaine à 100 % pour commencer à t’informer.<br />
@@ -165,7 +165,7 @@ export default function BlogPostPage() {
 
                             {/* Conclusion */}
                             <div className="mt-16 pt-8 border-t border-[#734838]/20">
-                                <h3 className="font-serif text-2xl font-bold mb-6">Conclusion</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-6">Conclusion</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Si tu te reconnais dans un de ces signes, ce n’est pas une urgence. C’est juste un message. Une invitation à réfléchir.</p>
                                     <p>Moi, je suis là pour t’accompagner dans cette réflexion-là :<br />

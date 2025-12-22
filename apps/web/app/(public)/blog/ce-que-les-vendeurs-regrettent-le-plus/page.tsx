@@ -14,7 +14,7 @@ export default function BlogPostPage() {
             {/* HERO SECTION */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-card-2.jpg"
+                    src="/assets/blog/article-2.png"
                     alt="Ce que les vendeurs regrettent le plus"
                     fill
                     className="object-cover"
@@ -25,7 +25,7 @@ export default function BlogPostPage() {
             {/* CONTENT SECTION */}
             <Section className="py-20 bg-[#F4F1EE]">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h1 className="font-serif text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
+                    <h1 className="font-sans text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
                         Ce que les vendeurs <br /> regrettent le plus
                     </h1>
 
@@ -43,7 +43,7 @@ export default function BlogPostPage() {
                         <div className="space-y-12">
                             {/* Point 1 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">1. Attendre trop longtemps avant de mettre en vente.</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">1. Attendre trop longtemps avant de mettre en vente.</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Ça, c'est probablement LE regret numéro un.</p>
                                     <p>Beaucoup de vendeurs se disent :</p>
@@ -56,7 +56,7 @@ export default function BlogPostPage() {
 
                             {/* Point 2 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">2. Sous-estimer l'importance de la première impression</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">2. Sous-estimer l'importance de la première impression</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Une maison peut être belle, bien entretenue... mais si, en ligne, les photos ne passent pas, <strong>les acheteurs ne cliqueront même pas.</strong></p>
                                     <p>Et ça, c'est un autre gros regret.</p>
@@ -70,7 +70,7 @@ export default function BlogPostPage() {
 
                             {/* Point 3 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">3. Avoir mis un prix trop élevé... juste "pour essayer". Ça, c'est un classique.</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">3. Avoir mis un prix trop élevé... juste "pour essayer". Ça, c'est un classique.</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>On se dit :</p>
                                     <p>« On peut toujours baisser après. »</p>
@@ -80,7 +80,7 @@ export default function BlogPostPage() {
                                         <li>les bons acheteurs ne la voient même pas dans leur recherche</li>
                                         <li>ceux qui la voient passent tout droit</li>
                                         <li>la maison se "brûle"</li>
-                                        <li>et quand on finit par baisser, c'est déjà trop tard :<br />la perception est installée -> « Pourquoi elle ne s'est pas vendue avant ? »</li>
+                                        <li>et quand on finit par baisser, c'est déjà trop tard :<br />la perception est installée → « Pourquoi elle ne s'est pas vendue avant ? »</li>
                                     </ul>
                                     <p>Le regret, ici, c'est de réaliser qu'un prix trop élevé au début a <strong>fait perdre du momentum</strong>, et parfois même plus que ça : le prix final est souvent plus bas que si on l'avait mise juste au départ.</p>
                                 </div>
@@ -88,7 +88,7 @@ export default function BlogPostPage() {
 
                             {/* Point 4 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">4. Ne pas avoir corrigé quelques petits détails avant la mise en marché.</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">4. Ne pas avoir corrigé quelques petits détails avant la mise en marché.</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Je te jure, des fois, ce sont des choses tellement simples... et pourtant tellement importantes :</p>
                                     <ul className="list-disc pl-6 space-y-2">
@@ -105,7 +105,7 @@ export default function BlogPostPage() {
 
                             {/* Point 5 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">5. Avoir accepté une offre trop vite... ou avoir trop attendu</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">5. Avoir accepté une offre trop vite... ou avoir trop attendu</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Il y a deux extrêmes :</p>
 
@@ -123,7 +123,7 @@ export default function BlogPostPage() {
 
                             {/* Point 6 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">6. Ne pas avoir posé les bonnes questions en cours de route.</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">6. Ne pas avoir posé les bonnes questions en cours de route.</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Et ça, je le vois souvent chez les gens qui ont essayé de vendre seuls, ou qui ont travaillé avec quelqu'un qui n'était pas assez présent.</p>
                                     <p>Ils me disent :</p>
@@ -140,7 +140,7 @@ export default function BlogPostPage() {
 
                             {/* Conclusion */}
                             <div className="mt-16 pt-8 border-t border-[#734838]/20">
-                                <h3 className="font-serif text-2xl font-bold mb-6">En conclusion</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-6">En conclusion</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Les regrets des vendeurs tournent toujours autour des mêmes thèmes :</p>
                                     <ul className="space-y-2">

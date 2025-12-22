@@ -7,7 +7,7 @@ import { ArrowRight, Calendar, User } from 'lucide-react';
 import type { Metadata } from 'next';
 import { BlogPageCarousel } from '@/components/blog-page-carousel';
 
-const blogHeroOpacity = 0.8; // 0.0 to 1.0
+const blogHeroOpacity = 1.0; // 0.0 to 1.0
 
 export const metadata: Metadata = {
     title: 'Blog Immobilier | Conseils, Émotions & Décisions – Sonia Rose',
@@ -31,7 +31,7 @@ export default function BlogPage() {
                             name: 'Sonia Rose Immobilier',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://soniarose.ca/assets/logo.png',
+                                url: 'https://soniarose.ca/assets/logo-sonia-rose-new.png',
                             },
                         },
                     }),
@@ -41,7 +41,7 @@ export default function BlogPage() {
             {/* SECTION 1 — HERO */}
             <div className="relative flex min-h-[600px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-hero-bg.png"
+                    src="/assets/blog/hero.png"
                     alt="Blog Immobilier Sonia Rose"
                     fill
                     className="object-cover"
@@ -50,7 +50,7 @@ export default function BlogPage() {
                 />
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn delay={0.2}>
-                        <h1 className="mb-4 font-serif text-5xl font-normal text-white md:text-7xl tracking-widest opacity-90">
+                        <h1 className="mb-4 font-sans text-6xl font-normal md:text-8xl tracking-widest opacity-90 text-brand-beige-300" style={{ textShadow: '3px 5px 6px rgba(0, 0, 0, 0.4)' }}>
                             BLOG IMMOBILIER
                         </h1>
                         <p className="text-sm md:text-base text-white/90 font-light tracking-wide uppercase">
@@ -61,16 +61,16 @@ export default function BlogPage() {
             </div>
 
             {/* SECTION 2 — INTRO */}
-            <Section className="py-20 bg-[#F4F1EE]">
+            <Section className="py-20 bg-brand-beige-100">
                 <div className="container mx-auto px-4 text-center">
                     <FadeIn>
-                        <h2 className="font-serif text-3xl md:text-4xl text-[#734838] mb-2">
+                        <h2 className="font-sans text-3xl md:text-4xl text-brand-brown mb-2">
                             BLOG IMMOBILIER
                         </h2>
-                        <h3 className="font-serif text-2xl md:text-3xl text-[#734838] mb-6">
+                        <h3 className="font-sans text-2xl md:text-3xl text-brand-brown mb-6">
                             CONSEILS & ÉMOTIONS
                         </h3>
-                        <p className="text-[#734838] max-w-2xl mx-auto text-lg font-light">
+                        <p className="text-brand-brown max-w-2xl mx-auto text-lg font-light">
                             Des analyses, des conseils et des perspectives modernes pour t'aider à prendre les meilleures décisions immobilières.
                         </p>
                     </FadeIn>
@@ -78,17 +78,17 @@ export default function BlogPage() {
             </Section>
 
             {/* SECTION 3 — ARTICLES */}
-            <Section className="py-20 bg-[#F4F1EE]">
+            <Section className="py-20 bg-brand-beige-100">
                 <FadeIn>
                     <BlogPageCarousel />
                 </FadeIn>
             </Section>
 
             {/* SECTION 4 — CTA */}
-            <Section background="navy">
+            <Section background="brown">
                 <div className="mx-auto max-w-4xl text-center">
                     <FadeIn>
-                        <h2 className="mb-6 font-serif text-3xl font-bold text-white md:text-4xl">
+                        <h2 className="mb-6 font-sans text-3xl font-bold text-white md:text-4xl">
                             Besoin d'aller plus loin ?
                         </h2>
                         <p className="mb-10 text-xl text-slate-300">
@@ -98,7 +98,7 @@ export default function BlogPage() {
                             <Button asChild size="lg" variant="gold">
                                 <Link href="/contact">Me contacter</Link>
                             </Button>
-                            <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white hover:text-brand-navy">
+                            <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white hover:text-brand-brown">
                                 <Link href="https://tally.so/r/QKKpvG" target="_blank">Évaluation Gratuite</Link>
                             </Button>
                         </div>

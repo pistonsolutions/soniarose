@@ -23,7 +23,7 @@ export async function DashboardContent() {
     return (
         <StaggerContainer className="space-y-12">
             <FadeIn className="space-y-2 border-b border-slate-200/50 pb-6 dark:border-white/10">
-                <h2 className="text-3xl font-serif font-bold text-brand-navy dark:text-white">Overview</h2>
+                <h2 className="text-3xl font-sans font-bold text-brand-brown dark:text-white">Overview</h2>
                 <p className="text-slate-600 dark:text-slate-300">
                     Monitor contact growth, messaging activity, and workflow readiness at a glance.
                 </p>
@@ -59,8 +59,8 @@ export async function DashboardContent() {
 
             <FadeIn className="space-y-6" delay={0.4}>
                 <div className="flex items-center justify-between">
-                    <h3 className="text-2xl font-serif font-bold text-brand-navy dark:text-white">Recent contacts</h3>
-                    <Link href="/contacts" className="text-sm font-medium text-brand-navy hover:text-brand-gold dark:text-brand-gold dark:hover:text-white transition-colors">
+                    <h3 className="text-2xl font-sans font-bold text-brand-brown dark:text-white">Recent contacts</h3>
+                    <Link href="/contacts" className="text-sm font-medium text-brand-brown hover:text-brand-gold dark:text-brand-gold dark:hover:text-white transition-colors">
                         View all contacts &rarr;
                     </Link>
                 </div>
@@ -68,16 +68,16 @@ export async function DashboardContent() {
                     <table className="min-w-full divide-y divide-slate-200/50 dark:divide-white/10">
                         <thead className="bg-slate-50/50 dark:bg-white/5">
                             <tr>
-                                <th scope="col" className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-brand-navy dark:text-slate-200">
+                                <th scope="col" className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-brand-brown dark:text-slate-200">
                                     Name
                                 </th>
-                                <th scope="col" className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-brand-navy dark:text-slate-200">
+                                <th scope="col" className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-brand-brown dark:text-slate-200">
                                     Phone
                                 </th>
-                                <th scope="col" className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-brand-navy dark:text-slate-200">
+                                <th scope="col" className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-brand-brown dark:text-slate-200">
                                     Opt-in
                                 </th>
-                                <th scope="col" className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-brand-navy dark:text-slate-200">
+                                <th scope="col" className="px-6 py-4 text-left text-xs font-bold uppercase tracking-wider text-brand-brown dark:text-slate-200">
                                     Added
                                 </th>
                             </tr>
@@ -92,7 +92,7 @@ export async function DashboardContent() {
                             ) : (
                                 recentContacts.map((contact) => (
                                     <tr key={contact.id} className="hover:bg-white/10 transition-colors">
-                                        <td className="px-6 py-4 text-sm font-medium text-brand-navy dark:text-white">
+                                        <td className="px-6 py-4 text-sm font-medium text-brand-brown dark:text-white">
                                             <Link href={`/contacts/${contact.id}`} className="hover:text-brand-gold transition-colors">
                                                 {formatName(contact.firstName, contact.lastName)}
                                             </Link>
@@ -129,9 +129,9 @@ function MetricCard({
 }) {
     return (
         <article className="relative overflow-hidden rounded-xl p-6 glass-card group">
-            <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-brand-navy to-brand-gold opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-brand-brown to-brand-gold opacity-0 transition-opacity group-hover:opacity-100" />
             <p className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">{label}</p>
-            <p className="mt-2 text-4xl font-serif font-bold text-brand-navy dark:text-white">{value}</p>
+            <p className="mt-2 text-4xl font-sans font-bold text-brand-brown dark:text-white">{value}</p>
             {children && <div className="mt-3">{children}</div>}
         </article>
     );

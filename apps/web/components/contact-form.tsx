@@ -50,7 +50,7 @@ export function ContactForm() {
         <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
-                    <label htmlFor="firstName" className="text-sm font-medium text-slate-700">
+                    <label htmlFor="firstName" className="text-sm font-medium font-sans text-slate-700">
                         Prénom <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -58,11 +58,11 @@ export function ContactForm() {
                         id="firstName"
                         name="firstName"
                         required
-                        className="w-full rounded-md border border-slate-300 p-2 focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
+                        className="w-full rounded-md border border-slate-300 p-2 font-sans focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
                     />
                 </div>
                 <div className="space-y-2">
-                    <label htmlFor="lastName" className="text-sm font-medium text-slate-700">
+                    <label htmlFor="lastName" className="text-sm font-medium font-sans text-slate-700">
                         Nom <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -70,12 +70,12 @@ export function ContactForm() {
                         id="lastName"
                         name="lastName"
                         required
-                        className="w-full rounded-md border border-slate-300 p-2 focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
+                        className="w-full rounded-md border border-slate-300 p-2 font-sans focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
                     />
                 </div>
             </div>
             <div className="space-y-2">
-                <label htmlFor="email" className="text-sm font-medium text-slate-700">
+                <label htmlFor="email" className="text-sm font-medium font-sans text-slate-700">
                     Courriel <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -83,22 +83,22 @@ export function ContactForm() {
                     id="email"
                     name="email"
                     required
-                    className="w-full rounded-md border border-slate-300 p-2 focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
+                    className="w-full rounded-md border border-slate-300 p-2 font-sans focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
                 />
             </div>
             <div className="space-y-2">
-                <label htmlFor="phone" className="text-sm font-medium text-slate-700">
+                <label htmlFor="phone" className="text-sm font-medium font-sans text-slate-700">
                     Téléphone
                 </label>
                 <input
                     type="tel"
                     id="phone"
                     name="phone"
-                    className="w-full rounded-md border border-slate-300 p-2 focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
+                    className="w-full rounded-md border border-slate-300 p-2 font-sans focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
                 />
             </div>
             <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-slate-700">
+                <label htmlFor="message" className="text-sm font-medium font-sans text-slate-700">
                     Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -106,7 +106,7 @@ export function ContactForm() {
                     name="message"
                     rows={4}
                     required
-                    className="w-full rounded-md border border-slate-300 p-2 focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
+                    className="w-full rounded-md border border-slate-300 p-2 font-sans focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
                 ></textarea>
             </div>
 
@@ -116,7 +116,7 @@ export function ContactForm() {
                 </div>
             )}
 
-            <Button type="submit" size="lg" className="w-full bg-brand-navy hover:bg-brand-navy/90" disabled={loading}>
+            <Button type="submit" size="lg" className="w-full bg-brand-brown hover:bg-brand-brown/90" disabled={loading}>
                 {loading ? 'Envoi en cours...' : 'Envoyer'}
             </Button>
         </form>

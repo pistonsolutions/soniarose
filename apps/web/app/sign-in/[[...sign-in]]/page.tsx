@@ -2,7 +2,7 @@ import { SignIn } from '@clerk/nextjs';
 
 export default function SignInPage() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-white via-slate-50 to-brand-cream p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-white via-slate-50 to-brand-beige-50 p-4">
       {/* Subtle background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -left-1/4 top-0 h-96 w-96 animate-pulse rounded-full bg-brand-gold/5 blur-3xl" />
@@ -17,7 +17,7 @@ export default function SignInPage() {
             elements: {
               rootBox: 'mx-auto',
               card: 'bg-white shadow-2xl border border-slate-200 rounded-2xl',
-              headerTitle: 'font-serif text-brand-navy text-2xl',
+              headerTitle: 'font-sans text-brand-brown text-2xl',
               headerSubtitle: 'text-slate-500',
               socialButtonsBlockButton: 'border-2 border-slate-200 hover:border-brand-gold hover:bg-brand-gold/5 transition-all',
               socialButtonsBlockButtonText: 'text-slate-700 font-medium',

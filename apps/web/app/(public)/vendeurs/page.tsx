@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { FadeIn } from '@/components/ui/fade-in';
 import { TrendingUp, Users, Camera, FileCheck } from 'lucide-react';
+import { EvaluationTunnel } from '@/components/evaluation-tunnel';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -13,12 +14,12 @@ export const metadata: Metadata = {
 
 export default function SellersPage() {
     // CONFIGURATION
-    const heroImageOpacity = 0.6; // Opacity of the background image (0.0 to 1.0)
+    const heroImageOpacity = 1.0; // Opacity of the background image (0.0 to 1.0)
 
     // BIO SECTION CONFIGURATION
-    const sellersBioScale = 3.7; // Scale the image (1 = 100%, 1.1 = 110%, etc.)
+    const sellersBioScale = 1.5; // Adjusted for new Portrait asset (was 3.7)
     const sellersBioX = 0; // Horizontal offset in pixels
-    const sellersBioY = 100; // Vertical offset in pixels
+    const sellersBioY = 150; // Vertical offset in pixels
 
     // GUIDE SECTION CONFIGURATION
     const sellersGuideScale = 1; // Scale the image (1 = 100%, 1.1 = 110%, etc.)
@@ -26,7 +27,7 @@ export default function SellersPage() {
     const sellersGuideY = 0; // Vertical offset in pixels
 
     // CTA SECTION CONFIGURATION
-    const ctaImageOpacity = 0.4; // Opacity of the background image (0.0 to 1.0)
+    const ctaImageOpacity = 1.0; // Opacity of the background image (0.0 to 1.0)
 
     return (
         <>
@@ -45,7 +46,7 @@ export default function SellersPage() {
                             name: 'Sonia Rose Immobilier',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://soniarose.ca/assets/logo.png',
+                                url: 'https://soniarose.ca/assets/logo-sonia-rose-new.png',
                             },
                         },
                     }),
@@ -56,7 +57,7 @@ export default function SellersPage() {
             {/* HERO SECTION */}
             <section className="relative flex h-[60vh] min-h-[500px] items-center justify-center overflow-hidden">
                 <Image
-                    src="/sellers-hero.jpg"
+                    src="/assets/sellers/hero.png"
                     alt="Vendre sa propriété avec Sonia Rose"
                     fill
                     className="object-cover"
@@ -65,7 +66,7 @@ export default function SellersPage() {
                 />
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn delay={0.2}>
-                        <h1 className="font-serif text-5xl font-bold text-white md:text-7xl lg:text-8xl tracking-widest uppercase">
+                        <h1 className="font-sans text-6xl md:text-8xl lg:text-9xl tracking-widest uppercase text-brand-beige-300" style={{ textShadow: '3px 5px 6px rgba(0, 0, 0, 0.4)' }}>
                             VENDEURS
                         </h1>
                     </FadeIn>
@@ -73,17 +74,17 @@ export default function SellersPage() {
             </section>
 
             {/* Section 2 - POURQUOI VENDRE AVEC SONIA ROSE */}
-            <section className="py-20 overflow-hidden" style={{ backgroundColor: '#ddd6cc' }}>
+            <section className="py-20 overflow-hidden bg-brand-beige-400">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="flex flex-col lg:flex-row items-center">
                             {/* Left Column: Text */}
                             <div className="lg:w-1/2 z-10 lg:pr-12">
-                                <h2 className="mb-2 font-serif text-5xl md:text-6xl uppercase tracking-wide leading-tight" style={{ color: '#734838' }}>
+                                <h2 className="mb-2 font-sans text-5xl md:text-6xl uppercase tracking-wide leading-tight text-brand-brown">
                                     POURQUOI VENDRE AVEC <br /> SONIA ROSE
                                 </h2>
 
-                                <div className="space-y-6 text-lg leading-relaxed mt-8" style={{ color: '#734838' }}>
+                                <div className="space-y-6 text-lg leading-relaxed mt-8 text-brand-brown">
                                     <p>
                                         Vendre une propriété, ce n’est pas juste une transaction — c’est un moment important de ta vie. Et tu mérites quelqu’un qui va te représenter comme si c’était sa propre maison.
                                     </p>
@@ -112,7 +113,7 @@ export default function SellersPage() {
                             <div className="lg:w-1/2 relative h-[500px] md:h-[700px] w-full mt-10 lg:mt-0 flex items-end justify-center lg:justify-end">
                                 <div className="relative w-full h-full max-w-lg">
                                     <Image
-                                        src="/sellers-bio.png"
+                                        src="/assets/sellers/why-sell-portrait.png"
                                         alt="Sonia Rose"
                                         fill
                                         className="object-contain object-bottom"
@@ -129,15 +130,15 @@ export default function SellersPage() {
             </section>
 
             {/* Section 3 - QUELLE EST LA VALEUR DE VOTRE PROPRIÉTÉ? */}
-            <section className="py-20" style={{ backgroundColor: '#E6E0D9' }}>
+            <section className="py-20 bg-brand-beige-400" id="evaluation">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                             {/* Left Column: Image */}
-                            <div className="lg:w-1/2">
-                                <div className="relative aspect-square w-full shadow-xl">
+                            <div className="lg:w-1/2 hidden lg:block">
+                                <div className="relative aspect-square w-full shadow-xl rounded-2xl overflow-hidden">
                                     <Image
-                                        src="/sellers-explore.jpg"
+                                        src="/assets/sellers/sellers-explore.jpg"
                                         alt="Cuisine moderne"
                                         fill
                                         className="object-cover"
@@ -145,50 +146,9 @@ export default function SellersPage() {
                                 </div>
                             </div>
 
-                            {/* Right Column: Content */}
-                            <div className="lg:w-1/2 text-center">
-                                <h2 className="mb-4 font-serif text-3xl md:text-5xl uppercase leading-tight" style={{ color: '#734838' }}>
-                                    QUELLE EST LA VALEUR DE <br /> VOTRE PROPRIÉTÉ?
-                                </h2>
-                                <p className="mb-8 text-lg leading-relaxed" style={{ color: '#734838' }}>
-                                    Reçois une estimation personnalisée basée sur ton adresse.<br />
-                                    Simple, rapide, sans pression — juste une analyse claire pour savoir où tu te situes réellement sur le marché.
-                                </p>
-
-                                {/* Address Input Simulation */}
-                                <Link href="https://tally.so/r/QKKpvG" target="_blank" className="mb-8 mx-auto max-w-md bg-white/50 p-2 rounded-full border border-[#734838]/30 flex items-center shadow-sm hover:bg-white/70 transition-colors cursor-pointer">
-                                    <div className="flex-grow px-4 py-2 text-left text-[#734838]/70 italic">
-                                        Entrez votre adresse pour commencer
-                                    </div>
-                                    <div className="h-10 w-10 flex items-center justify-center bg-[#E6E0D9] rounded-full text-[#734838] font-bold border border-[#734838]/20">
-                                        #
-                                    </div>
-                                </Link>
-
-                                <div className="mb-12">
-                                    <Button asChild size="lg" className="px-12 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
-                                        <Link href="https://tally.so/r/QKKpvG" target="_blank">SUIVANT</Link>
-                                    </Button>
-                                </div>
-
-                                {/* Steps */}
-                                <div className="flex justify-center gap-4 md:gap-8">
-                                    {/* Step 1 */}
-                                    <div className="flex flex-col items-center justify-center w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#F2EFE9] text-[#734838] p-2 shadow-sm">
-                                        <span className="font-serif font-bold text-lg mb-1">ÉTAPE 1</span>
-                                        <span className="text-xs md:text-sm leading-tight">Adresse de la propriété</span>
-                                    </div>
-                                    {/* Step 2 */}
-                                    <div className="flex flex-col items-center justify-center w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#DBCFB8] text-[#734838] p-2 shadow-sm">
-                                        <span className="font-serif font-bold text-lg mb-1">ÉTAPE 2</span>
-                                        <span className="text-xs md:text-sm leading-tight">Détails de la propriété</span>
-                                    </div>
-                                    {/* Step 3 */}
-                                    <div className="flex flex-col items-center justify-center w-28 h-28 md:w-32 md:h-32 rounded-full bg-[#9C8C74] text-white p-2 shadow-sm">
-                                        <span className="font-serif font-bold text-lg mb-1">ÉTAPE 3</span>
-                                        <span className="text-xs md:text-sm leading-tight">Évaluation gratuite</span>
-                                    </div>
-                                </div>
+                            {/* Right Column: Tunnel Form */}
+                            <div className="w-full lg:w-1/2">
+                                <EvaluationTunnel />
                             </div>
                         </div>
                     </FadeIn>
@@ -196,7 +156,7 @@ export default function SellersPage() {
             </section>
 
             {/* Section 4 - GUIDE PRATIQUE POUR VOTRE VENTE */}
-            <section className="py-20" style={{ backgroundColor: '#ddd6cc' }}>
+            <section className="py-20 bg-brand-beige-400">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
@@ -204,7 +164,7 @@ export default function SellersPage() {
                             <div className="lg:w-1/2 flex justify-center lg:justify-end">
                                 <div className="relative w-full max-w-md aspect-[3/4] shadow-2xl">
                                     <Image
-                                        src="/sellers-guide-cover.png"
+                                        src="/assets/resources/card-quiz.jpg"
                                         alt="Guide du Vendeur"
                                         fill
                                         className="object-cover"
@@ -214,10 +174,10 @@ export default function SellersPage() {
 
                             {/* Right Column: Content */}
                             <div className="lg:w-1/2 text-left">
-                                <h2 className="mb-6 font-serif text-3xl md:text-5xl uppercase leading-tight" style={{ color: '#734838' }}>
+                                <h2 className="mb-6 font-sans text-3xl md:text-5xl uppercase leading-tight text-brand-brown">
                                     GUIDE PRATIQUE POUR <br /> VOTRE VENTE
                                 </h2>
-                                <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#734838' }}>
+                                <div className="space-y-6 text-lg leading-relaxed text-brand-brown">
                                     <p>
                                         Vendre une propriété, c’est un projet important.<br />
                                         Pour t’aider à avancer avec clarté et confiance, j’ai préparé un guide complet rempli de conseils pratiques, d’étapes essentielles et d’informations précises pour que tu sois parfaitement accompagné du début à la fin.
@@ -228,8 +188,8 @@ export default function SellersPage() {
                                 </div>
 
                                 <div className="mt-10">
-                                    <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
-                                        <Link href="https://drive.google.com/file/d/1qEjWFoXa9zZv-LwFF5B83kG4UgjF8GES/view?usp=sharing" target="_blank">TÉLÉCHARGEZ-LE</Link>
+                                    <Button asChild size="lg" className="px-10 py-6 text-xl shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
+                                        <Link href="https://drive.google.com/file/d/1I0PGN5d3bkYA7ANvUHIZxTh089j3NrKX/view" target="_blank">TÉLÉCHARGEZ-LE</Link>
                                     </Button>
                                 </div>
                             </div>
@@ -243,20 +203,20 @@ export default function SellersPage() {
                 {/* Header Image */}
                 <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/sellers-marketing-header.jpg"
+                        src="/assets/sellers/marketing-header.png"
                         alt="Mise en marché stratégique"
                         fill
                         className="object-cover"
                     />
                 </div>
                 {/* Content */}
-                <div className="py-20" style={{ backgroundColor: '#E6E0D9' }}>
+                <div className="py-20 bg-brand-beige-400">
                     <div className="container mx-auto px-4 text-center">
                         <FadeIn>
-                            <h2 className="mb-8 font-serif text-3xl md:text-5xl uppercase leading-tight" style={{ color: '#734838' }}>
+                            <h2 className="mb-8 font-sans text-3xl md:text-5xl uppercase leading-tight text-brand-brown">
                                 MISE EN MARCHÉ STRATÉGIQUE
                             </h2>
-                            <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed font-medium" style={{ color: '#734838' }}>
+                            <div className="max-w-4xl mx-auto space-y-6 text-lg leading-relaxed font-medium text-brand-brown">
                                 <p>
                                     Chaque propriété est unique.<br />
                                     Mon rôle, c’est de créer une mise en marché réfléchie, professionnelle et conçue pour mettre en valeur ta maison au maximum.
@@ -289,26 +249,25 @@ export default function SellersPage() {
                         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                             {/* Left Column: Image */}
                             <div className="lg:w-1/2 flex justify-center lg:justify-end">
-                                <div className="relative w-full max-w-md shadow-lg">
+                                <div className="relative w-full max-w-md shadow-lg aspect-[3/4]">
                                     <Image
-                                        src="/sellers-report-quiz.png"
+                                        src="/assets/resources/secrets.webp"
                                         alt="Rapport personnalisé"
-                                        width={500}
-                                        height={600}
-                                        className="object-contain"
+                                        fill
+                                        className="object-cover"
                                     />
                                 </div>
                             </div>
 
                             {/* Right Column: Content */}
                             <div className="lg:w-1/2 text-center lg:text-right">
-                                <h2 className="mb-4 font-serif text-3xl md:text-5xl uppercase leading-tight" style={{ color: '#734838' }}>
+                                <h2 className="mb-4 font-sans text-3xl md:text-5xl uppercase leading-tight text-brand-brown">
                                     OBTIENS TON RAPPORT <br /> PERSONNALISÉE
                                 </h2>
-                                <h3 className="mb-8 font-serif text-xl md:text-2xl font-bold" style={{ color: '#734838' }}>
+                                <h3 className="mb-8 font-sans text-xl md:text-2xl font-bold text-brand-brown">
                                     Découvre les vérités cachées qui influencent vraiment la valeur de ta propriété
                                 </h3>
-                                <div className="space-y-4 text-lg leading-relaxed" style={{ color: '#734838' }}>
+                                <div className="space-y-4 text-lg leading-relaxed text-brand-brown">
                                     <p>Découvre les vérités cachées qui influencent réellement ta valeur.</p>
                                     <p>Mon rapport personnalisé te montre :</p>
                                     <ul className="space-y-1">
@@ -321,7 +280,7 @@ export default function SellersPage() {
                                 </div>
 
                                 <div className="mt-10">
-                                    <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
+                                    <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
                                         <Link href="https://tally.so/r/QKKpvG" target="_blank">RECEVOIR MON RAPPORT</Link>
                                     </Button>
                                 </div>
@@ -336,20 +295,20 @@ export default function SellersPage() {
                 {/* Header Image */}
                 <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/sellers-quiz-header.jpg"
+                        src="/assets/sellers/mismatch-header.png"
                         alt="Café et détente"
                         fill
                         className="object-cover"
                     />
                 </div>
                 {/* Content */}
-                <div className="py-20" style={{ backgroundColor: '#E6E0D9' }}>
+                <div className="py-20 bg-brand-beige-400">
                     <div className="container mx-auto px-4 text-center">
                         <FadeIn>
-                            <h2 className="mb-8 font-serif text-3xl md:text-5xl uppercase leading-tight" style={{ color: '#734838' }}>
+                            <h2 className="mb-8 font-sans text-3xl md:text-5xl uppercase leading-tight text-brand-brown">
                                 ET SI TA MAISON NE TE RESSEMBLAIT <br /> PLUS VRAIMENT?
                             </h2>
-                            <div className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed" style={{ color: '#734838' }}>
+                            <div className="max-w-3xl mx-auto space-y-6 text-lg leading-relaxed text-brand-brown">
                                 <p>
                                     Il arrive un moment où une maison cesse d’être seulement un lieu.<br />
                                     Elle devient le reflet de ton histoire, de tes choix, et de ton évolution.
@@ -359,7 +318,7 @@ export default function SellersPage() {
                                 </p>
                             </div>
                             <div className="mt-10">
-                                <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#8C6A5D', color: '#FFFFFF' }}>
+                                <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
                                     <Link href="https://tally.so/r/mZK1pz" target="_blank">FAIS LE TEST</Link>
                                 </Button>
                             </div>
@@ -371,22 +330,23 @@ export default function SellersPage() {
             {/* Section 8 - PRÊT(E) À PASSER À L’ACTION? */}
             <section className="relative py-32 overflow-hidden">
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 w-full h-full">
                     <Image
-                        src="/sellers-cta-bg.jpg"
+                        src="/assets/sellers/cta-bg.png"
                         alt="Background"
                         fill
                         className="object-cover"
-                        style={{ opacity: ctaImageOpacity }}
+                        style={{ opacity: 1.0 }}
                     />
+                    {/* <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" /> */}
                 </div>
 
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn>
-                        <h2 className="mb-8 font-serif text-4xl md:text-6xl uppercase leading-tight" style={{ color: '#4A3B32' }}>
+                        <h2 className="mb-8 font-sans text-4xl md:text-6xl uppercase leading-tight text-brand-brown">
                             PRÊT(E) À PASSER À L’ACTION?
                         </h2>
-                        <div className="max-w-4xl mx-auto space-y-6 text-xl leading-relaxed font-medium" style={{ color: '#4A3B32' }}>
+                        <div className="max-w-4xl mx-auto space-y-6 text-xl leading-relaxed font-medium text-brand-brown">
                             <p>
                                 Vendre une propriété, ce n’est pas rien.<br />
                                 C’est une décision importante, un chapitre de vie qui mérite d’être accompagné(e) avec soin.
@@ -401,7 +361,7 @@ export default function SellersPage() {
                         </div>
 
                         <div className="mt-12">
-                            <Button asChild size="lg" className="px-12 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#8C6A5D', color: '#FFFFFF' }}>
+                            <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
                                 <Link href="/contact">ME CONTACTER</Link>
                             </Button>
                         </div>
@@ -409,9 +369,9 @@ export default function SellersPage() {
                 </div>
 
                 {/* Logo Watermark */}
-                <div className="absolute bottom-8 right-8 z-10 opacity-80 w-32 md:w-48">
+                <div className="absolute right-4 bottom-4 w-48 md:w-64 opacity-50 pointer-events-none z-0">
                     <Image
-                        src="/images/sonia-rose-logo.png"
+                        src="/assets/logo-sonia-rose-new.png"
                         alt="Sonia Rose Logo"
                         width={200}
                         height={100}

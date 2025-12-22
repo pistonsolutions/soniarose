@@ -7,15 +7,25 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-lato)', ...defaultTheme.fontFamily.sans],
-        serif: ['var(--font-playfair)', ...defaultTheme.fontFamily.serif],
+        sans: ['var(--font-montserrat)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--font-lora)', ...defaultTheme.fontFamily.serif],
+        playfair: ['var(--font-playfair)', ...defaultTheme.fontFamily.serif],
       },
       colors: {
         brand: {
-          navy: '#734838', // Deep Navy -> Brown
+          brown: '#4b3620', // Deep Navy -> Brown (Primary Brand Color)
           gold: '#c5a059', // Gold/Bronze
-          cream: '#F9F9F7', // Warm Cream
-          beige: '#F2F0E9', // Warm Beige
+          charcoal: '#4b3620', // Merged into Brown (#4B3620)
+          beige: {
+            50: '#EFEAE2',  // Updated Cream
+            100: '#EFEAE2', // Updated Cream
+            200: '#F2EFE9', // Light Beige
+            300: '#E6DDD0', // Navbar & Hero Text (The "Main" Beige)
+            400: '#E6E0D9', // FAQ Section BG
+            500: '#DBCFB8', // Mid-tone
+            600: '#CDC5B9', // Tools Section
+            700: '#9C8C74', // Darkest Beige/Light Brown accent
+          },
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

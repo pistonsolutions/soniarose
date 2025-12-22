@@ -1,0 +1,44 @@
+# Feedback Implementation Plan
+
+This document outlines the actionable tasks based on the client's feedback (December 13, 2025).
+
+## 1. Global / General Changes
+
+- [x] **Fonts:** Ensure "Montserrat" font is used for all titles/headings across the site (Homepage "Work With Me", About Page titles).
+  - *Files:* `apps/web/app/globals.css`, `apps/web/components/ui/...` (check typography components), `apps/web/app/layout.tsx`.
+- [x] **Social Media Icons:** Replace black-and-white icons with real, colored versions.
+  - *Files:* `apps/web/components/layout/footer.tsx` (or wherever the footer is defined).
+- [x] **Logo Consistency:** Remove logo with text to ensure branding consistency.
+  - *Files:* `apps/web/components/layout/header.tsx`, `apps/web/components/layout/footer.tsx`.
+- [x] **Framed Logos:** Remove frames around logos in certain sections.
+  - *Files:* Check Homepage and About page components.
+
+## 2. Homepage (`apps/web/app/(public)/page.tsx`)
+
+- [x] **Hero Title:** Shorten the homepage title.
+- [x] **Hero Subtitle:**
+  - Make it shorter.
+  - Increase visibility (contrast).
+  - Change color to a darker shade.
+- [x] **Animation:** Add the requested moving image/animation to the homepage.
+- [x] **"Qui est Sonia Rose" Section:**
+  - Correct the text "Qui est Sonia Rose" (User said to forget about this for now).
+  - **Photo:** Align to the top of the page and increase size (match Canva reference).
+- [ ] **Photo Blocks (3 Squares):** Apply a filter for a softer, more cohesive look.
+- [ ] **"My Properties" Subtitle:** Update text to reflect work across Montreal and surroundings (remove specific "Rive-Sud" restriction).
+- [ ] **"Free Evaluation" Subtitle:** Change the wording.
+- [ ] **"Work With Me" Section:** Fix font to Montserrat.
+- [x] **Testimonials:** Add the missing testimonials section (content sent via email).
+- [ ] **Last Section:** Fix the photo size (currently too small).
+
+## 3. About Page (`apps/web/app/(public)/a-propos/page.tsx`)
+
+- [ ] **Hero Image:** Center the main image (show more chair, less table).
+- [ ] **Titles:** Ensure fonts are Montserrat.
+- [x] **Logos:** Fix colors and remove frames.
+- [ ] **Section 2 Image:** Move to the bottom of the page to avoid looking cut off.
+- [x] **Values Section:** Fix the round logo placement (currently looks lost next to text).
+
+## 4. Properties Page (`apps/web/app/(public)/proprietes/page.tsx`)
+
+- [ ] **Property Titles:** Change the titles as requested.

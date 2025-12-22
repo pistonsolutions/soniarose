@@ -32,7 +32,7 @@ export const Sidebar = memo(function Sidebar({ items }: SidebarProps) {
             className={clsx(
               'relative rounded-md px-3 py-2 text-sm font-medium transition-all duration-200 group',
               isActive
-                ? 'text-brand-navy dark:text-white bg-slate-100 dark:bg-slate-800'
+                ? 'text-brand-brown dark:text-white bg-slate-100 dark:bg-slate-800'
                 : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800'
             )}
           >
@@ -48,7 +48,7 @@ export const Sidebar = memo(function Sidebar({ items }: SidebarProps) {
             {item.description && (
               <span className={clsx(
                 "relative z-10 mt-0.5 block text-xs font-normal",
-                isActive ? "text-brand-navy/80 dark:text-slate-200" : "text-slate-600 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-300"
+                isActive ? "text-brand-brown/80 dark:text-slate-200" : "text-slate-600 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-300"
               )}>
                 {item.description}
               </span>

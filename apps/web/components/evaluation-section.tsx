@@ -45,7 +45,7 @@ export function EvaluationSection() {
                 {/* Right Side - Content */}
                 <div className="flex flex-col justify-center p-8 py-20 lg:p-20">
                     <div className="mx-auto max-w-md text-center w-full">
-                        <h2 className="mb-4 font-serif text-3xl font-normal text-[#734838] md:text-4xl lg:text-5xl leading-tight">
+                        <h2 className="mb-4 font-sans text-3xl font-normal text-[#734838] md:text-4xl lg:text-5xl leading-tight">
                             QUELLE EST LA VALEUR DE VOTRE PROPRIÉTÉ?
                         </h2>
 
@@ -86,7 +86,7 @@ export function EvaluationSection() {
                                                             placeholder="Entrez votre adresse complète"
                                                             value={address}
                                                             onChange={(e: React.ChangeEvent<HTMLInputElement>) => setAddress(e.target.value)}
-                                                            className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 pl-12 text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]"
+                                                            className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 pl-12 font-sans text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]"
                                                         />
                                                         <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-[#734838]/50" size={20} />
                                                     </div>
@@ -114,7 +114,7 @@ export function EvaluationSection() {
                                                 >
                                                     <div className="relative">
                                                         <select
-                                                            className="w-full appearance-none rounded-full border border-[#734838]/30 bg-transparent px-6 py-3.5 text-[#734838] focus:outline-none focus:ring-2 focus:ring-[#734838]"
+                                                            className="w-full appearance-none rounded-full border border-[#734838]/30 bg-transparent px-6 py-3.5 font-sans text-[#734838] focus:outline-none focus:ring-2 focus:ring-[#734838]"
                                                             defaultValue=""
                                                         >
                                                             <option value="" disabled>- Type de propriété -</option>
@@ -126,11 +126,11 @@ export function EvaluationSection() {
                                                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-[#734838] pointer-events-none" size={16} />
                                                     </div>
                                                     <div className="grid grid-cols-2 gap-3">
-                                                        <Input placeholder="Chambres" type="number" className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]" />
-                                                        <Input placeholder="Salles de bain" type="number" className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]" />
+                                                        <Input placeholder="Chambres" type="number" className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 font-sans text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]" />
+                                                        <Input placeholder="Salles de bain" type="number" className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 font-sans text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]" />
                                                     </div>
-                                                    <Input placeholder="Année de construction" type="number" className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]" />
-                                                    <Input placeholder="Superficie habitable (pi²)" type="number" className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]" />
+                                                    <Input placeholder="Année de construction" type="number" className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 font-sans text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]" />
+                                                    <Input placeholder="Superficie habitable (pi²)" type="number" className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 font-sans text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]" />
                                                 </motion.div>
                                             )}
 
@@ -156,19 +156,19 @@ export function EvaluationSection() {
                                                     <div className="flex-1 space-y-3">
                                                         <Input
                                                             placeholder="Votre nom"
-                                                            className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]"
+                                                            className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 font-sans text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]"
                                                         />
                                                         <Input
                                                             placeholder="Votre courriel"
-                                                            className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]"
+                                                            className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 font-sans text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]"
                                                         />
                                                         <Input
                                                             placeholder="Votre téléphone"
-                                                            className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]"
+                                                            className="rounded-full border-[#734838]/30 bg-transparent px-6 py-6 font-sans text-[#734838] placeholder:text-[#734838]/50 focus-visible:ring-[#734838]"
                                                         />
                                                         <div className="relative">
                                                             <select
-                                                                className="w-full appearance-none rounded-full border border-[#734838]/30 bg-transparent px-6 py-3.5 text-[#734838] focus:outline-none focus:ring-2 focus:ring-[#734838]"
+                                                                className="w-full appearance-none rounded-full border border-[#734838]/30 bg-transparent px-6 py-3.5 font-sans text-[#734838] focus:outline-none focus:ring-2 focus:ring-[#734838]"
                                                                 defaultValue=""
                                                             >
                                                                 <option value="" disabled>
@@ -190,15 +190,15 @@ export function EvaluationSection() {
                                     {/* Steps Indicator */}
                                     <div className="mb-8 flex justify-center gap-4">
                                         <div className={`flex h-24 w-24 flex-col items-center justify-center rounded-full p-2 text-center shadow-sm transition-colors ${step === 1 ? 'bg-[#99857A]' : 'bg-[#F4F1EE]'}`}>
-                                            <span className="font-serif text-lg font-bold text-[#734838]">ÉTAPE 1</span>
+                                            <span className="font-sans text-lg font-bold text-[#734838]">ÉTAPE 1</span>
                                             <span className="text-xs leading-tight text-[#734838]/80">Adresse de la propriété</span>
                                         </div>
                                         <div className={`flex h-24 w-24 flex-col items-center justify-center rounded-full p-2 text-center shadow-sm transition-colors ${step === 2 ? 'bg-[#99857A]' : 'bg-[#F4F1EE]'}`}>
-                                            <span className="font-serif text-lg font-bold text-[#734838]">ÉTAPE 2</span>
+                                            <span className="font-sans text-lg font-bold text-[#734838]">ÉTAPE 2</span>
                                             <span className="text-xs leading-tight text-[#734838]/80">Détails de la propriété</span>
                                         </div>
                                         <div className={`flex h-24 w-24 flex-col items-center justify-center rounded-full p-2 text-center shadow-sm transition-colors ${step === 3 ? 'bg-[#99857A]' : 'bg-[#F4F1EE]'}`}>
-                                            <span className="font-serif text-lg font-bold text-[#734838]">ÉTAPE 3</span>
+                                            <span className="font-sans text-lg font-bold text-[#734838]">ÉTAPE 3</span>
                                             <span className="text-xs leading-tight text-[#734838]/80">Évaluation gratuite</span>
                                         </div>
                                     </div>
@@ -247,15 +247,15 @@ export function EvaluationSection() {
                                     {/* Steps Indicator (Faded/Static) */}
                                     <div className="flex justify-center gap-4 opacity-80">
                                         <div className="flex h-24 w-24 flex-col items-center justify-center rounded-full bg-[#F4F1EE] p-2 text-center shadow-sm">
-                                            <span className="font-serif text-lg font-bold text-[#734838]">ÉTAPE 1</span>
+                                            <span className="font-sans text-lg font-bold text-[#734838]">ÉTAPE 1</span>
                                             <span className="text-xs leading-tight text-[#734838]/80">Adresse de la propriété</span>
                                         </div>
                                         <div className="flex h-24 w-24 flex-col items-center justify-center rounded-full bg-[#F4F1EE] p-2 text-center shadow-sm">
-                                            <span className="font-serif text-lg font-bold text-[#734838]">ÉTAPE 2</span>
+                                            <span className="font-sans text-lg font-bold text-[#734838]">ÉTAPE 2</span>
                                             <span className="text-xs leading-tight text-[#734838]/80">Détails de la propriété</span>
                                         </div>
                                         <div className="flex h-24 w-24 flex-col items-center justify-center rounded-full bg-[#99857A] p-2 text-center shadow-sm">
-                                            <span className="font-serif text-lg font-bold text-[#734838]">ÉTAPE 3</span>
+                                            <span className="font-sans text-lg font-bold text-[#734838]">ÉTAPE 3</span>
                                             <span className="text-xs leading-tight text-[#734838]/80">Évaluation gratuite</span>
                                         </div>
                                     </div>
@@ -263,8 +263,8 @@ export function EvaluationSection() {
                             )}
                         </AnimatePresence>
                     </div>
-                </div>
-            </div>
-        </section>
+                </div >
+            </div >
+        </section >
     );
 }

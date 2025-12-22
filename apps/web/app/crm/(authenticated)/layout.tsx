@@ -31,7 +31,7 @@ export default async function ConsoleLayout({ children }: { children: ReactNode 
         <div className="flex h-full flex-col p-6">
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <h1 className="text-xl font-serif font-bold text-slate-900 dark:text-white">Welcome, {firstName}</h1>
+              <h1 className="text-xl font-sans font-bold text-slate-900 dark:text-white">Welcome, {firstName}</h1>
             </div>
             <div className="bg-slate-100 rounded-full p-1 dark:bg-slate-800">
               <UserButton afterSignOutUrl="/" />

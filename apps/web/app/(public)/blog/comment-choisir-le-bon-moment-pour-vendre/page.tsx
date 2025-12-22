@@ -13,7 +13,7 @@ export default function BlogPostPage() {
             {/* HERO SECTION */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/blog-card-1.jpg"
+                    src="/assets/blog/article-1.png"
                     alt="Comment choisir le bon moment pour vendre"
                     fill
                     className="object-cover"
@@ -24,7 +24,7 @@ export default function BlogPostPage() {
             {/* CONTENT SECTION */}
             <Section className="py-20 bg-[#F4F1EE]">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h1 className="font-serif text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
+                    <h1 className="font-sans text-4xl md:text-5xl text-[#734838] font-bold mb-8 leading-tight">
                         Comment choisir le bon moment <br /> pour vendre
                     </h1>
 
@@ -54,7 +54,7 @@ export default function BlogPostPage() {
                         <div className="space-y-12">
                             {/* Point 1 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">1. Quand ton quotidien ne "fitte" plus avec ta maison</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">1. Quand ton quotidien ne "fitte" plus avec ta maison</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>C'est souvent le premier signe.</p>
                                     <p>Tu fais les mêmes gestes que d'habitude, mais tout te semble... lourd.</p>
@@ -67,7 +67,7 @@ export default function BlogPostPage() {
 
                             {/* Point 2 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">2. Quand l'entretien devient un poids</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">2. Quand l'entretien devient un poids</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Tu sais, ce moment où juste regarder la cour te décourage?</p>
                                     <p>Où repeindre une pièce te semble comme monter l'Everest?</p>
@@ -79,7 +79,7 @@ export default function BlogPostPage() {
 
                             {/* Point 3 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">3. Quand ton énergie change...mais la maison reste figée</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">3. Quand ton énergie change...mais la maison reste figée</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>On évolue.</p>
                                     <p>On guérit.</p>
@@ -93,7 +93,7 @@ export default function BlogPostPage() {
 
                             {/* Point 4 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">4. Quand tu commences à te projeter ailleurs</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">4. Quand tu commences à te projeter ailleurs</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>C'est subtil, mais c'est puissant. Tu te surprends à regarder les maisons sur Centris, à passer dans un quartier et te dire :</p>
                                     <p>« J'aimerais tellement habiter ici... »</p>
@@ -103,7 +103,7 @@ export default function BlogPostPage() {
 
                             {/* Point 5 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">5. Quand les finances jouent en ta faveur</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">5. Quand les finances jouent en ta faveur</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>On ne se mentira pas :</p>
                                     <p>il y a aussi un côté stratégique.</p>
@@ -116,7 +116,7 @@ export default function BlogPostPage() {
 
                             {/* Point 6 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">6. Quand tu ressens un besoin de tourner une page</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">6. Quand tu ressens un besoin de tourner une page</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Ce point-là, c'est celui dont les gens ne parlent pas assez souvent.</p>
                                     <p>Il arrive un moment où on n'a plus envie de "réparer". On a envie de recommencer ailleurs. D'avoir un nouveau décor, une nouvelle énergie, une nouvelle histoire.</p>
@@ -126,7 +126,7 @@ export default function BlogPostPage() {
 
                             {/* Point 7 */}
                             <div>
-                                <h3 className="font-serif text-2xl font-bold mb-4">7. Quand tu réalises que tu mérites mieux</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-4">7. Quand tu réalises que tu mérites mieux</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>Souvent, on attend parce qu'on pense que ce n'est pas le bon moment.</p>
                                     <p>Ou qu'on dérange.</p>
@@ -139,7 +139,7 @@ export default function BlogPostPage() {
 
                             {/* Conclusion */}
                             <div className="mt-16 pt-8 border-t border-[#734838]/20">
-                                <h3 className="font-serif text-2xl font-bold mb-6">En résumé</h3>
+                                <h3 className="font-sans text-2xl font-bold mb-6">En résumé</h3>
                                 <div className="space-y-4 font-light text-lg">
                                     <p>On ne vend pas une maison juste parce qu'on en a envie.</p>
                                     <p>On vend parce qu'on évolue.</p>

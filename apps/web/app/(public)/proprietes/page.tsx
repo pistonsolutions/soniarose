@@ -5,7 +5,8 @@ import { Section } from '@/components/ui/section';
 import { FadeIn } from '@/components/ui/fade-in';
 import { MapPin, ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
-import { EvaluationSection } from '@/components/evaluation-section';
+import { PropertiesCarousel } from '@/components/properties-carousel';
+import { EvaluationTunnel } from '@/components/evaluation-tunnel';
 
 export const metadata: Metadata = {
     title: 'Propriétés à vendre Rive-Sud | Sonia Rose Courtier Immobilier',
@@ -14,13 +15,25 @@ export const metadata: Metadata = {
 
 const properties = [
     {
+        id: 0,
+        status: 'Nouveau',
+        city: 'Montréal-Nord',
+        title: 'Duplex',
+        address: 'Montréal-Nord, QC',
+        price: 'Sur demande',
+        image: '/assets/properties/duplex-mtl-nord.jpg',
+        beds: 0,
+        baths: 0,
+        sqft: 0,
+    },
+    {
         id: 1,
         status: 'Nouveau',
         city: "Saint-Paul-de-l'Île-aux-Noix",
-        title: 'Bord de l\'eau exceptionnel',
+        title: 'Bord de l\'eau',
         address: "Saint-Paul-de-l'Île-aux-Noix, QC",
         price: 'Sur demande',
-        image: "/Nouveaute - Saint-Paul-de-l'Ile-aux-Noix.jpeg",
+        image: "/assets/properties/nouveaute-saint-paul.jpg",
         beds: 4,
         baths: 2,
         sqft: 2500,
@@ -29,10 +42,10 @@ const properties = [
         id: 2,
         status: 'Vendu',
         city: 'Boucherville',
-        title: 'Maison familiale',
+        title: 'Condo',
         address: 'Boucherville, QC',
         price: 'Vendu',
-        image: '/Vendu - Boucherville.jpeg',
+        image: '/assets/properties/vendu-boucherville.jpg',
         beds: 4,
         baths: 2,
         sqft: 2200,
@@ -44,7 +57,7 @@ const properties = [
         title: 'Cottage rénové',
         address: 'Brossard, QC',
         price: 'Vendu',
-        image: '/Vendu - Brossard.jpg',
+        image: '/assets/properties/vendu-brossard.jpg',
         beds: 3,
         baths: 2,
         sqft: 1800,
@@ -56,7 +69,7 @@ const properties = [
         title: 'Condo lumineux',
         address: 'Longueuil, QC',
         price: 'Vendu',
-        image: '/Vendu - Longeuil.png',
+        image: '/assets/properties/vendu-longueuil-1.png',
         beds: 2,
         baths: 1,
         sqft: 1100,
@@ -65,10 +78,10 @@ const properties = [
         id: 5,
         status: 'Vendu',
         city: 'Longueuil',
-        title: 'Propriété à revenus',
+        title: 'Maison à étages',
         address: 'Longueuil, QC',
         price: 'Vendu',
-        image: '/Vendu - Longeuil1.jpeg',
+        image: '/assets/properties/vendu-longueuil-2.jpg',
         beds: 6,
         baths: 3,
         sqft: 2800,
@@ -77,10 +90,10 @@ const properties = [
         id: 6,
         status: 'Vendu',
         city: 'Mercier',
-        title: 'Plain-pied moderne',
+        title: 'Maison à paliers multiples',
         address: 'Mercier, QC',
         price: 'Vendu',
-        image: '/Vendu - Mercier.jpeg',
+        image: '/assets/properties/vendu-mercier.jpg',
         beds: 3,
         baths: 2,
         sqft: 1500,
@@ -89,10 +102,10 @@ const properties = [
         id: 7,
         status: 'Vendu',
         city: 'Saint-Jean-sur-Richelieu',
-        title: 'Maison de ville',
+        title: 'Maison plain-pied avec vue exceptionelle',
         address: 'Saint-Jean-sur-Richelieu, QC',
         price: 'Vendu',
-        image: '/Vendu - Saint-Jean-sur-Richelieu.jpeg',
+        image: '/assets/properties/vendu-saint-jean.jpg',
         beds: 3,
         baths: 1.5,
         sqft: 1600,
@@ -101,10 +114,10 @@ const properties = [
         id: 8,
         status: 'Vendu',
         city: 'Sainte-Julie',
-        title: 'Prestige et confort',
+        title: 'Maison de ville',
         address: 'Sainte-Julie, QC',
         price: 'Vendu',
-        image: '/Vendu - Sainte-Julie.jpeg',
+        image: '/assets/properties/vendu-sainte-julie.jpg',
         beds: 5,
         baths: 3,
         sqft: 3200,
@@ -116,7 +129,7 @@ const properties = [
         title: 'Charme champêtre',
         address: 'Sainte-Madeleine, QC',
         price: 'Vendu',
-        image: '/Vendu - Sainte-Madelaine.jpg',
+        image: '/assets/properties/vendu-sainte-madeleine.jpg',
         beds: 3,
         baths: 1,
         sqft: 1400,
@@ -125,10 +138,10 @@ const properties = [
         id: 10,
         status: 'Vendu',
         city: 'Saint-Hubert',
-        title: 'Bungalow rénové',
+        title: 'Condo rénové',
         address: 'Saint-Hubert, QC',
         price: 'Vendu',
-        image: '/Vendu - St-Hubert.png',
+        image: '/assets/properties/vendu-st-hubert.png',
         beds: 3,
         baths: 2,
         sqft: 1300,
@@ -140,7 +153,7 @@ const properties = [
         title: 'Havre de paix',
         address: 'Stukely-Sud, QC',
         price: 'Vendu',
-        image: '/Vendu - Stukely-Sud.jpeg',
+        image: '/assets/properties/vendu-stukely-sud.jpg',
         beds: 3,
         baths: 2,
         sqft: 2000,
@@ -149,17 +162,47 @@ const properties = [
         id: 12,
         status: 'Vendu',
         city: 'Saint-Hubert',
-        title: 'Investissement idéal',
+        title: 'Construction Neuve',
         address: 'Saint-Hubert, QC',
         price: 'Vendu',
-        image: '/Vendu Saint-Hubert.jpg',
+        image: '/assets/properties/vendu-st-hubert-2.jpg',
         beds: 2,
         baths: 1,
         sqft: 1000,
     },
+    {
+        id: 13,
+        status: 'Vendu',
+        city: 'Hochelaga-Maisonneuve',
+        title: '6 Plex',
+        address: 'Hochelaga-Maisonneuve, QC',
+        price: 'Vendu',
+        image: '/assets/properties/vendu-hochelaga.jpg',
+        beds: 6,
+        baths: 6,
+        sqft: 5000,
+    },
+    {
+        id: 14,
+        status: 'Vendu',
+        city: 'Plateau Mont-Royal',
+        title: 'Propriété à revenus - Idéal pour investissement',
+        address: 'Plateau Mont-Royal, QC',
+        price: 'Vendu',
+        image: '/assets/properties/vendu-plateau.jpg',
+        beds: 4,
+        baths: 2,
+        sqft: 3000,
+    },
 ];
 
 export default function PropertiesPage() {
+    // HERO CONFIGURATION
+    // Change to 'contain' to see the full image (unzoomed), or 'cover' to fill the area (zoomed/cropped)
+    const heroObjectFit: 'cover' | 'contain' = 'cover';
+    const heroScale = 1; // Scale factor: 1 = 100%
+    const heroObjectPosition = '50% 70%'; // Focus on the lower part (50% horizontal, 70% vertical)
+
     return (
         <>
             <script
@@ -188,17 +231,17 @@ export default function PropertiesPage() {
             {/* SECTION 1 — HERO */}
             <div className="relative flex min-h-[500px] items-center justify-center pt-20 m-4 rounded-[3rem] overflow-hidden">
                 <Image
-                    src="/Nouveaute - Saint-Paul-de-l'Ile-aux-Noix.jpeg"
+                    src="/assets/properties/hero.png"
                     alt="Propriétés à vendre Sonia Rose"
                     fill
-                    className="object-cover"
-                    style={{ opacity: 0.6 }}
+                    className={`object-${heroObjectFit}`}
+                    style={{ opacity: 1.0, transform: `scale(${heroScale})`, objectPosition: heroObjectPosition }}
                     priority
                 />
-                <div className="absolute inset-0 bg-black/20" />
+                {/* <div className="absolute inset-0 bg-black/20" /> */}
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn delay={0.2}>
-                        <h1 className="mb-4 font-serif text-5xl font-normal text-white md:text-7xl tracking-widest opacity-90">
+                        <h1 className="mb-4 font-sans text-6xl font-normal md:text-8xl tracking-widest opacity-90 text-brand-beige-300" style={{ textShadow: '3px 5px 6px rgba(0, 0, 0, 0.4)' }}>
                             MES PROPRIÉTÉS
                         </h1>
                         <p className="text-sm md:text-base text-white/90 font-light tracking-wide uppercase">
@@ -206,60 +249,25 @@ export default function PropertiesPage() {
                         </p>
                     </FadeIn>
                 </div>
-            </div>
+            </div >
 
             {/* SECTION 2 — LISTE DES PROPRIÉTÉS */}
-            <Section className="py-20 bg-[#F4F1EE]">
+            <Section className="py-20 bg-brand-beige-200">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="mb-12 flex flex-col items-center justify-between gap-4 md:flex-row">
-                            <h2 className="font-serif text-3xl font-bold text-[#734838]">Propriétés en vedette</h2>
-                            <div className="flex gap-2">
-                                <Button variant="outline" className="border-[#734838] text-[#734838] hover:bg-[#734838] hover:text-white">Tous</Button>
-                                <Button variant="ghost" className="text-[#734838] hover:bg-[#734838]/10">Maisons</Button>
-                                <Button variant="ghost" className="text-[#734838] hover:bg-[#734838]/10">Condos</Button>
-                                <Button variant="ghost" className="text-[#734838] hover:bg-[#734838]/10">Revenus</Button>
-                            </div>
+                            <h2 className="font-sans text-3xl font-bold text-brand-brown">Propriétés en vedette</h2>
                         </div>
 
-                        {/* Property Grid */}
-                        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                            {properties.map((property) => (
-                                <div key={property.id} className="group overflow-hidden rounded-xl bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-md">
-                                    <div className="relative aspect-[4/3] bg-slate-200">
-                                        <div className={`absolute top-4 left-4 z-10 rounded-md px-3 py-1 text-sm font-bold text-white ${property.status === 'Nouveau' ? 'bg-[#734838]' : 'bg-black/50'
-                                            }`}>
-                                            {property.status}
-                                        </div>
-                                        <Image
-                                            src={property.image}
-                                            alt={property.title}
-                                            fill
-                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                    </div>
-                                    <div className="p-6">
-                                        <div className="mb-2 text-sm font-medium text-[#734838]/70 uppercase tracking-wider">{property.city}</div>
-                                        <h3 className="mb-2 font-serif text-xl font-bold text-[#734838]">{property.title}</h3>
-                                        <div className="mb-4 flex items-center text-[#734838]/80">
-                                            <MapPin size={16} className="mr-1" />
-                                            <span className="text-sm">{property.address}</span>
-                                        </div>
-
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-xl font-bold text-[#734838]">{property.price}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                        {/* Property Carousel */}
+                        <PropertiesCarousel properties={properties} />
 
                         <div className="mt-16 text-center">
-                            <p className="mb-6 text-lg text-[#734838]">
+                            <p className="mb-6 text-lg text-brand-brown">
                                 Vous ne trouvez pas ce que vous cherchez ? <br />
                                 Inscrivez-vous à mon alerte immobilière pour recevoir les nouveautés en primeur.
                             </p>
-                            <Button asChild size="lg" className="bg-[#734838] text-white hover:bg-[#5e3a2d]">
+                            <Button asChild size="lg" className="bg-brand-brown text-white hover:bg-brand-brown/90">
                                 <Link href="https://tally.so/r/w7X1p6" target="_blank">
                                     M'inscrire à l'alerte <ArrowRight className="ml-2 h-4 w-4" />
                                 </Link>
@@ -267,12 +275,14 @@ export default function PropertiesPage() {
                         </div>
                     </FadeIn>
                 </div>
-            </Section >
+            </Section>
 
             {/* SECTION 3 — EVALUATION */}
-            <FadeIn>
-                <EvaluationSection />
-            </FadeIn>
+            <Section className="py-20 bg-brand-cream">
+                <FadeIn>
+                    <EvaluationTunnel />
+                </FadeIn>
+            </Section>
         </>
     );
 }

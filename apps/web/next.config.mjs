@@ -2,6 +2,17 @@
 const nextConfig = {
   output: 'standalone',
 
+  // Disable ESLint and TypeScript checks during build (run them separately in CI)
+  // Disable ESLint and TypeScript checks during build - standard checks enabled
+  /*
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  */
+
   // Compiler optimizations
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? {
@@ -54,11 +65,48 @@ const nextConfig = {
     optimizePackageImports: ['framer-motion', '@clerk/nextjs', 'clsx'],
   },
 
-  async rewrites() {
+  // Only use API rewrites in development
+  ...(process.env.NODE_ENV === 'development' && {
+    async rewrites() {
+      return [
+        {
+          source: '/api/:path*',
+          destination: 'http://localhost:3001/api/:path*',
+        },
+      ];
+    },
+  }),
+  async redirects() {
     return [
       {
-        source: '/api/:path*',
-        destination: 'http://localhost:3001/api/:path*',
+        source: '/en',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/en/properties',
+        destination: '/proprietes',
+        permanent: true,
+      },
+      {
+        source: '/en/blog',
+        destination: '/blog',
+        permanent: true,
+      },
+      {
+        source: '/en/contact',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/en/property-assessment',
+        destination: '/vendeurs',
+        permanent: true,
+      },
+      {
+        source: '/fr',
+        destination: '/',
+        permanent: true,
       },
     ];
   },

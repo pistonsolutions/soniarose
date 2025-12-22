@@ -17,7 +17,7 @@ export async function MediaContent() {
         <div className="space-y-8">
             <header className="space-y-2">
                 <div className="flex items-center justify-between">
-                    <h2 className="text-3xl font-semibold">Media library</h2>
+                    <h2 className="text-3xl font-semibold font-sans">Media library</h2>
                     <UploadMediaDialog />
                 </div>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
@@ -32,7 +32,7 @@ export async function MediaContent() {
 
             <section className="space-y-4">
                 <header className="flex flex-wrap items-center justify-between gap-3">
-                    <h3 className="text-lg font-semibold">Stored assets</h3>
+                    <h3 className="text-lg font-semibold font-sans">Stored assets</h3>
                     <span className="text-xs uppercase tracking-wide text-slate-400 dark:text-slate-500">
                         {assets.length.toLocaleString()} total
                     </span>

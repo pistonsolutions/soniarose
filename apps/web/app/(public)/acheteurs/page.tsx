@@ -13,12 +13,14 @@ export const metadata: Metadata = {
 
 export default function BuyersPage() {
     // HERO CONFIGURATION
-    const heroImageOpacity = 0.6; // Opacity of the background image (0.0 to 1.0)
+    const heroImageOpacity = 1.0; // Opacity of the background image (0.0 to 1.0)
+    const heroZoom = 1; // Zoom level (1 = 100%)
+    const heroImagePosition = '50% 80%'; // Position: '50% 50%' = center, '50% 100%' = bottom.
 
     // BIO SECTION CONFIGURATION
-    const bioImageScale = 3.5; // Scale the image (1 = 100%, 1.1 = 110%, etc.)
+    const bioImageScale = 3; // Adjusted for new Portrait asset (was 3.5)
     const bioImageX = 0; // Horizontal offset in pixels
-    const bioImageY = 150; // Vertical offset in pixels
+    const bioImageY = 180; // Vertical offset in pixels
 
     // CTA SECTION CONFIGURATION
     const ctaImageOpacity = 0.8; // Opacity of the background image (0.0 to 1.0)
@@ -40,7 +42,7 @@ export default function BuyersPage() {
                             name: 'Sonia Rose Immobilier',
                             logo: {
                                 '@type': 'ImageObject',
-                                url: 'https://soniarose.ca/assets/logo.png',
+                                url: 'https://soniarose.ca/assets/logo-sonia-rose-new.png',
                             },
                         },
                     }),
@@ -52,19 +54,19 @@ export default function BuyersPage() {
             <section className="relative flex min-h-[80vh] items-center justify-center overflow-hidden bg-brand-cream">
                 <div className="absolute inset-0 z-0">
                     <Image
-                        src="/buyers-hero.jpg"
+                        src="/assets/buyers/hero.png"
                         alt="Acheter une propriété avec Sonia Rose"
                         fill
                         className="object-cover"
                         priority
-                        style={{ opacity: heroImageOpacity, transform: 'scale(1.2)' }}
+                        style={{ opacity: heroImageOpacity, transform: `scale(${heroZoom})`, objectPosition: heroImagePosition }}
                     />
                     {/* Light overlay to ensure text readability if needed */}
-                    <div className="absolute inset-0 bg-black/10" />
+                    {/* <div className="absolute inset-0 bg-black/10" /> */}
                 </div>
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn delay={0.2}>
-                        <h1 className="font-serif text-6xl md:text-8xl text-white tracking-widest uppercase" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.1)' }}>
+                        <h1 className="font-sans text-7xl md:text-9xl tracking-widest uppercase text-brand-beige-300" style={{ textShadow: '3px 5px 6px rgba(0, 0, 0, 0.4)' }}>
                             ACHETEURS
                         </h1>
                     </FadeIn>
@@ -72,17 +74,17 @@ export default function BuyersPage() {
             </section>
 
             {/* SECTION 2 — POURQUOI ACHETER AVEC SONIA ROSE */}
-            <section className="relative py-6 overflow-hidden" style={{ backgroundColor: '#ddd6cc' }}>
+            <section className="relative py-6 overflow-hidden bg-brand-beige-400">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="flex flex-col lg:flex-row items-center">
                             {/* Left Column: Text */}
                             <div className="lg:w-1/2 z-10 lg:pr-12">
-                                <h2 className="mb-2 font-serif text-5xl md:text-6xl uppercase tracking-wide leading-tight" style={{ color: '#734838' }}>
+                                <h2 className="mb-2 font-sans text-5xl md:text-6xl uppercase tracking-wide leading-tight text-brand-brown">
                                     POURQUOI ACHETER AVEC <br /> SONIA ROSE
                                 </h2>
 
-                                <div className="space-y-6 text-lg leading-relaxed mt-8" style={{ color: '#734838' }}>
+                                <div className="space-y-6 text-lg leading-relaxed mt-8 text-brand-brown">
                                     <p>
                                         Acheter une propriété, ce n’est pas seulement une étape financière.<br />
                                         C’est un moment de vie, un tournant où on veut se sentir guidé avec coeur, clarté et sécurité.
@@ -117,7 +119,7 @@ export default function BuyersPage() {
                             <div className="lg:w-1/2 relative h-[320px] md:h-[440px] w-full mt-10 lg:mt-0 flex items-end justify-center lg:justify-end">
                                 <div className="relative w-full h-full">
                                     <Image
-                                        src="/buyers-bio.png"
+                                        src="/assets/buyers/why-buy-portrait.png"
                                         alt="Sonia Rose"
                                         fill
                                         className="object-contain object-bottom"
@@ -135,7 +137,7 @@ export default function BuyersPage() {
 
 
             {/* Section 2.5 - GUIDE DE L'ACHETEUR */}
-            <section className="py-20 bg-brand-cream" style={{ backgroundColor: '#F2EFE9' }}>
+            <section className="py-20 bg-brand-cream bg-brand-beige-200">
                 <div className="container mx-auto px-4">
                     <FadeIn>
                         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
@@ -143,7 +145,7 @@ export default function BuyersPage() {
                             <div className="lg:w-1/2 flex justify-center lg:justify-end">
                                 <div className="relative w-full max-w-md aspect-[3/4] shadow-2xl lg:mr-60">
                                     <Image
-                                        src="/buyer-guide-cover.png"
+                                        src="/assets/buyers/guide-cover.png"
                                         alt="Guide de l'acheteur"
                                         fill
                                         className="object-cover"
@@ -153,10 +155,10 @@ export default function BuyersPage() {
 
                             {/* Right Column: Text */}
                             <div className="lg:w-1/2 text-left">
-                                <h2 className="mb-6 font-serif text-4xl md:text-5xl uppercase leading-tight" style={{ color: '#734838' }}>
+                                <h2 className="mb-6 font-sans text-4xl md:text-5xl uppercase leading-tight text-brand-brown">
                                     GUIDE PRATIQUE POUR ACHETER SEREINEMENT
                                 </h2>
-                                <div className="space-y-6 text-lg leading-relaxed" style={{ color: '#734838' }}>
+                                <div className="space-y-6 text-lg leading-relaxed text-brand-brown">
                                     <p>
                                         Acheter une propriété, c’est un projet important.<br />
                                         Pour vous aider à avancer avec clarté, confiance et simplicité, j’ai créé un guide complet qui rassemble les étapes essentielles et les informations utiles pour que votre expérience d’achat soit fluide, sécurisée et sans stress.
@@ -166,8 +168,8 @@ export default function BuyersPage() {
                                     </p>
                                 </div>
                                 <div className="mt-10">
-                                    <Button asChild size="lg" className="px-8 py-4 text-lg rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
-                                        <Link href="https://drive.google.com/file/d/1Pr6QYcisk7Rvrb4T6D1l9Iq3sNqPCyry/view" target="_blank">TÉLÉCHARGEZ-LE</Link>
+                                    <Button asChild size="lg" className="px-8 py-4 text-lg shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
+                                        <Link href="https://drive.google.com/file/d/1KwaIbl3n7xCO4CX1U7nytA5ohFbK9lZT/view" target="_blank">TÉLÉCHARGEZ-LE</Link>
                                     </Button>
                                 </div>
                             </div>
@@ -182,27 +184,27 @@ export default function BuyersPage() {
             {/* Section 2.6 - ACCOMPAGNEMENT ÉTAPE PAR ÉTAPE */}
             <section className="relative">
                 {/* Header Image */}
-                <div className="relative w-full h-[300px] md:h-[400px]">
+                <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/buyers-steps-header.jpg"
+                        src="/assets/buyers/steps-header-1600.webp"
                         alt="Accompagnement étape par étape"
                         fill
-                        className="object-cover"
+                        className="object-cover object-top"
                     />
                 </div>
 
                 {/* Text Content */}
-                <div className="py-20" style={{ backgroundColor: '#ddd6cc' }}>
+                <div className="py-20 bg-brand-beige-400">
                     <div className="container mx-auto px-4 text-center">
                         <FadeIn>
-                            <h2 className="mb-6 font-serif text-4xl md:text-5xl uppercase leading-tight" style={{ color: '#734838' }}>
+                            <h2 className="mb-6 font-sans text-4xl md:text-5xl uppercase leading-tight text-brand-brown">
                                 ACCOMPAGNEMENT ÉTAPE PAR ÉTAPE
                             </h2>
-                            <p className="text-xl mb-12 italic" style={{ color: '#734838' }}>
+                            <p className="text-xl mb-12 italic text-brand-brown">
                                 À chaque achat, vous méritez un accompagnement clair et humain.
                             </p>
 
-                            <div className="max-w-4xl mx-auto space-y-2 text-lg md:text-xl leading-relaxed" style={{ color: '#734838' }}>
+                            <div className="max-w-4xl mx-auto space-y-2 text-lg md:text-xl leading-relaxed text-brand-brown">
                                 <p>Voici comment je vous accompagne :</p>
                                 <p>- compréhension complète de vos besoins, de votre style de vie et de votre budget</p>
                                 <p>- sélection ciblée des propriétés selon vos critères</p>
@@ -212,7 +214,7 @@ export default function BuyersPage() {
                                 <p>- protection de vos intérêts à chaque étape, pour éviter les mauvaises surprises</p>
                             </div>
 
-                            <p className="mt-12 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed" style={{ color: '#734838' }}>
+                            <p className="mt-12 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed text-brand-brown">
                                 Avec moi, vous serez accompagné(e), informé(e) et protégé(e). Vous gardez toujours le contrôle, et je m’assure que vous avancez en confiance.
                             </p>
                         </FadeIn>
@@ -221,30 +223,27 @@ export default function BuyersPage() {
             </section>
 
 
-
-
-
             {/* Section 2.7 - ALERTE IMMOBILIÈRE PERSONNALISÉE */}
             <section className="relative">
                 {/* Header Image */}
-                <div className="relative w-full h-[300px] md:h-[400px]">
+                <div className="relative h-[300px] md:h-[400px] w-full">
                     <Image
-                        src="/buyers-alert-header.jpg"
-                        alt="Alerte immobilière personnalisée"
+                        src="/assets/buyers/custom-alert.png"
+                        alt="Alerte immobilière"
                         fill
                         className="object-cover"
                     />
                 </div>
 
                 {/* Text Content */}
-                <div className="py-20" style={{ backgroundColor: '#F2EFE9' }}>
+                <div className="py-20 bg-brand-beige-200">
                     <div className="container mx-auto px-4 text-center">
                         <FadeIn>
-                            <h2 className="mb-8 font-serif text-4xl md:text-5xl uppercase leading-tight" style={{ color: '#734838' }}>
+                            <h2 className="mb-8 font-sans text-4xl md:text-5xl uppercase leading-tight text-brand-brown">
                                 ALERTE IMMOBILIÈRE PERSONNALISÉE
                             </h2>
 
-                            <div className="max-w-4xl mx-auto space-y-6 text-lg md:text-xl leading-relaxed" style={{ color: '#734838' }}>
+                            <div className="max-w-4xl mx-auto space-y-6 text-lg md:text-xl leading-relaxed text-brand-brown">
                                 <p>
                                     Chercher une propriété peut vite devenir un casse-tête.<br />
                                     Avec mon alerte personnalisée, vous recevez automatiquement les nouvelles propriétés qui répondent à vos critères, dès qu’elles sont disponibles sur le marché.
@@ -258,7 +257,7 @@ export default function BuyersPage() {
                             </div>
 
                             <div className="mt-12">
-                                <Button asChild size="lg" className="px-8 py-4 text-lg rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
+                                <Button asChild size="lg" className="px-8 py-4 text-lg shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
                                     <Link href="https://tally.so/r/A7PEko" target="_blank">RECEVOIR MES ALERTES</Link>
                                 </Button>
                             </div>
@@ -271,24 +270,24 @@ export default function BuyersPage() {
             {/* Section 2.8 - PRÊT(E) À AVANCER? */}
             <section className="relative min-h-[800px] flex items-center justify-center py-20">
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0">
                     <Image
-                        src="/buyers-cta-bg.jpg"
-                        alt="Prêt à avancer?"
+                        src="/assets/buyers/cta-bg.png"
+                        alt="Background"
                         fill
                         className="object-cover"
-                        style={{ opacity: ctaImageOpacity }}
+                        style={{ opacity: 1.0 }}
                     />
+                    {/* <div className="absolute inset-0 bg-brand-charcoal/30 mix-blend-multiply" /> */}
                 </div>
-
                 {/* Content */}
                 <div className="container relative z-10 mx-auto px-4 text-center">
                     <FadeIn>
-                        <h2 className="mb-12 font-serif text-5xl md:text-7xl uppercase leading-tight" style={{ color: '#734838' }}>
+                        <h2 className="mb-12 font-sans text-5xl md:text-7xl uppercase leading-tight text-brand-beige-50">
                             PRÊT(E) À AVANCER?
                         </h2>
 
-                        <div className="max-w-4xl mx-auto space-y-8 text-xl md:text-2xl leading-relaxed font-medium" style={{ color: '#734838' }}>
+                        <div className="max-w-4xl mx-auto space-y-8 text-xl md:text-2xl leading-relaxed font-medium text-brand-beige-50">
                             <p>
                                 Acheter une propriété, ce n’est pas rien.<br />
                                 C’est une décision importante, un chapitre de vie qui mérite d’être accompagné avec soin.
@@ -302,7 +301,7 @@ export default function BuyersPage() {
                         </div>
 
                         <div className="mt-16">
-                            <Button asChild size="lg" className="px-10 py-6 text-xl rounded-none shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider" style={{ backgroundColor: '#734838', color: '#FFFFFF' }}>
+                            <Button asChild size="lg" className="px-10 py-6 text-xl shadow-none hover:opacity-90 transition-opacity uppercase tracking-wider bg-brand-brown text-white">
                                 <Link href="/contact">ME CONTACTER</Link>
                             </Button>
                         </div>
@@ -310,18 +309,16 @@ export default function BuyersPage() {
                 </div>
 
                 {/* Logo Watermark */}
-                <div className="absolute bottom-8 right-8 z-10 w-24 md:w-32 opacity-80">
+                <div className="absolute right-4 bottom-4 w-48 md:w-64 opacity-50 pointer-events-none z-0">
                     <Image
-                        src="/images/sonia-rose-logo.png"
+                        src="/assets/logo-sonia-rose-new.png"
                         alt="Sonia Rose Logo"
-                        width={150}
-                        height={150}
+                        width={200}
+                        height={100}
                         className="object-contain"
                     />
                 </div>
             </section>
-
-
 
         </>
     );
