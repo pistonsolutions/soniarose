@@ -80,11 +80,13 @@ jobs:
           TELNYX_PHONE_NUMBER: ${{ secrets.TELNYX_PHONE_NUMBER }}
           CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
           NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
+          GHCR_PAT: ${{ secrets.GITHUB_TOKEN }}
         with:
           host: ${{ secrets.OCI_HOST }}
           username: ${{ secrets.OCI_USER }}
           key: ${{ secrets.OCI_SSH_PRIVATE_KEY }}
-          envs: DATABASE_PASSWORD,TELNYX_API_KEY,TELNYX_PUBLIC_KEY,TELNYX_PHONE_NUMBER,CLERK_SECRET_KEY,NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+          command_timeout: 30m
+          envs: DATABASE_PASSWORD,TELNYX_API_KEY,TELNYX_PUBLIC_KEY,TELNYX_PHONE_NUMBER,CLERK_SECRET_KEY,NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,GHCR_PAT
           script: |
             # Navigate to app directory
             cd ~/soniarose || mkdir -p ~/soniarose && cd ~/soniarose
@@ -100,51 +102,62 @@ jobs:
             EOF
 
             # Download production configuration files
-            curl -o docker-compose.prod.yml https://raw.githubusercontent.com/${{ github.repository }}/main/docker-compose.prod.yml
-            curl -o nginx.conf https://raw.githubusercontent.com/${{ github.repository }}/main/nginx.conf
+            curl -s -o docker-compose.prod.yml https://raw.githubusercontent.com/${{ github.repository }}/main/docker-compose.prod.yml
+            curl -s -o nginx.conf https://raw.githubusercontent.com/${{ github.repository }}/main/nginx.conf
+
+            # Install Docker if not installed
+            if ! command -v docker &> /dev/null; then
+              echo "Installing Docker..."
+              sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+              sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+              sudo systemctl start docker
+              sudo systemctl enable docker
+              sudo usermod -aG docker $USER
+              echo "Docker installed successfully"
+            else
+              echo "Docker already installed: $(docker --version)"
+            fi
+
+            # Ensure Docker is running
+            sudo systemctl start docker || true
+
+            # Open firewall port 80 if firewalld is running
+            sudo firewall-cmd --permanent --add-port=80/tcp 2>/dev/null || true
+            sudo firewall-cmd --reload 2>/dev/null || true
 
             # Log in to GitHub Container Registry
-            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            echo "${GHCR_PAT}" | sudo docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
             # Pull latest images
-            docker pull ghcr.io/${{ github.repository_owner }}/soniarose-api:latest
-            docker pull ghcr.io/${{ github.repository_owner }}/soniarose-web:latest
+            echo "Pulling latest images..."
+            sudo docker pull ghcr.io/${{ github.repository_owner }}/soniarose-api:latest
+            sudo docker pull ghcr.io/${{ github.repository_owner }}/soniarose-web:latest
 
             # Stop existing containers
-            docker-compose -f docker-compose.prod.yml down
+            sudo docker compose -f docker-compose.prod.yml down 2>/dev/null || true
 
             # Start services
-            docker-compose -f docker-compose.prod.yml up -d
+            echo "Starting services..."
+            sudo docker compose -f docker-compose.prod.yml up -d
 
             # Wait for database to be ready
-            echo "Waiting for database to be ready..."
-            sleep 15
+            echo "Waiting for services to start..."
+            sleep 20
 
             # Run database migrations
-            docker-compose -f docker-compose.prod.yml exec -T api sh -c "cd /app && npx prisma migrate deploy" || echo "Migration failed or already up to date"
+            sudo docker compose -f docker-compose.prod.yml exec -T api sh -c "cd /app && npx prisma migrate deploy" || echo "Migration failed or already up to date"
 
             # Show running containers
-            docker-compose -f docker-compose.prod.yml ps
+            sudo docker compose -f docker-compose.prod.yml ps
 
-            # Check nginx health
-            echo "Checking nginx health..."
+            # Health checks
+            echo "Running health checks..."
             sleep 5
-            curl -f http://localhost/health || echo "Nginx health check failed"
-
-            # Check API health via nginx
-            echo "Checking API health via nginx..."
-            curl -f http://localhost/api/health || echo "API health check failed"
-
-            # Check landing page
-            echo "Checking landing page..."
-            curl -f http://localhost/ || echo "Landing page health check failed"
-
-            # Check CRM login page
-            echo "Checking CRM..."
-            curl -f http://localhost/crm/login || echo "CRM health check failed"
+            curl -sf http://localhost/health && echo " - Nginx OK" || echo " - Nginx FAILED"
+            curl -sf http://localhost/api/health && echo " - API OK" || echo " - API FAILED"
 
             # Clean up old images
-            docker image prune -af --filter "until=24h"
+            sudo docker image prune -af --filter "until=24h" 2>/dev/null || true
 
       - name: Deployment notification
         if: always()

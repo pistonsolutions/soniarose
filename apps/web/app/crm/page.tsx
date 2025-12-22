@@ -79,8 +79,8 @@ export default function LandingPage() {
           >
             <div className="relative h-48 w-48 rounded-2xl bg-white p-6 shadow-2xl ring-1 ring-slate-200 lg:h-56 lg:w-56">
               <img
-                src="/piston.png"
-                alt="Piston Solutions Logo"
+                src="/sonia-rose-logo.png"
+                alt="Sonia Rose CRM Logo"
                 className="object-contain w-full h-full"
               />
             </div>
@@ -97,7 +97,7 @@ export default function LandingPage() {
               }}
               className="text-center font-serif text-6xl font-bold text-brand-navy lg:text-left lg:text-7xl"
             >
-              Piston Solutions CRM
+              Sonia Rose CRM
             </motion.h1>
 
             <motion.p
@@ -176,7 +176,7 @@ export default function LandingPage() {
         transition={{ duration: 0.6, delay: 1.0 }}
         className="absolute bottom-8 text-center text-sm text-slate-500"
       >
-        <p>© {new Date().getFullYear()} Piston Solutions. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Sonia Rose. All rights reserved.</p>
       </motion.div>
     </div>
   );
