@@ -84,110 +84,110 @@ function pruneEmptyValues<T extends object>(input: T) {
   return Object.fromEntries(entries) as Partial<T>;
 }
 
-// CRM APIs disabled for public-frontend-only build
-// export const getContacts = cache(async (token?: string | null): Promise<FetchResult<Contact[]>> => {
-//   const result = await fetchJson<Contact[]>('/contacts', undefined, token, { next: { revalidate: 30 } });
-//
-//   return {
-//     data: result.data ?? [],
-//     error: result.error,
-//     status: result.status,
-//   };
-// });
-//
-// export const getContact = cache(async (id: string, token?: string | null): Promise<FetchResult<Contact | null>> => {
-//   const result = await fetchJson<Contact>(`/contacts/${id}`, undefined, token, { next: { revalidate: 30 } });
-//
-//   return {
-//     ...result,
-//     data: result.data,
-//   };
-// });
-//
-// export async function createContact(payload: CreateContactPayload, token?: string | null): Promise<FetchResult<Contact>> {
-//   const body = JSON.stringify(pruneEmptyValues(payload));
-//   return fetchJson<Contact>('/contacts', {
-//     method: 'POST',
-//     body,
-//   }, token, { cache: 'no-store' });
-// }
-//
-// export async function updateContact(id: string, payload: Partial<CreateContactPayload>, token?: string | null): Promise<FetchResult<Contact>> {
-//   const body = JSON.stringify(pruneEmptyValues(payload));
-//   return fetchJson<Contact>(`/contacts/${id}`, {
-//     method: 'PATCH',
-//     body,
-//   }, token, { cache: 'no-store' });
-// }
-//
-// export const getWorkflowOverview = cache(async (token?: string | null): Promise<FetchResult<WorkflowOverview>> => {
-//   return fetchJson<WorkflowOverview>('/workflows/overview', undefined, token, { next: { revalidate: 60 } });
-// });
-//
-// export const getWorkflowRuns = cache(async (limit = 20, token?: string | null): Promise<FetchResult<WorkflowRun[]>> => {
-//   const result = await fetchJson<WorkflowRun[]>(`/workflows/runs?limit=${limit}`, undefined, token, { next: { revalidate: 30 } });
-//
-//   return {
-//     data: result.data ?? [],
-//     error: result.error,
-//     status: result.status,
-//   };
-// });
-//
-// export async function retryWorkflowRun(runId: string, token?: string | null) {
-//   return fetchJson<{ runId: string; workflowKey: string; contactId: string }>(
-//     `/workflows/runs/${runId}/retry`,
-//     {
-//       method: 'POST',
-//     },
-//     token,
-//     { cache: 'no-store' }
-//   );
-// }
-//
-// export const getMediaAssets = cache(async (limit = 50, token?: string | null): Promise<FetchResult<MediaAssetRecord[]>> => {
-//   const result = await fetchJson<MediaAssetRecord[]>(`/media?limit=${limit}`, undefined, token, { cache: 'force-cache' });
-//
-//   return {
-//     data: result.data ?? [],
-//     error: result.error,
-//     status: result.status,
-//   };
-// });
-//
-// export const getComplianceEvents = cache(async (limit = 50, token?: string | null): Promise<FetchResult<ComplianceEventRecord[]>> => {
-//   const result = await fetchJson<ComplianceEventRecord[]>(`/compliance/events?limit=${limit}`, undefined, token, { next: { revalidate: 60 } });
-//
-//   return {
-//     data: result.data ?? [],
-//     error: result.error,
-//     status: result.status,
-//   };
-// });
-//
-// export const getComplianceSummary = cache(async (token?: string | null): Promise<FetchResult<ComplianceSummary>> => {
-//   return fetchJson<ComplianceSummary>('/compliance/summary', undefined, token, { cache: 'force-cache' });
-// });
-//
-// export const getHealthHeartbeat = cache(async (token?: string | null): Promise<FetchResult<HealthHeartbeat>> => {
-//   return fetchJson<HealthHeartbeat>('/health', undefined, token, { cache: 'no-store' });
-// });
-//
-// export const getMessages = cache(async (contactId: string, token?: string | null): Promise<FetchResult<Message[]>> => {
-//   const result = await fetchJson<Message[]>(`/contacts/${contactId}/messages`, undefined, token, { cache: 'no-store' });
-//
-//   return {
-//     data: result.data ?? [],
-//     error: result.error,
-//     status: result.status,
-//   };
-// });
-//
-// export async function sendMessage(contactId: string, body: string, token?: string | null): Promise<FetchResult<Message>> {
-//   return fetchJson<Message>(`/contacts/${contactId}/messages`, {
-//     method: 'POST',
-//     body: JSON.stringify({ body }),
-//   }, token, { cache: 'no-store' });
-// }
+// CRM APIs enabled for full build
+export const getContacts = cache(async (token?: string | null): Promise<FetchResult<Contact[]>> => {
+  const result = await fetchJson<Contact[]>('/contacts', undefined, token, { next: { revalidate: 30 } });
+
+  return {
+    data: result.data ?? [],
+    error: result.error,
+    status: result.status,
+  };
+});
+
+export const getContact = cache(async (id: string, token?: string | null): Promise<FetchResult<Contact | null>> => {
+  const result = await fetchJson<Contact>(`/contacts/${id}`, undefined, token, { next: { revalidate: 30 } });
+
+  return {
+    ...result,
+    data: result.data,
+  };
+});
+
+export async function createContact(payload: CreateContactPayload, token?: string | null): Promise<FetchResult<Contact>> {
+  const body = JSON.stringify(pruneEmptyValues(payload));
+  return fetchJson<Contact>('/contacts', {
+    method: 'POST',
+    body,
+  }, token, { cache: 'no-store' });
+}
+
+export async function updateContact(id: string, payload: Partial<CreateContactPayload>, token?: string | null): Promise<FetchResult<Contact>> {
+  const body = JSON.stringify(pruneEmptyValues(payload));
+  return fetchJson<Contact>(`/contacts/${id}`, {
+    method: 'PATCH',
+    body,
+  }, token, { cache: 'no-store' });
+}
+
+export const getWorkflowOverview = cache(async (token?: string | null): Promise<FetchResult<WorkflowOverview>> => {
+  return fetchJson<WorkflowOverview>('/workflows/overview', undefined, token, { next: { revalidate: 60 } });
+});
+
+export const getWorkflowRuns = cache(async (limit = 20, token?: string | null): Promise<FetchResult<WorkflowRun[]>> => {
+  const result = await fetchJson<WorkflowRun[]>(`/workflows/runs?limit=${limit}`, undefined, token, { next: { revalidate: 30 } });
+
+  return {
+    data: result.data ?? [],
+    error: result.error,
+    status: result.status,
+  };
+});
+
+export async function retryWorkflowRun(runId: string, token?: string | null) {
+  return fetchJson<{ runId: string; workflowKey: string; contactId: string }>(
+    `/workflows/runs/${runId}/retry`,
+    {
+      method: 'POST',
+    },
+    token,
+    { cache: 'no-store' }
+  );
+}
+
+export const getMediaAssets = cache(async (limit = 50, token?: string | null): Promise<FetchResult<MediaAssetRecord[]>> => {
+  const result = await fetchJson<MediaAssetRecord[]>(`/media?limit=${limit}`, undefined, token, { cache: 'force-cache' });
+
+  return {
+    data: result.data ?? [],
+    error: result.error,
+    status: result.status,
+  };
+});
+
+export const getComplianceEvents = cache(async (limit = 50, token?: string | null): Promise<FetchResult<ComplianceEventRecord[]>> => {
+  const result = await fetchJson<ComplianceEventRecord[]>(`/compliance/events?limit=${limit}`, undefined, token, { next: { revalidate: 60 } });
+
+  return {
+    data: result.data ?? [],
+    error: result.error,
+    status: result.status,
+  };
+});
+
+export const getComplianceSummary = cache(async (token?: string | null): Promise<FetchResult<ComplianceSummary>> => {
+  return fetchJson<ComplianceSummary>('/compliance/summary', undefined, token, { cache: 'force-cache' });
+});
+
+export const getHealthHeartbeat = cache(async (token?: string | null): Promise<FetchResult<HealthHeartbeat>> => {
+  return fetchJson<HealthHeartbeat>('/health', undefined, token, { cache: 'no-store' });
+});
+
+export const getMessages = cache(async (contactId: string, token?: string | null): Promise<FetchResult<Message[]>> => {
+  const result = await fetchJson<Message[]>(`/contacts/${contactId}/messages`, undefined, token, { cache: 'no-store' });
+
+  return {
+    data: result.data ?? [],
+    error: result.error,
+    status: result.status,
+  };
+});
+
+export async function sendMessage(contactId: string, body: string, token?: string | null): Promise<FetchResult<Message>> {
+  return fetchJson<Message>(`/contacts/${contactId}/messages`, {
+    method: 'POST',
+    body: JSON.stringify({ body }),
+  }, token, { cache: 'no-store' });
+}
 
 
