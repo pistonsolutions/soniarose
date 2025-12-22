@@ -10,8 +10,8 @@ import { clsx } from 'clsx';
 interface ChatWindowProps {
     contact: {
         id: string;
-        firstName: string;
-        lastName: string;
+        firstName?: string | null;
+        lastName?: string | null;
         phone: string;
     };
 }
