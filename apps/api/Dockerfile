@@ -86,6 +86,7 @@ COPY --from=deps /app/node_modules ./node_modules
 # Set environment to production
 ENV NODE_ENV=production
 ENV PORT=3001
+ENV NODE_PATH=/app/node_modules
 
 USER nestjs
 
