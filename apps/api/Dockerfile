@@ -80,8 +80,9 @@ COPY --from=builder --chown=nestjs:nodejs /app/packages/lib ./packages/lib
 COPY --from=builder --chown=nestjs:nodejs /app/package.json ./package.json
 COPY --from=builder --chown=nestjs:nodejs /app/pnpm-workspace.yaml ./pnpm-workspace.yaml
 
-# Install production dependencies only
-COPY --from=deps /app/node_modules ./node_modules
+# Install production dependencies only - copy from builder which has full install
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/apps/api/node_modules ./apps/api/node_modules
 
 # Set environment to production
 ENV NODE_ENV=production
