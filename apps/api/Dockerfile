@@ -89,6 +89,9 @@ ENV NODE_ENV=production
 ENV PORT=3001
 ENV NODE_PATH=/app/node_modules
 
+# Create uploads directory with proper permissions
+RUN mkdir -p /app/uploads && chown -R nestjs:nodejs /app/uploads
+
 USER nestjs
 
 EXPOSE 3001
