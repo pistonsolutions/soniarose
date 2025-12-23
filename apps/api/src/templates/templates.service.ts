@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
 import { CreateTemplateDto } from './dto/create-template.dto';
 import { UpdateTemplateDto } from './dto/update-template.dto';
-import { Prisma } from '@prisma/client';
+import { Prisma } from '@soniarose/database';
 
 @Injectable()
 export class TemplatesService {
