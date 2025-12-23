@@ -54,6 +54,9 @@ RUN pnpm --filter @soniarose/lib build
 RUN pnpm --filter @soniarose/database build
 RUN pnpm --filter @soniarose/api build
 
+# Verify build output exists
+RUN ls -la /app/apps/api/dist/ && test -f /app/apps/api/dist/main.js || (echo "BUILD FAILED: main.js not found" && exit 1)
+
 # ==========================================
 # Stage 4: Production runtime
 # ==========================================
