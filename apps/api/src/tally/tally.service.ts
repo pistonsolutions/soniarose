@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
 import { WorkflowsService, WorkflowJobType } from '../workflows/workflows.service';
 import { UserSettingsService } from '../user-settings/user-settings.service';
-import { WorkflowKey } from '@prisma/client';
+import { WorkflowKey } from '@soniarose/database';
 import { HttpService } from '@nestjs/axios';
 import { firstValueFrom } from 'rxjs';
 

@@ -4,7 +4,7 @@ import { WorkflowsService } from '../workflows/workflows.service';
 import { TelnyxService } from '../telnyx/telnyx.service';
 import { CreateContactDto } from './dto/create-contact.dto';
 import { UpdateContactDto } from './dto/update-contact.dto';
-import { MessageDirection, MessageStatus } from '@prisma/client';
+import { MessageDirection, MessageStatus } from '@soniarose/database';
 
 @Injectable()
 export class ContactsService {
@@ -141,7 +141,7 @@ export class ContactsService {
   }
 
   async update(userId: string, id: string, payload: UpdateContactDto) {
-    const { tags, ...contactData } = payload;
+    const { tags, birthday, ...contactData } = payload;
 
     const contact = await this.prisma.contact.findUnique({ where: { id } });
     if (!contact || contact.userId !== userId) {
@@ -152,7 +152,7 @@ export class ContactsService {
       where: { id },
       data: {
         ...contactData,
-        ...(contactData.birthday && { birthday: new Date(contactData.birthday) }),
+        ...(birthday && { birthday: new Date(birthday) }),
         ...(tags && {
           tags: {
             deleteMany: {},

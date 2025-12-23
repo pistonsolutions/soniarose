@@ -1,0 +1,53 @@
+2025-12-23T00:15:01.607530Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".github/workflows/deploy.yml")}
+2025-12-23T00:15:01.607566Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-12-23T00:15:01.707584Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".turbo/daemon/86e5e938b7df5798-turbo.log.2025-12-22"), AnchoredSystemPathBuf(".turbo/daemon/86e5e938b7df5798-turbo.log.2025-12-23")}
+2025-12-23T00:15:01.707597Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-12-23T04:07:39.898558Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("crmeys copy/ssh-key-2025-12-05 (1).key")}
+2025-12-23T04:07:39.898571Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-12-23T04:09:41.895416Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".github/workflows/deploy.yml")}
+2025-12-23T04:09:41.895444Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-12-23T04:09:41.999207Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".github/workflows/deploy.yml")}
+2025-12-23T04:09:41.999222Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-12-23T04:10:13.594603Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".github/workflows/deploy.yml")}
+2025-12-23T04:10:13.594619Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-12-23T04:10:13.694571Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".github/workflows/deploy.yml")}
+2025-12-23T04:10:13.694590Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-12-23T04:14:28.208966Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/database/src/index.ts")}
+2025-12-23T04:14:28.208980Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/database"), path: AnchoredSystemPathBuf("packages/database") }}))
+2025-12-23T04:14:30.009632Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/compliance/compliance.controller.ts")}
+2025-12-23T04:14:30.009649Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:14:32.408851Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/workflows/workflows.service.ts")}
+2025-12-23T04:14:32.408866Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:14:32.509811Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/workflows/workflows.service.ts")}
+2025-12-23T04:14:32.509830Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:14:32.510108Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-12-23T04:14:46.909001Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/database/prisma.service.ts")}
+2025-12-23T04:14:46.909016Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:14:48.909397Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/contacts/contacts.service.ts")}
+2025-12-23T04:14:48.909410Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:14:49.008762Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/contacts/contacts.service.ts")}
+2025-12-23T04:14:49.008782Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:14:49.008865Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-12-23T04:14:50.908579Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/contacts/dto/create-contact.dto.ts")}
+2025-12-23T04:14:50.908591Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:14:52.809317Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/tally/tally.service.ts")}
+2025-12-23T04:14:52.809331Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:14:54.408771Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/tasks/dto/create-task.dto.ts")}
+2025-12-23T04:14:54.408787Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:15:04.308905Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/telnyx/telnyx.service.ts")}
+2025-12-23T04:15:04.308922Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:15:06.208417Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/templates/dto/create-template.dto.ts")}
+2025-12-23T04:15:06.208431Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:15:08.609609Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/twilio/twilio.service.ts")}
+2025-12-23T04:15:08.609621Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:15:10.809248Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/workflows/workflows.processor.ts")}
+2025-12-23T04:15:10.809261Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:15:21.808360Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/tasks/tasks.service.ts")}
+2025-12-23T04:15:21.808379Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:15:21.908488Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/tasks/tasks.service.ts")}
+2025-12-23T04:15:21.908517Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:15:21.908654Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-12-23T04:15:41.709581Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/contacts/contacts.service.ts")}
+2025-12-23T04:15:41.709613Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))
+2025-12-23T04:15:43.409573Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/api/src/contacts/contacts.service.ts")}
+2025-12-23T04:15:43.409586Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@soniarose/api"), path: AnchoredSystemPathBuf("apps/api") }}))

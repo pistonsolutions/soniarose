@@ -1,4 +1,4 @@
-import { OptInStatus } from '@prisma/client';
+import { OptInStatus } from '@soniarose/database';
 import { IsArray, IsDateString, IsEmail, IsEnum, IsOptional, IsPhoneNumber, IsString } from 'class-validator';
 import { Transform } from 'class-transformer';
 

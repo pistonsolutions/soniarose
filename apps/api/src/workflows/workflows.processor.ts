@@ -6,7 +6,7 @@ import { WORKFLOW_QUEUE_NAME, WORKFLOW_REDIS_TOKEN } from './workflows.constants
 import { WorkflowQueueData, WorkflowsService } from './workflows.service';
 import { PrismaService } from '../database/prisma.service';
 import { TelnyxService } from '../telnyx/telnyx.service';
-import { WorkflowKey, WorkflowRunStatus, MessageDirection, MessageStatus } from '@prisma/client';
+import { WorkflowKey, WorkflowRunStatus, MessageDirection, MessageStatus } from '@soniarose/database';
 
 @Injectable()
 export class WorkflowsProcessor implements OnModuleDestroy, OnModuleInit {

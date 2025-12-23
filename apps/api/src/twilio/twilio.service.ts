@@ -2,7 +2,7 @@ import { Inject, Injectable, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Twilio, validateRequest } from 'twilio';
 import { PrismaService } from '../database/prisma.service';
-import { MessageDirection, MessageStatus } from '@prisma/client';
+import { MessageDirection, MessageStatus } from '@soniarose/database';
 
 export interface SendSmsPayload {
   to: string;

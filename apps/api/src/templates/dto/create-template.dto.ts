@@ -1,5 +1,5 @@
 import { IsEnum, IsOptional, IsString, IsArray, IsBoolean } from 'class-validator';
-import { TemplateType } from '@prisma/client';
+import { TemplateType } from '@soniarose/database';
 
 export class CreateTemplateDto {
     @IsString()

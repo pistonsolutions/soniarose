@@ -1,5 +1,5 @@
 import { IsEnum, IsOptional, IsString, IsDateString } from 'class-validator';
-import { TaskStatus, TaskPriority } from '@prisma/client';
+import { TaskStatus, TaskPriority } from '@soniarose/database';
 
 export class CreateTaskDto {
     @IsString()

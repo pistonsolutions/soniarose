@@ -158,7 +158,7 @@ export class WorkflowsService {
     ]);
 
     // Map DB status to Queue status keys for the dashboard
-    const dbMap = dbCounts.reduce((acc, curr) => {
+    const dbMap = dbCounts.reduce((acc: Record<string, number>, curr: { status: string; _count: number }) => {
       acc[curr.status] = curr._count;
       return acc;
     }, {} as Record<string, number>);

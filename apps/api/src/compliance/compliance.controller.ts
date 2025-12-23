@@ -3,7 +3,7 @@ import { PrismaService } from '../database/prisma.service';
 
 @Controller('compliance')
 export class ComplianceController {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) { }
 
   @Get('events')
   async listEvents(@Query('limit') limit?: string) {
@@ -42,13 +42,13 @@ export class ComplianceController {
 
     return {
       eventsByType: groups
-        .map((group) => ({
+        .map((group: { type: string; _count: { _all: number } }) => ({
           type: group.type,
           count: group._count?._all ?? 0,
         }))
-        .sort((a, b) => b.count - a.count),
+        .sort((a: { count: number }, b: { count: number }) => b.count - a.count),
       optedOutContacts,
-      totalEvents: groups.reduce((sum, item) => sum + (item._count?._all ?? 0), 0),
+      totalEvents: groups.reduce((sum: number, item: { _count: { _all: number } }) => sum + (item._count?._all ?? 0), 0),
     };
   }
 }

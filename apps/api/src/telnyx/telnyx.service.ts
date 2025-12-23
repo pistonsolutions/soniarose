@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const Telnyx = require('telnyx');
 import { PrismaService } from '../database/prisma.service';
-import { MessageDirection, MessageStatus } from '@prisma/client';
+import { MessageDirection, MessageStatus } from '@soniarose/database';
 
 export interface SendSmsPayload {
     to: string;
