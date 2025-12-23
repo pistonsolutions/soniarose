@@ -92,14 +92,12 @@ jobs:
             cd ~/soniarose || mkdir -p ~/soniarose && cd ~/soniarose
 
             # Create .env file
-            cat > .env << 'ENVEOF'
-            DATABASE_URL=postgresql://postgres:${DATABASE_PASSWORD}@db:5432/soniarose
-            TELNYX_API_KEY=${TELNYX_API_KEY}
-            TELNYX_PUBLIC_KEY=${TELNYX_PUBLIC_KEY}
-            TELNYX_PHONE_NUMBER=${TELNYX_PHONE_NUMBER}
-            CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
-            NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-ENVEOF
+            echo "DATABASE_URL=postgresql://postgres:${DATABASE_PASSWORD}@db:5432/soniarose" > .env
+            echo "TELNYX_API_KEY=${TELNYX_API_KEY}" >> .env
+            echo "TELNYX_PUBLIC_KEY=${TELNYX_PUBLIC_KEY}" >> .env
+            echo "TELNYX_PHONE_NUMBER=${TELNYX_PHONE_NUMBER}" >> .env
+            echo "CLERK_SECRET_KEY=${CLERK_SECRET_KEY}" >> .env
+            echo "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}" >> .env
 
             # Configure Swap to prevent OOM on micro instance
             if [ ! -f /swapfile ]; then
