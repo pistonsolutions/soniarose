@@ -54,8 +54,8 @@ RUN pnpm --filter @soniarose/lib build
 RUN pnpm --filter @soniarose/database build
 RUN pnpm --filter @soniarose/api build
 
-# Verify build output exists
-RUN ls -la /app/apps/api/dist/ && test -f /app/apps/api/dist/main.js || (echo "BUILD FAILED: main.js not found" && exit 1)
+# Verify build output exists (nested path due to monorepo structure)
+RUN ls -la /app/apps/api/dist/apps/api/src/ && test -f /app/apps/api/dist/apps/api/src/main.js || (echo "BUILD FAILED: main.js not found" && exit 1)
 
 # ==========================================
 # Stage 4: Production runtime
@@ -95,4 +95,4 @@ EXPOSE 3001
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
   CMD node -e "require('http').get('http://localhost:3001/health', (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
 
-CMD ["node", "apps/api/dist/main.js"]
+CMD ["node", "apps/api/dist/apps/api/src/main.js"]
