@@ -20,9 +20,12 @@ export class WorkflowsProcessor implements OnModuleDestroy, OnModuleInit {
     @Inject(forwardRef(() => WorkflowsService)) private readonly workflowsService: WorkflowsService,
   ) {
     const redisUrl = this.configService.get<string>('REDIS_URL', 'redis://localhost:6379');
-    // Parse redisUrl or just use default localhost for now if simple
-    // For simplicity, let's assume localhost:6379 if not provided, or parse it.
-    // Actually, BullMQ connection option can take a RedisOptions object.
+    // Parse the Redis URL to get host and port
+    const redisUrlParsed = new URL(redisUrl);
+    const redisHost = redisUrlParsed.hostname || 'localhost';
+    const redisPort = parseInt(redisUrlParsed.port || '6379', 10);
+
+    this.logger.log(`Connecting BullMQ worker to Redis at ${redisHost}:${redisPort}`);
 
     this.worker = new Worker<WorkflowQueueData>(
       WORKFLOW_QUEUE_NAME,
@@ -32,8 +35,8 @@ export class WorkflowsProcessor implements OnModuleDestroy, OnModuleInit {
       },
       {
         connection: {
-          host: 'localhost',
-          port: 6379,
+          host: redisHost,
+          port: redisPort,
         },
         autorun: true,
       },
