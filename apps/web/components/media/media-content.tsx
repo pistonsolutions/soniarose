@@ -69,7 +69,7 @@ export async function MediaContent() {
                                                 {asset.contacts && asset.contacts.length > 0 ? (
                                                     <div className="flex flex-wrap gap-1">
                                                         {asset.contacts.map(contact => (
-                                                            <Link key={contact.id} href={`/contacts/${contact.id}`}>
+                                                            <Link key={contact.id} href={`/crm/contacts/${contact.id}`}>
                                                                 <Badge variant="secondary" className="hover:bg-slate-200 cursor-pointer">
                                                                     {formatName(contact.firstName, contact.lastName)}
                                                                 </Badge>
@@ -77,7 +77,7 @@ export async function MediaContent() {
                                                         ))}
                                                     </div>
                                                 ) : asset.contact ? (
-                                                    <Link href={`/contacts/${asset.contact.id}`} className="text-blue-600 hover:underline dark:text-blue-300">
+                                                    <Link href={`/crm/contacts/${asset.contact.id}`} className="text-blue-600 hover:underline dark:text-blue-300">
                                                         {formatName(asset.contact.firstName, asset.contact.lastName)}
                                                     </Link>
                                                 ) : (

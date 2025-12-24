@@ -96,7 +96,7 @@ export function ContactForm() {
       return;
     }
 
-    router.push(`/contacts/${result.data.id}`);
+    router.push(`/crm/contacts/${result.data.id}`);
   }
 
   return (

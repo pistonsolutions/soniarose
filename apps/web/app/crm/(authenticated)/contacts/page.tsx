@@ -1,15 +1,54 @@
-import Link from 'next/link';
-import { auth } from '@clerk/nextjs/server';
-import { getContacts } from '@/lib/api';
-// import { ContactsTable } from '@/components/contacts/contacts-table';
-// import { CreateContactButton } from '@/components/contacts/create-contact-button';
-import { formatDate, formatName, formatOptInStatus } from '@/lib/format';
+'use client';
 
-export default async function ContactsPage() {
-  const { getToken } = await auth();
-  const token = await getToken();
-  const { data: contactData, error } = await getContacts(token);
-  const contacts = contactData || [];
+import Link from 'next/link';
+import { useAuth } from '@clerk/nextjs';
+import { getContacts } from '@/lib/api';
+import { formatDate, formatName, formatOptInStatus } from '@/lib/format';
+import { useEffect, useState } from 'react';
+import { Contact } from '@/lib/types';
+
+export default function ContactsPage() {
+  const { getToken, isLoaded, isSignedIn } = useAuth();
+  const [contacts, setContacts] = useState<Contact[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function loadData() {
+      try {
+        if (!isLoaded || !isSignedIn) return;
+
+        const token = await getToken();
+        const { data, error: apiError } = await getContacts(token);
+
+        if (apiError) {
+          setError(apiError);
+        } else {
+          setContacts(data ?? []);
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred loading contacts');
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    if (isLoaded) {
+      if (!isSignedIn) {
+        setLoading(false);
+        return;
+      }
+      loadData();
+    }
+  }, [isLoaded, isSignedIn, getToken]);
+
+  if (loading) {
+    return (
+      <div className="flex h-64 items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-brand-gold"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8">
@@ -38,7 +77,7 @@ export default async function ContactsPage() {
         </div>
         {error && (
           <p className="rounded-md border border-amber-500 bg-amber-100 px-3 py-2 text-xs text-amber-800 dark:border-amber-400 dark:bg-amber-900/30 dark:text-amber-200">
-            We couldn&apos;t load contacts from the API. Refresh once the backend is reachable.
+            Unable to reach the API. Showing cached counts where possible.
           </p>
         )}
       </header>

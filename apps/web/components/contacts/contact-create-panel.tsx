@@ -70,7 +70,7 @@ export function ContactCreatePanel() {
       setSuccessMessage('Contact created. Redirecting…');
       setFormState(INITIAL_FORM);
       setTagsInput('');
-      router.push(`/contacts/${result.data.id}`);
+      router.push(`/crm/contacts/${result.data.id}`);
       router.refresh();
       setIsOpen(false);
     });

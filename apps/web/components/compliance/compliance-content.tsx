@@ -108,7 +108,7 @@ export async function ComplianceContent() {
                                             </td>
                                             <td className="px-4 py-3 align-top text-sm text-blue-600 dark:text-blue-300">
                                                 {contact ? (
-                                                    <Link href={`/contacts/${contact.id}`} className="hover:underline">
+                                                    <Link href={`/crm/contacts/${contact.id}`} className="hover:underline">
                                                         {formatName(contact.firstName, contact.lastName)}
                                                     </Link>
                                                 ) : (
