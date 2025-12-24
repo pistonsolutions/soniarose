@@ -55,6 +55,9 @@ ENV NODE_ENV=production
 ARG NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
 
+# API URL for production (relative path through nginx)
+ENV NEXT_PUBLIC_API_URL=/api
+
 # Build Next.js app
 # This creates a standalone build in apps/web/.next/standalone
 RUN pnpm --filter @soniarose/web build
