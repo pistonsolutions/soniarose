@@ -82,8 +82,11 @@ services:
       api:
         condition: service_healthy
     environment:
-      # API endpoint (nginx will route /api to api service)
+      # API endpoint for client-side (nginx will route /api to api service)
       NEXT_PUBLIC_API_URL: /api
+      
+      # API endpoint for server-side rendering (internal Docker network)
+      INTERNAL_API_URL: http://api:3001/api
 
       # Clerk (public keys are safe to expose)
       NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}

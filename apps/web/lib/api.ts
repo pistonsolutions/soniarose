@@ -11,7 +11,12 @@ import type {
   WorkflowRun,
 } from './types';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:3001/api';
+// For server-side rendering (SSR), we need the internal Docker network URL
+// For client-side, we use the relative URL that goes through nginx
+const isServer = typeof window === 'undefined';
+const API_BASE_URL = isServer
+  ? (process.env.INTERNAL_API_URL ?? 'http://api:3001/api')
+  : (process.env.NEXT_PUBLIC_API_URL ?? '/api');
 
 type FetchResult<T> = {
   data: T | null;
