@@ -36,7 +36,8 @@ export class MediaController {
       contactIds = [contactIdLegacy];
     }
 
-    return this.mediaService.processVideo(file, userId, contactIds, tag);
+    // Returns immediately with PROCESSING status (202 Accepted)
+    return this.mediaService.uploadVideo(file, userId, contactIds, tag);
   }
 
   @Post(':id') // Using POST for update to avoid CORS preflight issues sometimes, but PATCH is better. Sticking to PATCH as per plan.

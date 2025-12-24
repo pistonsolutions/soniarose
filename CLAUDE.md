@@ -244,6 +244,4 @@ Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docke
 ∙ echo "=== Status ==="
 ∙ sudo docker ps
 ∙ 
-∙ echo ""
-∙ curl -sf http://localhost/ | head -3 && echo "...Landing OK"
-∙ '
+∙ echo ""curl -sf http://localhost/ | head -3 && echo "...Landing OK"'

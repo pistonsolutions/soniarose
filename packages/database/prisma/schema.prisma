@@ -69,6 +69,12 @@ enum TaskPriority {
   URGENT
 }
 
+enum MediaAssetStatus {
+  PROCESSING
+  READY
+  FAILED
+}
+
 enum TemplateType {
   SMS
   EMAIL
@@ -195,8 +201,8 @@ model TimelineEvent {
 }
 
 model MediaAsset {
-  id            String    @id @default(cuid())
-  userId        String    // Clerk User ID
+  id            String           @id @default(cuid())
+  userId        String           // Clerk User ID
   contacts      Contact[]
   ownerLabel    String?
   objectKey     String
@@ -204,7 +210,9 @@ model MediaAsset {
   sizeBytes     Int
   checksum      String?
   expiresAt     DateTime?
-  createdAt     DateTime  @default(now())
+  status        MediaAssetStatus @default(PROCESSING)
+  errorReason   String?
+  createdAt     DateTime         @default(now())
 
   @@index([objectKey])
   @@index([userId])
