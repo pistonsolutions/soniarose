@@ -158,3 +158,92 @@ Target platform is **Oracle Cloud Infrastructure (OCI)**. Plan includes:
 - Add media upload flows with presigned URLs
 - Implement authentication and multi-tenant guards
 - Add role-based access controls
+
+
+
+
+ ▲ soniarose   main  ❯ ssh -i "crmeys copy/ssh-key-2025-12-05 (1).key" -o StrictHostKeyChecking=no opc@168.138.66.139 '
+∙ cd ~/soniarose
+∙ 
+∙ echo "=== Server up ==="
+∙ uptime
+∙ 
+∙ echo ""
+∙ echo "=== Pull new web image ==="
+∙ sudo docker pull ghcr.io/pistonsolutions/soniarose-web:latest
+∙ 
+∙ echo ""
+∙ echo "=== Image timestamp ==="
+∙ sudo docker images ghcr.io/pistonsolutions/soniarose-web:latest --format "Created: {{.CreatedAt}}"
+∙ 
+∙ echo ""
+∙ echo "=== Start all containers ==="
+∙ sudo docker compose -f docker-compose.prod.yml up -d
+∙ 
+∙ echo "Waiting 60s..."
+∙ sleep 60
+∙ 
+∙ echo ""
+∙ echo "=== Manual start web/nginx ==="
+∙ sudo docker start soniarose-web 2>/dev/null || true
+∙ sudo docker start soniarose-nginx 2>/dev/null || true
+∙ sleep 10
+∙ 
+∙ echo ""
+∙ echo "=== Status ==="
+∙ sudo docker ps
+∙ 
+∙ echo ""
+∙ echo "=== Test ==="
+∙ curl -sf http://localhost/ | head -3 && echo "...Landing OK"
+∙ curl -sf http://localhost/crm | head -3 && echo "...CRM OK"
+∙ '
+=== Server up ===
+ 17:04:15 up 1 min,  0 users,  load average: 3.15, 0.84, 0.29
+
+=== Pull new web image ===
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+
+=== Image timestamp ===
+
+=== Start all containers ===
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+Waiting 60s...
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
+^C%                                                                                                                                
+
+ ▲ soniarose   main  ❯ ssh -i "crmeys copy/ssh-key-2025-12-05 (1).key" -o StrictHostKeyChecking=no opc@168.138.66.139 '
+∙ echo "=== Starting Docker ==="
+∙ sudo systemctl start docker
+∙ sleep 5
+∙ 
+∙ cd ~/soniarose
+∙ 
+∙ echo ""
+∙ echo "=== Pull new web image ==="
+∙ sudo docker pull ghcr.io/pistonsolutions/soniarose-web:latest
+∙ 
+∙ echo ""
+∙ echo "=== Image timestamp ==="
+∙ sudo docker images ghcr.io/pistonsolutions/soniarose-web:latest --format "Created: {{.CreatedAt}}"
+∙ 
+∙ echo ""
+∙ echo "=== Start all containers ==="
+∙ sudo docker compose -f docker-compose.prod.yml up -d
+∙ 
+∙ echo "Waiting 60s..."
+∙ sleep 60
+∙ 
+∙ echo ""
+∙ echo "=== Manual start web/nginx ==="
+∙ sudo docker start soniarose-web 2>/dev/null || true
+∙ sudo docker start soniarose-nginx 2>/dev/null || true
+∙ sleep 10
+∙ 
+∙ echo ""
+∙ echo "=== Status ==="
+∙ sudo docker ps
+∙ 
+∙ echo ""
+∙ curl -sf http://localhost/ | head -3 && echo "...Landing OK"
+∙ '
