@@ -357,7 +357,7 @@ export class WorkflowsProcessor implements OnModuleDestroy, OnModuleInit {
 
     // 5 messages over 10 days (Day 0, 2, 4, 7, 10)
     const schedule = [
-      { day: 0, msg: "Hi [FirstName]! Welcome to the 10 Days of Joy! 🌟 I'm so excited to share this journey with you. Here is your first gift - the 'Joy of Living' guide: [LINK]. Enjoy!" },
+      { day: 0, msg: "Hi [FirstName]! Welcome to the 10 Days of Joy! 🌟 I'm so excited to share this journey with you. Here is your first gift - guide de lacheteur: [LINK]. Enjoy!" },
       { day: 2, msg: "Day 2 of Joy! 🌻 'Happiness is not something ready made. It comes from your own actions.' - Dalai Lama. What's one small thing that made you smile today, [FirstName]?" },
       { day: 4, msg: "Day 4: A little treat for your home! 🕯️ Scent is a powerful mood booster. Try simmering cinnamon and orange slices on your stove today. Your home will smell amazing!" },
       { day: 7, msg: "Day 7: We're almost there! 🚀 I hope you've been enjoying these little moments of joy. Remember to take 5 minutes for yourself today. You deserve it, [FirstName]!" },
@@ -373,7 +373,7 @@ export class WorkflowsProcessor implements OnModuleDestroy, OnModuleInit {
     }
 
     const currentStep = schedule[stepIndex];
-    const body = currentStep.msg.replace('[FirstName]', contact.firstName || 'Friend').replace('[LINK]', 'https://soniarose.com/joy');
+    const body = currentStep.msg.replace('[FirstName]', contact.firstName || 'Friend').replace('[LINK]', 'https://drive.google.com/file/d/1KwaIbl3n7xCO4CX1U7nytA5ohFbK9lZT/view');
 
     try {
       await this.sendMessage(contact, body, run.id, `Joy Step ${stepIndex + 1}`, stepIndex);
