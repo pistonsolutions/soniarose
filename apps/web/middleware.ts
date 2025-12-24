@@ -1,10 +1,37 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-export function middleware(request: NextRequest) {
-    // Simple pass-through middleware for frontend-only deployment
-    return NextResponse.next();
-}
+// Define routes that should be protected (require authentication)
+const isProtectedRoute = createRouteMatcher([
+    '/crm/dashboard(.*)',
+    '/crm/contacts(.*)',
+    '/crm/inbox(.*)',
+    '/crm/forms(.*)',
+    '/crm/workflows(.*)',
+    '/crm/media(.*)',
+    '/crm/compliance(.*)',
+    '/crm/settings(.*)',
+]);
+
+// Define routes that should be public (no auth required)
+const isPublicRoute = createRouteMatcher([
+    '/',
+    '/crm',
+    '/crm/login(.*)',
+    '/about(.*)',
+    '/buyers(.*)',
+    '/sellers(.*)',
+    '/contact(.*)',
+    '/blog(.*)',
+    '/api/tally/webhook(.*)',
+    '/api/telnyx/webhook(.*)',
+]);
+
+export default clerkMiddleware(async (auth, req) => {
+    // Protect CRM authenticated routes
+    if (isProtectedRoute(req)) {
+        await auth.protect();
+    }
+});
 
 export const config = {
     matcher: [
