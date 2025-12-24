@@ -51,6 +51,10 @@ RUN pnpm --filter @soniarose/lib build
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
+# Next.js requires NEXT_PUBLIC_* env vars at build time
+ARG NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+ENV NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=$NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+
 # Build Next.js app
 # This creates a standalone build in apps/web/.next/standalone
 RUN pnpm --filter @soniarose/web build

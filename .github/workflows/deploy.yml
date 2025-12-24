@@ -1,4 +1,4 @@
-name: Deploy to OCI
+name: Build and Push Docker Images
 
 on:
   push:
@@ -11,7 +11,7 @@ env:
   IMAGE_PREFIX: ghcr.io/${{ github.repository_owner }}
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -70,126 +70,11 @@ jobs:
           labels: ${{ steps.meta-web.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
 
-      - name: Deploy to OCI instance
-        uses: appleboy/ssh-action@v1.0.3
-        env:
-          DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
-          TELNYX_API_KEY: ${{ secrets.TELNYX_API_KEY }}
-          TELNYX_PUBLIC_KEY: ${{ secrets.TELNYX_PUBLIC_KEY }}
-          TELNYX_PHONE_NUMBER: ${{ secrets.TELNYX_PHONE_NUMBER }}
-          CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
-          NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY }}
-          GHCR_PAT: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          host: ${{ secrets.OCI_HOST }}
-          username: ${{ secrets.OCI_USER }}
-          key: ${{ secrets.OCI_SSH_PRIVATE_KEY }}
-          command_timeout: 30m
-          envs: DATABASE_PASSWORD,TELNYX_API_KEY,TELNYX_PUBLIC_KEY,TELNYX_PHONE_NUMBER,CLERK_SECRET_KEY,NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,GHCR_PAT
-          script: |
-            # Navigate to app directory
-            cd ~/soniarose || mkdir -p ~/soniarose && cd ~/soniarose
-
-            # Create .env file
-            echo "DATABASE_URL=postgresql://postgres:${DATABASE_PASSWORD}@db:5432/soniarose" > .env
-            echo "TELNYX_API_KEY=${TELNYX_API_KEY}" >> .env
-            echo "TELNYX_PUBLIC_KEY=${TELNYX_PUBLIC_KEY}" >> .env
-            echo "TELNYX_PHONE_NUMBER=${TELNYX_PHONE_NUMBER}" >> .env
-            echo "CLERK_SECRET_KEY=${CLERK_SECRET_KEY}" >> .env
-            echo "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}" >> .env
-
-            # Configure Swap to prevent OOM on micro instance
-            if [ ! -f /swapfile ]; then
-              echo "Creating 2GB swap file..."
-              sudo fallocate -l 2G /swapfile
-              sudo chmod 600 /swapfile
-              sudo mkswap /swapfile
-              sudo swapon /swapfile
-              echo "/swapfile none swap sw 0 0" | sudo tee -a /etc/fstab
-              echo "Swap created."
-              free -h
-            else
-              echo "Swap file already exists."
-            fi
-
-            # Download production configuration files
-            curl -s -o docker-compose.prod.yml https://raw.githubusercontent.com/${{ github.repository }}/main/docker-compose.prod.yml
-            curl -s -o nginx.conf https://raw.githubusercontent.com/${{ github.repository }}/main/nginx.conf
-
-            # Install Docker if not installed
-            if ! command -v docker &> /dev/null; then
-              echo "Installing Docker..."
-              # Remove conflicting packages
-              sudo dnf remove -y podman buildah || true
-              
-              # Install required utils
-              sudo dnf install -y dnf-plugins-core
-
-              # Add Docker repo
-              sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-              
-              # Install Docker
-              sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
-              
-              # Start and enable Docker
-              sudo systemctl start docker
-              sudo systemctl enable docker
-              sudo usermod -aG docker $USER
-              echo "Docker installed successfully"
-            else
-              echo "Docker already installed: $(docker --version)"
-            fi
-
-            # Ensure Docker is running
-            sudo systemctl start docker || true
-
-            # Open firewall port 80 if firewalld is running
-            sudo firewall-cmd --permanent --add-port=80/tcp 2>/dev/null || true
-            sudo firewall-cmd --reload 2>/dev/null || true
-
-            # Log in to GitHub Container Registry
-            echo "${GHCR_PAT}" | sudo docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
-            # Pull latest images
-            echo "Pulling latest images..."
-            sudo docker pull ghcr.io/${{ github.repository_owner }}/soniarose-api:latest
-            sudo docker pull ghcr.io/${{ github.repository_owner }}/soniarose-web:latest
-
-            # Stop existing containers
-            sudo docker compose -f docker-compose.prod.yml down 2>/dev/null || true
-
-            # Start services
-            echo "Starting services..."
-            sudo docker compose -f docker-compose.prod.yml up -d
-
-            # Wait for database to be ready
-            echo "Waiting for services to start..."
-            sleep 20
-
-            # Run database migrations
-            sudo docker compose -f docker-compose.prod.yml exec -T api sh -c "cd /app && npx prisma migrate deploy" || echo "Migration failed or already up to date"
-
-            # Show running containers
-            sudo docker compose -f docker-compose.prod.yml ps
-
-            # Health checks
-            echo "Running health checks..."
-            sleep 5
-            curl -sf http://localhost/health && echo " - Nginx OK" || echo " - Nginx FAILED"
-            curl -sf http://localhost/api/health && echo " - API OK" || echo " - API FAILED"
-
-            # Clean up old images
-            sudo docker image prune -af --filter "until=24h" 2>/dev/null || true
-
-      - name: Deployment notification
-        if: always()
+      - name: Build summary
         run: |
-          if [ ${{ job.status }} == 'success' ]; then
-            echo "✅ Deployment successful!"
-            echo "🌐 Landing: http://${{ secrets.OCI_HOST }}"
-            echo "💼 CRM: http://${{ secrets.OCI_HOST }}/crm"
-            echo "🔌 API: http://${{ secrets.OCI_HOST }}/api"
-          else
-            echo "❌ Deployment failed!"
-          fi
+          echo "✅ Docker images built and pushed!"
+          echo "📦 API: ${{ env.IMAGE_PREFIX }}/soniarose-api:latest"
+          echo "📦 Web: ${{ env.IMAGE_PREFIX }}/soniarose-web:latest"
