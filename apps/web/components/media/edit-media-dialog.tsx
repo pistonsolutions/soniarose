@@ -47,7 +47,7 @@ export function EditMediaDialog({ asset, onUpdateComplete }: EditMediaDialogProp
 
         try {
             const token = await getToken();
-            const res = await fetch(`http://localhost:3001/api/media/${asset.id}`, {
+            const res = await fetch(`/api/media/${asset.id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

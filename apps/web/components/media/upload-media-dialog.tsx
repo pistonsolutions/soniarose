@@ -56,7 +56,7 @@ export function UploadMediaDialog({ onUploadComplete }: { onUploadComplete?: () 
                 formData.append('contactIds', JSON.stringify(contactIds));
             }
 
-            const res = await fetch('http://localhost:3001/api/media/upload', {
+            const res = await fetch('/api/media/upload', {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`,
