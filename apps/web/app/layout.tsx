@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Montserrat, Lora, Playfair_Display } from 'next/font/google';
+import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
@@ -32,17 +33,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <body className={`${montserrat.variable} ${lora.variable} ${playfair.variable} antialiased font-serif`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="fr" suppressHydrationWarning>
+        <body className={`${montserrat.variable} ${lora.variable} ${playfair.variable} antialiased font-serif`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
