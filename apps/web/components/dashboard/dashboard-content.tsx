@@ -60,7 +60,7 @@ export async function DashboardContent() {
             <FadeIn className="space-y-6" delay={0.4}>
                 <div className="flex items-center justify-between">
                     <h3 className="text-2xl font-sans font-bold text-brand-brown dark:text-white">Recent contacts</h3>
-                    <Link href="/contacts" className="text-sm font-medium text-brand-brown hover:text-brand-gold dark:text-brand-gold dark:hover:text-white transition-colors">
+                    <Link href="/crm/contacts" className="text-sm font-medium text-brand-brown hover:text-brand-gold dark:text-brand-gold dark:hover:text-white transition-colors">
                         View all contacts &rarr;
                     </Link>
                 </div>

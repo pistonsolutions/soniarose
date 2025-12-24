@@ -37,6 +37,11 @@ async function fetchJson<T>(
 ): Promise<FetchResult<T>> {
   const url = `${API_BASE_URL}${path}`;
 
+  // Debug logging for production troubleshooting
+  if (isServer) {
+    console.log(`[API] SSR Request: ${url}, Token: ${token ? 'present' : 'missing'}, INTERNAL_API_URL: ${process.env.INTERNAL_API_URL}`);
+  }
+
   try {
     const response = await fetch(url, {
       ...init,
