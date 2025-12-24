@@ -1,24 +1,65 @@
+'use client';
+
 import Link from 'next/link';
-import { auth } from '@clerk/nextjs/server';
+import { useAuth } from '@clerk/nextjs';
 import { getContacts } from '@/lib/api';
 import { formatDate, formatName } from '@/lib/format';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/motion';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
+import { Contact } from '@/lib/types';
 
 const MAX_RECENT_CONTACTS = 6;
 
-export async function DashboardContent() {
-    const { getToken } = await auth();
-    const token = await getToken();
-    const { data, error } = await getContacts(token);
-    const contacts = data ?? [];
+export function DashboardContent() {
+    const { getToken, isLoaded, isSignedIn } = useAuth();
+    const [contacts, setContacts] = useState<Contact[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
+    useEffect(() => {
+        async function loadData() {
+            try {
+                if (!isLoaded || !isSignedIn) return;
+
+                const token = await getToken();
+                const { data, error: apiError } = await getContacts(token);
+
+                if (apiError) {
+                    setError(apiError);
+                } else {
+                    setContacts(data ?? []);
+                }
+            } catch (err) {
+                setError(err instanceof Error ? err.message : 'An error occurred loading dashboard data');
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        if (isLoaded) {
+            if (!isSignedIn) {
+                setLoading(false);
+                return;
+            }
+            loadData();
+        }
+    }, [isLoaded, isSignedIn, getToken]);
+
+    // Derived state
     const totalContacts = contacts.length;
     const optedIn = contacts.filter((contact) => contact.optInStatus === 'OPTED_IN').length;
     const needsReview = contacts.filter((contact) => contact.optInStatus === 'UNKNOWN').length;
     const activeConversations = contacts.filter((contact) => contact.messages?.length).length;
 
     const recentContacts = contacts.slice(0, MAX_RECENT_CONTACTS);
+
+    if (loading) {
+        return (
+            <div className="flex h-64 items-center justify-center">
+                <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-brand-gold"></div>
+            </div>
+        );
+    }
 
     return (
         <StaggerContainer className="space-y-12">
@@ -93,7 +134,7 @@ export async function DashboardContent() {
                                 recentContacts.map((contact) => (
                                     <tr key={contact.id} className="hover:bg-white/10 transition-colors">
                                         <td className="px-6 py-4 text-sm font-medium text-brand-brown dark:text-white">
-                                            <Link href={`/contacts/${contact.id}`} className="hover:text-brand-gold transition-colors">
+                                            <Link href={`/crm/contacts/${contact.id}`} className="hover:text-brand-gold transition-colors">
                                                 {formatName(contact.firstName, contact.lastName)}
                                             </Link>
                                         </td>
