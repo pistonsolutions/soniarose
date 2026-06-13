@@ -89,3 +89,4 @@ A `docker-compose.yml` file provisions Postgres 16 and Redis 7. Databases persis
 - Replace temporary Prisma casting in services after running `pnpm db:generate` and introduce repository-level typing helpers
 - Layer authentication/multi-tenant guards plus role-based access controls
 - Automate OCI container builds/deployments and add infrastructure-as-code definitions
+""
